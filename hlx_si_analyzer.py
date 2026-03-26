@@ -26,6 +26,7 @@ import csv
 import sys
 import math
 import argparse
+import numpy as np
 from dataclasses import dataclass, field, asdict
 from typing import List, Optional
 
@@ -384,184 +385,135 @@ def compute_si(net: NetData, driver: DriverModel, num_bounces: int = 40) -> SIRe
     else:
         loss_per_traversal = 1.0
 
-    # --- Bounce diagram with capacitive load ---
-    # We simulate using discrete time steps.
-    # Time resolution: use Td/10 or tau_load/10, whichever is smaller
-    dt = min(Td_s, tau_load_s, tr_driver_s) / 20.0
-    if dt <= 0:
-        dt = 1e-12  # 1ps minimum
+    # --- Time-domain simulation at receiver (vectorized with numpy) ---
+    #
+    # 1. Compute unit step response at load via bounce diagram
+    # 2. Build step response as a sampled array
+    # 3. Convolve with driver ramp to get actual receiver waveform
+    # 4. Measure 10-90% rise/fall time, overshoot, undershoot from waveform
 
-    total_time = max(Td_s * num_bounces * 2, tr_driver_s * 10, tau_load_s * 10)
-    total_time = min(total_time, 100e-9)  # cap at 100ns
-    n_steps = int(total_time / dt) + 1
-    n_steps = min(n_steps, 100000)  # cap computation
-    dt = total_time / n_steps
+    # Time grid — 5000 points is enough for good resolution and fast computation
+    n_pts = 5000
+    total_time = max(Td_s * 40, tr_driver_s * 4, tau_load_s * 10, 20e-9)
+    total_time = min(total_time, 200e-9)
+    t_arr_np = np.linspace(0, total_time, n_pts)
+    dt = t_arr_np[1] - t_arr_np[0]
 
-    # Simplified approach: analytical bounce diagram
-    # Track voltage waves arriving at the load at times Td, 3*Td, 5*Td, ...
-    # and at the source at times 2*Td, 4*Td, ...
+    # --- Bounce diagram: unit step response at load ---
+    v_launched_unit = Z0 / (Z0 + Rout)
 
-    # For the capacitive load, the voltage response to an arriving step of
-    # amplitude V_inc is:
-    #   v(t) = V_inc * (2 - exp(-t/tau))   for t >= 0
-    # where tau = Z0 * C_load
-    # This accounts for the initial short-circuit reflection transitioning to open.
-    # The reflected wave amplitude evolves as:
-    #   v_ref(t) = V_inc * (1 - 2*exp(-t/tau))  — starts at -V_inc, goes to +V_inc
-
-    # We'll track load voltage as superposition of responses to each arriving wave.
-
-    # Each arriving wave at the load: (arrival_time, amplitude)
-    load_arrivals = []
-
-    # Initial wave launched by driver (rising edge as a step)
-    v_launched = VDD * Z0 / (Z0 + Rout)
-
-    # Forward wave to load
-    wave_fwd = v_launched * loss_per_traversal
-    arrival_time = Td_s
-    load_arrivals.append((arrival_time, wave_fwd))
-
-    # Iterate bounces
-    # After each load arrival, a reflection goes back to source.
-    # The "average" reflected amplitude depends on how long it's been at the load.
-    # For simplicity in the bounce model, we compute the reflected wave
-    # using the steady-state gamma_L at each bounce (effective gamma).
-    # We use gamma_L_eff that accounts for cap charging: after the first
-    # bounce the cap is partially charged, so gamma_L moves toward +1.
+    load_arrivals = []  # (arrival_time, amplitude)
+    wave_fwd = v_launched_unit * loss_per_traversal
+    arr_time = Td_s
+    load_arrivals.append((arr_time, wave_fwd))
 
     for bounce in range(num_bounces):
-        # Time the wave has been "at" the load for this bounce
-        # Approximate: use Td as dwell time (wave traverses, cap charges during Td)
-        if tau_load_s > 0:
+        if tau_load_s > 1e-15:
             gamma_l_eff = 1.0 - 2.0 * math.exp(-Td_s / tau_load_s)
         else:
-            gamma_l_eff = 1.0  # no cap = open circuit
-
-        # Reflected from load
+            gamma_l_eff = 1.0
         wave_back = wave_fwd * gamma_l_eff * loss_per_traversal
-
-        # Reflected from source
         wave_fwd = wave_back * gamma_s * loss_per_traversal
-
-        arrival_time += 2 * Td_s
-        if abs(wave_fwd) < VDD * 1e-6:
+        arr_time += 2 * Td_s
+        if abs(wave_fwd) < 1e-6:
             break
-        load_arrivals.append((arrival_time, wave_fwd))
+        load_arrivals.append((arr_time, wave_fwd))
 
-    # Compute load voltage over time as sum of step responses through cap
-    # Each arriving wave V_i at time t_i contributes:
-    #   For t >= t_i:  V_i * (2.0 - exp(-(t - t_i)/tau_load))   if tau_load > 0
-    #   For t >= t_i:  V_i * 2.0                                  if tau_load ≈ 0
+    # Build step response array (vectorized)
+    step_resp = np.zeros(n_pts)
+    for t_a, v_inc in load_arrivals:
+        mask = t_arr_np >= t_a
+        elapsed = t_arr_np[mask] - t_a
+        if tau_load_s > 1e-15:
+            step_resp[mask] += v_inc * (2.0 - np.exp(-elapsed / tau_load_s))
+        else:
+            step_resp[mask] += v_inc * 2.0
 
-    # Sample voltage at key times
-    sample_times = []
-    for t_arr, _ in load_arrivals:
-        sample_times.append(t_arr)
-        # Also sample just after each arrival
-        sample_times.append(t_arr + tau_load_s * 0.1)
-        sample_times.append(t_arr + tau_load_s)
-        sample_times.append(t_arr + tau_load_s * 3)
+    # --- Driver ramp (impulse response for convolution) ---
+    # Rising edge: linear ramp 0→VDD over t_ramp = tr/0.8
+    t_ramp_r = tr_driver_s / 0.8
+    t_ramp_f = tf_driver_s / 0.8
 
-    # Add fine samples around first arrival
-    for i in range(50):
-        sample_times.append(Td_s + i * tau_load_s * 0.1)
+    # The derivative of a linear ramp is a rectangular pulse of height VDD/t_ramp.
+    # Convolving step_response with this pulse gives the ramp response.
+    # Equivalent to: v_ramp(t) = (VDD/t_ramp) * integral from 0 to min(t,t_ramp) of step_resp(t-tau) dtau
+    # Which is: v_ramp[i] = (VDD/t_ramp) * cumsum(step_resp) * dt, clipped to ramp duration
 
-    # Add coarse samples over full range
-    for i in range(200):
-        sample_times.append(i * total_time / 200.0)
+    # Rising edge: convolve step response with rectangular pulse
+    ramp_width_r = max(int(t_ramp_r / dt), 1)
+    ramp_kernel_r = np.ones(ramp_width_r) * (VDD / ramp_width_r)
+    v_rise = np.convolve(step_resp, ramp_kernel_r, mode='full')[:n_pts]
 
-    sample_times = sorted(set(t for t in sample_times if 0 <= t <= total_time))
+    # Falling edge: VDD minus rising response (using fall time ramp)
+    ramp_width_f = max(int(t_ramp_f / dt), 1)
+    ramp_kernel_f = np.ones(ramp_width_f) * (VDD / ramp_width_f)
+    v_fall_response = np.convolve(step_resp, ramp_kernel_f, mode='full')[:n_pts]
+    v_fall = VDD - v_fall_response
 
-    v_max = 0.0
-    v_min = VDD  # for falling edge analysis we'd track differently
-    v_waveform = []
+    # --- Measure 10-90% rise time ---
+    v_10 = 0.1 * VDD
+    v_90 = 0.9 * VDD
 
-    for t in sample_times:
-        v = 0.0
-        for t_arr, v_inc in load_arrivals:
-            if t >= t_arr:
-                elapsed = t - t_arr
-                if tau_load_s > 1e-15:
-                    # Capacitive load response to incident step
-                    v += v_inc * (2.0 - math.exp(-elapsed / tau_load_s))
-                else:
-                    v += v_inc * 2.0
-        v_waveform.append((t, v))
-        if v > v_max:
-            v_max = v
-        if v < v_min:
-            v_min = v
+    def find_crossing_up(v_wave, threshold):
+        """Find time of first upward crossing of threshold."""
+        for i in range(1, len(v_wave)):
+            if v_wave[i-1] < threshold <= v_wave[i]:
+                frac = (threshold - v_wave[i-1]) / (v_wave[i] - v_wave[i-1]) if v_wave[i] != v_wave[i-1] else 0
+                return t_arr_np[i-1] + frac * dt
+        return None
 
-    # Also account for driver rise time smoothing the edges.
-    # The actual peak is reduced if tr_driver >> Td (electrically short line).
-    # Apply a smoothing correction: if the line is electrically short,
-    # reflections are masked by the slow driver edge.
-    # Knee frequency of driver: f_knee = 0.35 / tr
+    def find_crossing_down(v_wave, threshold):
+        """Find time of first downward crossing of threshold."""
+        for i in range(1, len(v_wave)):
+            if v_wave[i-1] > threshold >= v_wave[i]:
+                frac = (v_wave[i-1] - threshold) / (v_wave[i-1] - v_wave[i]) if v_wave[i-1] != v_wave[i] else 0
+                return t_arr_np[i-1] + frac * dt
+        return None
+
+    t_10_r = find_crossing_up(v_rise, v_10)
+    t_90_r = find_crossing_up(v_rise, v_90)
+    t_90_f = find_crossing_down(v_fall, v_90)
+    t_10_f = find_crossing_down(v_fall, v_10)
+
+    # Electrical length
     f_knee = 0.35 / tr_driver_s if tr_driver_s > 0 else 1e12
-    # Electrical length at knee frequency (one-way, in degrees)
     elec_length_deg = 360.0 * f_knee * Td_s
     result.electrical_length_deg = elec_length_deg
 
-    # If electrically short (< 30°), reflections are negligible
-    # Scale overshoot by a factor that goes from 0 at 0° to 1 at ~90°
-    if elec_length_deg < 90:
-        reflection_factor = math.sin(math.radians(elec_length_deg)) if elec_length_deg > 0 else 0
-    else:
-        reflection_factor = 1.0
-
     # --- Steady-state values ---
-    # DC: CMOS receiver draws negligible current
-    # VOH limited by resistive divider Rout + R_trace into high-Z load
-    result.voh = VDD  # negligible DC drop for high-Z CMOS input
+    result.voh = VDD
     result.vol = 0.0
 
-    # --- Overshoot / Undershoot ---
-    raw_overshoot = max(0, v_max - VDD)
-    raw_undershoot = max(0, -v_min)  # how far below 0V
+    # --- Rise / Fall time ---
+    if t_10_r is not None and t_90_r is not None:
+        result.rise_time_ns = (t_90_r - t_10_r) * 1e9
+    else:
+        result.rise_time_ns = tr_driver_s * 1e9
 
-    result.overshoot_v = raw_overshoot * reflection_factor
-    result.undershoot_v = raw_undershoot * reflection_factor
-    result.peak_v = VDD + result.overshoot_v
-    result.trough_v = -result.undershoot_v
+    if t_90_f is not None and t_10_f is not None:
+        result.fall_time_ns = (t_10_f - t_90_f) * 1e9
+    else:
+        result.fall_time_ns = tf_driver_s * 1e9
+
+    # --- Overshoot / Undershoot ---
+    v_max_rise = float(np.max(v_rise))
+    v_min_fall = float(np.min(v_fall))
+
+    result.overshoot_v = max(0, v_max_rise - VDD)
+    result.undershoot_v = max(0, -v_min_fall)
+    result.peak_v = v_max_rise
+    result.trough_v = v_min_fall
     result.overshoot_pct = (result.overshoot_v / VDD * 100) if VDD > 0 else 0
     result.undershoot_pct = (result.undershoot_v / VDD * 100) if VDD > 0 else 0
 
-    # --- Rise time at receiver ---
-    # Root-sum-square model:
-    # tr_total = sqrt(tr_driver² + tr_line² + tr_cap²)
-    # tr_line: diffusion rise time of lossy line ≈ 2.2 * R_trace * C_metal / 2
-    #          (distributed RC, factor of 1/2 for distributed vs lumped)
-    # tr_cap:  capacitive loading at receiver = 2.2 * Z0 * C_load
-    C_metal_F = net.cap_metal_pf * 1e-12
-    tr_line_s = 1.1 * R_trace * C_metal_F  # distributed RC (half of lumped 2.2*RC)
-    tr_cap_s = 2.2 * Z0 * C_load_F
-
-    tr_total_s = math.sqrt(tr_driver_s**2 + tr_line_s**2 + tr_cap_s**2)
-    tf_total_s = math.sqrt(tf_driver_s**2 + tr_line_s**2 + tr_cap_s**2)
-
-    result.rise_time_ns = tr_total_s * 1e9
-    result.fall_time_ns = tf_total_s * 1e9
-
     # --- Settling time ---
-    # Find time when voltage stays within 5% of VDD
     settle_thresh = 0.05 * VDD
-    settle_time = 0
-    for t, v in reversed(v_waveform):
-        if abs(v - VDD) > settle_thresh:
-            settle_time = t
-            break
-    result.settling_time_ns = settle_time * 1e9
+    settle_idx = np.where(np.abs(v_rise - VDD) > settle_thresh)[0]
+    result.settling_time_ns = float(t_arr_np[settle_idx[-1]]) * 1e9 if len(settle_idx) > 0 else 0
 
-    # Bounce count: number of threshold crossings
-    crossings = 0
-    if len(v_waveform) > 1:
-        for i in range(1, len(v_waveform)):
-            v_prev = v_waveform[i-1][1]
-            v_curr = v_waveform[i][1]
-            # Count crossings of VDD (high rail)
-            if (v_prev < VDD and v_curr >= VDD) or (v_prev >= VDD and v_curr < VDD):
-                crossings += 1
+    # Bounce count: number of VDD crossings on rising edge
+    above = v_rise >= VDD
+    crossings = int(np.sum(np.diff(above.astype(int)) != 0))
     result.bounce_count = crossings
 
     return result
