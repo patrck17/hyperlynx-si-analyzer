@@ -1,16340 +1,3788 @@
- --------------------------------------------------------------------
-|   HyperLynx Batch Mode Report, VX.2.14_Update1                     |
-|                                                                    |
-| Note:   Search on '** Warning **'  and  '** Warning(Severe) **'    |
-|         to find signal-integrity and EMC problems.                 |
-|                                                                    |
-| Note:   The signal-integrity information below is a summary of     |
-|         the results from the corner cases selected for this batch  |
-|         run (Fast-Strong, Typical, and Slow-Weak).                 |
-|                                                                    |
-| Note:   Signal-integrity simulation tests for SI compliance        |
-|         against user-set limits, and includes effects of           |
-|         transmission-line discontinuities, IC loading, etc.        |
-|         SI violation flags include:                                |
-|           D = Delay error                                          |
-|               -> min delay to pin < net's min delay threshold  OR  |
-|               -> max delay to pin > net's max delay threshold      |
-|           T = Threshold error                                      |
-|               -> during transition, the pin's signal level did     |
-|                  not reach the switching threshold                 |
-|           R = Rail-overshoot error                                 |
-|               -> pin's signal level exceeded the power-supply rail |
-|                  by more than the net's overshoot threshold        |
-|           M = Multi-threshold-crossing error                       |
-|               -> pin's signal level crossed the threshold more     |
-|                  than once during transition                       |
-|           N = Non-monotonic error                                  |
-|               -> pin's signal level changed direction while within |
-|                  the transition region between Vil and Vih         |
-|           X = Crosstalk error                                      |
-|               -> crosstalk from neighbor nets exceeded the         |
-|                  threshold value for this net                      |
-|           - = No error in this field                               |
-|                                                                    |
-| Note:   Metal delays shown in this report are copper delays only   |
-|         (no effects of reflections, IC loading, etc.) For actual   |
-|         pin-to-pin delays, see detailed SI simulation results.     |
-|                                                                    |
-| Note:   Lossy transmission-line modeling used.                     |
- --------------------------------------------------------------------
-
-START TIME
-**********************************************************************
-  Date ............................. Thursday Mar. 26,2026
-  Time ............................. 15:18:04
-
-GENERAL INFORMATION
-**********************************************************************
-  Board ............................ MAP_RFSOMS_ONLY.pjh
-  Total number of nets ............. 8312
-  Total number of components........ 9158
-  Total number of areas............. 11750
-  Board temperature ................ 20.0 degrees C
-  Default IC model (used for quick analysis if IC model is missing)
-    IC driver rise/fall time .......... 1.000 ns
-    IC driver switching voltage range . 3.30 V
-    IC driver output impedance ........ 1.0 ohms
-    IC input capacitance .............. 7.0 pF
-
-NET INFORMATION
-**********************************************************************
-  NET = $22N5467_B00, PS_UART_TX_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 451.354 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 59.0 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 20.9 nH
-     total metal resistance ............ 662.4 milliohms
-     total metal length ................ 002.997 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $27N17426_B00, TR60_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 651.449 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 87.1 ohms
-     total net capacitance (with ICs) .. 14.1 pF
-     total metal capacitance ........... 14.1 pF
-     total metal inductance ............ 30.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.255 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $27N17427_B00, TR61_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 492.834 ps
-     minimum metal Z0 .................. 29.5 ohms
-     maximum metal Z0 .................. 98.5 ohms
-     total net capacitance (with ICs) .. 10.7 pF
-     total metal capacitance ........... 10.7 pF
-     total metal inductance ............ 22.9 nH
-     total metal resistance ............ 796.6 milliohms
-     total metal length ................ 003.221 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $27N17428_B00, TR63_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 332.909 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 7.2 pF
-     total metal capacitance ........... 7.2 pF
-     total metal inductance ............ 15.5 nH
-     total metal resistance ............ 530.4 milliohms
-     total metal length ................ 002.179 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $27N17429_B00, TR62_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 505.914 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 88.0 ohms
-     total net capacitance (with ICs) .. 10.9 pF
-     total metal capacitance ........... 10.9 pF
-     total metal inductance ............ 23.6 nH
-     total metal resistance ............ 819.0 milliohms
-     total metal length ................ 003.306 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $28N31616_B00, $28N3129_B00, $28N3128_B00, TR0_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 382.271 ps
-     minimum metal Z0 .................. 29.7 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 8.3 pF
-     total metal capacitance ........... 8.3 pF
-     total metal inductance ............ 17.8 nH
-     total metal resistance ............ 586.7 milliohms
-     total metal length ................ 002.512 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $28N31669_B00, $28N6095_B00, $28N6094_B00, TR4_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 243.172 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 79.1 ohms
-     total net capacitance (with ICs) .. 5.3 pF
-     total metal capacitance ........... 5.3 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 355.1 milliohms
-     total metal length ................ 001.606 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $28N31760_B00, $28N6123_B00, $28N6122_B00, TR6_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 183.754 ps
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 81.3 ohms
-     total net capacitance (with ICs) .. 4.0 pF
-     total metal capacitance ........... 4.0 pF
-     total metal inductance ............ 8.5 nH
-     total metal resistance ............ 256.8 milliohms
-     total metal length ................ 001.219 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $28N31778_B00, $28N9063_B00, $28N9062_B00, TR8_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  63
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 755.129 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 508.9 ohms
-     total net capacitance (with ICs) .. 16.4 pF
-     total metal capacitance ........... 16.4 pF
-     total metal inductance ............ 34.8 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.942 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $28N32330_B00, $28N4611_B00, $28N4610_B00, TR2_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 338.413 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 78.4 ohms
-     total net capacitance (with ICs) .. 7.4 pF
-     total metal capacitance ........... 7.4 pF
-     total metal inductance ............ 15.7 nH
-     total metal resistance ............ 512.5 milliohms
-     total metal length ................ 002.228 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $28N32751_B00, $28N9077_B00, $28N9076_B00, TR9_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 666.056 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 14.5 pF
-     total metal capacitance ........... 14.5 pF
-     total metal inductance ............ 30.8 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.361 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $28N32761_B00, $28N6137_B00, $28N6136_B00, TR7_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 366.080 ps
-     minimum metal Z0 .................. 27.8 ohms
-     maximum metal Z0 .................. 83.3 ohms
-     total net capacitance (with ICs) .. 8.0 pF
-     total metal capacitance ........... 8.0 pF
-     total metal inductance ............ 17.0 nH
-     total metal resistance ............ 557.9 milliohms
-     total metal length ................ 002.408 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $28N32772_B00, $28N6109_B00, $28N6108_B00, TR5_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 317.169 ps
-     minimum metal Z0 .................. 26.9 ohms
-     maximum metal Z0 .................. 78.5 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.7 nH
-     total metal resistance ............ 478.0 milliohms
-     total metal length ................ 002.089 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $28N32785_B00, $28N4625_B00, $28N4624_B00, TR3_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 426.066 ps
-     minimum metal Z0 .................. 29.3 ohms
-     maximum metal Z0 .................. 78.3 ohms
-     total net capacitance (with ICs) .. 9.3 pF
-     total metal capacitance ........... 9.3 pF
-     total metal inductance ............ 19.7 nH
-     total metal resistance ............ 659.4 milliohms
-     total metal length ................ 002.798 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $28N32788_B00, $28N3869_B00, $28N3868_B00, TR1_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 536.690 ps
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 102.5 ohms
-     total net capacitance (with ICs) .. 11.7 pF
-     total metal capacitance ........... 11.7 pF
-     total metal inductance ............ 24.8 nH
-     total metal resistance ............ 843.3 milliohms
-     total metal length ................ 003.518 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $34N3360_B00, TR0_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 414.596 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 9.2 pF
-     total metal capacitance ........... 9.2 pF
-     total metal inductance ............ 18.7 nH
-     total metal resistance ............ 247.1 milliohms
-     total metal length ................ 002.742 in
-     average metal Z0 .................. 45.0 ohms
-
-  NET = $34N3609_B00, TR2_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 311.269 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.0 nH
-     total metal resistance ............ 184.1 milliohms
-     total metal length ................ 002.062 in
-     average metal Z0 .................. 44.9 ohms
-
-  NET = $34N3611_B00, TR3_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  13
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 183.811 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 498.2 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 8.3 nH
-     total metal resistance ............ 103.0 milliohms
-     total metal length ................ 001.233 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $34N3615_B00, TR5_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 293.963 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 6.5 pF
-     total metal capacitance ........... 6.5 pF
-     total metal inductance ............ 13.2 nH
-     total metal resistance ............ 173.6 milliohms
-     total metal length ................ 001.948 in
-     average metal Z0 .................. 45.0 ohms
-
-  NET = $34N3617_B00, TR6_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 362.066 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 8.1 pF
-     total metal capacitance ........... 8.1 pF
-     total metal inductance ............ 16.2 nH
-     total metal resistance ............ 215.3 milliohms
-     total metal length ................ 002.396 in
-     average metal Z0 .................. 44.8 ohms
-
-  NET = $34N3619_B00, TR7_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 432.509 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 9.6 pF
-     total metal capacitance ........... 9.6 pF
-     total metal inductance ............ 19.6 nH
-     total metal resistance ............ 258.5 milliohms
-     total metal length ................ 002.859 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $34N28647_B00, TR8_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 389.960 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 118.7 ohms
-     total net capacitance (with ICs) .. 8.8 pF
-     total metal capacitance ........... 8.8 pF
-     total metal inductance ............ 17.3 nH
-     total metal resistance ............ 232.1 milliohms
-     total metal length ................ 002.579 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = $34N28654_B00, TR14_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 395.578 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 8.9 pF
-     total metal capacitance ........... 8.9 pF
-     total metal inductance ............ 17.5 nH
-     total metal resistance ............ 236.0 milliohms
-     total metal length ................ 002.613 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = $34N28655_B00, TR15_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 466.513 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 10.6 pF
-     total metal capacitance ........... 10.6 pF
-     total metal inductance ............ 20.7 nH
-     total metal resistance ............ 279.3 milliohms
-     total metal length ................ 003.081 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = $34N28663_B00, TR8_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.111 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.9 ohms
-     total net capacitance (with ICs) .. 24.4 pF
-     total metal capacitance ........... 24.4 pF
-     total metal inductance ............ 50.9 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.260 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $34N28664_B00, TR9_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.121 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 24.6 pF
-     total metal capacitance ........... 24.6 pF
-     total metal inductance ............ 51.3 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.319 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $34N28665_B00, TR10_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.110 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 24.4 pF
-     total metal capacitance ........... 24.4 pF
-     total metal inductance ............ 50.8 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.245 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $34N28666_B00, TR11_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.119 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 24.5 pF
-     total metal capacitance ........... 24.5 pF
-     total metal inductance ............ 51.3 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.306 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $34N28667_B00, TR12_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.122 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 24.5 pF
-     total metal capacitance ........... 24.5 pF
-     total metal inductance ............ 51.5 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.323 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $34N28668_B00, TR13_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.131 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 24.7 pF
-     total metal capacitance ........... 24.7 pF
-     total metal inductance ............ 51.8 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.380 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $34N28669_B00, TR14_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.125 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 24.6 pF
-     total metal capacitance ........... 24.6 pF
-     total metal inductance ............ 51.6 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.345 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $34N28670_B00, TR15_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.134 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 24.8 pF
-     total metal capacitance ........... 24.8 pF
-     total metal inductance ............ 52.0 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.406 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $34N30187_B00, TR16_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 554.511 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 12.2 pF
-     total metal capacitance ........... 12.2 pF
-     total metal inductance ............ 25.2 nH
-     total metal resistance ............ 332.1 milliohms
-     total metal length ................ 003.656 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $34N30189_B00, TR17_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 500.662 ps
-     minimum metal Z0 .................. 44.0 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 11.1 pF
-     total metal capacitance ........... 11.1 pF
-     total metal inductance ............ 22.5 nH
-     total metal resistance ............ 300.8 milliohms
-     total metal length ................ 003.301 in
-     average metal Z0 .................. 45.0 ohms
-
-  NET = $34N30190_B00, TR18_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 441.336 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 19.8 nH
-     total metal resistance ............ 262.8 milliohms
-     total metal length ................ 002.911 in
-     average metal Z0 .................. 44.9 ohms
-
-  NET = $34N30191_B00, TR19_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 342.784 ps
-     minimum metal Z0 .................. 29.5 ohms
-     maximum metal Z0 .................. 72.0 ohms
-     total net capacitance (with ICs) .. 7.8 pF
-     total metal capacitance ........... 7.8 pF
-     total metal inductance ............ 15.1 nH
-     total metal resistance ............ 198.3 milliohms
-     total metal length ................ 002.266 in
-     average metal Z0 .................. 43.9 ohms
-
-  NET = $34N30192_B00, TR20_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 364.033 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 8.2 pF
-     total metal capacitance ........... 8.2 pF
-     total metal inductance ............ 16.1 nH
-     total metal resistance ............ 215.5 milliohms
-     total metal length ................ 002.404 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = $34N30193_B00, TR21_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 443.895 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 20.2 nH
-     total metal resistance ............ 264.4 milliohms
-     total metal length ................ 002.928 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $34N30195_B00, TR23_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 587.281 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 13.1 pF
-     total metal capacitance ........... 13.1 pF
-     total metal inductance ............ 26.3 nH
-     total metal resistance ............ 352.4 milliohms
-     total metal length ................ 003.871 in
-     average metal Z0 .................. 44.8 ohms
-
-  NET = $34N31729_B00, TR24_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 502.506 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 11.4 pF
-     total metal capacitance ........... 11.4 pF
-     total metal inductance ............ 22.2 nH
-     total metal resistance ............ 299.9 milliohms
-     total metal length ................ 003.316 in
-     average metal Z0 .................. 44.2 ohms
-
-  NET = $34N31731_B00, TR25_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 414.818 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.4 pF
-     total metal capacitance ........... 9.4 pF
-     total metal inductance ............ 18.3 nH
-     total metal resistance ............ 246.6 milliohms
-     total metal length ................ 002.740 in
-     average metal Z0 .................. 44.1 ohms
-
-  NET = $34N31732_B00, TR26_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 327.520 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.4 pF
-     total metal capacitance ........... 7.4 pF
-     total metal inductance ............ 14.5 nH
-     total metal resistance ............ 193.2 milliohms
-     total metal length ................ 002.167 in
-     average metal Z0 .................. 44.1 ohms
-
-  NET = $34N31733_B00, TR27_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  12
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 188.169 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 4.3 pF
-     total metal capacitance ........... 4.3 pF
-     total metal inductance ............ 8.3 nH
-     total metal resistance ............ 107.7 milliohms
-     total metal length ................ 001.253 in
-     average metal Z0 .................. 44.2 ohms
-
-  NET = $34N31734_B00, TR28_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 205.711 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 9.1 nH
-     total metal resistance ............ 118.5 milliohms
-     total metal length ................ 001.368 in
-     average metal Z0 .................. 44.2 ohms
-
-  NET = $34N31735_B00, TR29_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 285.095 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 6.5 pF
-     total metal capacitance ........... 6.5 pF
-     total metal inductance ............ 12.6 nH
-     total metal resistance ............ 167.1 milliohms
-     total metal length ................ 001.889 in
-     average metal Z0 .................. 44.1 ohms
-
-  NET = $34N31736_B00, TR30_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 353.031 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 8.0 pF
-     total metal capacitance ........... 8.0 pF
-     total metal inductance ............ 15.6 nH
-     total metal resistance ............ 208.6 milliohms
-     total metal length ................ 002.335 in
-     average metal Z0 .................. 44.1 ohms
-
-  NET = $34N31737_B00, TR31_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 422.463 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.6 pF
-     total metal capacitance ........... 9.6 pF
-     total metal inductance ............ 18.7 nH
-     total metal resistance ............ 250.6 milliohms
-     total metal length ................ 002.793 in
-     average metal Z0 .................. 44.2 ohms
-
-  NET = $34N31778_B00, TR39_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 433.097 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 19.2 nH
-     total metal resistance ............ 256.8 milliohms
-     total metal length ................ 002.863 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = $34N31814_B00, TR42_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 167.178 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.8 pF
-     total metal capacitance ........... 3.8 pF
-     total metal inductance ............ 7.5 nH
-     total metal resistance ............ 94.8 milliohms
-     total metal length ................ 001.116 in
-     average metal Z0 .................. 44.6 ohms
-
-  NET = $34N31815_B00, TR43_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 197.923 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 4.5 pF
-     total metal capacitance ........... 4.5 pF
-     total metal inductance ............ 8.8 nH
-     total metal resistance ............ 114.1 milliohms
-     total metal length ................ 001.316 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = $34N31816_B00, TR44_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  11
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 162.624 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.7 pF
-     total metal capacitance ........... 3.7 pF
-     total metal inductance ............ 7.2 nH
-     total metal resistance ............ 92.3 milliohms
-     total metal length ................ 001.085 in
-     average metal Z0 .................. 44.4 ohms
-
-  NET = $34N31827_B00, TR40_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 988.314 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 21.5 pF
-     total metal capacitance ........... 21.5 pF
-     total metal inductance ............ 45.5 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.466 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = $34N31828_B00, TR41_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 978.343 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 21.3 pF
-     total metal capacitance ........... 21.3 pF
-     total metal inductance ............ 45.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.408 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $34N31829_B00, TR42_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 953.161 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 20.8 pF
-     total metal capacitance ........... 20.8 pF
-     total metal inductance ............ 43.8 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.232 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $34N31830_B00, TR43_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 938.283 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 20.5 pF
-     total metal capacitance ........... 20.5 pF
-     total metal inductance ............ 43.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.134 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $34N31831_B00, TR44_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 954.407 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 20.8 pF
-     total metal capacitance ........... 20.8 pF
-     total metal inductance ............ 43.9 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.249 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = $34N31832_B00, TR45_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 944.624 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 20.6 pF
-     total metal capacitance ........... 20.6 pF
-     total metal inductance ............ 43.4 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.178 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $34N31833_B00, TR46_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 963.677 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 21.0 pF
-     total metal capacitance ........... 21.0 pF
-     total metal inductance ............ 44.3 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.318 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $34N31834_B00, TR47_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 951.496 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 20.7 pF
-     total metal capacitance ........... 20.7 pF
-     total metal inductance ............ 43.8 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.235 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = $39N25692_B00, LMK_STATUS_LD2_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.276 ns
-     minimum metal Z0 .................. 44.8 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 28.2 pF
-     total metal capacitance ........... 28.2 pF
-     total metal inductance ............ 57.8 nH
-     total metal resistance ............ 769.9 milliohms
-     total metal length ................ 008.416 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = $39N32926_B00, GE1_MDIO_B00, B502.MIO77_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.832 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 55.6 ohms
-     total net capacitance (with ICs) .. 40.5 pF
-     total metal capacitance ........... 40.5 pF
-     total metal inductance ............ 82.9 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 012.008 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $39N35017_B00, LMK_STATUS_LD1_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.255 ns
-     minimum metal Z0 .................. 44.8 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 27.5 pF
-     total metal capacitance ........... 27.5 pF
-     total metal inductance ............ 57.3 nH
-     total metal resistance ............ 758.2 milliohms
-     total metal length ................ 008.264 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $41N14923_B00, TXLO_MBUS_RX_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 349.471 ps
-     minimum metal Z0 .................. 40.6 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.7 pF
-     total metal capacitance ........... 7.7 pF
-     total metal inductance ............ 15.9 nH
-     total metal resistance ............ 546.8 milliohms
-     total metal length ................ 002.294 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = $42N12886_B00, RXLO_MBUS_EN_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 213.321 ps
-     minimum metal Z0 .................. 41.5 ohms
-     maximum metal Z0 .................. 478.8 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 9.6 nH
-     total metal resistance ............ 117.6 milliohms
-     total metal length ................ 001.434 in
-     average metal Z0 .................. 45.1 ohms
-
-  NET = $42N12887_B00, RXLO_MBUS_TX_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  10
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 180.112 ps
-     minimum metal Z0 .................. 41.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 4.0 pF
-     total metal capacitance ........... 4.0 pF
-     total metal inductance ............ 8.1 nH
-     total metal resistance ............ 103.6 milliohms
-     total metal length ................ 001.201 in
-     average metal Z0 .................. 45.0 ohms
-
-  NET = $42N27212_B00, CAL_MBUS_EN_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 141.741 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 4.8 pF
-     total metal capacitance ........... 4.8 pF
-     total metal inductance ............ 4.5 nH
-     total metal resistance ............ 75.0 milliohms
-     total metal length ................ 000.958 in
-     average metal Z0 .................. 30.7 ohms
-
-  NET = $42N27213_B00, CAL_MBUS_TX_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  9
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 111.922 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 2.5 pF
-     total metal capacitance ........... 2.5 pF
-     total metal inductance ............ 5.1 nH
-     total metal resistance ............ 151.1 milliohms
-     total metal length ................ 000.748 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $43N19703_B00, PRS_UCD_CLK_B00, UCD.CLK_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 662.097 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 14.0 pF
-     total metal capacitance ........... 14.0 pF
-     total metal inductance ............ 31.3 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.335 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = $43N19704_B00, PRS_UCD_ALERT_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.082 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 46.1 ohms
-     total net capacitance (with ICs) .. 23.7 pF
-     total metal capacitance ........... 23.7 pF
-     total metal inductance ............ 49.5 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.071 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $43N19705_B00, PRS_UCD_CNTRL_B00, UCD.CNTRL_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 688.475 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 32.5 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.504 in
-     average metal Z0 .................. 47.1 ohms
-
-  NET = $43N19706_B00, PRS_UCD_DATA_B00, UCD.DATA_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  44
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 655.430 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 13.9 pF
-     total metal capacitance ........... 13.9 pF
-     total metal inductance ............ 31.0 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.286 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = $43N19707_B00, PRS_UCD_CLK_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.101 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 46.1 ohms
-     total net capacitance (with ICs) .. 24.1 pF
-     total metal capacitance ........... 24.1 pF
-     total metal inductance ............ 50.3 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.187 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $43N19708_B00, PRS_UCD_DATA_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.092 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 46.1 ohms
-     total net capacitance (with ICs) .. 23.9 pF
-     total metal capacitance ........... 23.9 pF
-     total metal inductance ............ 50.0 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.134 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $43N19786_B00, SRS2_UCD_CNTRL_B00, UCD.CNTRL_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 713.312 ps
-     minimum metal Z0 .................. 31.0 ohms
-     maximum metal Z0 .................. 59.1 ohms
-     total net capacitance (with ICs) .. 15.3 pF
-     total metal capacitance ........... 15.3 pF
-     total metal inductance ............ 33.4 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.671 in
-     average metal Z0 .................. 46.8 ohms
-
-  NET = $43N19787_B00, SRS2_UCD_CLK_B00, UCD.CLK_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 680.491 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 14.5 pF
-     total metal capacitance ........... 14.5 pF
-     total metal inductance ............ 32.0 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.462 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = $43N19789_B00, SRS2_UCD_DATA_B00, UCD.DATA_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 679.874 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 14.5 pF
-     total metal capacitance ........... 14.5 pF
-     total metal inductance ............ 31.9 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.453 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = $43N19826_B00, SRS1_UCD_CNTRL_B00, UCD.CNTRL_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 685.645 ps
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 53.0 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 32.3 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.490 in
-     average metal Z0 .................. 47.0 ohms
-
-  NET = $43N19827_B00, SRS1_UCD_DATA_B00, UCD.DATA_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 652.100 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 13.8 pF
-     total metal capacitance ........... 13.8 pF
-     total metal inductance ............ 30.9 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.269 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = $48N23886_B00, $48N23884_B00, TE_EXT_SYNC_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  5
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 266.421 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.9 ohms
-     total net capacitance (with ICs) .. 11.6 pF
-     total metal capacitance ........... 11.6 pF
-     total metal inductance ............ 6.3 nH
-     total metal resistance ............ 45.7 milliohms
-     total metal length ................ 001.777 in
-     average metal Z0 .................. 23.4 ohms
-
-  NET = $54N17975_B00, TR16_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 398.453 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 8.6 pF
-     total metal capacitance ........... 8.6 pF
-     total metal inductance ............ 18.5 nH
-     total metal resistance ............ 638.5 milliohms
-     total metal length ................ 002.607 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $54N17976_B00, TR18_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 508.384 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 81.5 ohms
-     total net capacitance (with ICs) .. 11.0 pF
-     total metal capacitance ........... 11.0 pF
-     total metal inductance ............ 23.6 nH
-     total metal resistance ............ 821.3 milliohms
-     total metal length ................ 003.323 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $55N18007_B00, TR5_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 326.946 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 89.9 ohms
-     total net capacitance (with ICs) .. 7.0 pF
-     total metal capacitance ........... 7.0 pF
-     total metal inductance ............ 15.4 nH
-     total metal resistance ............ 519.8 milliohms
-     total metal length ................ 002.141 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = $56N18002_B00, TR10_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 346.084 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 508.4 ohms
-     total net capacitance (with ICs) .. 7.5 pF
-     total metal capacitance ........... 7.5 pF
-     total metal inductance ............ 16.2 nH
-     total metal resistance ............ 553.2 milliohms
-     total metal length ................ 002.265 in
-     average metal Z0 .................. 46.7 ohms
-
-  NET = $56N18003_B00, TR11_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 449.836 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 93.8 ohms
-     total net capacitance (with ICs) .. 9.7 pF
-     total metal capacitance ........... 9.7 pF
-     total metal inductance ............ 20.9 nH
-     total metal resistance ............ 724.9 milliohms
-     total metal length ................ 002.942 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $56N18004_B00, TR13_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 497.473 ps
-     minimum metal Z0 .................. 29.5 ohms
-     maximum metal Z0 .................. 80.6 ohms
-     total net capacitance (with ICs) .. 10.8 pF
-     total metal capacitance ........... 10.8 pF
-     total metal inductance ............ 23.2 nH
-     total metal resistance ............ 804.1 milliohms
-     total metal length ................ 003.251 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $56N18005_B00, TR12_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 382.653 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 89.1 ohms
-     total net capacitance (with ICs) .. 8.2 pF
-     total metal capacitance ........... 8.2 pF
-     total metal inductance ............ 17.9 nH
-     total metal resistance ............ 614.0 milliohms
-     total metal length ................ 002.503 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $56N18006_B00, TR14_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 667.027 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 99.4 ohms
-     total net capacitance (with ICs) .. 14.4 pF
-     total metal capacitance ........... 14.4 pF
-     total metal inductance ............ 31.1 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.356 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $57N18255_B00, TR20_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 442.556 ps
-     minimum metal Z0 .................. 28.6 ohms
-     maximum metal Z0 .................. 80.5 ohms
-     total net capacitance (with ICs) .. 9.6 pF
-     total metal capacitance ........... 9.6 pF
-     total metal inductance ............ 20.5 nH
-     total metal resistance ............ 711.9 milliohms
-     total metal length ................ 002.894 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $57N18256_B00, TR21_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 330.714 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 80.0 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 15.4 nH
-     total metal resistance ............ 526.1 milliohms
-     total metal length ................ 002.165 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $57N18257_B00, TR23_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 416.440 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 99.8 ohms
-     total net capacitance (with ICs) .. 9.0 pF
-     total metal capacitance ........... 9.0 pF
-     total metal inductance ............ 19.5 nH
-     total metal resistance ............ 670.1 milliohms
-     total metal length ................ 002.724 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $57N18258_B00, TR22_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 450.667 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 75.4 ohms
-     total net capacitance (with ICs) .. 9.7 pF
-     total metal capacitance ........... 9.7 pF
-     total metal inductance ............ 21.0 nH
-     total metal resistance ............ 725.3 milliohms
-     total metal length ................ 002.947 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $57N18259_B00, TR24_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 565.563 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 94.7 ohms
-     total net capacitance (with ICs) .. 12.2 pF
-     total metal capacitance ........... 12.2 pF
-     total metal inductance ............ 26.2 nH
-     total metal resistance ............ 918.3 milliohms
-     total metal length ................ 003.696 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $58N17996_B00, TR31_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 370.797 ps
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 74.6 ohms
-     total net capacitance (with ICs) .. 8.0 pF
-     total metal capacitance ........... 8.0 pF
-     total metal inductance ............ 17.2 nH
-     total metal resistance ............ 593.5 milliohms
-     total metal length ................ 002.426 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $59N17994_B00, TR26_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 329.423 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 15.4 nH
-     total metal resistance ............ 525.7 milliohms
-     total metal length ................ 002.157 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = $59N17996_B00, TR27_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 477.828 ps
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 75.2 ohms
-     total net capacitance (with ICs) .. 10.3 pF
-     total metal capacitance ........... 10.3 pF
-     total metal inductance ............ 22.2 nH
-     total metal resistance ............ 771.4 milliohms
-     total metal length ................ 003.123 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $59N17997_B00, TR29_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 510.426 ps
-     minimum metal Z0 .................. 29.3 ohms
-     maximum metal Z0 .................. 101.1 ohms
-     total net capacitance (with ICs) .. 11.1 pF
-     total metal capacitance ........... 11.1 pF
-     total metal inductance ............ 23.7 nH
-     total metal resistance ............ 825.8 milliohms
-     total metal length ................ 003.336 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $60N18008_B00, TR37_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 321.461 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 88.0 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 15.0 nH
-     total metal resistance ............ 510.6 milliohms
-     total metal length ................ 002.105 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $61N18000_B00, TR40_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 466.093 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 103.4 ohms
-     total net capacitance (with ICs) .. 10.1 pF
-     total metal capacitance ........... 10.1 pF
-     total metal inductance ............ 21.7 nH
-     total metal resistance ............ 752.8 milliohms
-     total metal length ................ 003.047 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = $62N6122_B00, $62N6123_B00, TR16_DAC_IF_B00, $62N14314_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 394.881 ps
-     minimum metal Z0 .................. 29.8 ohms
-     maximum metal Z0 .................. 97.9 ohms
-     total net capacitance (with ICs) .. 8.6 pF
-     total metal capacitance ........... 8.6 pF
-     total metal inductance ............ 18.3 nH
-     total metal resistance ............ 607.7 milliohms
-     total metal length ................ 002.595 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $62N9062_B00, $62N9063_B00, TR18_DAC_IF_B00, $62N13637_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 335.414 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 93.0 ohms
-     total net capacitance (with ICs) .. 7.3 pF
-     total metal capacitance ........... 7.3 pF
-     total metal inductance ............ 15.6 nH
-     total metal resistance ............ 507.5 milliohms
-     total metal length ................ 002.208 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $62N9077_B00, $62N14337_B00, $62N9076_B00, TR19_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 399.131 ps
-     minimum metal Z0 .................. 29.3 ohms
-     maximum metal Z0 .................. 80.5 ohms
-     total net capacitance (with ICs) .. 8.7 pF
-     total metal capacitance ........... 8.7 pF
-     total metal inductance ............ 18.5 nH
-     total metal resistance ............ 614.6 milliohms
-     total metal length ................ 002.623 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $62N13621_B00, $62N3129_B00, $62N3128_B00, TR10_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  49
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 691.860 ps
-     minimum metal Z0 .................. 25.6 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 15.0 pF
-     total metal capacitance ........... 15.0 pF
-     total metal inductance ............ 32.0 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.531 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $62N13641_B00, $62N3869_B00, $62N3868_B00, TR11_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  40
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 675.490 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 100.2 ohms
-     total net capacitance (with ICs) .. 14.7 pF
-     total metal capacitance ........... 14.7 pF
-     total metal inductance ............ 31.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.423 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $62N13649_B00, $62N6109_B00, $62N6108_B00, TR15_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  62
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 760.571 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 16.5 pF
-     total metal capacitance ........... 16.5 pF
-     total metal inductance ............ 35.1 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.977 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $62N14280_B00, $62N4611_B00, $62N4610_B00, TR12_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  47
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 664.226 ps
-     minimum metal Z0 .................. 27.9 ohms
-     maximum metal Z0 .................. 95.6 ohms
-     total net capacitance (with ICs) .. 14.4 pF
-     total metal capacitance ........... 14.4 pF
-     total metal inductance ............ 30.7 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.351 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $62N14308_B00, $62N6095_B00, $62N6094_B00, TR14_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  49
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 776.223 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 16.9 pF
-     total metal capacitance ........... 16.9 pF
-     total metal inductance ............ 35.8 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 005.080 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $62N14343_B00, $62N6137_B00, $62N6136_B00, TR17_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 585.771 ps
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 93.6 ohms
-     total net capacitance (with ICs) .. 12.7 pF
-     total metal capacitance ........... 12.7 pF
-     total metal inductance ............ 27.2 nH
-     total metal resistance ............ 925.1 milliohms
-     total metal length ................ 003.839 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $62N14366_B00, $62N4625_B00, $62N4624_B00, TR13_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 672.375 ps
-     minimum metal Z0 .................. 26.5 ohms
-     maximum metal Z0 .................. 95.5 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 31.0 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.404 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $63N23181_B00, TR2_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 511.470 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 98.5 ohms
-     total net capacitance (with ICs) .. 11.0 pF
-     total metal capacitance ........... 11.0 pF
-     total metal inductance ............ 23.9 nH
-     total metal resistance ............ 826.4 milliohms
-     total metal length ................ 003.343 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $63N23183_B00, TR4_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 465.336 ps
-     minimum metal Z0 .................. 28.6 ohms
-     maximum metal Z0 .................. 98.5 ohms
-     total net capacitance (with ICs) .. 10.0 pF
-     total metal capacitance ........... 10.0 pF
-     total metal inductance ............ 21.8 nH
-     total metal resistance ............ 749.7 milliohms
-     total metal length ................ 003.043 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $63N23186_B00, TR3_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 627.776 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 87.0 ohms
-     total net capacitance (with ICs) .. 13.6 pF
-     total metal capacitance ........... 13.6 pF
-     total metal inductance ............ 29.2 nH
-     total metal resistance ............ 1.0 ohms
-     total metal length ................ 004.101 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $64N18005_B00, TR50_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 539.548 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 508.4 ohms
-     total net capacitance (with ICs) .. 11.7 pF
-     total metal capacitance ........... 11.7 pF
-     total metal inductance ............ 25.1 nH
-     total metal resistance ............ 873.1 milliohms
-     total metal length ................ 003.526 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $64N18006_B00, TR51_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 414.869 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 83.4 ohms
-     total net capacitance (with ICs) .. 9.0 pF
-     total metal capacitance ........... 9.0 pF
-     total metal inductance ............ 19.3 nH
-     total metal resistance ............ 665.7 milliohms
-     total metal length ................ 002.714 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $64N18007_B00, TR53_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 324.081 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 90.5 ohms
-     total net capacitance (with ICs) .. 7.0 pF
-     total metal capacitance ........... 7.0 pF
-     total metal inductance ............ 15.1 nH
-     total metal resistance ............ 515.0 milliohms
-     total metal length ................ 002.122 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $64N18008_B00, TR52_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 469.381 ps
-     minimum metal Z0 .................. 28.6 ohms
-     maximum metal Z0 .................. 89.5 ohms
-     total net capacitance (with ICs) .. 10.2 pF
-     total metal capacitance ........... 10.2 pF
-     total metal inductance ............ 21.8 nH
-     total metal resistance ............ 756.4 milliohms
-     total metal length ................ 003.069 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $64N18009_B00, TR54_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 438.436 ps
-     minimum metal Z0 .................. 28.5 ohms
-     maximum metal Z0 .................. 78.2 ohms
-     total net capacitance (with ICs) .. 9.5 pF
-     total metal capacitance ........... 9.5 pF
-     total metal inductance ............ 20.3 nH
-     total metal resistance ............ 705.0 milliohms
-     total metal length ................ 002.867 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $65N21070_B00, TR55_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 408.653 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 88.9 ohms
-     total net capacitance (with ICs) .. 8.8 pF
-     total metal capacitance ........... 8.8 pF
-     total metal inductance ............ 19.1 nH
-     total metal resistance ............ 657.2 milliohms
-     total metal length ................ 002.673 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = $65N21071_B00, TR56_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 637.639 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 13.8 pF
-     total metal capacitance ........... 13.8 pF
-     total metal inductance ............ 29.5 nH
-     total metal resistance ............ 1.0 ohms
-     total metal length ................ 004.165 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $65N21072_B00, TR58_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 607.653 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 83.7 ohms
-     total net capacitance (with ICs) .. 13.2 pF
-     total metal capacitance ........... 13.2 pF
-     total metal inductance ............ 28.2 nH
-     total metal resistance ............ 988.3 milliohms
-     total metal length ................ 003.970 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $65N21074_B00, TR59_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  40
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 530.809 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 82.5 ohms
-     total net capacitance (with ICs) .. 11.5 pF
-     total metal capacitance ........... 11.5 pF
-     total metal inductance ............ 24.6 nH
-     total metal resistance ............ 859.6 milliohms
-     total metal length ................ 003.469 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $66N18005_B00, TR45_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 555.206 ps
-     minimum metal Z0 .................. 29.5 ohms
-     maximum metal Z0 .................. 96.3 ohms
-     total net capacitance (with ICs) .. 12.0 pF
-     total metal capacitance ........... 12.0 pF
-     total metal inductance ............ 25.9 nH
-     total metal resistance ............ 900.3 milliohms
-     total metal length ................ 003.628 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = $66N18007_B00, TR48_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 401.738 ps
-     minimum metal Z0 .................. 28.5 ohms
-     maximum metal Z0 .................. 78.2 ohms
-     total net capacitance (with ICs) .. 8.7 pF
-     total metal capacitance ........... 8.7 pF
-     total metal inductance ............ 18.7 nH
-     total metal resistance ............ 644.1 milliohms
-     total metal length ................ 002.629 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $66N18009_B00, TR49_ADC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 379.547 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 8.2 pF
-     total metal capacitance ........... 8.2 pF
-     total metal inductance ............ 17.7 nH
-     total metal resistance ............ 607.1 milliohms
-     total metal length ................ 002.484 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $67N3128_B00, $67N3129_B00, TR20_DAC_IF_B00, $67N14382_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 245.131 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 93.0 ohms
-     total net capacitance (with ICs) .. 5.3 pF
-     total metal capacitance ........... 5.3 pF
-     total metal inductance ............ 11.5 nH
-     total metal resistance ............ 358.4 milliohms
-     total metal length ................ 001.619 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $67N3869_B00, $67N13641_B00, $67N3868_B00, TR21_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 296.397 ps
-     minimum metal Z0 .................. 27.1 ohms
-     maximum metal Z0 .................. 80.3 ohms
-     total net capacitance (with ICs) .. 6.4 pF
-     total metal capacitance ........... 6.4 pF
-     total metal inductance ............ 13.7 nH
-     total metal resistance ............ 443.4 milliohms
-     total metal length ................ 001.953 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $67N4625_B00, $67N13645_B00, $67N4624_B00, TR23_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 357.450 ps
-     minimum metal Z0 .................. 27.8 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 7.8 pF
-     total metal capacitance ........... 7.8 pF
-     total metal inductance ............ 16.6 nH
-     total metal resistance ............ 543.4 milliohms
-     total metal length ................ 002.352 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $67N6094_B00, $67N6095_B00, TR24_DAC_IF_B00, $67N14310_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 837.430 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 99.4 ohms
-     total net capacitance (with ICs) .. 18.2 pF
-     total metal capacitance ........... 18.2 pF
-     total metal inductance ............ 38.8 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.478 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $67N6122_B00, $67N6123_B00, TR26_DAC_IF_B00, $67N14320_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 674.565 ps
-     minimum metal Z0 .................. 26.6 ohms
-     maximum metal Z0 .................. 85.1 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 31.3 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.418 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $67N6137_B00, $67N14350_B00, $67N6136_B00, TR27_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  49
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 542.848 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 99.4 ohms
-     total net capacitance (with ICs) .. 11.8 pF
-     total metal capacitance ........... 11.8 pF
-     total metal inductance ............ 25.1 nH
-     total metal resistance ............ 853.6 milliohms
-     total metal length ................ 003.559 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $67N9062_B00, $67N9063_B00, TR28_DAC_IF_B00, $67N14330_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 673.868 ps
-     minimum metal Z0 .................. 29.2 ohms
-     maximum metal Z0 .................. 99.9 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 31.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.413 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $67N9076_B00, $67N9077_B00, TR29_DAC_IF_B00, $67N14423_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 823.957 ps
-     minimum metal Z0 .................. 26.5 ohms
-     maximum metal Z0 .................. 100.3 ohms
-     total net capacitance (with ICs) .. 17.9 pF
-     total metal capacitance ........... 17.9 pF
-     total metal inductance ............ 38.0 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.391 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $67N14301_B00, $67N4611_B00, $67N4610_B00, TR22_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 186.909 ps
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 4.0 pF
-     total metal capacitance ........... 4.0 pF
-     total metal inductance ............ 8.8 nH
-     total metal resistance ............ 262.1 milliohms
-     total metal length ................ 001.240 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $67N14440_B00, $67N6109_B00, $67N6108_B00, TR25_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  78
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 774.799 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 99.4 ohms
-     total net capacitance (with ICs) .. 16.8 pF
-     total metal capacitance ........... 16.8 pF
-     total metal inductance ............ 35.9 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 005.070 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $68N3868_B00, $68N3869_B00, TR31_DAC_IF_B00, $68N14288_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 624.337 ps
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 74.6 ohms
-     total net capacitance (with ICs) .. 13.6 pF
-     total metal capacitance ........... 13.6 pF
-     total metal inductance ............ 28.8 nH
-     total metal resistance ............ 990.2 milliohms
-     total metal length ................ 004.090 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $68N4624_B00, $68N4625_B00, TR33_DAC_IF_B00, $68N13645_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 523.623 ps
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 99.3 ohms
-     total net capacitance (with ICs) .. 11.4 pF
-     total metal capacitance ........... 11.4 pF
-     total metal inductance ............ 24.3 nH
-     total metal resistance ............ 821.6 milliohms
-     total metal length ................ 003.433 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $68N6108_B00, TR35_DAC_IF_B00, $68N6109_B00, $68N14307_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 365.932 ps
-     minimum metal Z0 .................. 29.3 ohms
-     maximum metal Z0 .................. 94.0 ohms
-     total net capacitance (with ICs) .. 7.9 pF
-     total metal capacitance ........... 7.9 pF
-     total metal inductance ............ 17.0 nH
-     total metal resistance ............ 559.4 milliohms
-     total metal length ................ 002.406 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $68N6123_B00, $68N14346_B00, $68N6122_B00, TR36_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 232.810 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 5.1 pF
-     total metal capacitance ........... 5.1 pF
-     total metal inductance ............ 10.8 nH
-     total metal resistance ............ 337.9 milliohms
-     total metal length ................ 001.539 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $68N6137_B00, $68N14317_B00, $68N6136_B00, TR37_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 306.692 ps
-     minimum metal Z0 .................. 27.0 ohms
-     maximum metal Z0 .................. 101.5 ohms
-     total net capacitance (with ICs) .. 6.7 pF
-     total metal capacitance ........... 6.7 pF
-     total metal inductance ............ 14.2 nH
-     total metal resistance ............ 460.5 milliohms
-     total metal length ................ 002.020 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $68N9076_B00, TR39_DAC_IF_B00, $68N9077_B00, $68N13657_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 365.902 ps
-     minimum metal Z0 .................. 27.8 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 7.9 pF
-     total metal capacitance ........... 7.9 pF
-     total metal inductance ............ 17.1 nH
-     total metal resistance ............ 557.5 milliohms
-     total metal length ................ 002.407 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $68N14336_B00, $68N9063_B00, $68N9062_B00, TR38_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 188.617 ps
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 8.8 nH
-     total metal resistance ............ 264.9 milliohms
-     total metal length ................ 001.251 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $68N14358_B00, $68N6095_B00, $68N6094_B00, TR34_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 314.811 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.6 nH
-     total metal resistance ............ 473.3 milliohms
-     total metal length ................ 002.074 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $68N14365_B00, $68N4611_B00, $68N4610_B00, TR32_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 395.078 ps
-     minimum metal Z0 .................. 29.8 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 8.6 pF
-     total metal capacitance ........... 8.6 pF
-     total metal inductance ............ 18.3 nH
-     total metal resistance ............ 608.0 milliohms
-     total metal length ................ 002.596 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $68N14375_B00, $68N3129_B00, $68N3128_B00, TR30_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 813.819 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 93.3 ohms
-     total net capacitance (with ICs) .. 17.7 pF
-     total metal capacitance ........... 17.7 pF
-     total metal inductance ............ 37.6 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.325 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $69N3868_B00, TR41_DAC_IF_B00, $69N3869_B00, $69N14289_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 695.687 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 92.5 ohms
-     total net capacitance (with ICs) .. 15.1 pF
-     total metal capacitance ........... 15.1 pF
-     total metal inductance ............ 32.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.555 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $69N4624_B00, $69N4625_B00, TR43_DAC_IF_B00, $69N14296_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 540.678 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 97.8 ohms
-     total net capacitance (with ICs) .. 11.7 pF
-     total metal capacitance ........... 11.7 pF
-     total metal inductance ............ 25.1 nH
-     total metal resistance ............ 850.0 milliohms
-     total metal length ................ 003.545 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $69N6094_B00, $69N6095_B00, TR44_DAC_IF_B00, $69N14359_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  54
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 763.476 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 102.8 ohms
-     total net capacitance (with ICs) .. 16.6 pF
-     total metal capacitance ........... 16.6 pF
-     total metal inductance ............ 35.3 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.997 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $69N6109_B00, $69N14306_B00, $69N6108_B00, TR45_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 762.453 ps
-     minimum metal Z0 .................. 27.7 ohms
-     maximum metal Z0 .................. 96.8 ohms
-     total net capacitance (with ICs) .. 16.6 pF
-     total metal capacitance ........... 16.6 pF
-     total metal inductance ............ 35.2 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.990 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $69N6122_B00, $69N6123_B00, TR46_DAC_IF_B00, $69N14350_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 759.969 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 86.1 ohms
-     total net capacitance (with ICs) .. 16.5 pF
-     total metal capacitance ........... 16.5 pF
-     total metal inductance ............ 35.1 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.974 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $69N9076_B00, $69N9077_B00, TR49_DAC_IF_B00, $69N14329_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 551.630 ps
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 95.5 ohms
-     total net capacitance (with ICs) .. 12.0 pF
-     total metal capacitance ........... 12.0 pF
-     total metal inductance ............ 25.6 nH
-     total metal resistance ............ 868.2 milliohms
-     total metal length ................ 003.616 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $69N14319_B00, $69N6137_B00, $69N6136_B00, TR47_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 585.077 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 95.2 ohms
-     total net capacitance (with ICs) .. 12.7 pF
-     total metal capacitance ........... 12.7 pF
-     total metal inductance ............ 27.0 nH
-     total metal resistance ............ 924.9 milliohms
-     total metal length ................ 003.834 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $69N14336_B00, $69N9063_B00, $69N9062_B00, TR48_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 404.293 ps
-     minimum metal Z0 .................. 29.7 ohms
-     maximum metal Z0 .................. 102.1 ohms
-     total net capacitance (with ICs) .. 8.8 pF
-     total metal capacitance ........... 8.8 pF
-     total metal inductance ............ 18.8 nH
-     total metal resistance ............ 623.4 milliohms
-     total metal length ................ 002.656 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $69N14370_B00, $69N4611_B00, $69N4610_B00, TR42_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 626.134 ps
-     minimum metal Z0 .................. 26.6 ohms
-     maximum metal Z0 .................. 103.9 ohms
-     total net capacitance (with ICs) .. 13.6 pF
-     total metal capacitance ........... 13.6 pF
-     total metal inductance ............ 29.0 nH
-     total metal resistance ............ 990.8 milliohms
-     total metal length ................ 004.102 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $69N14383_B00, $69N3129_B00, $69N3128_B00, TR40_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  47
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 765.235 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 86.1 ohms
-     total net capacitance (with ICs) .. 16.6 pF
-     total metal capacitance ........... 16.6 pF
-     total metal inductance ............ 35.3 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 005.008 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $70N4610_B00, $70N4611_B00, TR52_DAC_IF_B00, $70N13625_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 234.904 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 94.7 ohms
-     total net capacitance (with ICs) .. 5.1 pF
-     total metal capacitance ........... 5.1 pF
-     total metal inductance ............ 10.9 nH
-     total metal resistance ............ 341.4 milliohms
-     total metal length ................ 001.553 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $70N6094_B00, $70N6095_B00, TR54_DAC_IF_B00, $70N13629_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 184.651 ps
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 94.2 ohms
-     total net capacitance (with ICs) .. 4.0 pF
-     total metal capacitance ........... 4.0 pF
-     total metal inductance ............ 8.6 nH
-     total metal resistance ............ 258.3 milliohms
-     total metal length ................ 001.225 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = $70N13621_B00, $70N3129_B00, $70N3128_B00, TR50_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 313.840 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 94.7 ohms
-     total net capacitance (with ICs) .. 6.8 pF
-     total metal capacitance ........... 6.8 pF
-     total metal inductance ............ 14.6 nH
-     total metal resistance ............ 471.7 milliohms
-     total metal length ................ 002.067 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $70N14285_B00, $70N3869_B00, $70N3868_B00, TR51_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 372.133 ps
-     minimum metal Z0 .................. 29.3 ohms
-     maximum metal Z0 .................. 83.3 ohms
-     total net capacitance (with ICs) .. 8.1 pF
-     total metal capacitance ........... 8.1 pF
-     total metal inductance ............ 17.2 nH
-     total metal resistance ............ 569.7 milliohms
-     total metal length ................ 002.447 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $70N14294_B00, $70N4625_B00, $70N4624_B00, TR53_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 291.753 ps
-     minimum metal Z0 .................. 27.1 ohms
-     maximum metal Z0 .................. 83.7 ohms
-     total net capacitance (with ICs) .. 6.4 pF
-     total metal capacitance ........... 6.4 pF
-     total metal inductance ............ 13.5 nH
-     total metal resistance ............ 435.7 milliohms
-     total metal length ................ 001.923 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $70N14308_B00, $70N6109_B00, $70N6108_B00, TR55_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 353.071 ps
-     minimum metal Z0 .................. 27.8 ohms
-     maximum metal Z0 .................. 78.0 ohms
-     total net capacitance (with ICs) .. 7.7 pF
-     total metal capacitance ........... 7.7 pF
-     total metal inductance ............ 16.4 nH
-     total metal resistance ............ 536.3 milliohms
-     total metal length ................ 002.323 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $70N14314_B00, $70N6137_B00, $70N6136_B00, TR57_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  50
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 690.743 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 103.3 ohms
-     total net capacitance (with ICs) .. 15.0 pF
-     total metal capacitance ........... 15.0 pF
-     total metal inductance ............ 31.9 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.522 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $70N14328_B00, $70N9077_B00, $70N9076_B00, TR59_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 703.496 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 105.7 ohms
-     total net capacitance (with ICs) .. 15.3 pF
-     total metal capacitance ........... 15.3 pF
-     total metal inductance ............ 32.5 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.605 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $70N14335_B00, $70N9063_B00, $70N9062_B00, TR58_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 700.045 ps
-     minimum metal Z0 .................. 25.6 ohms
-     maximum metal Z0 .................. 105.7 ohms
-     total net capacitance (with ICs) .. 15.2 pF
-     total metal capacitance ........... 15.2 pF
-     total metal inductance ............ 32.5 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.584 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $70N14348_B00, $70N6123_B00, $70N6122_B00, TR56_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  68
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 848.412 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 18.4 pF
-     total metal capacitance ........... 18.4 pF
-     total metal inductance ............ 39.2 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.550 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $71N11423_B00, $71N4611_B00, $71N4610_B00, TR62_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 720.881 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 98.0 ohms
-     total net capacitance (with ICs) .. 15.7 pF
-     total metal capacitance ........... 15.7 pF
-     total metal inductance ............ 33.3 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.718 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $71N11535_B00, $71N3869_B00, $71N3868_B00, TR61_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  55
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 669.609 ps
-     minimum metal Z0 .................. 27.7 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 14.5 pF
-     total metal capacitance ........... 14.5 pF
-     total metal inductance ............ 31.1 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.385 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $71N11709_B00, $71N4625_B00, $71N4624_B00, TR63_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 674.298 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 31.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.415 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $71N11736_B00, $71N3129_B00, $71N3128_B00, TR60_DAC_IF_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  56
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 727.964 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 15.8 pF
-     total metal capacitance ........... 15.8 pF
-     total metal inductance ............ 33.8 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.766 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $73N34452_B00, SYS_CLK_PS_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.920 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 92.9 ohms
-     total net capacitance (with ICs) .. 42.0 pF
-     total metal capacitance ........... 42.0 pF
-     total metal inductance ............ 87.8 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 012.533 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $73N34454_B00, SYS_CLK_VX_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.870 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 58.3 ohms
-     total net capacitance (with ICs) .. 40.7 pF
-     total metal capacitance ........... 40.7 pF
-     total metal inductance ............ 86.1 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 012.204 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = $85N3613_B00, TR52_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 442.328 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 9.7 pF
-     total metal capacitance ........... 9.7 pF
-     total metal inductance ............ 20.2 nH
-     total metal resistance ............ 678.9 milliohms
-     total metal length ................ 002.903 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $85N3617_B00, TR54_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 325.251 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 14.9 nH
-     total metal resistance ............ 485.6 milliohms
-     total metal length ................ 002.142 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $85N3619_B00, TR55_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.042 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.7 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.4 nH
-     total metal resistance ............ 390.0 milliohms
-     total metal length ................ 001.799 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $85N3647_B00, TR49_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  40
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.061 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 23.3 pF
-     total metal capacitance ........... 23.3 pF
-     total metal inductance ............ 48.4 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.938 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = $85N3651_B00, TR51_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.033 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 22.7 pF
-     total metal capacitance ........... 22.7 pF
-     total metal inductance ............ 47.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.751 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = $85N3653_B00, TR52_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 995.097 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.0 ohms
-     total net capacitance (with ICs) .. 21.8 pF
-     total metal capacitance ........... 21.8 pF
-     total metal inductance ............ 45.5 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.511 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = $85N3659_B00, TR55_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.013 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 22.2 pF
-     total metal capacitance ........... 22.2 pF
-     total metal inductance ............ 46.4 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.628 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $85N24931_B00, SYNC_EN2_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  105
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.141 ns
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 68.1 pF
-     total metal capacitance ........... 68.1 pF
-     total metal inductance ............ 144.9 nH
-     total metal resistance ............ 4.3 ohms
-     total metal length ................ 020.815 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = $85N24932_B00, SYNC_EN3_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  89
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.041 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 44.2 pF
-     total metal capacitance ........... 44.2 pF
-     total metal inductance ............ 94.3 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 013.620 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = $85N28647_B00, TR56_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 352.551 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 7.8 pF
-     total metal capacitance ........... 7.8 pF
-     total metal inductance ............ 16.1 nH
-     total metal resistance ............ 526.9 milliohms
-     total metal length ................ 002.323 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $85N28649_B00, TR57_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 309.924 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.1 nH
-     total metal resistance ............ 461.0 milliohms
-     total metal length ................ 002.043 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = $85N28650_B00, TR58_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 274.260 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 6.1 pF
-     total metal capacitance ........... 6.1 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 403.4 milliohms
-     total metal length ................ 001.810 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = $85N28651_B00, TR59_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 239.768 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 493.8 ohms
-     total net capacitance (with ICs) .. 5.3 pF
-     total metal capacitance ........... 5.3 pF
-     total metal inductance ............ 10.9 nH
-     total metal resistance ............ 347.7 milliohms
-     total metal length ................ 001.584 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $85N28652_B00, TR60_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 285.086 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 6.3 pF
-     total metal capacitance ........... 6.3 pF
-     total metal inductance ............ 13.0 nH
-     total metal resistance ............ 423.7 milliohms
-     total metal length ................ 001.878 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = $85N28653_B00, TR61_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 357.113 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 7.9 pF
-     total metal capacitance ........... 7.9 pF
-     total metal inductance ............ 16.3 nH
-     total metal resistance ............ 541.8 milliohms
-     total metal length ................ 002.349 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $85N28654_B00, TR62_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 420.240 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 9.3 pF
-     total metal capacitance ........... 9.3 pF
-     total metal inductance ............ 19.1 nH
-     total metal resistance ............ 645.1 milliohms
-     total metal length ................ 002.761 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $85N28655_B00, TR63_EXT_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 486.597 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 10.6 pF
-     total metal capacitance ........... 10.6 pF
-     total metal inductance ............ 22.3 nH
-     total metal resistance ............ 745.8 milliohms
-     total metal length ................ 003.197 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $85N28663_B00, TR56_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 243.673 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.1 ohms
-     total net capacitance (with ICs) .. 5.4 pF
-     total metal capacitance ........... 5.4 pF
-     total metal inductance ............ 11.1 nH
-     total metal resistance ............ 358.3 milliohms
-     total metal length ................ 001.612 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = $85N28664_B00, TR57_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 237.048 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 48.8 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 10.8 nH
-     total metal resistance ............ 350.6 milliohms
-     total metal length ................ 001.566 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $85N28665_B00, TR58_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 226.961 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 5.0 pF
-     total metal capacitance ........... 5.0 pF
-     total metal inductance ............ 10.3 nH
-     total metal resistance ............ 341.0 milliohms
-     total metal length ................ 001.497 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $85N28666_B00, TR59_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  12
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 221.145 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 333.3 milliohms
-     total metal length ................ 001.458 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $85N28667_B00, TR60_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 234.205 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 10.7 nH
-     total metal resistance ............ 356.8 milliohms
-     total metal length ................ 001.542 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $85N28669_B00, TR62_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 279.589 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 6.2 pF
-     total metal capacitance ........... 6.2 pF
-     total metal inductance ............ 12.8 nH
-     total metal resistance ............ 430.3 milliohms
-     total metal length ................ 001.838 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $85N40113_B00, DIR_AB_0_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.731 ns
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 63.8 ohms
-     total net capacitance (with ICs) .. 57.5 pF
-     total metal capacitance ........... 57.5 pF
-     total metal inductance ............ 129.8 nH
-     total metal resistance ............ 4.5 ohms
-     total metal length ................ 017.846 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = $85N40116_B00, DIR_AB_2_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.294 ns
-     minimum metal Z0 .................. 47.5 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 48.0 pF
-     total metal capacitance ........... 48.0 pF
-     total metal inductance ............ 109.6 nH
-     total metal resistance ............ 4.1 ohms
-     total metal length ................ 014.986 in
-     average metal Z0 .................. 47.8 ohms
-
-  NET = $85N40117_B00, DIR_AB_3_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.796 ns
-     minimum metal Z0 .................. 46.7 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 37.7 pF
-     total metal capacitance ........... 37.7 pF
-     total metal inductance ............ 85.6 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 011.757 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = $85N40118_B00, DIR_AB_4_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.255 ns
-     minimum metal Z0 .................. 47.5 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 47.3 pF
-     total metal capacitance ........... 47.3 pF
-     total metal inductance ............ 107.5 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 014.725 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = $85N40120_B00, DIR_AB_6_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.572 ns
-     minimum metal Z0 .................. 47.5 ohms
-     maximum metal Z0 .................. 61.7 ohms
-     total net capacitance (with ICs) .. 32.9 pF
-     total metal capacitance ........... 32.9 pF
-     total metal inductance ............ 75.1 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 010.274 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = $91N48111_B00, P48V_EN_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.447 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 53.6 pF
-     total metal capacitance ........... 53.6 pF
-     total metal inductance ............ 111.9 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 015.968 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $91N48140_B00, TE_EXT_SYNC_P3V3_B00, $48N23878_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  3
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.861 ns
-     minimum metal Z0 .................. 33.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 40.9 pF
-     total metal capacitance ........... 40.9 pF
-     total metal inductance ............ 84.7 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 012.165 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $91N48145_B00, LMK_PLL_SYNC_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.632 ns
-     minimum metal Z0 .................. 44.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 36.4 pF
-     total metal capacitance ........... 36.4 pF
-     total metal inductance ............ 73.2 nH
-     total metal resistance ............ 995.5 milliohms
-     total metal length ................ 010.722 in
-     average metal Z0 .................. 44.9 ohms
-
-  NET = $91N48146_B00, FAN_EN_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.401 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 60.5 pF
-     total metal capacitance ........... 60.5 pF
-     total metal inductance ............ 95.4 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 015.669 in
-     average metal Z0 .................. 39.7 ohms
-
-  NET = $91N50178_B00, PRS_SPI0_MOSI_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.603 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 57.1 pF
-     total metal capacitance ........... 57.1 pF
-     total metal inductance ............ 118.9 nH
-     total metal resistance ............ 4.3 ohms
-     total metal length ................ 016.985 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = $91N50180_B00, PRS_SPI0_SCLK_P1V8_VX_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 314.739 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.4 nH
-     total metal resistance ............ 484.2 milliohms
-     total metal length ................ 002.072 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $91N50181_B00, PRS_SPI0_VX_CS_N_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  13
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 349.748 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.7 pF
-     total metal capacitance ........... 7.7 pF
-     total metal inductance ............ 15.9 nH
-     total metal resistance ............ 544.1 milliohms
-     total metal length ................ 002.299 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = $91N50182_B00, PRS_SPI0_PS_CS_N_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.413 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 52.8 pF
-     total metal capacitance ........... 52.8 pF
-     total metal inductance ............ 110.3 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 015.745 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $91N59270_B00, LMK_STATUS_LD2_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 321.765 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 14.7 nH
-     total metal resistance ............ 495.3 milliohms
-     total metal length ................ 002.118 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = $91N59272_B00, LMK_STATUS_LD1_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 323.584 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 14.8 nH
-     total metal resistance ............ 500.3 milliohms
-     total metal length ................ 002.129 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = $91N59318_B00, MBUS_EN_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.585 ns
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 34.5 pF
-     total metal capacitance ........... 34.5 pF
-     total metal inductance ............ 72.9 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 010.361 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = $91N59319_B00, CBUS_TX_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.545 ns
-     minimum metal Z0 .................. 41.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 33.6 pF
-     total metal capacitance ........... 33.6 pF
-     total metal inductance ............ 71.1 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 010.089 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = $91N59320_B00, CBUS_EN_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.575 ns
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 34.3 pF
-     total metal capacitance ........... 34.3 pF
-     total metal inductance ............ 72.3 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 010.298 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $91N59324_B00, MBUS_TX_P3V3_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.555 ns
-     minimum metal Z0 .................. 41.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 33.9 pF
-     total metal capacitance ........... 33.9 pF
-     total metal inductance ............ 71.3 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 010.151 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $91N60494_B00, CAL_MBUS_RX_B00, CAL_MBUS_TX_B00, B88_L2_N_B01, B88_L2_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  109
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.817 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 39.1 pF
-     total metal capacitance ........... 39.1 pF
-     total metal inductance ............ 84.7 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.870 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = $91N60495_B00, MBUS_RX_B00, MBUS_TX_B00, B89_L2_N_B01, B89_L2_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  63
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 806.709 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 17.1 pF
-     total metal capacitance ........... 17.1 pF
-     total metal inductance ............ 38.3 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 005.290 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = $91N60513_B00, PRS_PS_PCIE_RESET_N_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.520 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 33.3 pF
-     total metal capacitance ........... 33.3 pF
-     total metal inductance ............ 69.5 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 009.926 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = $91N60514_B00, CBUS_RX_B00, CBUS_EN_B00, B89_L6_P_B01, B89_L6_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  75
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 873.621 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 18.5 pF
-     total metal capacitance ........... 18.5 pF
-     total metal inductance ............ 41.4 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 005.729 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = $91N61993_B00, GE1_MDC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.210 ns
-     minimum metal Z0 .................. 45.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 26.4 pF
-     total metal capacitance ........... 26.4 pF
-     total metal inductance ............ 55.4 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 007.919 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $91N63271_B00, PRS_SPI0_MISO_B00, B502.MIO68_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 684.896 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 68.8 ohms
-     total net capacitance (with ICs) .. 14.8 pF
-     total metal capacitance ........... 14.8 pF
-     total metal inductance ............ 31.8 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 004.468 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = $91N64528_B00, SRS0_PLL_SYNC_B00, PLL.SYNC_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.189 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 25.9 pF
-     total metal capacitance ........... 25.9 pF
-     total metal inductance ............ 54.7 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 007.758 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $91N64644_B00, PRS_PLL_SYNC_B00, PLL.SYNC_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 754.988 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 16.7 pF
-     total metal capacitance ........... 16.7 pF
-     total metal inductance ............ 34.2 nH
-     total metal resistance ............ 617.0 milliohms
-     total metal length ................ 004.957 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = $91N64646_B00, SRS1_PLL_SYNC_B00, PLL.SYNC_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  40
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.231 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 98.0 ohms
-     total net capacitance (with ICs) .. 48.8 pF
-     total metal capacitance ........... 48.8 pF
-     total metal inductance ............ 102.2 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 014.548 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = $91N64648_B00, SRS2_PLL_SYNC_B00, PLL.SYNC_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  70
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.354 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 51.4 pF
-     total metal capacitance ........... 51.4 pF
-     total metal inductance ............ 108.0 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 015.352 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = $91N66840_B00, PRS_SPI0_SCLK_P1V8_PS_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.007 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 44.0 pF
-     total metal capacitance ........... 44.0 pF
-     total metal inductance ............ 91.8 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.108 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = CAL_DISC_P_B00, CAL_DISC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  68
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 243.440 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 3.7 pF
-     total metal capacitance ........... 3.7 pF
-     total metal inductance ............ 17.4 nH
-     total metal resistance ............ 366.0 milliohms
-     total metal length ................ 001.606 in
-     average metal Z0 .................. 68.4 ohms
-
-  NET = CAL_MBUS_EN_B00, CAL_DISC_B00, B89_L9_P_B01, B89_L9_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  176
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.517 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 76.3 pF
-     total metal capacitance ........... 76.3 pF
-     total metal inductance ............ 162.2 nH
-     total metal resistance ............ 6.0 ohms
-     total metal length ................ 022.940 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = CAL_MBUS_P_B00, CAL_MBUS_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 189.145 ps
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 3.0 pF
-     total metal capacitance ........... 3.0 pF
-     total metal inductance ............ 14.5 nH
-     total metal resistance ............ 260.5 milliohms
-     total metal length ................ 001.266 in
-     average metal Z0 .................. 69.4 ohms
-
-  NET = CAL_MBUS_RX_P3V3_B00, $41N14307_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 948.580 ps
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 20.8 pF
-     total metal capacitance ........... 20.8 pF
-     total metal inductance ............ 43.3 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.202 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = CAL_SER_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.371 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 46.0 ohms
-     total net capacitance (with ICs) .. 30.1 pF
-     total metal capacitance ........... 30.1 pF
-     total metal inductance ............ 62.4 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 008.943 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = CAL_SPI_CS_N_N_B00, CAL_SPI_CS_N_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  109
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 604.292 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 9.2 pF
-     total metal capacitance ........... 9.2 pF
-     total metal inductance ............ 42.1 nH
-     total metal resistance ............ 936.5 milliohms
-     total metal length ................ 003.959 in
-     average metal Z0 .................. 67.6 ohms
-
-  NET = CAL_SPI_SCLK_B00, CAL_SPI_SDO_B00, B89_L8_N_B01, B89_L8_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  154
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.500 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 89.2 ohms
-     total net capacitance (with ICs) .. 75.9 pF
-     total metal capacitance ........... 75.9 pF
-     total metal inductance ............ 161.7 nH
-     total metal resistance ............ 6.0 ohms
-     total metal length ................ 022.841 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = CAL_SPI_SCLK_N_B00, CAL_SPI_SCLK_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  102
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 428.179 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 6.5 pF
-     total metal capacitance ........... 6.5 pF
-     total metal inductance ............ 30.7 nH
-     total metal resistance ............ 658.5 milliohms
-     total metal length ................ 002.813 in
-     average metal Z0 .................. 68.6 ohms
-
-  NET = CAL_SPI_SDO_P_B00, CAL_SPI_SDO_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  96
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 442.947 ps
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 6.7 pF
-     total metal capacitance ........... 6.7 pF
-     total metal inductance ............ 31.2 nH
-     total metal resistance ............ 684.6 milliohms
-     total metal length ................ 002.906 in
-     average metal Z0 .................. 68.1 ohms
-
-  NET = CBUS_P_B00, CBUS_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  2561
-     IC drivers .........  0
-     IC receivers .......  18
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 20.894 ns
-     minimum metal Z0 .................. 19.1 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 318.4 pF
-     total metal capacitance ........... 318.4 pF
-     total metal inductance ............ 1.4 uH
-     total metal resistance ............ 32.3 ohms
-     total metal length ................ 136.222 in
-     average metal Z0 .................. 65.9 ohms
-
-  NET = CBUS_RX_P3V3_B00, $41N12546_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.509 ns
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 32.9 pF
-     total metal capacitance ........... 32.9 pF
-     total metal inductance ............ 69.2 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 009.853 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = CBUS_TERM0_N_B00, CBUS_TERM0_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  58
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.517 ps
-     minimum metal Z0 .................. 54.5 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.6 nH
-     total metal resistance ............ 31.8 milliohms
-     total metal length ................ 000.473 in
-     average metal Z0 .................. 56.5 ohms
-
-  NET = CBUS_TERM1_N_B00, CBUS_TERM1_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  59
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.361 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.6 nH
-     total metal resistance ............ 31.8 milliohms
-     total metal length ................ 000.471 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = CBUS_TERM2_N_B00, CBUS_TERM2_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  63
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.735 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.7 nH
-     total metal resistance ............ 32.0 milliohms
-     total metal length ................ 000.474 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = CBUS_TERM3_N_B00, CBUS_TERM3_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  55
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.359 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.6 nH
-     total metal resistance ............ 31.8 milliohms
-     total metal length ................ 000.471 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = CBUS_TERM4_N_B00, CBUS_TERM4_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  63
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.385 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.6 nH
-     total metal resistance ............ 31.8 milliohms
-     total metal length ................ 000.472 in
-     average metal Z0 .................. 56.5 ohms
-
-  NET = CBUS_TERM5_N_B00, CBUS_TERM5_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  60
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.363 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.6 nH
-     total metal resistance ............ 31.8 milliohms
-     total metal length ................ 000.471 in
-     average metal Z0 .................. 56.5 ohms
-
-  NET = CBUS_TERM6_N_B00, CBUS_TERM6_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  68
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.905 ps
-     minimum metal Z0 .................. 47.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.7 nH
-     total metal resistance ............ 31.9 milliohms
-     total metal length ................ 000.475 in
-     average metal Z0 .................. 56.3 ohms
-
-  NET = CBUS_TERM7_N_B00, CBUS_TERM7_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  57
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.709 ps
-     minimum metal Z0 .................. 54.5 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 3.7 nH
-     total metal resistance ............ 31.9 milliohms
-     total metal length ................ 000.474 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = CBUS_TX_B00, MBUS_EN_B00, B89_L10_P_B01, B89_L10_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  121
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 846.264 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 90.2 ohms
-     total net capacitance (with ICs) .. 18.0 pF
-     total metal capacitance ........... 18.0 pF
-     total metal inductance ............ 40.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 005.545 in
-     average metal Z0 .................. 47.1 ohms
-
-  NET = CLK_OUT0_P_B00, CLK_OUT0_N_B00, GTY_REFCLK_232_P_B00, GTY_REFCLK_232_N_B00, MGTREFCLK1P_232_B00, MGTREFCLK1N_232_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  298
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.425 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 51.0 pF
-     total metal capacitance ........... 51.0 pF
-     total metal inductance ............ 116.0 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 015.874 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = CLK_OUT2_P_B00, CLK_OUT2_N_B00, GTY_REFCLK_231_P_B00, GTY_REFCLK_231_N_B00, MGTREFCLK1P_231_B00, MGTREFCLK1N_231_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  194
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.679 ns
-     minimum metal Z0 .................. 22.2 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 56.2 pF
-     total metal capacitance ........... 56.2 pF
-     total metal inductance ............ 128.1 nH
-     total metal resistance ............ 4.7 ohms
-     total metal length ................ 017.519 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = CLK_OUT3_P_B00, CLK_OUT3_N_B00, GTY_REFCLK_225_P_B00, GTY_REFCLK_225_N_B00, MGTREFCLK1P_225_B00, MGTREFCLK1N_225_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.039 ns
-     minimum metal Z0 .................. 22.2 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 43.8 pF
-     total metal capacitance ........... 43.8 pF
-     total metal inductance ............ 95.3 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 013.408 in
-     average metal Z0 .................. 46.7 ohms
-
-  NET = CLK_OUT4_P_B00, CLK_OUT4_N_B00, SRS2_EXT_CLK_IN_P_B00, SRS2_EXT_CLK_IN_N_B00, EXT_CLK_IN_P_B04, EXT_CLK_IN_N_B04, CLKIN1_P_B04, CLKIN1_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  180
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  1
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.744 ns
-     minimum metal Z0 .................. 45.8 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 36.9 pF
-     total metal capacitance ........... 36.9 pF
-     total metal inductance ............ 82.7 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 011.494 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = CLK_OUT5_P_B00, CLK_OUT5_N_B00, PRS_EXT_CLK_IN_P_B00, PRS_EXT_CLK_IN_N_B00, EXT_CLK_IN_P_B01, EXT_CLK_IN_N_B01, CLKIN1_P_B01, CLKIN1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  231
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  1
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.486 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 73.9 pF
-     total metal capacitance ........... 73.9 pF
-     total metal inductance ............ 164.8 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 022.915 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = CLK_OUT6_P_B00, CLK_OUT6_N_B00, SRS1_EXT_CLK_IN_P_B00, SRS1_EXT_CLK_IN_N_B00, EXT_CLK_IN_P_B03, EXT_CLK_IN_N_B03, CLKIN1_P_B03, CLKIN1_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  161
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  1
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.184 ns
-     minimum metal Z0 .................. 22.2 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 46.4 pF
-     total metal capacitance ........... 46.4 pF
-     total metal inductance ............ 103.0 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 014.395 in
-     average metal Z0 .................. 47.1 ohms
-
-  NET = CLK_OUT7_P_B00, CLK_OUT7_N_B00, SRS0_EXT_CLK_IN_P_B00, SRS0_EXT_CLK_IN_N_B00, EXT_CLK_IN_P_B02, EXT_CLK_IN_N_B02, CLKIN1_P_B02, CLKIN1_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  143
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  1
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.870 ns
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 104.4 pF
-     total metal capacitance ........... 104.4 pF
-     total metal inductance ............ 227.5 nH
-     total metal resistance ............ 3.8 ohms
-     total metal length ................ 032.014 in
-     average metal Z0 .................. 46.7 ohms
-
-  NET = CLK_OUT8_P_B00, CLK_OUT8_N_B00, GTY_REFCLK_130_P_B00, GTY_REFCLK_130_N_B00, MGTREFCLK1P_130_B00, MGTREFCLK1N_130_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.560 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 511.0 ohms
-     total net capacitance (with ICs) .. 32.9 pF
-     total metal capacitance ........... 32.9 pF
-     total metal inductance ............ 74.6 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 010.227 in
-     average metal Z0 .................. 47.6 ohms
-
-  NET = CLK_OUT9_P_B00, CLK_OUT9_N_B00, GTY_REFCLK_131_P_B00, GTY_REFCLK_131_N_B00, MGTREFCLK1P_131_B00, MGTREFCLK1N_131_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  186
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.611 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 511.0 ohms
-     total net capacitance (with ICs) .. 33.9 pF
-     total metal capacitance ........... 33.9 pF
-     total metal inductance ............ 77.1 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 010.569 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = CLK_OUT10_P_B00, CLK_OUT10_N_B00, PL_DDR4_REFCLK_P_B00, PL_DDR4_REFCLK_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  108
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.510 ns
-     minimum metal Z0 .................. 24.0 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 31.5 pF
-     total metal capacitance ........... 31.5 pF
-     total metal inductance ............ 72.8 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 009.916 in
-     average metal Z0 .................. 48.1 ohms
-
-  NET = CLK_OUT11_P_B00, CLK_OUT11_N_B00, GTY_REFCLK_121_P_B00, GTY_REFCLK_121_N_B00, MGTREFCLK1P_121_B00, MGTREFCLK1N_121_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  159
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.427 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 511.0 ohms
-     total net capacitance (with ICs) .. 30.1 pF
-     total metal capacitance ........... 30.1 pF
-     total metal inductance ............ 68.3 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 009.365 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = CLK_OUT12_P_B00, CLK_OUT12_N_B00, AXI_REFCLK_233_P_B00, AXI_REFCLK_233_N_B00, MGTREFCLK1P_233_B00, MGTREFCLK1N_233_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  221
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.306 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 48.4 pF
-     total metal capacitance ........... 48.4 pF
-     total metal inductance ............ 110.5 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 015.098 in
-     average metal Z0 .................. 47.8 ohms
-
-  NET = CLK_OUT13_P_B00, CLK_OUT13_N_B00, GTY_REFCLK_120_P_B00, GTY_REFCLK_120_N_B00, MGTREFCLK1P_120_B00, MGTREFCLK1N_120_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  132
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.416 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 511.0 ohms
-     total net capacitance (with ICs) .. 29.9 pF
-     total metal capacitance ........... 29.9 pF
-     total metal inductance ............ 67.7 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 009.296 in
-     average metal Z0 .................. 47.6 ohms
-
-  NET = DEBUG_PRS_0_B00, DEBUG_PRS_1_B00, B88_L4_P_B01, B88_L4_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  131
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.980 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 101.9 ohms
-     total net capacitance (with ICs) .. 86.1 pF
-     total metal capacitance ........... 86.1 pF
-     total metal inductance ............ 184.0 nH
-     total metal resistance ............ 6.9 ohms
-     total metal length ................ 025.961 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = DEBUG_PS_0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 542.505 ps
-     minimum metal Z0 .................. 21.6 ohms
-     maximum metal Z0 .................. 95.8 ohms
-     total net capacitance (with ICs) .. 11.9 pF
-     total metal capacitance ........... 11.9 pF
-     total metal inductance ............ 24.8 nH
-     total metal resistance ............ 862.1 milliohms
-     total metal length ................ 003.556 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = DEBUG_PS_1_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 594.353 ps
-     minimum metal Z0 .................. 29.1 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 13.0 pF
-     total metal capacitance ........... 13.0 pF
-     total metal inductance ............ 27.3 nH
-     total metal resistance ............ 908.5 milliohms
-     total metal length ................ 003.918 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = DEBUG_SRS0_0_B00, DEBUG_SRS0_1_B00, B89_L3_P_B02, B89_L3_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  117
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.841 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 39.8 pF
-     total metal capacitance ........... 39.8 pF
-     total metal inductance ............ 85.5 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 012.024 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = DEBUG_SRS1_0_B00, DEBUG_SRS1_1_B00, B89_L3_P_B03, B89_L3_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  106
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.414 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 52.3 pF
-     total metal capacitance ........... 52.3 pF
-     total metal inductance ............ 111.7 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 015.757 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = DEBUG_SRS2_0_B00, DEBUG_SRS2_1_B00, B89_L3_P_B04, B89_L3_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  123
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.664 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 101.6 pF
-     total metal capacitance ........... 101.6 pF
-     total metal inductance ............ 214.4 nH
-     total metal resistance ............ 7.9 ohms
-     total metal length ................ 030.412 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = DEBUG_VX_0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.752 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 38.2 pF
-     total metal capacitance ........... 38.2 pF
-     total metal inductance ............ 80.5 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.436 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = DEBUG_VX_1_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.756 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 38.3 pF
-     total metal capacitance ........... 38.3 pF
-     total metal inductance ............ 80.5 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.488 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = DIR_AB_1_P3V3_B00, $85N40115_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.507 ns
-     minimum metal Z0 .................. 46.7 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 31.4 pF
-     total metal capacitance ........... 31.4 pF
-     total metal inductance ............ 72.3 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.850 in
-     average metal Z0 .................. 48.0 ohms
-
-  NET = DIR_AB_5_P3V3_B00, $85N40119_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 662.566 ps
-     minimum metal Z0 .................. 44.8 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 30.0 nH
-     total metal resistance ............ 399.7 milliohms
-     total metal length ................ 004.372 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = DIR_AB_7_P3V3_B00, $85N40121_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.147 ns
-     minimum metal Z0 .................. 47.5 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 24.0 pF
-     total metal capacitance ........... 24.0 pF
-     total metal inductance ............ 54.8 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 007.512 in
-     average metal Z0 .................. 47.8 ohms
-
-  NET = DIR_AB_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  9
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 765.176 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 15.9 pF
-     total metal capacitance ........... 15.9 pF
-     total metal inductance ............ 37.0 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.050 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = FAN_EN_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 933.125 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 23.5 pF
-     total metal capacitance ........... 23.5 pF
-     total metal inductance ............ 37.1 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 006.098 in
-     average metal Z0 .................. 39.8 ohms
-
-  NET = FAN_ENABLE_N_B00, FAN_ENABLE_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 327.656 ps
-     minimum metal Z0 .................. 34.2 ohms
-     maximum metal Z0 .................. 117.1 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 15.3 nH
-     total metal resistance ............ 216.3 milliohms
-     total metal length ................ 002.152 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = GE0_LED0_C_B00, GE_LED0_C_B01, GE_LED0_B_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 297.926 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 6.3 pF
-     total metal capacitance ........... 6.3 pF
-     total metal inductance ............ 14.2 nH
-     total metal resistance ............ 655.0 milliohms
-     total metal length ................ 001.943 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = GE0_LED2_C_B00, GE_LED2_C_B01, GE_LED2_B_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 295.856 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 80.2 ohms
-     total net capacitance (with ICs) .. 6.3 pF
-     total metal capacitance ........... 6.3 pF
-     total metal inductance ............ 14.1 nH
-     total metal resistance ............ 644.9 milliohms
-     total metal length ................ 001.930 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = GE0_MDI0_P_B00, GE0_MDI0_N_B00, GE_MDI0_P_B01, GE_MDI0_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  208
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.376 ns
-     minimum metal Z0 .................. 30.4 ohms
-     maximum metal Z0 .................. 105.9 ohms
-     total net capacitance (with ICs) .. 50.3 pF
-     total metal capacitance ........... 50.3 pF
-     total metal inductance ............ 112.7 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 015.619 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = GE0_MDI1_P_B00, GE0_MDI1_N_B00, GE_MDI1_P_B01, GE_MDI1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  128
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.397 ns
-     minimum metal Z0 .................. 30.3 ohms
-     maximum metal Z0 .................. 129.2 ohms
-     total net capacitance (with ICs) .. 50.6 pF
-     total metal capacitance ........... 50.6 pF
-     total metal inductance ............ 114.0 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 015.749 in
-     average metal Z0 .................. 47.4 ohms
-
-  NET = GE0_MDI2_P_B00, GE0_MDI2_N_B00, GE_MDI2_P_B01, GE_MDI2_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  109
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.414 ns
-     minimum metal Z0 .................. 30.4 ohms
-     maximum metal Z0 .................. 105.5 ohms
-     total net capacitance (with ICs) .. 51.1 pF
-     total metal capacitance ........... 51.1 pF
-     total metal inductance ............ 114.5 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 015.833 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = GE0_MDI3_P_B00, GE0_MDI3_N_B00, GE_MDI3_P_B01, GE_MDI3_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  121
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.451 ns
-     minimum metal Z0 .................. 30.4 ohms
-     maximum metal Z0 .................. 95.9 ohms
-     total net capacitance (with ICs) .. 52.0 pF
-     total metal capacitance ........... 52.0 pF
-     total metal inductance ............ 115.9 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 016.074 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = GE1_MDC_B00, B502.MIO76_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 787.681 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 17.0 pF
-     total metal capacitance ........... 17.0 pF
-     total metal inductance ............ 36.6 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.140 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = GE1_MDI0_N_B00, GE1_MDI0_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 275.619 ps
-     minimum metal Z0 .................. 43.1 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 6.3 pF
-     total metal capacitance ........... 6.3 pF
-     total metal inductance ............ 12.2 nH
-     total metal resistance ............ 159.2 milliohms
-     total metal length ................ 001.812 in
-     average metal Z0 .................. 44.2 ohms
-
-  NET = GE1_MDI1_N_B00, GE1_MDI1_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 420.329 ps
-     minimum metal Z0 .................. 40.6 ohms
-     maximum metal Z0 .................. 110.4 ohms
-     total net capacitance (with ICs) .. 9.6 pF
-     total metal capacitance ........... 9.6 pF
-     total metal inductance ............ 18.6 nH
-     total metal resistance ............ 243.9 milliohms
-     total metal length ................ 002.761 in
-     average metal Z0 .................. 44.1 ohms
-
-  NET = GE1_MDI2_N_B00, GE1_MDI2_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 537.809 ps
-     minimum metal Z0 .................. 43.5 ohms
-     maximum metal Z0 .................. 109.0 ohms
-     total net capacitance (with ICs) .. 12.2 pF
-     total metal capacitance ........... 12.2 pF
-     total metal inductance ............ 23.9 nH
-     total metal resistance ............ 312.8 milliohms
-     total metal length ................ 003.532 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = GE1_MDI3_N_B00, GE1_MDI3_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 652.948 ps
-     minimum metal Z0 .................. 43.4 ohms
-     maximum metal Z0 .................. 101.9 ohms
-     total net capacitance (with ICs) .. 14.8 pF
-     total metal capacitance ........... 14.8 pF
-     total metal inductance ............ 28.8 nH
-     total metal resistance ............ 380.1 milliohms
-     total metal length ................ 004.286 in
-     average metal Z0 .................. 44.1 ohms
-
-  NET = GE1_MDIO_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.265 ns
-     minimum metal Z0 .................. 41.2 ohms
-     maximum metal Z0 .................. 93.5 ohms
-     total net capacitance (with ICs) .. 27.7 pF
-     total metal capacitance ........... 27.7 pF
-     total metal inductance ............ 57.8 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 008.268 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = GE1_SGMII_SI_N_B00, GE1_SGMII_SI_P_B00, PS_MGT.TX1_N_B01, GE1_SGMII_SI_N_OUT_B00, PS_MGT.TX1_P_B01, GE1_SGMII_SI_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  149
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.771 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 94.6 ohms
-     total net capacitance (with ICs) .. 35.8 pF
-     total metal capacitance ........... 35.8 pF
-     total metal inductance ............ 88.6 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.868 in
-     average metal Z0 .................. 49.7 ohms
-
-  NET = GE1_SGMII_SO_P_B00, GE1_SGMII_SO_N_B00, PS_MGT.RX1_P_B01, GE1_SGMII_SO_P_OUT_B00, PS_MGT.RX1_N_B01, GE1_SGMII_SO_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  153
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.884 ns
-     minimum metal Z0 .................. 30.0 ohms
-     maximum metal Z0 .................. 115.1 ohms
-     total net capacitance (with ICs) .. 39.1 pF
-     total metal capacitance ........... 39.1 pF
-     total metal inductance ............ 91.3 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 012.302 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = INS_RX_B00, B501.MIO28_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  61
-     IC drivers .........  0
-     IC receivers .......  5
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.452 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 81.5 ohms
-     total net capacitance (with ICs) .. 76.0 pF
-     total metal capacitance ........... 76.0 pF
-     total metal inductance ............ 157.0 nH
-     total metal resistance ............ 4.5 ohms
-     total metal length ................ 022.547 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = INS_RX_P_B00, INS_RX_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 262.826 ps
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 110.3 ohms
-     total net capacitance (with ICs) .. 5.6 pF
-     total metal capacitance ........... 5.6 pF
-     total metal inductance ............ 12.4 nH
-     total metal resistance ............ 171.6 milliohms
-     total metal length ................ 001.732 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = INS_TX_B00, B501.MIO29_B01, $48N20172_B00, $48N20186_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  68
-     IC drivers .........  0
-     IC receivers .......  5
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.951 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 75.1 ohms
-     total net capacitance (with ICs) .. 130.4 pF
-     total metal capacitance ........... 130.4 pF
-     total metal inductance ............ 271.8 nH
-     total metal resistance ............ 8.6 ohms
-     total metal length ................ 038.842 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = INS_TX_P_B00, INS_TX_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 501.577 ps
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 10.7 pF
-     total metal capacitance ........... 10.7 pF
-     total metal inductance ............ 23.6 nH
-     total metal resistance ............ 322.4 milliohms
-     total metal length ................ 003.313 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = J10_PRS_SRS0_AXI_RX_0_N_B00, J10_PRS_SRS0_AXI_RX_0_P_B00, B129.MGTY_RX0_N_B01, J14_PRS_SRS0_AXI_RX_0_N_B00, B129.MGTY_RX0_P_B01, J14_PRS_SRS0_AXI_RX_0_P_B00, B128.MGTY_TX0_N_B02, B128.MGTY_TX0_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  401
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.331 ns
-     minimum metal Z0 .................. 45.8 ohms
-     maximum metal Z0 .................. 91.3 ohms
-     total net capacitance (with ICs) .. 70.0 pF
-     total metal capacitance ........... 70.0 pF
-     total metal inductance ............ 159.3 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 022.091 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = J10_PRS_SRS0_AXI_TX_0_N_B00, J10_PRS_SRS0_AXI_TX_0_P_B00, B129.MGTY_TX0_N_B01, J14_PRS_SRS0_AXI_TX_0_N_B00, B129.MGTY_TX0_P_B01, J14_PRS_SRS0_AXI_TX_0_P_B00, B128.MGTY_RX0_N_B02, B128.MGTY_RX0_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  399
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.122 ns
-     minimum metal Z0 .................. 45.8 ohms
-     maximum metal Z0 .................. 96.0 ohms
-     total net capacitance (with ICs) .. 65.8 pF
-     total metal capacitance ........... 65.8 pF
-     total metal inductance ............ 148.8 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 020.648 in
-     average metal Z0 .................. 47.6 ohms
-
-  NET = J10_PRS_SRS1_AXI_RX_0_N_B00, J10_PRS_SRS1_AXI_RX_0_P_B00, B129.MGTY_RX1_N_B01, J18_PRS_SRS1_AXI_RX_0_N_B00, B129.MGTY_RX1_P_B01, J18_PRS_SRS1_AXI_RX_0_P_B00, B128.MGTY_TX0_N_B03, B128.MGTY_TX0_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  645
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 6.454 ns
-     minimum metal Z0 .................. 45.8 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 137.5 pF
-     total metal capacitance ........... 137.5 pF
-     total metal inductance ............ 304.0 nH
-     total metal resistance ............ 4.8 ohms
-     total metal length ................ 042.559 in
-     average metal Z0 .................. 47.0 ohms
-
-  NET = J10_PRS_SRS1_AXI_TX_0_P_B00, J10_PRS_SRS1_AXI_TX_0_N_B00, B129.MGTY_TX1_P_B01, J18_PRS_SRS1_AXI_TX_0_P_B00, B129.MGTY_TX1_N_B01, J18_PRS_SRS1_AXI_TX_0_N_B00, B128.MGTY_RX0_P_B03, B128.MGTY_RX0_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  341
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.771 ns
-     minimum metal Z0 .................. 45.9 ohms
-     maximum metal Z0 .................. 90.4 ohms
-     total net capacitance (with ICs) .. 122.8 pF
-     total metal capacitance ........... 122.8 pF
-     total metal inductance ............ 272.1 nH
-     total metal resistance ............ 4.5 ohms
-     total metal length ................ 038.059 in
-     average metal Z0 .................. 47.1 ohms
-
-  NET = J10_PRS_SRS2_AXI_RX_0_N_B00, J10_PRS_SRS2_AXI_RX_0_P_B00, B129.MGTY_RX2_N_B01, J22_PRS_SRS2_AXI_RX_0_N_B00, B129.MGTY_RX2_P_B01, J22_PRS_SRS2_AXI_RX_0_P_B00, B128.MGTY_TX0_N_B04, B128.MGTY_TX0_P_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  429
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.803 ns
-     minimum metal Z0 .................. 46.0 ohms
-     maximum metal Z0 .................. 95.6 ohms
-     total net capacitance (with ICs) .. 80.2 pF
-     total metal capacitance ........... 80.2 pF
-     total metal inductance ............ 181.1 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 025.191 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = J10_PRS_SRS2_AXI_TX_0_N_B00, J10_PRS_SRS2_AXI_TX_0_P_B00, B129.MGTY_TX2_N_B01, J22_PRS_SRS2_AXI_TX_0_N_B00, B129.MGTY_TX2_P_B01, J22_PRS_SRS2_AXI_TX_0_P_B00, B128.MGTY_RX0_N_B04, B128.MGTY_RX0_P_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  288
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.475 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 105.8 ohms
-     total net capacitance (with ICs) .. 72.9 pF
-     total metal capacitance ........... 72.9 pF
-     total metal inductance ............ 166.7 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 023.012 in
-     average metal Z0 .................. 47.8 ohms
-
-  NET = LED_0_EN_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  4
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 57.425 ps
-     minimum metal Z0 .................. 46.0 ohms
-     maximum metal Z0 .................. 46.7 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 2.6 nH
-     total metal resistance ............ 18.7 milliohms
-     total metal length ................ 000.419 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = LED_1_EN_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  4
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 45.428 ps
-     minimum metal Z0 .................. 46.0 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 982.0 fF
-     total metal capacitance ........... 982.0 fF
-     total metal inductance ............ 2.1 nH
-     total metal resistance ............ 14.7 milliohms
-     total metal length ................ 000.330 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = LED_2_EN_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  2
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 24.409 ps
-     minimum metal Z0 .................. 44.7 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 529.0 fF
-     total metal capacitance ........... 529.0 fF
-     total metal inductance ............ 1.1 nH
-     total metal resistance ............ 7.9 milliohms
-     total metal length ................ 000.177 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = LMK_PLL_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 940.388 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.4 ohms
-     total net capacitance (with ICs) .. 20.7 pF
-     total metal capacitance ........... 20.7 pF
-     total metal inductance ............ 42.9 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.135 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = LMK_RST_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 813.723 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 508.4 ohms
-     total net capacitance (with ICs) .. 17.8 pF
-     total metal capacitance ........... 17.8 pF
-     total metal inductance ............ 37.2 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.316 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = LMK_RST_P3V3_B00, $91N59303_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.556 ns
-     minimum metal Z0 .................. 44.8 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 34.6 pF
-     total metal capacitance ........... 34.6 pF
-     total metal inductance ............ 69.9 nH
-     total metal resistance ............ 949.4 milliohms
-     total metal length ................ 010.223 in
-     average metal Z0 .................. 44.9 ohms
-
-  NET = LMK_SPI_CS_N_B00, CAL_SPI_CS_N_B00, B89_L12_P_B01, B89_L12_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  125
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.592 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 98.7 ohms
-     total net capacitance (with ICs) .. 78.8 pF
-     total metal capacitance ........... 78.8 pF
-     total metal inductance ............ 163.9 nH
-     total metal resistance ............ 4.4 ohms
-     total metal length ................ 023.500 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = LMK_SPI_CS_N_OUT_B00, $39N25680_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  9
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.271 ps
-     minimum metal Z0 .................. 46.0 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 1.4 pF
-     total metal capacitance ........... 1.4 pF
-     total metal inductance ............ 3.1 nH
-     total metal resistance ............ 21.8 milliohms
-     total metal length ................ 000.488 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = LMK_SPI_SCLK_B00, LMK_SPI_SDIO_B00, B89_L4_N_B01, B89_L4_P_B01, $39N25677_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  111
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.744 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 82.3 pF
-     total metal capacitance ........... 82.3 pF
-     total metal inductance ............ 170.4 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 024.537 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = LMK_SPI_SCLK_OUT_B00, $39N25678_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  9
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 64.869 ps
-     minimum metal Z0 .................. 47.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 1.4 pF
-     total metal capacitance ........... 1.4 pF
-     total metal inductance ............ 3.1 nH
-     total metal resistance ............ 20.9 milliohms
-     total metal length ................ 000.467 in
-     average metal Z0 .................. 47.4 ohms
-
-  NET = LMK_SPI_SDIO_OUT_B00, $39N25679_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  9
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 63.361 ps
-     minimum metal Z0 .................. 46.0 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 1.4 pF
-     total metal capacitance ........... 1.4 pF
-     total metal inductance ............ 3.0 nH
-     total metal resistance ............ 20.5 milliohms
-     total metal length ................ 000.459 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = MAP_MSTR_RST_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  44
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 648.918 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 14.3 pF
-     total metal capacitance ........... 14.3 pF
-     total metal inductance ............ 29.6 nH
-     total metal resistance ............ 996.7 milliohms
-     total metal length ................ 004.248 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = MBUS_P_B00, MBUS_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  2290
-     IC drivers .........  0
-     IC receivers .......  18
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 20.768 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 311.5 pF
-     total metal capacitance ........... 311.5 pF
-     total metal inductance ............ 1.4 uH
-     total metal resistance ............ 32.4 ohms
-     total metal length ................ 135.362 in
-     average metal Z0 .................. 66.9 ohms
-
-  NET = MBUS_RX_P3V3_B00, $41N13147_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.542 ns
-     minimum metal Z0 .................. 45.7 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 33.6 pF
-     total metal capacitance ........... 33.6 pF
-     total metal inductance ............ 70.9 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 010.069 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = MBUS_TERM0_N_B00, MBUS_TERM0_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.179 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.2 milliohms
-     total metal length ................ 000.492 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = MBUS_TERM1_N_B00, MBUS_TERM1_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  47
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.154 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.2 milliohms
-     total metal length ................ 000.492 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = MBUS_TERM2_N_B00, MBUS_TERM2_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.517 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.3 milliohms
-     total metal length ................ 000.495 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = MBUS_TERM3_N_B00, MBUS_TERM3_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  49
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.166 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.2 milliohms
-     total metal length ................ 000.492 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = MBUS_TERM4_N_B00, MBUS_TERM4_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.180 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.2 milliohms
-     total metal length ................ 000.492 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = MBUS_TERM5_N_B00, MBUS_TERM5_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  56
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 66.531 ps
-     minimum metal Z0 .................. 55.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 32.8 milliohms
-     total metal length ................ 000.487 in
-     average metal Z0 .................. 56.5 ohms
-
-  NET = MBUS_TERM6_N_B00, MBUS_TERM6_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  56
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.649 ps
-     minimum metal Z0 .................. 47.9 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.3 milliohms
-     total metal length ................ 000.496 in
-     average metal Z0 .................. 56.3 ohms
-
-  NET = MBUS_TERM7_N_B00, MBUS_TERM7_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  58
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 67.151 ps
-     minimum metal Z0 .................. 55.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.8 nH
-     total metal resistance ............ 33.2 milliohms
-     total metal length ................ 000.492 in
-     average metal Z0 .................. 56.4 ohms
-
-  NET = MGTREFCLK1N_224_B00, MGTREFCLK1P_224_B00, GTY_REFCLK_224_N_B00, GTY_REFCLK_224_P_B00, CLK_OUT1_N_B00, CLK_OUT1_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  170
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.949 ns
-     minimum metal Z0 .................. 22.6 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 41.8 pF
-     total metal capacitance ........... 41.8 pF
-     total metal inductance ............ 91.2 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 012.828 in
-     average metal Z0 .................. 46.7 ohms
-
-  NET = MGTYRXN0_120_B00, MGTYRXP0_120_B00, SRS1_VX_MGTY_TX_6_N_B00, SRS1_VX_MGTY_TX_6_P_B00, B131.MGTY_TX2_N_B03, B131.MGTY_TX2_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  240
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.062 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 64.4 pF
-     total metal capacitance ........... 64.4 pF
-     total metal inductance ............ 146.5 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 020.375 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = MGTYRXN0_121_B00, MGTYRXP0_121_B00, SRS1_VX_MGTY_TX_4_N_B00, SRS1_VX_MGTY_TX_4_P_B00, B131.MGTY_TX0_N_B03, B131.MGTY_TX0_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  266
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.053 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 164.3 ohms
-     total net capacitance (with ICs) .. 64.3 pF
-     total metal capacitance ........... 64.3 pF
-     total metal inductance ............ 145.9 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 020.294 in
-     average metal Z0 .................. 47.6 ohms
-
-  NET = MGTYRXN0_123_B00, MGTYRXP0_123_B00, SRS1_VX_MGTY_TX_0_N_B00, SRS1_VX_MGTY_TX_0_P_B00, B130.MGTY_TX0_N_B03, B130.MGTY_TX0_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  275
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.147 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 66.3 pF
-     total metal capacitance ........... 66.3 pF
-     total metal inductance ............ 150.5 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 020.937 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = MGTYRXN0_129_B00, MGTYRXP0_129_B00, SRS0_VX_MGTY_TX_6_N_B00, SRS0_VX_MGTY_TX_6_P_B00, B131.MGTY_TX2_N_B02, B131.MGTY_TX2_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  352
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.393 ns
-     minimum metal Z0 .................. 41.1 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 71.6 pF
-     total metal capacitance ........... 71.6 pF
-     total metal inductance ............ 161.8 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 022.527 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXN0_131_B00, MGTYRXP0_131_B00, SRS0_VX_MGTY_TX_2_N_B00, SRS0_VX_MGTY_TX_2_P_B00, B130.MGTY_TX2_N_B02, B130.MGTY_TX2_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  348
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.322 ns
-     minimum metal Z0 .................. 41.1 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 70.3 pF
-     total metal capacitance ........... 70.3 pF
-     total metal inductance ............ 157.9 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 022.015 in
-     average metal Z0 .................. 47.4 ohms
-
-  NET = MGTYRXN1_233_B00, MGTYRXP1_233_B00, PRS_VX_AXI_TX_0_N_B00, PRS_VX_AXI_TX_0_P_B00, B128.MGTY_TX0_N_B01, B128.MGTY_TX0_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  269
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.695 ns
-     minimum metal Z0 .................. 21.6 ohms
-     maximum metal Z0 .................. 111.7 ohms
-     total net capacitance (with ICs) .. 34.5 pF
-     total metal capacitance ........... 34.5 pF
-     total metal inductance ............ 84.4 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 011.333 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = MGTYRXN2_121_B00, MGTYRXP2_121_B00, SRS1_VX_MGTY_TX_5_N_B00, SRS1_VX_MGTY_TX_5_P_B00, B131.MGTY_TX1_N_B03, B131.MGTY_TX1_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  262
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.066 ns
-     minimum metal Z0 .................. 45.9 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 64.7 pF
-     total metal capacitance ........... 64.7 pF
-     total metal inductance ............ 146.0 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 020.356 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXN2_122_B00, MGTYRXP2_122_B00, SRS1_VX_MGTY_TX_3_N_B00, SRS1_VX_MGTY_TX_3_P_B00, B130.MGTY_TX3_N_B03, B130.MGTY_TX3_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  238
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.059 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 64.7 pF
-     total metal capacitance ........... 64.7 pF
-     total metal inductance ............ 145.3 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 020.283 in
-     average metal Z0 .................. 47.4 ohms
-
-  NET = MGTYRXN2_123_B00, MGTYRXP2_123_B00, SRS1_VX_MGTY_TX_1_N_B00, SRS1_VX_MGTY_TX_1_P_B00, B130.MGTY_TX1_N_B03, B130.MGTY_TX1_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  205
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.139 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 66.3 pF
-     total metal capacitance ........... 66.3 pF
-     total metal inductance ............ 149.5 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 020.846 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXN2_129_B00, MGTYRXP2_129_B00, SRS0_VX_MGTY_TX_7_N_B00, SRS0_VX_MGTY_TX_7_P_B00, B131.MGTY_TX3_N_B02, B131.MGTY_TX3_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  441
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.447 ns
-     minimum metal Z0 .................. 42.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 72.5 pF
-     total metal capacitance ........... 72.5 pF
-     total metal inductance ............ 164.9 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 022.916 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = MGTYRXN2_130_B00, MGTYRXP2_130_B00, SRS0_VX_MGTY_TX_5_N_B00, SRS0_VX_MGTY_TX_5_P_B00, B131.MGTY_TX1_N_B02, B131.MGTY_TX1_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  485
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.381 ns
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 164.3 ohms
-     total net capacitance (with ICs) .. 71.4 pF
-     total metal capacitance ........... 71.4 pF
-     total metal inductance ............ 161.1 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 022.436 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXN2_131_B00, MGTYRXP2_131_B00, SRS0_VX_MGTY_TX_3_N_B00, SRS0_VX_MGTY_TX_3_P_B00, B130.MGTY_TX3_N_B02, B130.MGTY_TX3_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  378
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.332 ns
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 70.5 pF
-     total metal capacitance ........... 70.5 pF
-     total metal inductance ............ 158.4 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 022.085 in
-     average metal Z0 .................. 47.4 ohms
-
-  NET = MGTYRXN2_133_B00, MGTYRXP2_133_B00, SRS0_VX_MGTY_TX_0_N_B00, SRS0_VX_MGTY_TX_0_P_B00, B130.MGTY_TX0_N_B02, B130.MGTY_TX0_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  255
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.394 ns
-     minimum metal Z0 .................. 41.1 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 71.7 pF
-     total metal capacitance ........... 71.7 pF
-     total metal inductance ............ 161.7 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 022.537 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXN3_133_B00, MGTYRXP3_133_B00, SRS0_VX_MGTY_TX_1_N_B00, SRS0_VX_MGTY_TX_1_P_B00, B130.MGTY_TX1_N_B02, B130.MGTY_TX1_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  300
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.394 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 71.7 pF
-     total metal capacitance ........... 71.7 pF
-     total metal inductance ............ 161.7 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 022.537 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXP0_122_B00, MGTYRXN0_122_B00, SRS1_VX_MGTY_TX_2_P_B00, SRS1_VX_MGTY_TX_2_N_B00, B130.MGTY_TX2_P_B03, B130.MGTY_TX2_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  312
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.060 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 164.3 ohms
-     total net capacitance (with ICs) .. 64.5 pF
-     total metal capacitance ........... 64.5 pF
-     total metal inductance ............ 146.0 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 020.317 in
-     average metal Z0 .................. 47.6 ohms
-
-  NET = MGTYRXP0_130_B00, MGTYRXN0_130_B00, SRS0_VX_MGTY_TX_4_P_B00, SRS0_VX_MGTY_TX_4_N_B00, B131.MGTY_TX0_P_B02, B131.MGTY_TX0_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  402
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.347 ns
-     minimum metal Z0 .................. 43.4 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 70.7 pF
-     total metal capacitance ........... 70.7 pF
-     total metal inductance ............ 159.4 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 022.201 in
-     average metal Z0 .................. 47.5 ohms
-
-  NET = MGTYRXP0_224_B00, MGTYRXN0_224_B00, SRS2_VX_MGTY_TX_6_P_B00, SRS2_VX_MGTY_TX_6_N_B00, B131.MGTY_TX2_P_B04, B131.MGTY_TX2_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  240
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.043 ns
-     minimum metal Z0 .................. 41.6 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 42.5 pF
-     total metal capacitance ........... 42.5 pF
-     total metal inductance ............ 99.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 013.676 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = MGTYRXP0_232_B00, MGTYRXN0_232_B00, PRS_VX_MGTY_TX_0_P_B00, PRS_VX_MGTY_TX_0_N_B00, B130.MGTY_TX0_P_B01, B130.MGTY_TX0_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  291
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.320 ns
-     minimum metal Z0 .................. 41.2 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 48.2 pF
-     total metal capacitance ........... 48.2 pF
-     total metal inductance ............ 112.6 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 015.498 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = MGTYRXP1_120_B00, MGTYRXN1_120_B00, SRS1_VX_MGTY_TX_7_P_B00, SRS1_VX_MGTY_TX_7_N_B00, B131.MGTY_TX3_P_B03, B131.MGTY_TX3_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  252
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.115 ns
-     minimum metal Z0 .................. 46.1 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 65.6 pF
-     total metal capacitance ........... 65.6 pF
-     total metal inductance ............ 149.0 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 020.726 in
-     average metal Z0 .................. 47.7 ohms
-
-  NET = MGTYRXP1_225_B00, MGTYRXN1_225_B00, SRS2_VX_MGTY_TX_4_P_B00, SRS2_VX_MGTY_TX_4_N_B00, B131.MGTY_TX0_P_B04, B131.MGTY_TX0_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  288
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.030 ns
-     minimum metal Z0 .................. 45.0 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 42.2 pF
-     total metal capacitance ........... 42.2 pF
-     total metal inductance ............ 98.7 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 013.598 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = MGTYRXP1_226_B00, MGTYRXN1_226_B00, SRS2_VX_MGTY_TX_2_P_B00, SRS2_VX_MGTY_TX_2_N_B00, B130.MGTY_TX2_P_B04, B130.MGTY_TX2_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  397
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.037 ns
-     minimum metal Z0 .................. 42.6 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 42.3 pF
-     total metal capacitance ........... 42.3 pF
-     total metal inductance ............ 99.0 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 013.637 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = MGTYRXP1_227_B00, MGTYRXN1_227_B00, SRS2_VX_MGTY_TX_0_P_B00, SRS2_VX_MGTY_TX_0_N_B00, B130.MGTY_TX0_P_B04, B130.MGTY_TX0_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  301
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.131 ns
-     minimum metal Z0 .................. 41.7 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 44.0 pF
-     total metal capacitance ........... 44.0 pF
-     total metal inductance ............ 104.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 014.319 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = MGTYRXP1_229_B00, MGTYRXN1_229_B00, PRS_VX_MGTY_TX_6_P_B00, PRS_VX_MGTY_TX_6_N_B00, B131.MGTY_TX2_P_B01, B131.MGTY_TX2_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  430
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.320 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 48.0 pF
-     total metal capacitance ........... 48.0 pF
-     total metal inductance ............ 113.2 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 015.556 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = MGTYRXP1_230_B00, MGTYRXN1_230_B00, PRS_VX_MGTY_TX_4_P_B00, PRS_VX_MGTY_TX_4_N_B00, B131.MGTY_TX0_P_B01, B131.MGTY_TX0_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  296
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.265 ns
-     minimum metal Z0 .................. 42.8 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 46.9 pF
-     total metal capacitance ........... 46.9 pF
-     total metal inductance ............ 110.3 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 015.152 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = MGTYRXP1_231_B00, MGTYRXN1_231_B00, PRS_VX_MGTY_TX_2_P_B00, PRS_VX_MGTY_TX_2_N_B00, B130.MGTY_TX2_P_B01, B130.MGTY_TX2_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  349
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.246 ns
-     minimum metal Z0 .................. 42.4 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 46.8 pF
-     total metal capacitance ........... 46.8 pF
-     total metal inductance ............ 108.7 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 014.989 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = MGTYRXP2_233_B00, MGTYRXN2_233_B00, PRS_VX_AXI_TX_1_P_B00, PRS_VX_AXI_TX_1_N_B00, B128.MGTY_TX1_P_B01, B128.MGTY_TX1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  375
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.706 ns
-     minimum metal Z0 .................. 22.3 ohms
-     maximum metal Z0 .................. 113.7 ohms
-     total net capacitance (with ICs) .. 34.6 pF
-     total metal capacitance ........... 34.6 pF
-     total metal inductance ............ 85.7 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.388 in
-     average metal Z0 .................. 49.8 ohms
-
-  NET = MGTYRXP3_224_B00, MGTYRXN3_224_B00, SRS2_VX_MGTY_TX_7_P_B00, SRS2_VX_MGTY_TX_7_N_B00, B131.MGTY_TX3_P_B04, B131.MGTY_TX3_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  268
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.039 ns
-     minimum metal Z0 .................. 41.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 42.3 pF
-     total metal capacitance ........... 42.3 pF
-     total metal inductance ............ 99.2 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 013.671 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = MGTYRXP3_225_B00, MGTYRXN3_225_B00, SRS2_VX_MGTY_TX_5_P_B00, SRS2_VX_MGTY_TX_5_N_B00, B131.MGTY_TX1_P_B04, B131.MGTY_TX1_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  326
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.997 ns
-     minimum metal Z0 .................. 36.1 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 41.5 pF
-     total metal capacitance ........... 41.5 pF
-     total metal inductance ............ 96.9 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 013.378 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = MGTYRXP3_226_B00, MGTYRXN3_226_B00, SRS2_VX_MGTY_TX_3_P_B00, SRS2_VX_MGTY_TX_3_N_B00, B130.MGTY_TX3_P_B04, B130.MGTY_TX3_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  332
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.993 ns
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 41.4 pF
-     total metal capacitance ........... 41.4 pF
-     total metal inductance ............ 96.8 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 013.339 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = MGTYRXP3_227_B00, MGTYRXN3_227_B00, SRS2_VX_MGTY_TX_1_P_B00, SRS2_VX_MGTY_TX_1_N_B00, B130.MGTY_TX1_P_B04, B130.MGTY_TX1_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  237
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.071 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 42.9 pF
-     total metal capacitance ........... 42.9 pF
-     total metal inductance ............ 101.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 013.916 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = MGTYRXP3_229_B00, MGTYRXN3_229_B00, PRS_VX_MGTY_TX_7_P_B00, PRS_VX_MGTY_TX_7_N_B00, B131.MGTY_TX3_P_B01, B131.MGTY_TX3_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  473
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.331 ns
-     minimum metal Z0 .................. 41.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 48.1 pF
-     total metal capacitance ........... 48.1 pF
-     total metal inductance ............ 114.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 015.650 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = MGTYRXP3_230_B00, MGTYRXN3_230_B00, PRS_VX_MGTY_TX_5_P_B00, PRS_VX_MGTY_TX_5_N_B00, B131.MGTY_TX1_P_B01, B131.MGTY_TX1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  426
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.246 ns
-     minimum metal Z0 .................. 41.1 ohms
-     maximum metal Z0 .................. 467.7 ohms
-     total net capacitance (with ICs) .. 46.5 pF
-     total metal capacitance ........... 46.5 pF
-     total metal inductance ............ 109.4 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 015.026 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = MGTYRXP3_231_B00, MGTYRXN3_231_B00, PRS_VX_MGTY_TX_3_P_B00, PRS_VX_MGTY_TX_3_N_B00, B130.MGTY_TX3_P_B01, B130.MGTY_TX3_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  275
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.209 ns
-     minimum metal Z0 .................. 41.5 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 46.0 pF
-     total metal capacitance ........... 46.0 pF
-     total metal inductance ............ 106.9 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 014.744 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = MGTYRXP3_232_B00, MGTYRXN3_232_B00, PRS_VX_MGTY_TX_1_P_B00, PRS_VX_MGTY_TX_1_N_B00, B130.MGTY_TX1_P_B01, B130.MGTY_TX1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  300
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.274 ns
-     minimum metal Z0 .................. 46.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 47.4 pF
-     total metal capacitance ........... 47.4 pF
-     total metal inductance ............ 110.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 015.179 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = MGTYRXP3_233_B00, MGTYRXN3_233_B00, PRS_VX_AXI_TX_2_P_B00, PRS_VX_AXI_TX_2_N_B00, B128.MGTY_TX2_P_B01, B128.MGTY_TX2_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  302
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.666 ns
-     minimum metal Z0 .................. 25.2 ohms
-     maximum metal Z0 .................. 111.7 ohms
-     total net capacitance (with ICs) .. 34.0 pF
-     total metal capacitance ........... 34.0 pF
-     total metal inductance ............ 83.2 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.091 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = MGTYTXP2_233_B00, MGTYTXN2_233_B00, PRS_VX_AXI_RX_1_P_B00, PRS_VX_AXI_RX_1_N_B00, B128.MGTY_RX1_P_B01, B128.MGTY_RX1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  397
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.712 ns
-     minimum metal Z0 .................. 23.4 ohms
-     maximum metal Z0 .................. 105.1 ohms
-     total net capacitance (with ICs) .. 35.8 pF
-     total metal capacitance ........... 35.8 pF
-     total metal inductance ............ 82.6 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.151 in
-     average metal Z0 .................. 48.0 ohms
-
-  NET = MGTYTXP3_233_B00, MGTYTXN3_233_B00, PRS_VX_AXI_RX_2_P_B00, PRS_VX_AXI_RX_2_N_B00, B128.MGTY_RX2_P_B01, B128.MGTY_RX2_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  390
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.731 ns
-     minimum metal Z0 .................. 22.3 ohms
-     maximum metal Z0 .................. 101.8 ohms
-     total net capacitance (with ICs) .. 36.2 pF
-     total metal capacitance ........... 36.2 pF
-     total metal inductance ............ 83.5 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.274 in
-     average metal Z0 .................. 48.1 ohms
-
-  NET = P1V1_SHDN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  4
-     IC drivers .........  0
-     IC receivers .......  1
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 11.986 ps
-     minimum metal Z0 .................. 40.6 ohms
-     maximum metal Z0 .................. 41.9 ohms
-     total net capacitance (with ICs) .. 293.0 fF
-     total metal capacitance ........... 293.0 fF
-     total metal inductance ............ 490.3 pH
-     total metal resistance ............ 3.1 milliohms
-     total metal length ................ 000.087 in
-     average metal Z0 .................. 40.9 ohms
-
-  NET = P2V5_SHDN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  5
-     IC drivers .........  0
-     IC receivers .......  1
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 12.001 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 42.0 ohms
-     total net capacitance (with ICs) .. 292.2 fF
-     total metal capacitance ........... 292.2 fF
-     total metal inductance ............ 492.9 pH
-     total metal resistance ............ 3.1 milliohms
-     total metal length ................ 000.087 in
-     average metal Z0 .................. 41.1 ohms
-
-  NET = P3V3_P1V8_MGTV_RUN_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.734 ns
-     minimum metal Z0 .................. 45.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 37.9 pF
-     total metal capacitance ........... 37.9 pF
-     total metal inductance ............ 79.3 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.330 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = P48V_EN_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 904.958 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 19.8 pF
-     total metal capacitance ........... 19.8 pF
-     total metal inductance ............ 41.4 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 005.917 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = P48V_ENABLE_P_B00, P48V_ENABLE_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 235.206 ps
-     minimum metal Z0 .................. 34.2 ohms
-     maximum metal Z0 .................. 98.5 ohms
-     total net capacitance (with ICs) .. 5.0 pF
-     total metal capacitance ........... 5.0 pF
-     total metal inductance ............ 11.2 nH
-     total metal resistance ............ 154.5 milliohms
-     total metal length ................ 001.546 in
-     average metal Z0 .................. 47.0 ohms
-
-  NET = PRS_ADC0_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 758.166 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 16.7 pF
-     total metal capacitance ........... 16.7 pF
-     total metal inductance ............ 34.6 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.950 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = PRS_ADC0_N_B00, PRS_ADC0_P_B00, ADC0_N_B01, $63N2394_B00, ADC0_P_B01, $63N2393_B00, $63N22721_B00, $63N2383_B00, $63N2378_B00, $63N2379_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  145
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.352 ns
-     minimum metal Z0 .................. 31.1 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 27.9 pF
-     total metal capacitance ........... 27.9 pF
-     total metal inductance ............ 65.9 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.841 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = PRS_ADC1_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 643.694 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.6 ohms
-     total net capacitance (with ICs) .. 14.1 pF
-     total metal capacitance ........... 14.1 pF
-     total metal inductance ............ 29.5 nH
-     total metal resistance ............ 1.0 ohms
-     total metal length ................ 004.204 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC1_P_B00, PRS_ADC1_N_B00, ADC1_P_B01, $63N16334_B00, ADC1_N_B01, $63N16335_B00, $63N16324_B00, $63N22725_B00, $63N16321_B00, $63N16320_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  205
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.511 ns
-     minimum metal Z0 .................. 31.1 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 31.3 pF
-     total metal capacitance ........... 31.3 pF
-     total metal inductance ............ 73.5 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.878 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_ADC2_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 765.554 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 104.6 ohms
-     total net capacitance (with ICs) .. 16.8 pF
-     total metal capacitance ........... 16.8 pF
-     total metal inductance ............ 35.0 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.998 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC2_N_B00, PRS_ADC2_P_B00, ADC2_N_B01, $63N17559_B00, ADC2_P_B01, $63N17558_B00, $63N17549_B00, $63N17548_B00, $63N17544_B00, $63N17545_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  146
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.415 ns
-     minimum metal Z0 .................. 31.1 ohms
-     maximum metal Z0 .................. 111.8 ohms
-     total net capacitance (with ICs) .. 29.2 pF
-     total metal capacitance ........... 29.2 pF
-     total metal inductance ............ 68.9 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.256 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_ADC3_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 702.638 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 99.9 ohms
-     total net capacitance (with ICs) .. 15.4 pF
-     total metal capacitance ........... 15.4 pF
-     total metal inductance ............ 32.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.589 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC3_P_B00, PRS_ADC3_N_B00, ADC3_P_B01, $63N17579_B00, ADC3_N_B01, $63N17580_B00, $63N17569_B00, $63N22723_B00, $63N17566_B00, $63N17565_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  239
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.612 ns
-     minimum metal Z0 .................. 31.0 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 33.3 pF
-     total metal capacitance ........... 33.3 pF
-     total metal inductance ............ 78.6 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.537 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = PRS_ADC4_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 760.940 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 95.5 ohms
-     total net capacitance (with ICs) .. 16.7 pF
-     total metal capacitance ........... 16.7 pF
-     total metal inductance ............ 34.8 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.968 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC4_N_B00, PRS_ADC4_P_B00, ADC4_N_B01, $63N21225_B00, ADC4_P_B01, $63N21224_B00, $63N21215_B00, $63N21214_B00, $63N21210_B00, $63N21211_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  157
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.513 ns
-     minimum metal Z0 .................. 31.1 ohms
-     maximum metal Z0 .................. 112.9 ohms
-     total net capacitance (with ICs) .. 31.3 pF
-     total metal capacitance ........... 31.3 pF
-     total metal inductance ............ 73.6 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.891 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_ADC5_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 635.244 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 98.0 ohms
-     total net capacitance (with ICs) .. 13.9 pF
-     total metal capacitance ........... 13.9 pF
-     total metal inductance ............ 29.2 nH
-     total metal resistance ............ 1.0 ohms
-     total metal length ................ 004.149 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = PRS_ADC5_P_B00, PRS_ADC5_N_B00, ADC5_P_B01, $55N11319_B00, ADC5_N_B01, $55N11320_B00, $55N11309_B00, $55N17724_B00, $55N11306_B00, $55N11305_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  224
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.726 ns
-     minimum metal Z0 .................. 36.4 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 35.8 pF
-     total metal capacitance ........... 35.8 pF
-     total metal inductance ............ 83.8 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.279 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = PRS_ADC6_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 696.758 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 15.4 pF
-     total metal capacitance ........... 15.4 pF
-     total metal inductance ............ 31.8 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.550 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = PRS_ADC6_N_B00, PRS_ADC6_P_B00, ADC6_N_B01, $55N11341_B00, ADC6_P_B01, $55N11340_B00, $55N17732_B00, $55N11330_B00, $55N11326_B00, $55N11327_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  198
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.600 ns
-     minimum metal Z0 .................. 38.4 ohms
-     maximum metal Z0 .................. 111.6 ohms
-     total net capacitance (with ICs) .. 33.1 pF
-     total metal capacitance ........... 33.1 pF
-     total metal inductance ............ 77.8 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 010.455 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_ADC7_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 570.667 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 101.5 ohms
-     total net capacitance (with ICs) .. 12.5 pF
-     total metal capacitance ........... 12.5 pF
-     total metal inductance ............ 26.1 nH
-     total metal resistance ............ 920.3 milliohms
-     total metal length ................ 003.729 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC7_P_B00, PRS_ADC7_N_B00, ADC7_P_B01, $55N11361_B00, ADC7_N_B01, $55N11362_B00, $55N11351_B00, $55N17726_B00, $55N11348_B00, $55N11347_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  371
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.817 ns
-     minimum metal Z0 .................. 31.1 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 37.6 pF
-     total metal capacitance ........... 37.6 pF
-     total metal inductance ............ 88.5 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 011.872 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_ADC8_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  40
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 948.752 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 96.0 ohms
-     total net capacitance (with ICs) .. 20.8 pF
-     total metal capacitance ........... 20.8 pF
-     total metal inductance ............ 43.4 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.193 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC8_N_B00, PRS_ADC8_P_B00, ADC8_N_B01, $55N11383_B00, ADC8_P_B01, $55N11382_B00, $55N17734_B00, $55N11372_B00, $55N11368_B00, $55N11369_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  232
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 958.412 ps
-     minimum metal Z0 .................. 35.8 ohms
-     maximum metal Z0 .................. 103.2 ohms
-     total net capacitance (with ICs) .. 19.6 pF
-     total metal capacitance ........... 19.6 pF
-     total metal inductance ............ 47.2 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 006.278 in
-     average metal Z0 .................. 49.0 ohms
-
-  NET = PRS_ADC9_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 848.076 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 61.5 ohms
-     total net capacitance (with ICs) .. 18.6 pF
-     total metal capacitance ........... 18.6 pF
-     total metal inductance ............ 38.7 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.536 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC9_P_B00, PRS_ADC9_N_B00, ADC9_P_B01, $55N11403_B00, ADC9_N_B01, $55N11404_B00, $55N11393_B00, $55N17730_B00, $55N11390_B00, $55N11389_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  358
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.020 ns
-     minimum metal Z0 .................. 32.1 ohms
-     maximum metal Z0 .................. 132.2 ohms
-     total net capacitance (with ICs) .. 20.9 pF
-     total metal capacitance ........... 20.9 pF
-     total metal inductance ............ 50.4 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.682 in
-     average metal Z0 .................. 49.1 ohms
-
-  NET = PRS_ADC10_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.002 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 92.1 ohms
-     total net capacitance (with ICs) .. 21.9 pF
-     total metal capacitance ........... 21.9 pF
-     total metal inductance ............ 46.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.542 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = PRS_ADC10_N_B00, PRS_ADC10_P_B00, ADC10_N_B01, $56N11315_B00, ADC10_P_B01, $56N11314_B00, $56N17729_B00, $56N11304_B00, $56N11300_B00, $56N11301_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  171
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 883.802 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 102.0 ohms
-     total net capacitance (with ICs) .. 18.0 pF
-     total metal capacitance ........... 18.0 pF
-     total metal inductance ............ 43.6 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 005.792 in
-     average metal Z0 .................. 49.2 ohms
-
-  NET = PRS_ADC11_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 885.082 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 96.0 ohms
-     total net capacitance (with ICs) .. 19.4 pF
-     total metal capacitance ........... 19.4 pF
-     total metal inductance ............ 40.6 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.778 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = PRS_ADC11_P_B00, PRS_ADC11_N_B00, ADC11_P_B01, $56N11335_B00, ADC11_N_B01, $56N11336_B00, $56N11325_B00, $56N17727_B00, $56N11322_B00, $56N11321_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  382
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.061 ns
-     minimum metal Z0 .................. 30.8 ohms
-     maximum metal Z0 .................. 131.8 ohms
-     total net capacitance (with ICs) .. 21.7 pF
-     total metal capacitance ........... 21.7 pF
-     total metal inductance ............ 52.6 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 006.950 in
-     average metal Z0 .................. 49.2 ohms
-
-  NET = PRS_ADC12_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 980.908 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 52.0 ohms
-     total net capacitance (with ICs) .. 21.4 pF
-     total metal capacitance ........... 21.4 pF
-     total metal inductance ............ 45.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.402 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = PRS_ADC12_N_B00, PRS_ADC12_P_B00, ADC12_N_B01, $56N11357_B00, ADC12_P_B01, $56N11356_B00, $56N17723_B00, $56N11346_B00, $56N11342_B00, $56N11343_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  228
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 947.709 ps
-     minimum metal Z0 .................. 32.4 ohms
-     maximum metal Z0 .................. 101.6 ohms
-     total net capacitance (with ICs) .. 19.3 pF
-     total metal capacitance ........... 19.3 pF
-     total metal inductance ............ 46.8 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 006.208 in
-     average metal Z0 .................. 49.2 ohms
-
-  NET = PRS_ADC13_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 861.802 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 93.5 ohms
-     total net capacitance (with ICs) .. 18.8 pF
-     total metal capacitance ........... 18.8 pF
-     total metal inductance ............ 39.6 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.626 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = PRS_ADC13_P_B00, PRS_ADC13_N_B00, ADC13_P_B01, $56N11377_B00, ADC13_N_B01, $56N11378_B00, $56N11367_B00, $56N17725_B00, $56N11364_B00, $56N11363_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  294
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.170 ns
-     minimum metal Z0 .................. 23.9 ohms
-     maximum metal Z0 .................. 111.6 ohms
-     total net capacitance (with ICs) .. 24.2 pF
-     total metal capacitance ........... 24.2 pF
-     total metal inductance ............ 57.2 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 007.663 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = PRS_ADC14_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 922.401 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 20.3 pF
-     total metal capacitance ........... 20.3 pF
-     total metal inductance ............ 42.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 006.021 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = PRS_ADC14_N_B00, PRS_ADC14_P_B00, ADC14_N_B01, $56N11399_B00, ADC14_P_B01, $56N11398_B00, $56N17721_B00, $56N11388_B00, $56N11384_B00, $56N11385_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  167
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.008 ns
-     minimum metal Z0 .................. 39.9 ohms
-     maximum metal Z0 .................. 101.8 ohms
-     total net capacitance (with ICs) .. 20.6 pF
-     total metal capacitance ........... 20.6 pF
-     total metal inductance ............ 49.6 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.603 in
-     average metal Z0 .................. 49.0 ohms
-
-  NET = PRS_ADC15_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 791.878 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 92.7 ohms
-     total net capacitance (with ICs) .. 17.3 pF
-     total metal capacitance ........... 17.3 pF
-     total metal inductance ............ 36.4 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.173 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = PRS_ADC15_P_B00, PRS_ADC15_N_B00, ADC15_P_B01, $54N11288_B00, ADC15_N_B01, $54N11289_B00, $54N11278_B00, $54N17701_B00, $54N11275_B00, $54N11274_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  210
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.232 ns
-     minimum metal Z0 .................. 30.8 ohms
-     maximum metal Z0 .................. 111.6 ohms
-     total net capacitance (with ICs) .. 25.4 pF
-     total metal capacitance ........... 25.4 pF
-     total metal inductance ............ 60.3 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 008.066 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = PRS_DAC0_N_B00, PRS_DAC0_P_B00, DAC0_IOUT_N_B01, $28N3120_B00, DAC0_IOUT_P_B01, $28N3119_B00, $28N3123_B00, $28N3124_B00, PRS_DAC0_N_OUT_B00, PRS_DAC0_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  212
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.027 ns
-     minimum metal Z0 .................. 29.7 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 42.0 pF
-     total metal capacitance ........... 42.0 pF
-     total metal inductance ............ 98.3 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 013.233 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = PRS_DAC1_P_B00, PRS_DAC1_N_B00, DAC1_IOUT_P_B01, $28N3859_B00, DAC1_IOUT_N_B01, $28N3860_B00, PRS_DAC1_N_OUT_B00, $28N3863_B00, $28N3864_B00, PRS_DAC1_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  205
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.570 ns
-     minimum metal Z0 .................. 31.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 32.5 pF
-     total metal capacitance ........... 32.5 pF
-     total metal inductance ............ 76.2 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.255 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = PRS_DAC2_N_B00, PRS_DAC2_P_B00, DAC2_IOUT_N_B01, $28N4602_B00, DAC2_IOUT_P_B01, $28N4601_B00, $28N4605_B00, $28N4606_B00, PRS_DAC2_N_OUT_B00, PRS_DAC2_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  309
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.925 ns
-     minimum metal Z0 .................. 23.0 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 40.0 pF
-     total metal capacitance ........... 40.0 pF
-     total metal inductance ............ 93.2 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 012.569 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = PRS_DAC3_P_B00, PRS_DAC3_N_B00, DAC3_IOUT_P_B01, $28N4615_B00, DAC3_IOUT_N_B01, $28N4616_B00, PRS_DAC3_N_OUT_B00, $28N4619_B00, $28N4620_B00, PRS_DAC3_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  265
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.553 ns
-     minimum metal Z0 .................. 30.6 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 32.1 pF
-     total metal capacitance ........... 32.1 pF
-     total metal inductance ............ 75.4 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.145 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = PRS_DAC4_N_B00, PRS_DAC4_P_B00, DAC4_IOUT_N_B01, $28N6086_B00, DAC4_IOUT_P_B01, $28N6085_B00, $28N6089_B00, $28N6090_B00, PRS_DAC4_N_OUT_B00, PRS_DAC4_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  125
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.805 ns
-     minimum metal Z0 .................. 24.3 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 37.5 pF
-     total metal capacitance ........... 37.5 pF
-     total metal inductance ............ 87.5 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 011.786 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = PRS_DAC5_P_B00, PRS_DAC5_N_B00, DAC5_IOUT_P_B01, $28N6099_B00, DAC5_IOUT_N_B01, $28N6100_B00, PRS_DAC5_N_OUT_B00, $28N6103_B00, $28N6104_B00, PRS_DAC5_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  253
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.412 ns
-     minimum metal Z0 .................. 31.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 29.2 pF
-     total metal capacitance ........... 29.2 pF
-     total metal inductance ............ 68.7 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.223 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_DAC6_N_B00, PRS_DAC6_P_B00, DAC6_IOUT_N_B01, $28N6114_B00, DAC6_IOUT_P_B01, $28N6113_B00, $28N6117_B00, $28N6118_B00, PRS_DAC6_N_OUT_B00, PRS_DAC6_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  228
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.751 ns
-     minimum metal Z0 .................. 29.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 36.3 pF
-     total metal capacitance ........... 36.3 pF
-     total metal inductance ............ 84.7 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.439 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = PRS_DAC7_P_B00, PRS_DAC7_N_B00, DAC7_IOUT_P_B01, $28N6127_B00, DAC7_IOUT_N_B01, $28N6128_B00, PRS_DAC7_N_OUT_B00, $28N6131_B00, $28N6132_B00, PRS_DAC7_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  299
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.355 ns
-     minimum metal Z0 .................. 31.0 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 28.0 pF
-     total metal capacitance ........... 28.0 pF
-     total metal inductance ............ 65.9 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.853 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_DAC8_N_B00, PRS_DAC8_P_B00, DAC8_IOUT_N_B01, $28N9054_B00, DAC8_IOUT_P_B01, $28N9053_B00, $28N9057_B00, $28N9058_B00, PRS_DAC8_N_OUT_B00, PRS_DAC8_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.356 ns
-     minimum metal Z0 .................. 27.9 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 28.1 pF
-     total metal capacitance ........... 28.1 pF
-     total metal inductance ............ 65.9 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.859 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_DAC9_P_B00, PRS_DAC9_N_B00, DAC9_IOUT_P_B01, $28N9067_B00, DAC9_IOUT_N_B01, $28N9068_B00, PRS_DAC9_N_OUT_B00, $28N9071_B00, $28N9072_B00, PRS_DAC9_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  218
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.161 ns
-     minimum metal Z0 .................. 27.9 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 24.0 pF
-     total metal capacitance ........... 24.0 pF
-     total metal inductance ............ 56.7 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.588 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = PRS_DAC10_N_B00, PRS_DAC10_P_B00, DAC10_IOUT_N_B01, $62N3120_B00, DAC10_IOUT_P_B01, $62N3119_B00, $62N3123_B00, $62N3124_B00, PRS_DAC10_N_OUT_B00, PRS_DAC10_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  202
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.557 ns
-     minimum metal Z0 .................. 30.3 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 32.3 pF
-     total metal capacitance ........... 32.3 pF
-     total metal inductance ............ 75.6 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.172 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = PRS_DAC11_P_B00, PRS_DAC11_N_B00, DAC11_IOUT_P_B01, $62N3859_B00, DAC11_IOUT_N_B01, $62N3860_B00, PRS_DAC11_N_OUT_B00, $62N3863_B00, $62N3864_B00, PRS_DAC11_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  188
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.111 ns
-     minimum metal Z0 .................. 29.3 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 23.0 pF
-     total metal capacitance ........... 23.0 pF
-     total metal inductance ............ 54.2 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.268 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = PRS_DAC12_N_B00, PRS_DAC12_P_B00, DAC12_IOUT_N_B01, $62N4602_B00, DAC12_IOUT_P_B01, $62N4601_B00, $62N4606_B00, $62N4605_B00, PRS_DAC12_P_OUT_B00, PRS_DAC12_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  184
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.499 ns
-     minimum metal Z0 .................. 30.5 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 31.0 pF
-     total metal capacitance ........... 31.0 pF
-     total metal inductance ............ 72.8 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.795 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = PRS_DAC13_P_B00, PRS_DAC13_N_B00, DAC13_IOUT_P_B01, $62N4615_B00, DAC13_IOUT_N_B01, $62N4616_B00, PRS_DAC13_N_OUT_B00, $62N4619_B00, $62N4620_B00, PRS_DAC13_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  219
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.295 ns
-     minimum metal Z0 .................. 36.9 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 26.8 pF
-     total metal capacitance ........... 26.8 pF
-     total metal inductance ............ 63.0 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 008.465 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_DAC14_N_B00, PRS_DAC14_P_B00, DAC14_IOUT_N_B01, $62N6086_B00, DAC14_IOUT_P_B01, $62N6085_B00, $62N6089_B00, $62N6090_B00, PRS_DAC14_N_OUT_B00, PRS_DAC14_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  117
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.191 ns
-     minimum metal Z0 .................. 25.0 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 24.6 pF
-     total metal capacitance ........... 24.6 pF
-     total metal inductance ............ 58.1 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 007.784 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = PRS_DAC15_P_B00, PRS_DAC15_N_B00, DAC15_IOUT_P_B01, $62N6099_B00, DAC15_IOUT_N_B01, $62N6100_B00, $62N6103_B00, $62N6104_B00, PRS_DAC15_N_OUT_B00, PRS_DAC15_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  171
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.228 ns
-     minimum metal Z0 .................. 32.4 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 25.4 pF
-     total metal capacitance ........... 25.4 pF
-     total metal inductance ............ 59.8 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 008.031 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = PRS_EXT_CLK_P_B00, PRS_EXT_CLK_N_B00, EXT_REFCLK_P_B01, EXT_CLK_OUT_P_B01, EXT_REFCLK_N_B01, EXT_CLK_OUT_N_B01, REFCLK_VREF_B01, xEXT_CLK_OUT_P_B01, xEXT_CLK_OUT_N_B01, OSC_REFCLK_N_B01, OSC_REFCLK_P_B01, xOSC_REFCLK_N_B01, xOSC_REFCLK_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  172
-     IC drivers .........  0
-     IC receivers .......  15
-     resistors ..........  8
-     capacitors .........  5
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.181 ns
-     minimum metal Z0 .................. 46.1 ohms
-     maximum metal Z0 .................. 55.7 ohms
-     total net capacitance (with ICs) .. 23.4 pF
-     total metal capacitance ........... 23.4 pF
-     total metal inductance ............ 59.8 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.944 in
-     average metal Z0 .................. 50.6 ohms
-
-  NET = PRS_PLL_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.380 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 30.2 pF
-     total metal capacitance ........... 30.2 pF
-     total metal inductance ............ 63.1 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 008.998 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = PRS_PS_PCIE_RESET_N_B00, B501.MIO30_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 661.562 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 14.3 pF
-     total metal capacitance ........... 14.3 pF
-     total metal inductance ............ 30.7 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.329 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_PS_PCIE_RX_0_N_OUT_B00, PRS_PS_PCIE_RX_0_P_OUT_B00, PRS_PS_PCIE_RX_0_N_B00, PRS_PS_PCIE_RX_0_P_B00, PS_MGT.RX0_N_B01, PS_MGT.RX0_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  350
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.204 ns
-     minimum metal Z0 .................. 45.9 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 111.9 pF
-     total metal capacitance ........... 111.9 pF
-     total metal inductance ............ 242.2 nH
-     total metal resistance ............ 4.1 ohms
-     total metal length ................ 034.093 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = PRS_PS_PCIE_TX_0_P_B00, PRS_PS_PCIE_TX_0_N_B00, PS_MGT.TX0_P_B01, PRS_PS_PCIE_TX_0_P_OUT_B00, PS_MGT.TX0_N_B01, PRS_PS_PCIE_TX_0_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  423
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.424 ns
-     minimum metal Z0 .................. 45.8 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 115.4 pF
-     total metal capacitance ........... 115.4 pF
-     total metal inductance ............ 256.0 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 035.876 in
-     average metal Z0 .................. 47.1 ohms
-
-  NET = PRS_PS_SE_GPIO_1_B00, PRS_PS_SE_GPIO_0_B00, B89_L1_N_B01, B89_L1_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  133
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.530 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 110.0 ohms
-     total net capacitance (with ICs) .. 98.0 pF
-     total metal capacitance ........... 98.0 pF
-     total metal inductance ............ 210.6 nH
-     total metal resistance ............ 7.8 ohms
-     total metal length ................ 029.513 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = PRS_PS_SE_GPIO_2_B00, PRS_PS_SE_GPIO_3_B00, B89_L7_P_B01, B89_L7_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  192
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.492 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 97.9 ohms
-     total net capacitance (with ICs) .. 97.4 pF
-     total metal capacitance ........... 97.4 pF
-     total metal inductance ............ 207.5 nH
-     total metal resistance ............ 7.7 ohms
-     total metal length ................ 029.268 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SPI0_MISO_P1V8_B00, $22N41624_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  66
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.021 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 110.2 ohms
-     total net capacitance (with ICs) .. 66.2 pF
-     total metal capacitance ........... 66.2 pF
-     total metal inductance ............ 138.2 nH
-     total metal resistance ............ 5.0 ohms
-     total metal length ................ 019.697 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = PRS_SPI0_MOSI_B00, B502.MIO69_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 437.785 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.3 pF
-     total metal capacitance ........... 9.3 pF
-     total metal inductance ............ 20.6 nH
-     total metal resistance ............ 840.0 milliohms
-     total metal length ................ 002.858 in
-     average metal Z0 .................. 47.0 ohms
-
-  NET = PRS_SPI0_PS_CS_N_B00, B502.MIO67_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 437.187 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 9.3 pF
-     total metal capacitance ........... 9.3 pF
-     total metal inductance ............ 20.7 nH
-     total metal resistance ............ 819.8 milliohms
-     total metal length ................ 002.873 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = PRS_SPI0_SCLK_B00, B502.MIO64_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  5
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 475.556 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 80.5 ohms
-     total net capacitance (with ICs) .. 10.1 pF
-     total metal capacitance ........... 10.1 pF
-     total metal inductance ............ 22.5 nH
-     total metal resistance ............ 885.2 milliohms
-     total metal length ................ 003.117 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = PRS_SPI0_VX_CS_N_B00, B502.MIO66_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 462.172 ps
-     minimum metal Z0 .................. 21.6 ohms
-     maximum metal Z0 .................. 103.2 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 21.9 nH
-     total metal resistance ............ 885.2 milliohms
-     total metal length ................ 003.026 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = PRS_SPI1_MISO_B00, B502.MIO74_B04, B502.MIO74_B03, B502.MIO74_B02, B502.MIO74_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  166
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.534 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 120.2 pF
-     total metal capacitance ........... 120.2 pF
-     total metal inductance ............ 255.2 nH
-     total metal resistance ............ 9.7 ohms
-     total metal length ................ 036.038 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = PRS_SPI1_MOSI_B00, B502.MIO75_B04, B502.MIO75_B03, B502.MIO75_B02, B502.MIO75_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  196
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.670 ns
-     minimum metal Z0 .................. 39.5 ohms
-     maximum metal Z0 .................. 93.5 ohms
-     total net capacitance (with ICs) .. 122.8 pF
-     total metal capacitance ........... 122.8 pF
-     total metal inductance ............ 262.0 nH
-     total metal resistance ............ 10.0 ohms
-     total metal length ................ 036.925 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SPI1_SCLK_B00, B502.MIO70_B04, B502.MIO70_B03, B502.MIO70_B02, B502.MIO70_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  204
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.632 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 122.1 pF
-     total metal capacitance ........... 122.1 pF
-     total metal inductance ............ 260.1 nH
-     total metal resistance ............ 10.0 ohms
-     total metal length ................ 036.672 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SPI1_SRS0_CS_N_B00, B502.MIO73_B02, B502.MIO73_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  88
-     IC drivers .........  0
-     IC receivers .......  6
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.758 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.7 ohms
-     total net capacitance (with ICs) .. 38.0 pF
-     total metal capacitance ........... 38.0 pF
-     total metal inductance ............ 81.5 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.445 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = PRS_SPI1_SRS1_CS_N_B00, B502.MIO72_B03, B502.MIO72_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  106
-     IC drivers .........  0
-     IC receivers .......  6
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.577 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 60.5 ohms
-     total net capacitance (with ICs) .. 77.6 pF
-     total metal capacitance ........... 77.6 pF
-     total metal inductance ............ 165.0 nH
-     total metal resistance ............ 6.3 ohms
-     total metal length ................ 023.292 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = PRS_SPI1_SRS2_CS_N_B00, B502.MIO71_B04, B502.MIO71_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  87
-     IC drivers .........  0
-     IC receivers .......  6
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.460 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.4 ohms
-     total net capacitance (with ICs) .. 53.2 pF
-     total metal capacitance ........... 53.2 pF
-     total metal inductance ............ 113.9 nH
-     total metal resistance ............ 4.4 ohms
-     total metal length ................ 016.015 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS0_DAC_TRIG_B00, PRS_SRS0_SE_GPIO_9_B00, B87_L10_P_B02, B87_L10_P_B01, B87_L10_N_B02, B87_L10_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  171
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.223 ns
-     minimum metal Z0 .................. 17.9 ohms
-     maximum metal Z0 .................. 69.8 ohms
-     total net capacitance (with ICs) .. 91.2 pF
-     total metal capacitance ........... 91.2 pF
-     total metal inductance ............ 195.8 nH
-     total metal resistance ............ 7.5 ohms
-     total metal length ................ 027.505 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS0_SE_GPIO_0_B00, PRS_SRS0_SE_GPIO_1_B00, B87_L1_P_B02, B87_L1_P_B01, B87_L1_N_B02, B87_L1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  166
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.097 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 97.6 ohms
-     total net capacitance (with ICs) .. 88.3 pF
-     total metal capacitance ........... 88.3 pF
-     total metal inductance ............ 190.7 nH
-     total metal resistance ............ 7.3 ohms
-     total metal length ................ 026.678 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = PRS_SRS0_SE_GPIO_2_B00, PRS_SRS0_SE_GPIO_3_B00, B87_L5_P_B02, B87_L5_P_B01, B87_L5_N_B02, B87_L5_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  175
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.012 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 89.4 ohms
-     total net capacitance (with ICs) .. 86.7 pF
-     total metal capacitance ........... 86.7 pF
-     total metal inductance ............ 186.0 nH
-     total metal resistance ............ 7.1 ohms
-     total metal length ................ 026.124 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS0_SE_GPIO_4_B00, PRS_SRS0_SE_GPIO_5_B00, B87_L3_P_B02, B87_L3_P_B01, B87_L3_N_B02, B87_L3_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  205
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.202 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 90.4 ohms
-     total net capacitance (with ICs) .. 90.9 pF
-     total metal capacitance ........... 90.9 pF
-     total metal inductance ............ 194.7 nH
-     total metal resistance ............ 7.4 ohms
-     total metal length ................ 027.373 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS0_SE_GPIO_6_B00, PRS_SRS0_ADC_TRIG_B00, B87_L4_P_B02, B87_L4_P_B01, B87_L4_N_B02, B87_L4_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  122
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.062 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.9 ohms
-     total net capacitance (with ICs) .. 87.8 pF
-     total metal capacitance ........... 87.8 pF
-     total metal inductance ............ 188.3 nH
-     total metal resistance ............ 7.2 ohms
-     total metal length ................ 026.456 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS1_ADC_TRIG_B00, PRS_SRS1_DAC_TRIG_B00, B87_L9_P_B03, B87_L9_P_B01, B87_L9_N_B03, B87_L9_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  164
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 6.241 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 89.9 ohms
-     total net capacitance (with ICs) .. 135.3 pF
-     total metal capacitance ........... 135.3 pF
-     total metal inductance ............ 288.3 nH
-     total metal resistance ............ 10.9 ohms
-     total metal length ................ 040.646 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SRS1_SE_GPIO_0_B00, PRS_SRS1_SE_GPIO_1_B00, B87_L7_P_B03, B87_L7_P_B01, B87_L7_N_B03, B87_L7_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  180
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.902 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 93.6 ohms
-     total net capacitance (with ICs) .. 128.1 pF
-     total metal capacitance ........... 128.1 pF
-     total metal inductance ............ 272.4 nH
-     total metal resistance ............ 10.3 ohms
-     total metal length ................ 038.442 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = PRS_SRS1_SE_GPIO_2_B00, PRS_SRS1_SE_GPIO_3_B00, B87_L11_P_B03, B87_L11_P_B01, B87_L11_N_B03, B87_L11_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  156
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.799 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 116.0 ohms
-     total net capacitance (with ICs) .. 125.7 pF
-     total metal capacitance ........... 125.7 pF
-     total metal inductance ............ 268.1 nH
-     total metal resistance ............ 10.1 ohms
-     total metal length ................ 037.769 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SRS1_SE_GPIO_4_B00, PRS_SRS1_SE_GPIO_5_B00, B87_L2_P_B03, B87_L2_P_B01, B87_L2_N_B03, B87_L2_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  148
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.782 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 80.0 ohms
-     total net capacitance (with ICs) .. 125.4 pF
-     total metal capacitance ........... 125.4 pF
-     total metal inductance ............ 267.1 nH
-     total metal resistance ............ 10.1 ohms
-     total metal length ................ 037.667 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SRS1_SE_GPIO_8_B00, PRS_SRS2_SE_GPIO_5_B00, B87_L6_P_B03, B87_L6_P_B01, B87_L6_N_B04, B87_L6_N_B01, B87_L6_N_B03, B87_L6_P_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  202
-     IC drivers .........  0
-     IC receivers .......  16
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.566 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 99.4 ohms
-     total net capacitance (with ICs) .. 120.2 pF
-     total metal capacitance ........... 120.2 pF
-     total metal inductance ............ 258.1 nH
-     total metal resistance ............ 10.0 ohms
-     total metal length ................ 036.254 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS2_ADC_TRIG_B00, B88_L3_P_B04, PRS_VX_SE_GPIO_7_B00, B88_L3_P_B01, B88_L3_N_B04, B88_L3_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  200
-     IC drivers .........  0
-     IC receivers .......  13
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.306 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.5 ohms
-     total net capacitance (with ICs) .. 71.1 pF
-     total metal capacitance ........... 71.1 pF
-     total metal inductance ............ 154.2 nH
-     total metal resistance ............ 6.0 ohms
-     total metal length ................ 021.577 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = PRS_SRS2_SE_GPIO_0_B00, PRS_SRS2_SE_GPIO_1_B00, B87_L8_P_B04, B87_L8_P_B01, B87_L8_N_B04, B87_L8_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  152
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.750 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 92.0 ohms
-     total net capacitance (with ICs) .. 81.2 pF
-     total metal capacitance ........... 81.2 pF
-     total metal inductance ............ 173.5 nH
-     total metal resistance ............ 6.7 ohms
-     total metal length ................ 024.426 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = PRS_SRS2_SE_GPIO_2_B00, PRS_SRS2_SE_GPIO_3_B00, B87_L12_P_B04, B87_L12_P_B01, B87_L12_N_B04, B87_L12_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.897 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 91.5 ohms
-     total net capacitance (with ICs) .. 84.3 pF
-     total metal capacitance ........... 84.3 pF
-     total metal inductance ............ 180.6 nH
-     total metal resistance ............ 7.0 ohms
-     total metal length ................ 025.385 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_SRS2_SE_GPIO_4_B00, PRS_SRS2_DAC_TRIG_B00, B88_L1_P_B04, B88_L1_P_B01, B88_L1_N_B04, B88_L1_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  194
-     IC drivers .........  0
-     IC receivers .......  12
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.029 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.7 ohms
-     total net capacitance (with ICs) .. 87.0 pF
-     total metal capacitance ........... 87.0 pF
-     total metal inductance ............ 187.0 nH
-     total metal resistance ............ 7.3 ohms
-     total metal length ................ 026.239 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = PRS_UCD_ALERT_B00, UCD.ALERT_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 693.545 ps
-     minimum metal Z0 .................. 39.9 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 14.7 pF
-     total metal capacitance ........... 14.7 pF
-     total metal inductance ............ 32.8 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.530 in
-     average metal Z0 .................. 47.3 ohms
-
-  NET = PRS_UCD_CNTRL_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.068 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 23.3 pF
-     total metal capacitance ........... 23.3 pF
-     total metal inductance ............ 49.0 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.979 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = PRS_USB_N_B00, PRS_USB_P_B00, USB_UART.D_N_B01, USB_UART.D_P_B01, R_USB_D_N_B01, R_USB_D_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  129
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  2
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.863 ns
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 38.8 pF
-     total metal capacitance ........... 38.8 pF
-     total metal inductance ............ 89.7 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 012.226 in
-     average metal Z0 .................. 48.1 ohms
-
-  NET = PRS_USB_VBUS_B00, USB_UART.VBUS_B01, VBUS_SENSE_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 821.391 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.9 ohms
-     total net capacitance (with ICs) .. 20.6 pF
-     total metal capacitance ........... 20.6 pF
-     total metal inductance ............ 32.9 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 005.360 in
-     average metal Z0 .................. 39.9 ohms
-
-  NET = PRS_VX_AXI_RX_0_P_B00, PRS_VX_AXI_RX_0_N_B00, B128.MGTY_RX0_P_B01, MGTYTXP0_233_B00, B128.MGTY_RX0_N_B01, MGTYTXN0_233_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  264
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.557 ns
-     minimum metal Z0 .................. 22.0 ohms
-     maximum metal Z0 .................. 103.9 ohms
-     total net capacitance (with ICs) .. 32.6 pF
-     total metal capacitance ........... 32.6 pF
-     total metal inductance ............ 75.3 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.140 in
-     average metal Z0 .................. 48.1 ohms
-
-  NET = PRS_VX_SE_GPIO_6_B00, PRS_RESET_N_B00, B88_L11_P_B01, B88_L11_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  145
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.185 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 61.9 ohms
-     total net capacitance (with ICs) .. 47.3 pF
-     total metal capacitance ........... 47.3 pF
-     total metal inductance ............ 101.4 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 014.255 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = PRS_VX_SE_GPIO_8_B00, PRS_VX_SE_GPIO_9_B00, EXT_SYNC_P_B01, EXT_SYNC_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  92
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  4
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.909 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 41.1 pF
-     total metal capacitance ........... 41.1 pF
-     total metal inductance ............ 89.3 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.528 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = PRS_VX_SE_GPIO_10_B00, PCIe_RESET_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  52
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.434 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 31.3 pF
-     total metal capacitance ........... 31.3 pF
-     total metal inductance ............ 66.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 009.534 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = PS_PCIE_REFCLK_N_B00, PS_PCIE_REFCLK_P_B00, PS_PCIE_REFCLK_N_OUT_B00, PS_PCIE_REFCLK_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  188
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.520 ns
-     minimum metal Z0 .................. 27.2 ohms
-     maximum metal Z0 .................. 497.2 ohms
-     total net capacitance (with ICs) .. 73.7 pF
-     total metal capacitance ........... 73.7 pF
-     total metal inductance ............ 168.3 nH
-     total metal resistance ............ 6.1 ohms
-     total metal length ................ 022.972 in
-     average metal Z0 .................. 47.8 ohms
-
-  NET = PS_PCIE_REFCLK_P_B01, PS_PCIE_REFCLK_N_B01, xPCIE_CLK0_P_B01, xPCIE_CLK0_N_B01, PCIE_CLK0_P_B01, PCIE_CLK0_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  4
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 647.870 ps
-     minimum metal Z0 .................. 49.2 ohms
-     maximum metal Z0 .................. 55.3 ohms
-     total net capacitance (with ICs) .. 13.1 pF
-     total metal capacitance ........... 13.1 pF
-     total metal inductance ............ 32.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 004.241 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = PS_PCIE_REFCLK_P_B02, PS_PCIE_REFCLK_N_B02, xPCIE_CLK0_P_B02, xPCIE_CLK0_N_B02, PCIE_CLK0_P_B02, PCIE_CLK0_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  4
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 647.868 ps
-     minimum metal Z0 .................. 49.2 ohms
-     maximum metal Z0 .................. 55.3 ohms
-     total net capacitance (with ICs) .. 13.1 pF
-     total metal capacitance ........... 13.1 pF
-     total metal inductance ............ 32.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 004.241 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = PS_PCIE_REFCLK_P_B03, PS_PCIE_REFCLK_N_B03, xPCIE_CLK0_P_B03, xPCIE_CLK0_N_B03, PCIE_CLK0_P_B03, PCIE_CLK0_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  4
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 647.870 ps
-     minimum metal Z0 .................. 49.2 ohms
-     maximum metal Z0 .................. 55.3 ohms
-     total net capacitance (with ICs) .. 13.1 pF
-     total metal capacitance ........... 13.1 pF
-     total metal inductance ............ 32.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 004.241 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = PS_PCIE_REFCLK_P_B04, PS_PCIE_REFCLK_N_B04, xPCIE_CLK0_P_B04, xPCIE_CLK0_N_B04, PCIE_CLK0_P_B04, PCIE_CLK0_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  4
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 647.869 ps
-     minimum metal Z0 .................. 49.2 ohms
-     maximum metal Z0 .................. 55.3 ohms
-     total net capacitance (with ICs) .. 13.1 pF
-     total metal capacitance ........... 13.1 pF
-     total metal inductance ............ 32.1 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 004.241 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = PS_RST_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.220 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 59.5 ohms
-     total net capacitance (with ICs) .. 48.6 pF
-     total metal capacitance ........... 48.6 pF
-     total metal inductance ............ 101.6 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 014.465 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = PS_UART_RX_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 460.445 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 10.1 pF
-     total metal capacitance ........... 10.1 pF
-     total metal inductance ............ 21.1 nH
-     total metal resistance ............ 721.3 milliohms
-     total metal length ................ 003.024 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = PS_VCCINT_RUN_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  7
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 55.148 ps
-     minimum metal Z0 .................. 34.0 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 1.3 pF
-     total metal capacitance ........... 1.3 pF
-     total metal inductance ............ 2.4 nH
-     total metal resistance ............ 28.5 milliohms
-     total metal length ................ 000.371 in
-     average metal Z0 .................. 42.6 ohms
-
-  NET = RUN_P1V2_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 132.423 ps
-     minimum metal Z0 .................. 45.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 2.8 pF
-     total metal capacitance ........... 2.8 pF
-     total metal inductance ............ 6.2 nH
-     total metal resistance ............ 156.0 milliohms
-     total metal length ................ 000.900 in
-     average metal Z0 .................. 46.8 ohms
-
-  NET = RUN_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  7
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 40.601 ps
-     minimum metal Z0 .................. 47.9 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 838.2 fF
-     total metal capacitance ........... 838.2 fF
-     total metal inductance ............ 2.0 nH
-     total metal resistance ............ 14.5 milliohms
-     total metal length ................ 000.296 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = RXLO_DISC_P_B00, RXLO_DISC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  44
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 372.532 ps
-     minimum metal Z0 .................. 55.5 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 5.6 pF
-     total metal capacitance ........... 5.6 pF
-     total metal inductance ............ 25.6 nH
-     total metal resistance ............ 570.7 milliohms
-     total metal length ................ 002.446 in
-     average metal Z0 .................. 67.7 ohms
-
-  NET = RXLO_MBUS_P_B00, RXLO_MBUS_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 129.625 ps
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 139.5 ohms
-     total net capacitance (with ICs) .. 2.3 pF
-     total metal capacitance ........... 2.3 pF
-     total metal inductance ............ 7.8 nH
-     total metal resistance ............ 65.9 milliohms
-     total metal length ................ 000.874 in
-     average metal Z0 .................. 59.0 ohms
-
-  NET = RXLO_MBUS_RX_P3V3_B00, $41N14297_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 322.916 ps
-     minimum metal Z0 .................. 41.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.1 pF
-     total metal capacitance ........... 7.1 pF
-     total metal inductance ............ 14.8 nH
-     total metal resistance ............ 500.9 milliohms
-     total metal length ................ 002.122 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = RXLO_MBUS_TX_B00, RXLO_MBUS_EN_B00, B89_L3_N_B01, B89_L3_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  97
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 947.259 ps
-     minimum metal Z0 .................. 44.8 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 20.2 pF
-     total metal capacitance ........... 20.2 pF
-     total metal inductance ............ 44.5 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 006.219 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = RXLO_SER_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 598.892 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 13.2 pF
-     total metal capacitance ........... 13.2 pF
-     total metal inductance ............ 27.3 nH
-     total metal resistance ............ 977.3 milliohms
-     total metal length ................ 003.911 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = RXLO_SPI_CS_N_B00, RXLO_DISC_B00, B89_L5_P_B01, B89_L5_N_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  81
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 927.078 ps
-     minimum metal Z0 .................. 44.0 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 19.8 pF
-     total metal capacitance ........... 19.8 pF
-     total metal inductance ............ 43.5 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 006.082 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = RXLO_SPI_CS_N_N_B00, RXLO_SPI_CS_N_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 268.398 ps
-     minimum metal Z0 .................. 56.8 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 4.0 pF
-     total metal capacitance ........... 4.0 pF
-     total metal inductance ............ 20.2 nH
-     total metal resistance ............ 411.5 milliohms
-     total metal length ................ 001.770 in
-     average metal Z0 .................. 71.5 ohms
-
-  NET = RXLO_SPI_SCLK_N_B00, RXLO_SPI_SCLK_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 129.093 ps
-     minimum metal Z0 .................. 55.6 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 1.9 pF
-     total metal capacitance ........... 1.9 pF
-     total metal inductance ............ 9.3 nH
-     total metal resistance ............ 188.2 milliohms
-     total metal length ................ 000.858 in
-     average metal Z0 .................. 70.3 ohms
-
-  NET = RXLO_SPI_SDO_B00, RXLO_SPI_SCLK_B00, B88_L9_N_B01, B88_L9_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  72
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 910.871 ps
-     minimum metal Z0 .................. 44.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 19.5 pF
-     total metal capacitance ........... 19.5 pF
-     total metal inductance ............ 42.7 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 005.979 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = RXLO_SPI_SDO_P_B00, RXLO_SPI_SDO_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 257.643 ps
-     minimum metal Z0 .................. 55.6 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 3.8 pF
-     total metal capacitance ........... 3.8 pF
-     total metal inductance ............ 19.4 nH
-     total metal resistance ............ 392.9 milliohms
-     total metal length ................ 001.702 in
-     average metal Z0 .................. 71.3 ohms
-
-  NET = SRS0_ADC0_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.950 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 87.8 ohms
-     total net capacitance (with ICs) .. 42.7 pF
-     total metal capacitance ........... 42.7 pF
-     total metal inductance ............ 89.3 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.713 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC0_N_B00, SRS0_ADC0_P_B00, ADC0_N_B02, $54N11310_B00, ADC0_P_B02, $54N11309_B00, $54N17699_B00, $54N11299_B00, $54N11295_B00, $54N11296_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  143
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.398 ns
-     minimum metal Z0 .................. 23.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 29.0 pF
-     total metal capacitance ........... 29.0 pF
-     total metal inductance ............ 68.0 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.143 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_ADC1_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.902 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 59.6 ohms
-     total net capacitance (with ICs) .. 41.5 pF
-     total metal capacitance ........... 41.5 pF
-     total metal inductance ............ 87.2 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 012.404 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC1_P_B00, SRS0_ADC1_N_B00, ADC1_P_B02, $54N11330_B00, ADC1_N_B02, $54N11331_B00, $54N11320_B00, $54N17695_B00, $54N11317_B00, $54N11316_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  254
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.595 ns
-     minimum metal Z0 .................. 25.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 33.1 pF
-     total metal capacitance ........... 33.1 pF
-     total metal inductance ............ 77.4 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.429 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_ADC2_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.864 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 40.7 pF
-     total metal capacitance ........... 40.7 pF
-     total metal inductance ............ 85.6 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 012.154 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = SRS0_ADC2_N_B00, SRS0_ADC2_P_B00, ADC2_N_B02, $54N11352_B00, ADC2_P_B02, $54N11351_B00, $54N17697_B00, $54N11341_B00, $54N11337_B00, $54N11338_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  147
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.443 ns
-     minimum metal Z0 .................. 23.8 ohms
-     maximum metal Z0 .................. 114.2 ohms
-     total net capacitance (with ICs) .. 29.9 pF
-     total metal capacitance ........... 29.9 pF
-     total metal inductance ............ 70.2 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 009.439 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_ADC3_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.851 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 40.5 pF
-     total metal capacitance ........... 40.5 pF
-     total metal inductance ............ 84.9 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 012.072 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC3_P_B00, SRS0_ADC3_N_B00, ADC3_P_B02, $54N11372_B00, ADC3_N_B02, $54N11373_B00, $54N11362_B00, $54N17693_B00, $54N11359_B00, $54N11358_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  266
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.746 ns
-     minimum metal Z0 .................. 28.9 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 36.1 pF
-     total metal capacitance ........... 36.1 pF
-     total metal inductance ............ 85.1 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.416 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS0_ADC4_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.812 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 39.6 pF
-     total metal capacitance ........... 39.6 pF
-     total metal inductance ............ 83.1 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 011.819 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC4_N_B00, SRS0_ADC4_P_B00, ADC4_N_B02, $57N11270_B00, ADC4_P_B02, $57N11269_B00, $57N17674_B00, $57N11259_B00, $57N11255_B00, $57N11256_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  154
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.659 ns
-     minimum metal Z0 .................. 23.8 ohms
-     maximum metal Z0 .................. 114.3 ohms
-     total net capacitance (with ICs) .. 34.4 pF
-     total metal capacitance ........... 34.4 pF
-     total metal inductance ............ 80.4 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 010.840 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS0_ADC5_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.649 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 96.2 ohms
-     total net capacitance (with ICs) .. 36.0 pF
-     total metal capacitance ........... 36.0 pF
-     total metal inductance ............ 75.8 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 010.756 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = SRS0_ADC5_P_B00, SRS0_ADC5_N_B00, ADC5_P_B02, $57N11290_B00, ADC5_N_B02, $57N11291_B00, $57N11280_B00, $57N17680_B00, $57N11277_B00, $57N11276_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  249
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.915 ns
-     minimum metal Z0 .................. 36.3 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 39.7 pF
-     total metal capacitance ........... 39.7 pF
-     total metal inductance ............ 92.7 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.512 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS0_ADC6_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.791 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 39.2 pF
-     total metal capacitance ........... 39.2 pF
-     total metal inductance ............ 82.0 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.676 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC6_N_B00, SRS0_ADC6_P_B00, ADC6_N_B02, $57N11312_B00, ADC6_P_B02, $57N11311_B00, $57N17676_B00, $57N11301_B00, $57N11297_B00, $57N11298_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  182
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.700 ns
-     minimum metal Z0 .................. 32.0 ohms
-     maximum metal Z0 .................. 116.1 ohms
-     total net capacitance (with ICs) .. 35.2 pF
-     total metal capacitance ........... 35.2 pF
-     total metal inductance ............ 82.6 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.110 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_ADC7_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.745 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 38.2 pF
-     total metal capacitance ........... 38.2 pF
-     total metal inductance ............ 79.9 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.381 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC7_P_B00, SRS0_ADC7_N_B00, ADC7_P_B02, $57N11332_B00, ADC7_N_B02, $57N11333_B00, $57N11322_B00, $57N17682_B00, $57N11319_B00, $57N11318_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  418
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.882 ns
-     minimum metal Z0 .................. 25.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 39.0 pF
-     total metal capacitance ........... 39.0 pF
-     total metal inductance ............ 91.6 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 012.299 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS0_ADC8_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.171 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 47.5 pF
-     total metal capacitance ........... 47.5 pF
-     total metal inductance ............ 99.5 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 014.159 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC8_N_B00, SRS0_ADC8_P_B00, ADC8_N_B02, $57N11354_B00, ADC8_P_B02, $57N11353_B00, $57N17678_B00, $57N11343_B00, $57N11339_B00, $57N11340_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  229
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 878.740 ps
-     minimum metal Z0 .................. 35.7 ohms
-     maximum metal Z0 .................. 103.1 ohms
-     total net capacitance (with ICs) .. 17.9 pF
-     total metal capacitance ........... 17.9 pF
-     total metal inductance ............ 43.4 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 005.760 in
-     average metal Z0 .................. 49.2 ohms
-
-  NET = SRS0_ADC9_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.982 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 43.2 pF
-     total metal capacitance ........... 43.2 pF
-     total metal inductance ............ 91.0 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 012.927 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = SRS0_ADC9_P_B00, SRS0_ADC9_N_B00, ADC9_P_B02, $59N11307_B00, ADC9_N_B02, $59N11308_B00, $59N11297_B00, $59N17720_B00, $59N11294_B00, $59N11293_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  348
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.043 ns
-     minimum metal Z0 .................. 27.0 ohms
-     maximum metal Z0 .................. 102.4 ohms
-     total net capacitance (with ICs) .. 21.5 pF
-     total metal capacitance ........... 21.5 pF
-     total metal inductance ............ 51.1 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.833 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = SRS0_ADC10_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  53
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.046 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 102.6 ohms
-     total net capacitance (with ICs) .. 44.6 pF
-     total metal capacitance ........... 44.6 pF
-     total metal inductance ............ 94.0 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 013.343 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = SRS0_ADC10_N_B00, SRS0_ADC10_P_B00, ADC10_N_B02, $59N11329_B00, ADC10_P_B02, $59N11328_B00, $59N17716_B00, $59N11318_B00, $59N11314_B00, $59N11315_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  170
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 897.064 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 101.6 ohms
-     total net capacitance (with ICs) .. 18.3 pF
-     total metal capacitance ........... 18.3 pF
-     total metal inductance ............ 44.5 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 005.879 in
-     average metal Z0 .................. 49.3 ohms
-
-  NET = SRS0_ADC11_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  56
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.932 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 58.7 ohms
-     total net capacitance (with ICs) .. 42.1 pF
-     total metal capacitance ........... 42.1 pF
-     total metal inductance ............ 88.8 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.596 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = SRS0_ADC11_P_B00, SRS0_ADC11_N_B00, ADC11_P_B02, $59N11349_B00, ADC11_N_B02, $59N11350_B00, $59N11339_B00, $59N17718_B00, $59N11336_B00, $59N11335_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  364
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.096 ns
-     minimum metal Z0 .................. 23.9 ohms
-     maximum metal Z0 .................. 121.7 ohms
-     total net capacitance (with ICs) .. 22.5 pF
-     total metal capacitance ........... 22.5 pF
-     total metal inductance ............ 54.0 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 007.178 in
-     average metal Z0 .................. 48.9 ohms
-
-  NET = SRS0_ADC12_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  58
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.017 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 44.1 pF
-     total metal capacitance ........... 44.1 pF
-     total metal inductance ............ 92.5 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.154 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC12_N_B00, SRS0_ADC12_P_B00, ADC12_N_B02, $59N11371_B00, ADC12_P_B02, $59N11370_B00, $59N17714_B00, $59N11360_B00, $59N11356_B00, $59N11357_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  237
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 941.302 ps
-     minimum metal Z0 .................. 32.4 ohms
-     maximum metal Z0 .................. 101.6 ohms
-     total net capacitance (with ICs) .. 19.2 pF
-     total metal capacitance ........... 19.2 pF
-     total metal inductance ............ 46.5 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 006.167 in
-     average metal Z0 .................. 49.2 ohms
-
-  NET = SRS0_ADC13_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  50
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.973 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 43.1 pF
-     total metal capacitance ........... 43.1 pF
-     total metal inductance ............ 90.4 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 012.867 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_ADC13_P_B00, SRS0_ADC13_N_B00, ADC13_P_B02, $59N11391_B00, ADC13_N_B02, $59N11392_B00, $59N11381_B00, $59N17712_B00, $59N11378_B00, $59N11377_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  297
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.162 ns
-     minimum metal Z0 .................. 24.3 ohms
-     maximum metal Z0 .................. 111.2 ohms
-     total net capacitance (with ICs) .. 24.1 pF
-     total metal capacitance ........... 24.1 pF
-     total metal inductance ............ 56.4 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.610 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_ADC14_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  55
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.026 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 97.7 ohms
-     total net capacitance (with ICs) .. 44.5 pF
-     total metal capacitance ........... 44.5 pF
-     total metal inductance ............ 92.6 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.213 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS0_ADC14_N_B00, SRS0_ADC14_P_B00, ADC14_N_B02, $58N11285_B00, ADC14_P_B02, $58N11284_B00, $58N17716_B00, $58N11274_B00, $58N11270_B00, $58N11271_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  172
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 996.358 ps
-     minimum metal Z0 .................. 40.4 ohms
-     maximum metal Z0 .................. 101.6 ohms
-     total net capacitance (with ICs) .. 20.3 pF
-     total metal capacitance ........... 20.3 pF
-     total metal inductance ............ 49.1 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.526 in
-     average metal Z0 .................. 49.2 ohms
-
-  NET = SRS0_ADC15_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.926 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 42.1 pF
-     total metal capacitance ........... 42.1 pF
-     total metal inductance ............ 88.2 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.564 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS0_ADC15_P_B00, SRS0_ADC15_N_B00, ADC15_P_B02, $58N11305_B00, ADC15_N_B02, $58N11306_B00, $58N11295_B00, $58N17714_B00, $58N11292_B00, $58N11291_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  217
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.213 ns
-     minimum metal Z0 .................. 24.3 ohms
-     maximum metal Z0 .................. 101.6 ohms
-     total net capacitance (with ICs) .. 25.0 pF
-     total metal capacitance ........... 25.0 pF
-     total metal inductance ............ 59.2 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 007.940 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS0_DAC0_N_B00, SRS0_DAC0_P_B00, DAC0_IOUT_N_B02, $62N6114_B00, DAC0_IOUT_P_B02, $62N6113_B00, $62N6118_B00, $62N6117_B00, SRS0_DAC0_P_OUT_B00, SRS0_DAC0_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  167
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.893 ns
-     minimum metal Z0 .................. 31.2 ohms
-     maximum metal Z0 .................. 108.2 ohms
-     total net capacitance (with ICs) .. 39.2 pF
-     total metal capacitance ........... 39.2 pF
-     total metal inductance ............ 91.6 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.358 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS0_DAC1_P_B00, SRS0_DAC1_N_B00, DAC1_IOUT_P_B02, $62N6127_B00, DAC1_IOUT_N_B02, $62N6128_B00, $62N6131_B00, $62N6132_B00, SRS0_DAC1_N_OUT_B00, SRS0_DAC1_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  207
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.539 ns
-     minimum metal Z0 .................. 24.3 ohms
-     maximum metal Z0 .................. 121.0 ohms
-     total net capacitance (with ICs) .. 32.0 pF
-     total metal capacitance ........... 32.0 pF
-     total metal inductance ............ 74.8 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 010.054 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS0_DAC2_N_B00, SRS0_DAC2_P_B00, DAC2_IOUT_N_B02, $62N9054_B00, DAC2_IOUT_P_B02, $62N9053_B00, $62N9058_B00, $62N9057_B00, SRS0_DAC2_P_OUT_B00, SRS0_DAC2_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  268
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.867 ns
-     minimum metal Z0 .................. 30.3 ohms
-     maximum metal Z0 .................. 82.9 ohms
-     total net capacitance (with ICs) .. 38.8 pF
-     total metal capacitance ........... 38.8 pF
-     total metal inductance ............ 90.2 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.195 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS0_DAC3_P_B00, SRS0_DAC3_N_B00, DAC3_IOUT_P_B02, $62N9067_B00, DAC3_IOUT_N_B02, $62N9068_B00, $62N9071_B00, $62N9072_B00, SRS0_DAC3_N_OUT_B00, SRS0_DAC3_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  260
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.486 ns
-     minimum metal Z0 .................. 28.9 ohms
-     maximum metal Z0 .................. 92.5 ohms
-     total net capacitance (with ICs) .. 30.8 pF
-     total metal capacitance ........... 30.8 pF
-     total metal inductance ............ 71.9 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 009.709 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS0_DAC4_N_B00, SRS0_DAC4_P_B00, DAC4_IOUT_N_B02, $67N3120_B00, DAC4_IOUT_P_B02, $67N3119_B00, $67N3124_B00, $67N3123_B00, SRS0_DAC4_P_OUT_B00, SRS0_DAC4_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  133
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.784 ns
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 108.1 ohms
-     total net capacitance (with ICs) .. 37.0 pF
-     total metal capacitance ........... 37.0 pF
-     total metal inductance ............ 86.5 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 011.648 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_DAC5_P_B00, SRS0_DAC5_N_B00, DAC5_IOUT_P_B02, $67N3859_B00, DAC5_IOUT_N_B02, $67N3860_B00, $67N3863_B00, $67N3864_B00, SRS0_DAC5_N_OUT_B00, SRS0_DAC5_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  243
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.365 ns
-     minimum metal Z0 .................. 24.1 ohms
-     maximum metal Z0 .................. 121.0 ohms
-     total net capacitance (with ICs) .. 28.3 pF
-     total metal capacitance ........... 28.3 pF
-     total metal inductance ............ 66.4 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.918 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_DAC6_N_B00, SRS0_DAC6_P_B00, DAC6_IOUT_N_B02, $67N4602_B00, DAC6_IOUT_P_B02, $67N4601_B00, $67N4606_B00, $67N4605_B00, SRS0_DAC6_P_OUT_B00, SRS0_DAC6_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  255
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.729 ns
-     minimum metal Z0 .................. 30.4 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 35.8 pF
-     total metal capacitance ........... 35.8 pF
-     total metal inductance ............ 83.8 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.293 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_DAC7_P_B00, SRS0_DAC7_N_B00, DAC7_IOUT_P_B02, $67N4615_B00, DAC7_IOUT_N_B02, $67N4616_B00, $67N4619_B00, $67N4620_B00, SRS0_DAC7_N_OUT_B00, SRS0_DAC7_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  294
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.331 ns
-     minimum metal Z0 .................. 24.3 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 27.7 pF
-     total metal capacitance ........... 27.7 pF
-     total metal inductance ............ 64.4 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.696 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS0_DAC8_N_B00, SRS0_DAC8_P_B00, DAC8_IOUT_N_B02, $67N6086_B00, DAC8_IOUT_P_B02, $67N6085_B00, $67N6090_B00, $67N6089_B00, SRS0_DAC8_P_OUT_B00, SRS0_DAC8_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.324 ns
-     minimum metal Z0 .................. 34.0 ohms
-     maximum metal Z0 .................. 100.1 ohms
-     total net capacitance (with ICs) .. 27.4 pF
-     total metal capacitance ........... 27.4 pF
-     total metal inductance ............ 64.2 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.649 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_DAC9_P_B00, SRS0_DAC9_N_B00, DAC9_IOUT_P_B02, $67N6099_B00, DAC9_IOUT_N_B02, $67N6100_B00, $67N6103_B00, $67N6104_B00, SRS0_DAC9_N_OUT_B00, SRS0_DAC9_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  214
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.148 ns
-     minimum metal Z0 .................. 34.6 ohms
-     maximum metal Z0 .................. 122.9 ohms
-     total net capacitance (with ICs) .. 23.6 pF
-     total metal capacitance ........... 23.6 pF
-     total metal inductance ............ 56.3 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.508 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = SRS0_DAC10_N_B00, SRS0_DAC10_P_B00, DAC10_IOUT_N_B02, $67N6114_B00, DAC10_IOUT_P_B02, $67N6113_B00, $67N6118_B00, $67N6117_B00, SRS0_DAC10_P_OUT_B00, SRS0_DAC10_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  171
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.515 ns
-     minimum metal Z0 .................. 24.7 ohms
-     maximum metal Z0 .................. 67.6 ohms
-     total net capacitance (with ICs) .. 31.5 pF
-     total metal capacitance ........... 31.5 pF
-     total metal inductance ............ 73.1 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.898 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS0_DAC11_P_B00, SRS0_DAC11_N_B00, DAC11_IOUT_P_B02, $67N6127_B00, DAC11_IOUT_N_B02, $67N6128_B00, $67N6131_B00, $67N6132_B00, SRS0_DAC11_N_OUT_B00, SRS0_DAC11_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  185
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.106 ns
-     minimum metal Z0 .................. 34.6 ohms
-     maximum metal Z0 .................. 80.1 ohms
-     total net capacitance (with ICs) .. 22.9 pF
-     total metal capacitance ........... 22.9 pF
-     total metal inductance ............ 53.5 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 007.230 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_DAC12_N_B00, SRS0_DAC12_P_B00, DAC12_IOUT_N_B02, $67N9054_B00, DAC12_IOUT_P_B02, $67N9053_B00, $67N9057_B00, $67N9058_B00, SRS0_DAC12_N_OUT_B00, SRS0_DAC12_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  139
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.508 ns
-     minimum metal Z0 .................. 24.7 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 31.4 pF
-     total metal capacitance ........... 31.4 pF
-     total metal inductance ............ 72.9 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.851 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS0_DAC13_P_B00, SRS0_DAC13_N_B00, DAC13_IOUT_P_B02, $67N9067_B00, DAC13_IOUT_N_B02, $67N9068_B00, $67N9071_B00, $67N9072_B00, SRS0_DAC13_N_OUT_B00, SRS0_DAC13_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  221
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.309 ns
-     minimum metal Z0 .................. 25.5 ohms
-     maximum metal Z0 .................. 124.7 ohms
-     total net capacitance (with ICs) .. 27.2 pF
-     total metal capacitance ........... 27.2 pF
-     total metal inductance ............ 63.7 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 008.557 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS0_DAC14_N_B00, SRS0_DAC14_P_B00, DAC14_IOUT_N_B02, $68N3120_B00, DAC14_IOUT_P_B02, $68N3119_B00, $68N3123_B00, $68N3124_B00, SRS0_DAC14_N_OUT_B00, SRS0_DAC14_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  109
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.209 ns
-     minimum metal Z0 .................. 33.4 ohms
-     maximum metal Z0 .................. 97.0 ohms
-     total net capacitance (with ICs) .. 25.0 pF
-     total metal capacitance ........... 25.0 pF
-     total metal inductance ............ 58.7 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 007.906 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS0_DAC15_P_B00, SRS0_DAC15_N_B00, DAC15_IOUT_P_B02, $68N3859_B00, DAC15_IOUT_N_B02, $68N3860_B00, SRS0_DAC15_N_OUT_B00, $68N3863_B00, $68N3864_B00, SRS0_DAC15_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.219 ns
-     minimum metal Z0 .................. 24.7 ohms
-     maximum metal Z0 .................. 100.7 ohms
-     total net capacitance (with ICs) .. 25.4 pF
-     total metal capacitance ........... 25.4 pF
-     total metal inductance ............ 58.9 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 007.971 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS0_EXT_CLK_P_B00, SRS0_EXT_CLK_N_B00, EXT_REFCLK_P_B02, EXT_CLK_OUT_P_B02, EXT_REFCLK_N_B02, EXT_CLK_OUT_N_B02, REFCLK_VREF_B02, xEXT_CLK_OUT_P_B02, xEXT_CLK_OUT_N_B02, OSC_REFCLK_N_B02, OSC_REFCLK_P_B02, xOSC_REFCLK_N_B02, xOSC_REFCLK_P_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  168
-     IC drivers .........  0
-     IC receivers .......  15
-     resistors ..........  8
-     capacitors .........  5
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.168 ns
-     minimum metal Z0 .................. 46.1 ohms
-     maximum metal Z0 .................. 55.7 ohms
-     total net capacitance (with ICs) .. 23.1 pF
-     total metal capacitance ........... 23.1 pF
-     total metal inductance ............ 59.2 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.859 in
-     average metal Z0 .................. 50.6 ohms
-
-  NET = SRS0_PLL_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.386 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 30.3 pF
-     total metal capacitance ........... 30.3 pF
-     total metal inductance ............ 63.4 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.045 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS0_RESET_N_B00, B89_L5_P_B02, B89_L5_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  93
-     IC drivers .........  0
-     IC receivers .......  7
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.347 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 50.7 pF
-     total metal capacitance ........... 50.7 pF
-     total metal inductance ............ 108.8 nH
-     total metal resistance ............ 4.1 ohms
-     total metal length ................ 015.297 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = SRS0_UCD_ALERT_B00, UCD.ALERT_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 688.123 ps
-     minimum metal Z0 .................. 39.9 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 32.5 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.496 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = SRS0_UCD_ALERT_P1V8_B00, $43N19744_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  66
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.129 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 46.6 pF
-     total metal capacitance ........... 46.6 pF
-     total metal inductance ............ 97.4 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.887 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS0_UCD_CLK_B00, UCD.CLK_B02, $43N19745_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 654.856 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 103.5 ohms
-     total net capacitance (with ICs) .. 13.9 pF
-     total metal capacitance ........... 13.9 pF
-     total metal inductance ............ 30.9 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.294 in
-     average metal Z0 .................. 47.1 ohms
-
-  NET = SRS0_UCD_CLK_P1V8_B00, $43N19749_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  53
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.144 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 47.0 pF
-     total metal capacitance ........... 47.0 pF
-     total metal inductance ............ 98.0 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.983 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS0_UCD_CNTRL_B00, UCD.CNTRL_B02, $43N19747_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 681.809 ps
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 80.4 ohms
-     total net capacitance (with ICs) .. 14.6 pF
-     total metal capacitance ........... 14.6 pF
-     total metal inductance ............ 32.0 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.466 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = SRS0_UCD_CNTRL_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  62
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.141 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 46.7 pF
-     total metal capacitance ........... 46.7 pF
-     total metal inductance ............ 98.2 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.974 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS0_UCD_DATA_B00, UCD.DATA_B02, $43N19746_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 650.211 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 13.8 pF
-     total metal capacitance ........... 13.8 pF
-     total metal inductance ............ 30.7 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.258 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = SRS0_UCD_DATA_P1V8_B00, $43N19748_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  72
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.140 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 46.8 pF
-     total metal capacitance ........... 46.8 pF
-     total metal inductance ............ 97.9 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.957 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS0_USB_P_B00, SRS0_USB_N_B00, USB_UART.D_P_B02, USB_UART.D_N_B02, R_USB_D_P_B02, R_USB_D_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  119
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  2
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.009 ns
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 57.5 ohms
-     total net capacitance (with ICs) .. 42.1 pF
-     total metal capacitance ........... 42.1 pF
-     total metal inductance ............ 96.1 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 013.172 in
-     average metal Z0 .................. 47.8 ohms
-
-  NET = SRS0_USB_VBUS_B00, USB_UART.VBUS_B02, VBUS_SENSE_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.221 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 27.6 pF
-     total metal capacitance ........... 27.6 pF
-     total metal inductance ............ 54.3 nH
-     total metal resistance ............ 898.0 milliohms
-     total metal length ................ 008.007 in
-     average metal Z0 .................. 44.4 ohms
-
-  NET = SRS1_ADC0_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.819 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 58.3 ohms
-     total net capacitance (with ICs) .. 39.9 pF
-     total metal capacitance ........... 39.9 pF
-     total metal inductance ............ 83.2 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 011.858 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC0_N_B00, SRS1_ADC0_P_B00, ADC0_N_B03, $58N11327_B00, ADC0_P_B03, $58N11326_B00, $58N17718_B00, $58N11316_B00, $58N11312_B00, $58N11313_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  150
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.429 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 29.4 pF
-     total metal capacitance ........... 29.4 pF
-     total metal inductance ............ 69.7 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.344 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = SRS1_ADC1_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.820 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 39.9 pF
-     total metal capacitance ........... 39.9 pF
-     total metal inductance ............ 83.3 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 011.871 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC1_P_B00, SRS1_ADC1_N_B00, ADC1_P_B03, $58N11347_B00, ADC1_N_B03, $58N11348_B00, $58N11337_B00, $58N17720_B00, $58N11334_B00, $58N11333_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  263
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.718 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 35.5 pF
-     total metal capacitance ........... 35.5 pF
-     total metal inductance ............ 83.5 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.232 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_ADC2_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.768 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 103.0 ohms
-     total net capacitance (with ICs) .. 38.8 pF
-     total metal capacitance ........... 38.8 pF
-     total metal inductance ............ 80.8 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.528 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS1_ADC2_N_B00, SRS1_ADC2_P_B00, ADC2_N_B03, $58N11369_B00, ADC2_P_B03, $58N11368_B00, $58N17722_B00, $58N11358_B00, $58N11354_B00, $58N11355_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  198
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.483 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 109.6 ohms
-     total net capacitance (with ICs) .. 30.4 pF
-     total metal capacitance ........... 30.4 pF
-     total metal inductance ............ 72.7 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 009.701 in
-     average metal Z0 .................. 48.9 ohms
-
-  NET = SRS1_ADC3_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.771 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 96.5 ohms
-     total net capacitance (with ICs) .. 38.8 pF
-     total metal capacitance ........... 38.8 pF
-     total metal inductance ............ 81.1 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.552 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC3_P_B00, SRS1_ADC3_N_B00, ADC3_P_B03, $60N11289_B00, ADC3_N_B03, $60N11290_B00, $60N11279_B00, $60N17724_B00, $60N11276_B00, $60N11275_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  273
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.775 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 36.6 pF
-     total metal capacitance ........... 36.6 pF
-     total metal inductance ............ 86.3 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.601 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_ADC4_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.784 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 103.0 ohms
-     total net capacitance (with ICs) .. 39.1 pF
-     total metal capacitance ........... 39.1 pF
-     total metal inductance ............ 81.5 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.630 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC4_N_B00, SRS1_ADC4_P_B00, ADC4_N_B03, $60N11311_B00, ADC4_P_B03, $60N11310_B00, $60N17732_B00, $60N11300_B00, $60N11296_B00, $60N11297_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  164
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.645 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 107.1 ohms
-     total net capacitance (with ICs) .. 33.9 pF
-     total metal capacitance ........... 33.9 pF
-     total metal inductance ............ 80.1 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 010.751 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS1_ADC5_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.761 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 95.0 ohms
-     total net capacitance (with ICs) .. 38.6 pF
-     total metal capacitance ........... 38.6 pF
-     total metal inductance ............ 80.6 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.483 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC5_P_B00, SRS1_ADC5_N_B00, ADC5_P_B03, $60N11331_B00, ADC5_N_B03, $60N11332_B00, $60N11321_B00, $60N17726_B00, $60N11318_B00, $60N11317_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  263
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.914 ns
-     minimum metal Z0 .................. 30.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 39.5 pF
-     total metal capacitance ........... 39.5 pF
-     total metal inductance ............ 92.9 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.505 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_ADC6_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.713 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 101.7 ohms
-     total net capacitance (with ICs) .. 37.6 pF
-     total metal capacitance ........... 37.6 pF
-     total metal inductance ............ 78.3 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.171 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS1_ADC6_N_B00, SRS1_ADC6_P_B00, ADC6_N_B03, $60N11353_B00, ADC6_P_B03, $60N11352_B00, $60N17730_B00, $60N11342_B00, $60N11338_B00, $60N11339_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  189
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.698 ns
-     minimum metal Z0 .................. 39.9 ohms
-     maximum metal Z0 .................. 100.9 ohms
-     total net capacitance (with ICs) .. 34.9 pF
-     total metal capacitance ........... 34.9 pF
-     total metal inductance ............ 82.7 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.094 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS1_ADC7_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.807 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 93.2 ohms
-     total net capacitance (with ICs) .. 39.6 pF
-     total metal capacitance ........... 39.6 pF
-     total metal inductance ............ 82.6 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 011.783 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC7_P_B00, SRS1_ADC7_N_B00, ADC7_P_B03, $60N11373_B00, ADC7_N_B03, $60N11374_B00, $60N11363_B00, $60N17728_B00, $60N11360_B00, $60N11359_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  421
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.882 ns
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 38.9 pF
-     total metal capacitance ........... 38.9 pF
-     total metal inductance ............ 91.4 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 012.294 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_ADC8_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.278 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 49.9 pF
-     total metal capacitance ........... 49.9 pF
-     total metal inductance ............ 104.2 nH
-     total metal resistance ............ 3.8 ohms
-     total metal length ................ 014.856 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC8_N_B00, SRS1_ADC8_P_B00, ADC8_N_B03, $61N11285_B00, ADC8_P_B03, $61N11284_B00, $61N17719_B00, $61N11274_B00, $61N11270_B00, $61N11271_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  234
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 927.681 ps
-     minimum metal Z0 .................. 33.7 ohms
-     maximum metal Z0 .................. 100.7 ohms
-     total net capacitance (with ICs) .. 18.9 pF
-     total metal capacitance ........... 18.9 pF
-     total metal inductance ............ 45.7 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 006.079 in
-     average metal Z0 .................. 49.1 ohms
-
-  NET = SRS1_ADC9_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.290 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 68.2 ohms
-     total net capacitance (with ICs) .. 50.2 pF
-     total metal capacitance ........... 50.2 pF
-     total metal inductance ............ 104.7 nH
-     total metal resistance ............ 3.8 ohms
-     total metal length ................ 014.934 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC9_P_B00, SRS1_ADC9_N_B00, ADC9_P_B03, $61N11305_B00, ADC9_N_B03, $61N11306_B00, $61N11295_B00, $61N17721_B00, $61N11292_B00, $61N11291_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  397
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.099 ns
-     minimum metal Z0 .................. 29.6 ohms
-     maximum metal Z0 .................. 99.6 ohms
-     total net capacitance (with ICs) .. 22.6 pF
-     total metal capacitance ........... 22.6 pF
-     total metal inductance ............ 53.8 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 007.197 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = SRS1_ADC10_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  60
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.521 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 55.3 pF
-     total metal capacitance ........... 55.3 pF
-     total metal inductance ............ 115.2 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.439 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS1_ADC10_N_B00, SRS1_ADC10_P_B00, ADC10_N_B03, $61N11327_B00, ADC10_P_B03, $61N11326_B00, $61N17723_B00, $61N11316_B00, $61N11312_B00, $61N11313_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  180
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 917.925 ps
-     minimum metal Z0 .................. 39.9 ohms
-     maximum metal Z0 .................. 100.8 ohms
-     total net capacitance (with ICs) .. 18.6 pF
-     total metal capacitance ........... 18.6 pF
-     total metal inductance ............ 45.5 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 006.015 in
-     average metal Z0 .................. 49.4 ohms
-
-  NET = SRS1_ADC11_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  51
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.289 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 50.1 pF
-     total metal capacitance ........... 50.1 pF
-     total metal inductance ............ 104.7 nH
-     total metal resistance ............ 3.8 ohms
-     total metal length ................ 014.924 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC11_P_B00, SRS1_ADC11_N_B00, ADC11_P_B03, $61N11347_B00, ADC11_N_B03, $61N11348_B00, $61N11337_B00, $61N17727_B00, $61N11334_B00, $61N11333_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  399
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.141 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 98.9 ohms
-     total net capacitance (with ICs) .. 23.4 pF
-     total metal capacitance ........... 23.4 pF
-     total metal inductance ............ 55.8 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.472 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = SRS1_ADC12_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.202 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 48.3 pF
-     total metal capacitance ........... 48.3 pF
-     total metal inductance ............ 100.6 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 014.358 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC12_N_B00, SRS1_ADC12_P_B00, ADC12_N_B03, $61N11369_B00, ADC12_P_B03, $61N11368_B00, $61N17725_B00, $61N11358_B00, $61N11354_B00, $61N11355_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  229
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 984.865 ps
-     minimum metal Z0 .................. 32.4 ohms
-     maximum metal Z0 .................. 99.9 ohms
-     total net capacitance (with ICs) .. 20.1 pF
-     total metal capacitance ........... 20.1 pF
-     total metal inductance ............ 48.5 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.451 in
-     average metal Z0 .................. 49.1 ohms
-
-  NET = SRS1_ADC13_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  40
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.218 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 87.4 ohms
-     total net capacitance (with ICs) .. 48.6 pF
-     total metal capacitance ........... 48.6 pF
-     total metal inductance ............ 101.4 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 014.462 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC13_P_B00, SRS1_ADC13_N_B00, ADC13_P_B03, $66N11289_B00, ADC13_N_B03, $66N11290_B00, $66N11279_B00, $66N17724_B00, $66N11276_B00, $66N11275_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  358
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.693 ns
-     minimum metal Z0 .................. 28.7 ohms
-     maximum metal Z0 .................. 99.5 ohms
-     total net capacitance (with ICs) .. 35.0 pF
-     total metal capacitance ........... 35.0 pF
-     total metal inductance ............ 82.3 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.071 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_ADC14_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.097 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 95.0 ohms
-     total net capacitance (with ICs) .. 46.0 pF
-     total metal capacitance ........... 46.0 pF
-     total metal inductance ............ 95.9 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.673 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC14_N_B00, SRS1_ADC14_P_B00, ADC14_N_B03, $66N11311_B00, ADC14_P_B03, $66N11310_B00, $66N17728_B00, $66N11300_B00, $66N11296_B00, $66N11297_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  187
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.497 ns
-     minimum metal Z0 .................. 44.5 ohms
-     maximum metal Z0 .................. 98.9 ohms
-     total net capacitance (with ICs) .. 30.7 pF
-     total metal capacitance ........... 30.7 pF
-     total metal inductance ............ 73.2 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.790 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = SRS1_ADC15_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.164 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 75.0 ohms
-     total net capacitance (with ICs) .. 47.4 pF
-     total metal capacitance ........... 47.4 pF
-     total metal inductance ............ 99.0 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 014.116 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_ADC15_P_B00, SRS1_ADC15_N_B00, ADC15_P_B03, $66N11331_B00, ADC15_N_B03, $66N11332_B00, $66N11321_B00, $66N17726_B00, $66N11318_B00, $66N11317_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  221
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.617 ns
-     minimum metal Z0 .................. 29.0 ohms
-     maximum metal Z0 .................. 106.4 ohms
-     total net capacitance (with ICs) .. 33.3 pF
-     total metal capacitance ........... 33.3 pF
-     total metal inductance ............ 78.9 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 010.570 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = SRS1_DAC0_N_B00, SRS1_DAC0_P_B00, DAC0_IOUT_N_B03, $68N4602_B00, DAC0_IOUT_P_B03, $68N4601_B00, $68N4606_B00, $68N4605_B00, SRS1_DAC0_P_OUT_B00, SRS1_DAC0_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  214
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.907 ns
-     minimum metal Z0 .................. 33.2 ohms
-     maximum metal Z0 .................. 134.1 ohms
-     total net capacitance (with ICs) .. 39.7 pF
-     total metal capacitance ........... 39.7 pF
-     total metal inductance ............ 92.1 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.451 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS1_DAC1_P_B00, SRS1_DAC1_N_B00, DAC1_IOUT_P_B03, $68N4615_B00, DAC1_IOUT_N_B03, $68N4616_B00, SRS1_DAC1_N_OUT_B00, $68N4619_B00, $68N4620_B00, SRS1_DAC1_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  211
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.548 ns
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 32.0 pF
-     total metal capacitance ........... 32.0 pF
-     total metal inductance ............ 75.6 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.116 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS1_DAC2_N_B00, SRS1_DAC2_P_B00, DAC2_IOUT_N_B03, $68N6086_B00, DAC2_IOUT_P_B03, $68N6085_B00, $68N6090_B00, $68N6089_B00, SRS1_DAC2_P_OUT_B00, SRS1_DAC2_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  309
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.916 ns
-     minimum metal Z0 .................. 28.7 ohms
-     maximum metal Z0 .................. 133.9 ohms
-     total net capacitance (with ICs) .. 39.9 pF
-     total metal capacitance ........... 39.9 pF
-     total metal inductance ............ 92.5 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.512 in
-     average metal Z0 .................. 48.1 ohms
-
-  NET = SRS1_DAC3_P_B00, SRS1_DAC3_N_B00, DAC3_IOUT_P_B03, $68N6099_B00, DAC3_IOUT_N_B03, $68N6100_B00, $68N6103_B00, $68N6104_B00, SRS1_DAC3_N_OUT_B00, SRS1_DAC3_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  261
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.520 ns
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 125.9 ohms
-     total net capacitance (with ICs) .. 31.5 pF
-     total metal capacitance ........... 31.5 pF
-     total metal inductance ............ 73.9 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 009.931 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS1_DAC4_N_B00, SRS1_DAC4_P_B00, DAC4_IOUT_N_B03, $68N6114_B00, DAC4_IOUT_P_B03, $68N6113_B00, $68N6118_B00, $68N6117_B00, SRS1_DAC4_P_OUT_B00, SRS1_DAC4_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  164
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.810 ns
-     minimum metal Z0 .................. 33.2 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 37.7 pF
-     total metal capacitance ........... 37.7 pF
-     total metal inductance ............ 87.5 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 011.818 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS1_DAC5_P_B00, SRS1_DAC5_N_B00, DAC5_IOUT_P_B03, $68N6127_B00, DAC5_IOUT_N_B03, $68N6128_B00, SRS1_DAC5_N_OUT_B00, $68N6131_B00, $68N6132_B00, SRS1_DAC5_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  260
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.356 ns
-     minimum metal Z0 .................. 30.0 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 28.0 pF
-     total metal capacitance ........... 28.0 pF
-     total metal inductance ............ 66.4 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.863 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = SRS1_DAC6_N_B00, SRS1_DAC6_P_B00, DAC6_IOUT_N_B03, $68N9054_B00, DAC6_IOUT_P_B03, $68N9053_B00, $68N9058_B00, $68N9057_B00, SRS1_DAC6_P_OUT_B00, SRS1_DAC6_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  259
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.729 ns
-     minimum metal Z0 .................. 40.0 ohms
-     maximum metal Z0 .................. 135.1 ohms
-     total net capacitance (with ICs) .. 35.9 pF
-     total metal capacitance ........... 35.9 pF
-     total metal inductance ............ 83.8 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.293 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS1_DAC7_P_B00, SRS1_DAC7_N_B00, DAC7_IOUT_P_B03, $68N9067_B00, DAC7_IOUT_N_B03, $68N9068_B00, $68N9071_B00, $68N9072_B00, SRS1_DAC7_N_OUT_B00, SRS1_DAC7_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  307
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.336 ns
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 27.7 pF
-     total metal capacitance ........... 27.7 pF
-     total metal inductance ............ 65.1 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.735 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_DAC8_N_B00, SRS1_DAC8_P_B00, DAC8_IOUT_N_B03, $69N3120_B00, DAC8_IOUT_P_B03, $69N3119_B00, $69N3124_B00, $69N3123_B00, SRS1_DAC8_P_OUT_B00, SRS1_DAC8_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  160
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.328 ns
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 111.4 ohms
-     total net capacitance (with ICs) .. 27.7 pF
-     total metal capacitance ........... 27.7 pF
-     total metal inductance ............ 64.1 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.678 in
-     average metal Z0 .................. 48.1 ohms
-
-  NET = SRS1_DAC9_P_B00, SRS1_DAC9_N_B00, DAC9_IOUT_P_B03, $69N3859_B00, DAC9_IOUT_N_B03, $69N3860_B00, $69N3863_B00, $69N3864_B00, SRS1_DAC9_N_OUT_B00, SRS1_DAC9_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  218
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.159 ns
-     minimum metal Z0 .................. 33.8 ohms
-     maximum metal Z0 .................. 117.7 ohms
-     total net capacitance (with ICs) .. 24.0 pF
-     total metal capacitance ........... 24.0 pF
-     total metal inductance ............ 56.7 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.582 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = SRS1_DAC10_N_B00, SRS1_DAC10_P_B00, DAC10_IOUT_N_B03, $69N4602_B00, DAC10_IOUT_P_B03, $69N4601_B00, $69N4606_B00, $69N4605_B00, SRS1_DAC10_P_OUT_B00, SRS1_DAC10_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  199
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.578 ns
-     minimum metal Z0 .................. 33.9 ohms
-     maximum metal Z0 .................. 109.3 ohms
-     total net capacitance (with ICs) .. 32.7 pF
-     total metal capacitance ........... 32.7 pF
-     total metal inductance ............ 76.5 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.312 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS1_DAC11_P_B00, SRS1_DAC11_N_B00, DAC11_IOUT_P_B03, $69N4615_B00, DAC11_IOUT_N_B03, $69N4616_B00, $69N4619_B00, $69N4620_B00, SRS1_DAC11_N_OUT_B00, SRS1_DAC11_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  179
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.114 ns
-     minimum metal Z0 .................. 33.8 ohms
-     maximum metal Z0 .................. 115.4 ohms
-     total net capacitance (with ICs) .. 23.1 pF
-     total metal capacitance ........... 23.1 pF
-     total metal inductance ............ 54.2 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.284 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS1_DAC12_N_B00, SRS1_DAC12_P_B00, DAC12_IOUT_N_B03, $69N6086_B00, DAC12_IOUT_P_B03, $69N6085_B00, $69N6090_B00, $69N6089_B00, SRS1_DAC12_P_OUT_B00, SRS1_DAC12_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  175
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.579 ns
-     minimum metal Z0 .................. 28.6 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 32.8 pF
-     total metal capacitance ........... 32.8 pF
-     total metal inductance ............ 76.5 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.316 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS1_DAC13_P_B00, SRS1_DAC13_N_B00, DAC13_IOUT_P_B03, $69N6099_B00, DAC13_IOUT_N_B03, $69N6100_B00, $69N6103_B00, $69N6104_B00, SRS1_DAC13_N_OUT_B00, SRS1_DAC13_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  220
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.341 ns
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 112.7 ohms
-     total net capacitance (with ICs) .. 27.7 pF
-     total metal capacitance ........... 27.7 pF
-     total metal inductance ............ 65.5 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.769 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS1_DAC14_N_B00, SRS1_DAC14_P_B00, DAC14_IOUT_N_B03, $69N6114_B00, DAC14_IOUT_P_B03, $69N6113_B00, $69N6117_B00, $69N6118_B00, SRS1_DAC14_N_OUT_B00, SRS1_DAC14_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  112
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.223 ns
-     minimum metal Z0 .................. 35.2 ohms
-     maximum metal Z0 .................. 114.1 ohms
-     total net capacitance (with ICs) .. 25.3 pF
-     total metal capacitance ........... 25.3 pF
-     total metal inductance ............ 59.8 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 007.997 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = SRS1_DAC15_P_B00, SRS1_DAC15_N_B00, DAC15_IOUT_P_B03, $69N6127_B00, DAC15_IOUT_N_B03, $69N6128_B00, $69N6131_B00, $69N6132_B00, SRS1_DAC15_N_OUT_B00, SRS1_DAC15_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  154
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.234 ns
-     minimum metal Z0 .................. 35.2 ohms
-     maximum metal Z0 .................. 112.3 ohms
-     total net capacitance (with ICs) .. 25.5 pF
-     total metal capacitance ........... 25.5 pF
-     total metal inductance ............ 60.1 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 008.068 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS1_EXT_CLK_P_B00, SRS1_EXT_CLK_N_B00, EXT_REFCLK_P_B03, EXT_CLK_OUT_P_B03, EXT_REFCLK_N_B03, EXT_CLK_OUT_N_B03, REFCLK_VREF_B03, xEXT_CLK_OUT_P_B03, xEXT_CLK_OUT_N_B03, OSC_REFCLK_N_B03, OSC_REFCLK_P_B03, xOSC_REFCLK_N_B03, xOSC_REFCLK_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  172
-     IC drivers .........  0
-     IC receivers .......  15
-     resistors ..........  8
-     capacitors .........  5
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.155 ns
-     minimum metal Z0 .................. 44.9 ohms
-     maximum metal Z0 .................. 55.7 ohms
-     total net capacitance (with ICs) .. 22.8 pF
-     total metal capacitance ........... 22.8 pF
-     total metal inductance ............ 58.6 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 007.769 in
-     average metal Z0 .................. 50.6 ohms
-
-  NET = SRS1_PLL_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.105 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 24.2 pF
-     total metal capacitance ........... 24.2 pF
-     total metal inductance ............ 50.6 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.206 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS1_RESET_N_B00, B89_L5_P_B03, B89_L5_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  76
-     IC drivers .........  0
-     IC receivers .......  7
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.085 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 45.2 pF
-     total metal capacitance ........... 45.2 pF
-     total metal inductance ............ 96.3 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 013.589 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = SRS1_UCD_ALERT_B00, UCD.ALERT_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 682.758 ps
-     minimum metal Z0 .................. 42.0 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 14.5 pF
-     total metal capacitance ........... 14.5 pF
-     total metal inductance ............ 32.3 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.459 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = SRS1_UCD_ALERT_P1V8_B00, $43N19828_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.882 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 46.0 ohms
-     total net capacitance (with ICs) .. 41.3 pF
-     total metal capacitance ........... 41.3 pF
-     total metal inductance ............ 85.8 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 012.277 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS1_UCD_CLK_B00, UCD.CLK_B03, $43N19830_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 656.548 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 50.7 ohms
-     total net capacitance (with ICs) .. 13.9 pF
-     total metal capacitance ........... 13.9 pF
-     total metal inductance ............ 31.0 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.303 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = SRS1_UCD_CLK_P1V8_B00, $43N19831_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.743 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 56.2 ohms
-     total net capacitance (with ICs) .. 38.2 pF
-     total metal capacitance ........... 38.2 pF
-     total metal inductance ............ 79.7 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.373 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS1_UCD_CNTRL_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.690 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 37.0 pF
-     total metal capacitance ........... 37.0 pF
-     total metal inductance ............ 77.2 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.022 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS1_UCD_DATA_P1V8_B00, $43N19829_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.843 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 46.0 ohms
-     total net capacitance (with ICs) .. 40.5 pF
-     total metal capacitance ........... 40.5 pF
-     total metal inductance ............ 84.0 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 012.022 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS1_USB_P_B00, SRS1_USB_N_B00, USB_UART.D_P_B03, USB_UART.D_N_B03, R_USB_D_P_B03, R_USB_D_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  116
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  2
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.880 ns
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 57.5 ohms
-     total net capacitance (with ICs) .. 39.3 pF
-     total metal capacitance ........... 39.3 pF
-     total metal inductance ............ 90.1 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 012.327 in
-     average metal Z0 .................. 47.9 ohms
-
-  NET = SRS1_USB_VBUS_B00, USB_UART.VBUS_B03, VBUS_SENSE_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 998.614 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 22.2 pF
-     total metal capacitance ........... 22.2 pF
-     total metal inductance ............ 45.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.515 in
-     average metal Z0 .................. 45.1 ohms
-
-  NET = SRS2_ADC0_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.057 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 87.8 ohms
-     total net capacitance (with ICs) .. 23.3 pF
-     total metal capacitance ........... 23.3 pF
-     total metal inductance ............ 48.3 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.900 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC0_N_B00, SRS2_ADC0_P_B00, ADC0_N_B04, $66N11353_B00, ADC0_P_B04, $66N11352_B00, $66N17730_B00, $66N11342_B00, $66N11338_B00, $66N11339_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  144
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.410 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 29.1 pF
-     total metal capacitance ........... 29.1 pF
-     total metal inductance ............ 68.6 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.220 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_ADC1_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.060 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.6 ohms
-     total net capacitance (with ICs) .. 23.3 pF
-     total metal capacitance ........... 23.3 pF
-     total metal inductance ............ 48.4 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.917 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC1_P_B00, SRS2_ADC1_N_B00, ADC1_P_B04, $66N11373_B00, ADC1_N_B04, $66N11374_B00, $66N11363_B00, $66N17732_B00, $66N11360_B00, $66N11359_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  265
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.601 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 33.2 pF
-     total metal capacitance ........... 33.2 pF
-     total metal inductance ............ 77.7 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.469 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_ADC2_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.013 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 71.9 ohms
-     total net capacitance (with ICs) .. 22.2 pF
-     total metal capacitance ........... 22.2 pF
-     total metal inductance ............ 46.3 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.607 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC2_N_B00, SRS2_ADC2_P_B00, ADC2_N_B04, $64N11290_B00, ADC2_P_B04, $64N11289_B00, $64N17732_B00, $64N11279_B00, $64N11275_B00, $64N11276_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.431 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 135.4 ohms
-     total net capacitance (with ICs) .. 29.6 pF
-     total metal capacitance ........... 29.6 pF
-     total metal inductance ............ 69.6 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.361 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_ADC3_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.012 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 22.3 pF
-     total metal capacitance ........... 22.3 pF
-     total metal inductance ............ 46.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.603 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC3_P_B00, SRS2_ADC3_N_B00, ADC3_P_B04, $64N11310_B00, ADC3_N_B04, $64N11311_B00, $64N11300_B00, $64N17730_B00, $64N11297_B00, $64N11296_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  277
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.739 ns
-     minimum metal Z0 .................. 30.1 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 36.0 pF
-     total metal capacitance ........... 36.0 pF
-     total metal inductance ............ 84.6 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 011.366 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_ADC4_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 877.294 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 71.9 ohms
-     total net capacitance (with ICs) .. 19.3 pF
-     total metal capacitance ........... 19.3 pF
-     total metal inductance ............ 40.1 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.726 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC4_N_B00, SRS2_ADC4_P_B00, ADC4_N_B04, $64N11332_B00, ADC4_P_B04, $64N11331_B00, $64N17726_B00, $64N11321_B00, $64N11317_B00, $64N11318_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  165
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.627 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 135.4 ohms
-     total net capacitance (with ICs) .. 33.7 pF
-     total metal capacitance ........... 33.7 pF
-     total metal inductance ............ 79.0 nH
-     total metal resistance ............ 3.1 ohms
-     total metal length ................ 010.639 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_ADC5_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.045 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 23.0 pF
-     total metal capacitance ........... 23.0 pF
-     total metal inductance ............ 47.6 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.817 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC5_P_B00, SRS2_ADC5_N_B00, ADC5_P_B04, $64N11352_B00, ADC5_N_B04, $64N11353_B00, $64N11342_B00, $64N17728_B00, $64N11339_B00, $64N11338_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  257
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.910 ns
-     minimum metal Z0 .................. 35.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 39.6 pF
-     total metal capacitance ........... 39.6 pF
-     total metal inductance ............ 92.5 nH
-     total metal resistance ............ 3.6 ohms
-     total metal length ................ 012.479 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_ADC6_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 796.992 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 17.6 pF
-     total metal capacitance ........... 17.6 pF
-     total metal inductance ............ 36.3 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.202 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC6_N_B00, SRS2_ADC6_P_B00, ADC6_N_B04, $64N11374_B00, ADC6_P_B04, $64N11373_B00, $64N17724_B00, $64N11363_B00, $64N11359_B00, $64N11360_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  190
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.698 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 135.6 ohms
-     total net capacitance (with ICs) .. 35.1 pF
-     total metal capacitance ........... 35.1 pF
-     total metal inductance ............ 82.5 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 011.097 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_ADC7_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 810.013 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 17.8 pF
-     total metal capacitance ........... 17.8 pF
-     total metal inductance ............ 36.9 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.288 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC7_P_B00, SRS2_ADC7_N_B00, ADC7_P_B04, $65N11289_B00, ADC7_N_B04, $65N11290_B00, $65N11279_B00, $65N20797_B00, $65N11276_B00, $65N11275_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  382
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.861 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 38.6 pF
-     total metal capacitance ........... 38.6 pF
-     total metal inductance ............ 90.6 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 012.164 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_ADC8_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  55
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.250 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 100.7 ohms
-     total net capacitance (with ICs) .. 27.4 pF
-     total metal capacitance ........... 27.4 pF
-     total metal inductance ............ 57.1 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 008.153 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC8_N_B00, SRS2_ADC8_P_B00, ADC8_N_B04, $65N11311_B00, ADC8_P_B04, $65N11310_B00, $65N20795_B00, $65N11300_B00, $65N11296_B00, $65N11297_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  236
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 880.832 ps
-     minimum metal Z0 .................. 33.6 ohms
-     maximum metal Z0 .................. 117.5 ohms
-     total net capacitance (with ICs) .. 17.9 pF
-     total metal capacitance ........... 17.9 pF
-     total metal inductance ............ 43.8 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 005.775 in
-     average metal Z0 .................. 49.5 ohms
-
-  NET = SRS2_ADC9_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.161 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 25.5 pF
-     total metal capacitance ........... 25.5 pF
-     total metal inductance ............ 52.9 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 007.577 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC9_P_B00, SRS2_ADC9_N_B00, ADC9_P_B04, $65N11331_B00, ADC9_N_B04, $65N11332_B00, $65N11321_B00, $65N20791_B00, $65N11318_B00, $65N11317_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  348
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.033 ns
-     minimum metal Z0 .................. 36.3 ohms
-     maximum metal Z0 .................. 129.7 ohms
-     total net capacitance (with ICs) .. 21.2 pF
-     total metal capacitance ........... 21.2 pF
-     total metal inductance ............ 50.8 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.766 in
-     average metal Z0 .................. 49.0 ohms
-
-  NET = SRS2_ADC10_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.316 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 102.6 ohms
-     total net capacitance (with ICs) .. 28.9 pF
-     total metal capacitance ........... 28.9 pF
-     total metal inductance ............ 60.1 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 008.584 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC10_N_B00, SRS2_ADC10_P_B00, ADC10_N_B04, $65N11353_B00, ADC10_P_B04, $65N11352_B00, $65N20793_B00, $65N11342_B00, $65N11338_B00, $65N11339_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  172
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 899.197 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 137.2 ohms
-     total net capacitance (with ICs) .. 18.3 pF
-     total metal capacitance ........... 18.3 pF
-     total metal inductance ............ 44.7 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 005.894 in
-     average metal Z0 .................. 49.4 ohms
-
-  NET = SRS2_ADC11_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  49
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.029 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 58.7 ohms
-     total net capacitance (with ICs) .. 22.5 pF
-     total metal capacitance ........... 22.5 pF
-     total metal inductance ............ 47.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.714 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SRS2_ADC11_P_B00, SRS2_ADC11_N_B00, ADC11_P_B04, $65N11373_B00, ADC11_N_B04, $65N11374_B00, $65N11363_B00, $65N20789_B00, $65N11360_B00, $65N11359_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  360
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.076 ns
-     minimum metal Z0 .................. 30.2 ohms
-     maximum metal Z0 .................. 129.6 ohms
-     total net capacitance (with ICs) .. 22.1 pF
-     total metal capacitance ........... 22.1 pF
-     total metal inductance ............ 53.1 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 007.045 in
-     average metal Z0 .................. 49.1 ohms
-
-  NET = SRS2_ADC12_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 968.407 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 52.0 ohms
-     total net capacitance (with ICs) .. 21.3 pF
-     total metal capacitance ........... 21.3 pF
-     total metal inductance ............ 44.2 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.321 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC12_N_B00, SRS2_ADC12_P_B00, ADC12_N_B04, $27N10825_B00, ADC12_P_B04, $27N10824_B00, $27N17201_B00, $27N10814_B00, $27N10810_B00, $27N10811_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  233
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 956.001 ps
-     minimum metal Z0 .................. 32.4 ohms
-     maximum metal Z0 .................. 129.7 ohms
-     total net capacitance (with ICs) .. 19.5 pF
-     total metal capacitance ........... 19.5 pF
-     total metal inductance ............ 47.4 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 006.264 in
-     average metal Z0 .................. 49.3 ohms
-
-  NET = SRS2_ADC13_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  44
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.003 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 22.1 pF
-     total metal capacitance ........... 22.1 pF
-     total metal inductance ............ 45.7 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.548 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC13_P_B00, SRS2_ADC13_N_B00, ADC13_P_B04, $27N10845_B00, ADC13_N_B04, $27N10846_B00, $27N10835_B00, $27N17207_B00, $27N10832_B00, $27N10831_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  302
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.147 ns
-     minimum metal Z0 .................. 29.0 ohms
-     maximum metal Z0 .................. 129.7 ohms
-     total net capacitance (with ICs) .. 23.7 pF
-     total metal capacitance ........... 23.7 pF
-     total metal inductance ............ 56.0 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.510 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS2_ADC14_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 996.889 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 97.7 ohms
-     total net capacitance (with ICs) .. 22.0 pF
-     total metal capacitance ........... 22.0 pF
-     total metal inductance ............ 45.4 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.506 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = SRS2_ADC14_N_B00, SRS2_ADC14_P_B00, ADC14_N_B04, $27N10867_B00, ADC14_P_B04, $27N10866_B00, $27N17203_B00, $27N10856_B00, $27N10852_B00, $27N10853_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  175
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 999.644 ps
-     minimum metal Z0 .................. 39.9 ohms
-     maximum metal Z0 .................. 125.4 ohms
-     total net capacitance (with ICs) .. 20.4 pF
-     total metal capacitance ........... 20.4 pF
-     total metal inductance ............ 49.5 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 006.548 in
-     average metal Z0 .................. 49.3 ohms
-
-  NET = SRS2_ADC15_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  44
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 895.009 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 74.9 ohms
-     total net capacitance (with ICs) .. 19.6 pF
-     total metal capacitance ........... 19.6 pF
-     total metal inductance ............ 40.9 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 005.844 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = SRS2_ADC15_P_B00, SRS2_ADC15_N_B00, ADC15_P_B04, $27N10887_B00, ADC15_N_B04, $27N10888_B00, $27N10877_B00, $27N17205_B00, $27N10874_B00, $27N10873_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  213
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  4
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.208 ns
-     minimum metal Z0 .................. 29.0 ohms
-     maximum metal Z0 .................. 129.8 ohms
-     total net capacitance (with ICs) .. 24.8 pF
-     total metal capacitance ........... 24.8 pF
-     total metal inductance ............ 59.2 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 007.906 in
-     average metal Z0 .................. 48.8 ohms
-
-  NET = SRS2_DAC0_N_B00, SRS2_DAC0_P_B00, DAC0_IOUT_N_B04, $69N9054_B00, DAC0_IOUT_P_B04, $69N9053_B00, $69N9058_B00, $69N9057_B00, SRS2_DAC0_P_OUT_B00, SRS2_DAC0_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  197
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.919 ns
-     minimum metal Z0 .................. 32.5 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 39.7 pF
-     total metal capacitance ........... 39.7 pF
-     total metal inductance ............ 93.0 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 012.530 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_DAC1_P_B00, SRS2_DAC1_N_B00, DAC1_IOUT_P_B04, $69N9067_B00, DAC1_IOUT_N_B04, $69N9068_B00, $69N9071_B00, $69N9072_B00, SRS2_DAC1_N_OUT_B00, SRS2_DAC1_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  210
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.550 ns
-     minimum metal Z0 .................. 30.0 ohms
-     maximum metal Z0 .................. 122.3 ohms
-     total net capacitance (with ICs) .. 32.2 pF
-     total metal capacitance ........... 32.2 pF
-     total metal inductance ............ 75.0 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.123 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_DAC2_N_B00, SRS2_DAC2_P_B00, DAC2_IOUT_N_B04, $70N3120_B00, DAC2_IOUT_P_B04, $70N3119_B00, $70N3124_B00, $70N3123_B00, SRS2_DAC2_P_OUT_B00, SRS2_DAC2_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  301
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.924 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 39.8 pF
-     total metal capacitance ........... 39.8 pF
-     total metal inductance ............ 93.5 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 012.565 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_DAC3_P_B00, SRS2_DAC3_N_B00, DAC3_IOUT_P_B04, $70N3859_B00, DAC3_IOUT_N_B04, $70N3860_B00, $70N3863_B00, $70N3864_B00, SRS2_DAC3_N_OUT_B00, SRS2_DAC3_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  257
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.541 ns
-     minimum metal Z0 .................. 30.0 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 31.9 pF
-     total metal capacitance ........... 31.9 pF
-     total metal inductance ............ 74.6 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 010.064 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_DAC4_N_B00, SRS2_DAC4_P_B00, DAC4_IOUT_N_B04, $70N4602_B00, DAC4_IOUT_P_B04, $70N4601_B00, $70N4606_B00, $70N4605_B00, SRS2_DAC4_P_OUT_B00, SRS2_DAC4_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  162
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.842 ns
-     minimum metal Z0 .................. 32.5 ohms
-     maximum metal Z0 .................. 114.5 ohms
-     total net capacitance (with ICs) .. 38.1 pF
-     total metal capacitance ........... 38.1 pF
-     total metal inductance ............ 89.6 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 012.029 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_DAC5_P_B00, SRS2_DAC5_N_B00, DAC5_IOUT_P_B04, $70N4615_B00, DAC5_IOUT_N_B04, $70N4616_B00, $70N4619_B00, $70N4620_B00, SRS2_DAC5_N_OUT_B00, SRS2_DAC5_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  257
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.390 ns
-     minimum metal Z0 .................. 30.0 ohms
-     maximum metal Z0 .................. 122.6 ohms
-     total net capacitance (with ICs) .. 28.9 pF
-     total metal capacitance ........... 28.9 pF
-     total metal inductance ............ 67.3 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 009.078 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_DAC6_N_B00, SRS2_DAC6_P_B00, DAC6_IOUT_N_B04, $70N6086_B00, DAC6_IOUT_P_B04, $70N6085_B00, $70N6090_B00, $70N6089_B00, SRS2_DAC6_P_OUT_B00, SRS2_DAC6_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  279
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.771 ns
-     minimum metal Z0 .................. 41.3 ohms
-     maximum metal Z0 .................. 510.7 ohms
-     total net capacitance (with ICs) .. 36.6 pF
-     total metal capacitance ........... 36.6 pF
-     total metal inductance ............ 86.1 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 011.572 in
-     average metal Z0 .................. 48.5 ohms
-
-  NET = SRS2_DAC7_P_B00, SRS2_DAC7_N_B00, DAC7_IOUT_P_B04, $70N6099_B00, DAC7_IOUT_N_B04, $70N6100_B00, $70N6103_B00, $70N6104_B00, SRS2_DAC7_N_OUT_B00, SRS2_DAC7_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  300
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.359 ns
-     minimum metal Z0 .................. 30.0 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 28.2 pF
-     total metal capacitance ........... 28.2 pF
-     total metal inductance ............ 65.8 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 008.879 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_DAC8_N_B00, SRS2_DAC8_P_B00, DAC8_IOUT_N_B04, $70N6114_B00, DAC8_IOUT_P_B04, $70N6113_B00, $70N6118_B00, $70N6117_B00, SRS2_DAC8_P_OUT_B00, SRS2_DAC8_N_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  158
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.299 ns
-     minimum metal Z0 .................. 32.5 ohms
-     maximum metal Z0 .................. 101.1 ohms
-     total net capacitance (with ICs) .. 26.9 pF
-     total metal capacitance ........... 26.9 pF
-     total metal inductance ............ 62.9 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 008.487 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_DAC9_P_B00, SRS2_DAC9_N_B00, DAC9_IOUT_P_B04, $70N6127_B00, DAC9_IOUT_N_B04, $70N6128_B00, SRS2_DAC9_N_OUT_B00, $70N6131_B00, $70N6132_B00, SRS2_DAC9_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  220
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.138 ns
-     minimum metal Z0 .................. 32.5 ohms
-     maximum metal Z0 .................. 125.6 ohms
-     total net capacitance (with ICs) .. 23.5 pF
-     total metal capacitance ........... 23.5 pF
-     total metal inductance ............ 55.5 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.438 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS2_DAC10_N_B00, SRS2_DAC10_P_B00, DAC10_IOUT_N_B04, $70N9054_B00, DAC10_IOUT_P_B04, $70N9053_B00, $70N9057_B00, $70N9058_B00, SRS2_DAC10_N_OUT_B00, SRS2_DAC10_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  209
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.542 ns
-     minimum metal Z0 .................. 33.7 ohms
-     maximum metal Z0 .................. 98.7 ohms
-     total net capacitance (with ICs) .. 31.9 pF
-     total metal capacitance ........... 31.9 pF
-     total metal inductance ............ 74.8 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.072 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_DAC11_P_B00, SRS2_DAC11_N_B00, DAC11_IOUT_P_B04, $70N9067_B00, DAC11_IOUT_N_B04, $70N9068_B00, SRS2_DAC11_N_OUT_B00, $70N9071_B00, $70N9072_B00, SRS2_DAC11_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  191
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.111 ns
-     minimum metal Z0 .................. 32.5 ohms
-     maximum metal Z0 .................. 98.9 ohms
-     total net capacitance (with ICs) .. 23.0 pF
-     total metal capacitance ........... 23.0 pF
-     total metal inductance ............ 53.7 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.265 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_DAC12_N_B00, SRS2_DAC12_P_B00, DAC12_IOUT_N_B04, $71N3120_B00, DAC12_IOUT_P_B04, $71N3119_B00, $71N3123_B00, $71N3124_B00, SRS2_DAC12_N_OUT_B00, SRS2_DAC12_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  196
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.564 ns
-     minimum metal Z0 .................. 33.7 ohms
-     maximum metal Z0 .................. 478.5 ohms
-     total net capacitance (with ICs) .. 32.5 pF
-     total metal capacitance ........... 32.5 pF
-     total metal inductance ............ 75.4 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 010.218 in
-     average metal Z0 .................. 48.2 ohms
-
-  NET = SRS2_DAC13_P_B00, SRS2_DAC13_N_B00, DAC13_IOUT_P_B04, $71N3859_B00, DAC13_IOUT_N_B04, $71N3860_B00, SRS2_DAC13_N_OUT_B00, $71N3863_B00, $71N3864_B00, SRS2_DAC13_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  232
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.329 ns
-     minimum metal Z0 .................. 35.4 ohms
-     maximum metal Z0 .................. 125.8 ohms
-     total net capacitance (with ICs) .. 27.5 pF
-     total metal capacitance ........... 27.5 pF
-     total metal inductance ............ 64.5 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 008.689 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = SRS2_DAC14_N_B00, SRS2_DAC14_P_B00, DAC14_IOUT_N_B04, $71N4602_B00, DAC14_IOUT_P_B04, $71N4601_B00, $71N4605_B00, $71N4606_B00, SRS2_DAC14_N_OUT_B00, SRS2_DAC14_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  133
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.220 ns
-     minimum metal Z0 .................. 32.5 ohms
-     maximum metal Z0 .................. 113.6 ohms
-     total net capacitance (with ICs) .. 25.1 pF
-     total metal capacitance ........... 25.1 pF
-     total metal inductance ............ 59.6 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 007.978 in
-     average metal Z0 .................. 48.7 ohms
-
-  NET = SRS2_DAC15_P_B00, SRS2_DAC15_N_B00, DAC15_IOUT_P_B04, $71N4615_B00, DAC15_IOUT_N_B04, $71N4616_B00, SRS2_DAC15_N_OUT_B00, $71N4619_B00, $71N4620_B00, SRS2_DAC15_P_OUT_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  153
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  5
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.244 ns
-     minimum metal Z0 .................. 33.7 ohms
-     maximum metal Z0 .................. 99.5 ohms
-     total net capacitance (with ICs) .. 25.8 pF
-     total metal capacitance ........... 25.8 pF
-     total metal inductance ............ 60.2 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 008.135 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SRS2_EXT_CLK_P_B00, SRS2_EXT_CLK_N_B00, EXT_REFCLK_P_B04, EXT_CLK_OUT_P_B04, EXT_REFCLK_N_B04, EXT_CLK_OUT_N_B04, REFCLK_VREF_B04, xEXT_CLK_OUT_P_B04, xEXT_CLK_OUT_N_B04, OSC_REFCLK_N_B04, OSC_REFCLK_P_B04, xOSC_REFCLK_N_B04, xOSC_REFCLK_P_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  168
-     IC drivers .........  0
-     IC receivers .......  15
-     resistors ..........  8
-     capacitors .........  5
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.170 ns
-     minimum metal Z0 .................. 46.1 ohms
-     maximum metal Z0 .................. 55.7 ohms
-     total net capacitance (with ICs) .. 23.2 pF
-     total metal capacitance ........... 23.2 pF
-     total metal inductance ............ 59.3 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 007.867 in
-     average metal Z0 .................. 50.6 ohms
-
-  NET = SRS2_PLL_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.107 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 24.2 pF
-     total metal capacitance ........... 24.2 pF
-     total metal inductance ............ 50.7 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.230 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = SRS2_RESET_N_B00, B89_L5_P_B04, B89_L5_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  80
-     IC drivers .........  0
-     IC receivers .......  7
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.372 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 29.6 pF
-     total metal capacitance ........... 29.6 pF
-     total metal inductance ............ 63.8 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 008.944 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = SRS2_UCD_ALERT_B00, UCD.ALERT_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 709.115 ps
-     minimum metal Z0 .................. 41.5 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 15.0 pF
-     total metal capacitance ........... 15.0 pF
-     total metal inductance ............ 33.5 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.632 in
-     average metal Z0 .................. 47.2 ohms
-
-  NET = SRS2_UCD_ALERT_P1V8_B00, $43N19788_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 630.209 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 13.9 pF
-     total metal capacitance ........... 13.9 pF
-     total metal inductance ............ 28.6 nH
-     total metal resistance ............ 971.4 milliohms
-     total metal length ................ 004.139 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = SRS2_UCD_CLK_P1V8_B00, $43N19785_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 589.314 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 48.1 ohms
-     total net capacitance (with ICs) .. 13.0 pF
-     total metal capacitance ........... 13.0 pF
-     total metal inductance ............ 26.8 nH
-     total metal resistance ............ 937.7 milliohms
-     total metal length ................ 003.860 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = SRS2_UCD_CNTRL_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 627.725 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 13.7 pF
-     total metal capacitance ........... 13.7 pF
-     total metal inductance ............ 28.9 nH
-     total metal resistance ............ 955.7 milliohms
-     total metal length ................ 004.139 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = SRS2_UCD_DATA_P1V8_B00, $43N19790_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 650.013 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.1 ohms
-     total net capacitance (with ICs) .. 14.4 pF
-     total metal capacitance ........... 14.4 pF
-     total metal inductance ............ 29.5 nH
-     total metal resistance ............ 1.0 ohms
-     total metal length ................ 004.262 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = SRS2_USB_N_B00, SRS2_USB_P_B00, USB_UART.D_N_B04, USB_UART.D_P_B04, R_USB_D_N_B04, R_USB_D_P_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  122
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  2
-     capacitors .........  2
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.874 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 122.1 ohms
-     total net capacitance (with ICs) .. 38.6 pF
-     total metal capacitance ........... 38.6 pF
-     total metal inductance ............ 91.2 nH
-     total metal resistance ............ 3.8 ohms
-     total metal length ................ 012.256 in
-     average metal Z0 .................. 48.6 ohms
-
-  NET = SRS2_USB_VBUS_B00, USB_UART.VBUS_B04, VBUS_SENSE_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.175 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.3 ohms
-     total net capacitance (with ICs) .. 26.0 pF
-     total metal capacitance ........... 26.0 pF
-     total metal inductance ............ 53.2 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 007.671 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = SYNC_EN_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  9
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 863.306 ps
-     minimum metal Z0 .................. 47.1 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 17.9 pF
-     total metal capacitance ........... 17.9 pF
-     total metal inductance ............ 41.8 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.689 in
-     average metal Z0 .................. 48.3 ohms
-
-  NET = SYNC_EN0_P3V3_B00, $85N24928_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  98
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.842 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 61.5 pF
-     total metal capacitance ........... 61.5 pF
-     total metal inductance ............ 131.4 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 018.845 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = SYNC_EN1_P3V3_B00, $85N24930_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  93
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.108 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 45.7 pF
-     total metal capacitance ........... 45.7 pF
-     total metal inductance ............ 97.3 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 014.069 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = SYNC_EN4_P3V3_B00, $85N24933_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  94
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.764 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 60.2 pF
-     total metal capacitance ........... 60.2 pF
-     total metal inductance ............ 127.1 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 018.330 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = SYNC_EN5_P3V3_B00, $85N24934_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  86
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.088 ns
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 23.6 pF
-     total metal capacitance ........... 23.6 pF
-     total metal inductance ............ 50.3 nH
-     total metal resistance ............ 658.6 milliohms
-     total metal length ................ 007.436 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = SYNC_EN6_P3V3_B00, $85N24935_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  87
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.411 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 31.0 pF
-     total metal capacitance ........... 31.0 pF
-     total metal inductance ............ 64.8 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 009.382 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = SYNC_EN7_P3V3_B00, $85N24936_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  82
-     IC drivers .........  0
-     IC receivers .......  17
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.259 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 27.4 pF
-     total metal capacitance ........... 27.4 pF
-     total metal inductance ............ 58.0 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 008.399 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TD_A_P_B00, TD_A_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 63.024 ps
-     minimum metal Z0 .................. 47.4 ohms
-     maximum metal Z0 .................. 57.6 ohms
-     total net capacitance (with ICs) .. 1.2 pF
-     total metal capacitance ........... 1.2 pF
-     total metal inductance ............ 3.4 nH
-     total metal resistance ............ 30.2 milliohms
-     total metal length ................ 000.464 in
-     average metal Z0 .................. 54.4 ohms
-
-  NET = TD_B_P_B00, TD_B_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 48.314 ps
-     minimum metal Z0 .................. 47.4 ohms
-     maximum metal Z0 .................. 57.5 ohms
-     total net capacitance (with ICs) .. 892.4 fF
-     total metal capacitance ........... 892.4 fF
-     total metal inductance ............ 2.6 nH
-     total metal resistance ............ 22.9 milliohms
-     total metal length ................ 000.355 in
-     average metal Z0 .................. 54.2 ohms
-
-  NET = TD_C_P_B00, TD_C_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  10
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 55.547 ps
-     minimum metal Z0 .................. 47.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 1.1 pF
-     total metal capacitance ........... 1.1 pF
-     total metal inductance ............ 2.9 nH
-     total metal resistance ............ 23.5 milliohms
-     total metal length ................ 000.407 in
-     average metal Z0 .................. 52.2 ohms
-
-  NET = TD_D_P_B00, TD_D_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 82.031 ps
-     minimum metal Z0 .................. 47.3 ohms
-     maximum metal Z0 .................. 105.2 ohms
-     total net capacitance (with ICs) .. 1.5 pF
-     total metal capacitance ........... 1.5 pF
-     total metal inductance ............ 4.6 nH
-     total metal resistance ............ 39.5 milliohms
-     total metal length ................ 000.601 in
-     average metal Z0 .................. 55.4 ohms
-
-  NET = TE_EXT_SYNC_P1V8_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 905.236 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 118.7 ohms
-     total net capacitance (with ICs) .. 19.7 pF
-     total metal capacitance ........... 19.7 pF
-     total metal inductance ............ 41.6 nH
-     total metal resistance ............ 1.5 ohms
-     total metal length ................ 005.919 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TE_INS_RX_P_B00, TE_INS_RX_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  8
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 90.153 ps
-     minimum metal Z0 .................. 52.7 ohms
-     maximum metal Z0 .................. 493.8 ohms
-     total net capacitance (with ICs) .. 1.7 pF
-     total metal capacitance ........... 1.7 pF
-     total metal inductance ............ 5.0 nH
-     total metal resistance ............ 39.4 milliohms
-     total metal length ................ 000.662 in
-     average metal Z0 .................. 54.9 ohms
-
-  NET = TE_INS_SEL_P_B00, TE_INS_SEL_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 103.971 ps
-     minimum metal Z0 .................. 52.7 ohms
-     maximum metal Z0 .................. 123.4 ohms
-     total net capacitance (with ICs) .. 1.9 pF
-     total metal capacitance ........... 1.9 pF
-     total metal inductance ............ 5.7 nH
-     total metal resistance ............ 45.3 milliohms
-     total metal length ................ 000.760 in
-     average metal Z0 .................. 54.9 ohms
-
-  NET = TE_INS_TX_P_B00, TE_INS_TX_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 103.207 ps
-     minimum metal Z0 .................. 52.7 ohms
-     maximum metal Z0 .................. 92.2 ohms
-     total net capacitance (with ICs) .. 1.9 pF
-     total metal capacitance ........... 1.9 pF
-     total metal inductance ............ 5.8 nH
-     total metal resistance ............ 45.0 milliohms
-     total metal length ................ 000.756 in
-     average metal Z0 .................. 56.0 ohms
-
-  NET = TR0_ADC_IF_B00, $63N23179_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 409.528 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 93.8 ohms
-     total net capacitance (with ICs) .. 8.9 pF
-     total metal capacitance ........... 8.9 pF
-     total metal inductance ............ 19.1 nH
-     total metal resistance ............ 657.0 milliohms
-     total metal length ................ 002.679 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR0_EXT_SYNC_N_B00, TR0_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  104
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.552 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.2 milliohms
-     total metal length ................ 001.516 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR0_EXT_SYNC_P1V8_B00, $34N3645_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 844.258 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 18.6 pF
-     total metal capacitance ........... 18.6 pF
-     total metal inductance ............ 38.5 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.529 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR0_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.140 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 25.1 pF
-     total metal capacitance ........... 25.1 pF
-     total metal inductance ............ 52.0 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.459 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR1_ADC_IF_B00, $63N23185_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 383.787 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 84.9 ohms
-     total net capacitance (with ICs) .. 8.3 pF
-     total metal capacitance ........... 8.3 pF
-     total metal inductance ............ 18.0 nH
-     total metal resistance ............ 614.1 milliohms
-     total metal length ................ 002.512 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR1_EXT_SYNC_P_B00, TR1_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  116
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.402 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.2 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR1_EXT_SYNC_P1V8_B00, $34N3647_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 795.557 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 17.5 pF
-     total metal capacitance ........... 17.5 pF
-     total metal inductance ............ 36.3 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.211 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR1_EXT_SYNC_P3V3_B00, $34N3607_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 363.619 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 8.1 pF
-     total metal capacitance ........... 8.1 pF
-     total metal inductance ............ 16.5 nH
-     total metal resistance ............ 216.1 milliohms
-     total metal length ................ 002.406 in
-     average metal Z0 .................. 45.2 ohms
-
-  NET = TR1_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.151 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 25.3 pF
-     total metal capacitance ........... 25.3 pF
-     total metal inductance ............ 52.5 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 007.524 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR2_EXT_SYNC_P_B00, TR2_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  153
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.036 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.6 milliohms
-     total metal length ................ 001.447 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR2_EXT_SYNC_P1V8_B00, $34N3649_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 777.924 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 17.1 pF
-     total metal capacitance ........... 17.1 pF
-     total metal inductance ............ 35.5 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 005.096 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR2_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.153 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 25.3 pF
-     total metal capacitance ........... 25.3 pF
-     total metal inductance ............ 52.7 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 007.536 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR3_EXT_SYNC_P_B00, TR3_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  174
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.953 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.813 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR3_EXT_SYNC_P1V8_B00, $34N3651_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 756.159 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 16.7 pF
-     total metal capacitance ........... 16.7 pF
-     total metal inductance ............ 34.4 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 004.955 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR3_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.142 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 25.1 pF
-     total metal capacitance ........... 25.1 pF
-     total metal inductance ............ 52.1 nH
-     total metal resistance ............ 1.9 ohms
-     total metal length ................ 007.461 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR4_EXT_SYNC_N_B00, TR4_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  146
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 315.805 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.8 pF
-     total metal capacitance ........... 6.8 pF
-     total metal inductance ............ 14.7 nH
-     total metal resistance ............ 197.7 milliohms
-     total metal length ................ 002.095 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR4_EXT_SYNC_P1V8_B00, $34N3653_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 788.285 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 17.3 pF
-     total metal capacitance ........... 17.3 pF
-     total metal inductance ............ 35.9 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.156 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR4_EXT_SYNC_P3V3_B00, $34N3613_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  13
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 214.284 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 4.8 pF
-     total metal capacitance ........... 4.8 pF
-     total metal inductance ............ 9.7 nH
-     total metal resistance ............ 126.5 milliohms
-     total metal length ................ 001.425 in
-     average metal Z0 .................. 45.1 ohms
-
-  NET = TR4_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.040 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.5 ohms
-     total net capacitance (with ICs) .. 22.9 pF
-     total metal capacitance ........... 22.9 pF
-     total metal inductance ............ 47.5 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.790 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR5_EXT_SYNC_N_B00, TR5_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  184
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 269.991 ps
-     minimum metal Z0 .................. 30.3 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR5_EXT_SYNC_P1V8_B00, $34N3655_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 763.784 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 16.8 pF
-     total metal capacitance ........... 16.8 pF
-     total metal inductance ............ 34.8 nH
-     total metal resistance ............ 1.2 ohms
-     total metal length ................ 005.004 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR5_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.049 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 23.1 pF
-     total metal capacitance ........... 23.1 pF
-     total metal inductance ............ 47.9 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.852 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR6_ADC_IF_B00, $55N18008_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 437.053 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 98.5 ohms
-     total net capacitance (with ICs) .. 9.5 pF
-     total metal capacitance ........... 9.5 pF
-     total metal inductance ............ 20.4 nH
-     total metal resistance ............ 702.7 milliohms
-     total metal length ................ 002.858 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR6_EXT_SYNC_N_B00, TR6_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  132
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.217 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.4 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR6_EXT_SYNC_P1V8_B00, $34N3657_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 850.365 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 18.7 pF
-     total metal capacitance ........... 18.7 pF
-     total metal inductance ............ 38.8 nH
-     total metal resistance ............ 1.4 ohms
-     total metal length ................ 005.562 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR6_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.080 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 23.6 pF
-     total metal capacitance ........... 23.6 pF
-     total metal inductance ............ 49.6 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.056 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR7_ADC_IF_B00, $55N18309_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 390.087 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 88.9 ohms
-     total net capacitance (with ICs) .. 8.4 pF
-     total metal capacitance ........... 8.4 pF
-     total metal inductance ............ 18.3 nH
-     total metal resistance ............ 626.3 milliohms
-     total metal length ................ 002.552 in
-     average metal Z0 .................. 46.8 ohms
-
-  NET = TR7_EXT_SYNC_N_B00, TR7_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  114
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.162 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.7 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR7_EXT_SYNC_P1V8_B00, $34N3659_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 829.948 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 18.3 pF
-     total metal capacitance ........... 18.3 pF
-     total metal inductance ............ 37.8 nH
-     total metal resistance ............ 1.3 ohms
-     total metal length ................ 005.433 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR7_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.074 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 23.5 pF
-     total metal capacitance ........... 23.5 pF
-     total metal inductance ............ 49.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 007.020 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR8_ADC_IF_B00, $55N18009_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  61
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 691.374 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 87.6 ohms
-     total net capacitance (with ICs) .. 14.9 pF
-     total metal capacitance ........... 14.9 pF
-     total metal inductance ............ 32.2 nH
-     total metal resistance ............ 1.1 ohms
-     total metal length ................ 004.515 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR8_EXT_SYNC_N_B00, TR8_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  101
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.519 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.3 milliohms
-     total metal length ................ 001.516 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR8_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.417 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 30.9 pF
-     total metal capacitance ........... 30.9 pF
-     total metal inductance ............ 65.1 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.264 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR9_ADC_IF_B00, $55N18311_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 550.107 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 98.5 ohms
-     total net capacitance (with ICs) .. 11.9 pF
-     total metal capacitance ........... 11.9 pF
-     total metal inductance ............ 25.7 nH
-     total metal resistance ............ 891.6 milliohms
-     total metal length ................ 003.594 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR9_EXT_SYNC_P_B00, TR9_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  113
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.395 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.2 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR9_EXT_SYNC_P3V3_B00, $34N28649_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 325.018 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 118.7 ohms
-     total net capacitance (with ICs) .. 7.3 pF
-     total metal capacitance ........... 7.3 pF
-     total metal inductance ............ 14.4 nH
-     total metal resistance ............ 192.7 milliohms
-     total metal length ................ 002.150 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR9_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.418 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 30.9 pF
-     total metal capacitance ........... 30.9 pF
-     total metal inductance ............ 65.1 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.266 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR10_EXT_SYNC_P_B00, TR10_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  151
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 216.999 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.6 milliohms
-     total metal length ................ 001.447 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR10_EXT_SYNC_P3V3_B00, $34N28650_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 301.903 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 6.8 pF
-     total metal capacitance ........... 6.8 pF
-     total metal inductance ............ 13.4 nH
-     total metal resistance ............ 178.8 milliohms
-     total metal length ................ 001.998 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR10_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  43
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.499 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 32.7 pF
-     total metal capacitance ........... 32.7 pF
-     total metal inductance ............ 68.9 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 009.792 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR11_EXT_SYNC_P_B00, TR11_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  177
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.890 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.813 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR11_EXT_SYNC_P3V3_B00, $34N28651_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  13
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 146.448 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 3.3 pF
-     total metal capacitance ........... 3.3 pF
-     total metal inductance ............ 6.5 nH
-     total metal resistance ............ 83.3 milliohms
-     total metal length ................ 000.978 in
-     average metal Z0 .................. 44.4 ohms
-
-  NET = TR11_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.490 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 32.5 pF
-     total metal capacitance ........... 32.5 pF
-     total metal inductance ............ 68.3 nH
-     total metal resistance ............ 2.4 ohms
-     total metal length ................ 009.733 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR12_EXT_SYNC_P_B00, TR12_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  136
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 318.452 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.8 nH
-     total metal resistance ............ 199.5 milliohms
-     total metal length ................ 002.112 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR12_EXT_SYNC_P3V3_B00, $34N28652_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 189.623 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 118.7 ohms
-     total net capacitance (with ICs) .. 4.3 pF
-     total metal capacitance ........... 4.3 pF
-     total metal inductance ............ 8.4 nH
-     total metal resistance ............ 109.8 milliohms
-     total metal length ................ 001.262 in
-     average metal Z0 .................. 44.4 ohms
-
-  NET = TR12_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  53
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.390 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 30.4 pF
-     total metal capacitance ........... 30.4 pF
-     total metal inductance ............ 63.8 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.076 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR13_EXT_SYNC_P_B00, TR13_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  193
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 269.972 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR13_EXT_SYNC_P3V3_B00, $34N28653_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 239.468 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 5.4 pF
-     total metal capacitance ........... 5.4 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 140.2 milliohms
-     total metal length ................ 001.589 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR13_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  54
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.395 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 56.2 ohms
-     total net capacitance (with ICs) .. 30.4 pF
-     total metal capacitance ........... 30.4 pF
-     total metal inductance ............ 64.1 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.105 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR14_EXT_SYNC_P_B00, TR14_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  131
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.017 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.6 milliohms
-     total metal length ................ 001.611 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR14_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  45
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.399 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 30.5 pF
-     total metal capacitance ........... 30.5 pF
-     total metal inductance ............ 64.3 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.137 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR15_ADC_IF_B00, $54N17974_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  44
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 455.256 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 90.7 ohms
-     total net capacitance (with ICs) .. 9.9 pF
-     total metal capacitance ........... 9.9 pF
-     total metal inductance ............ 21.1 nH
-     total metal resistance ............ 733.8 milliohms
-     total metal length ................ 002.976 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR15_EXT_SYNC_N_B00, TR15_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  118
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.122 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.7 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR15_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  48
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.413 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 30.8 pF
-     total metal capacitance ........... 30.8 pF
-     total metal inductance ............ 64.9 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.231 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR16_EXT_SYNC_P_B00, TR16_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  100
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.418 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.1 milliohms
-     total metal length ................ 001.515 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR16_EXT_SYNC_P1V8_B00, $34N30203_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.645 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.3 ohms
-     total net capacitance (with ICs) .. 35.8 pF
-     total metal capacitance ........... 35.8 pF
-     total metal inductance ............ 75.7 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 010.741 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR16_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.085 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 60.7 ohms
-     total net capacitance (with ICs) .. 45.4 pF
-     total metal capacitance ........... 45.4 pF
-     total metal inductance ............ 95.9 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 013.616 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR17_ADC_IF_B00, $54N17977_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 379.566 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 8.2 pF
-     total metal capacitance ........... 8.2 pF
-     total metal inductance ............ 17.6 nH
-     total metal resistance ............ 607.1 milliohms
-     total metal length ................ 002.484 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR17_EXT_SYNC_N_B00, TR17_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  111
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.429 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.2 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR17_EXT_SYNC_P1V8_B00, $34N30204_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.623 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 35.3 pF
-     total metal capacitance ........... 35.3 pF
-     total metal inductance ............ 74.8 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 010.596 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR17_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.084 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 45.4 pF
-     total metal capacitance ........... 45.4 pF
-     total metal inductance ............ 95.9 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 013.606 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR18_EXT_SYNC_N_B00, TR18_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  152
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.059 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.6 milliohms
-     total metal length ................ 001.447 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR18_EXT_SYNC_P1V8_B00, $34N30205_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.623 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 35.3 pF
-     total metal capacitance ........... 35.3 pF
-     total metal inductance ............ 74.7 nH
-     total metal resistance ............ 2.7 ohms
-     total metal length ................ 010.593 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR18_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.113 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 46.0 pF
-     total metal capacitance ........... 46.0 pF
-     total metal inductance ............ 97.3 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.791 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR19_ADC_IF_B00, $54N17978_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 372.520 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 101.8 ohms
-     total net capacitance (with ICs) .. 8.0 pF
-     total metal capacitance ........... 8.0 pF
-     total metal inductance ............ 17.5 nH
-     total metal resistance ............ 595.3 milliohms
-     total metal length ................ 002.438 in
-     average metal Z0 .................. 46.7 ohms
-
-  NET = TR19_EXT_SYNC_N_B00, TR19_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  177
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.947 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.813 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR19_EXT_SYNC_P1V8_B00, $34N30206_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.577 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 34.3 pF
-     total metal capacitance ........... 34.3 pF
-     total metal inductance ............ 72.6 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 010.303 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR19_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.112 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 46.0 pF
-     total metal capacitance ........... 46.0 pF
-     total metal inductance ............ 97.1 nH
-     total metal resistance ............ 3.5 ohms
-     total metal length ................ 013.782 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR20_EXT_SYNC_N_B00, TR20_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  129
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 320.289 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.9 nH
-     total metal resistance ............ 200.7 milliohms
-     total metal length ................ 002.124 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR20_EXT_SYNC_P1V8_B00, $34N30207_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.570 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 34.1 pF
-     total metal capacitance ........... 34.1 pF
-     total metal inductance ............ 72.3 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 010.256 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR20_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.013 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 43.9 pF
-     total metal capacitance ........... 43.9 pF
-     total metal inductance ............ 92.4 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.135 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR21_EXT_SYNC_N_B00, TR21_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  192
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 270.023 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR21_EXT_SYNC_P1V8_B00, $34N30208_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.572 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 34.2 pF
-     total metal capacitance ........... 34.2 pF
-     total metal inductance ............ 72.4 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 010.264 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR21_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  38
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.019 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 75.6 ohms
-     total net capacitance (with ICs) .. 43.9 pF
-     total metal capacitance ........... 43.9 pF
-     total metal inductance ............ 93.1 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.172 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = TR22_EXT_SYNC_N_B00, TR22_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  140
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.244 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.5 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR22_EXT_SYNC_P1V8_B00, $34N30209_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.609 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.3 ohms
-     total net capacitance (with ICs) .. 35.0 pF
-     total metal capacitance ........... 35.0 pF
-     total metal inductance ............ 74.0 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 010.504 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR22_EXT_SYNC_P3V3_B00, $34N30194_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 517.156 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 11.5 pF
-     total metal capacitance ........... 11.5 pF
-     total metal inductance ............ 23.3 nH
-     total metal resistance ............ 309.3 milliohms
-     total metal length ................ 003.409 in
-     average metal Z0 .................. 45.0 ohms
-
-  NET = TR22_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.020 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 43.9 pF
-     total metal capacitance ........... 43.9 pF
-     total metal inductance ............ 93.0 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.179 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR23_EXT_SYNC_N_B00, TR23_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  122
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.185 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.8 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR23_EXT_SYNC_P1V8_B00, $34N30210_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.609 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 57.7 ohms
-     total net capacitance (with ICs) .. 35.1 pF
-     total metal capacitance ........... 35.1 pF
-     total metal inductance ............ 73.8 nH
-     total metal resistance ............ 2.6 ohms
-     total metal length ................ 010.506 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR23_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.017 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 60.8 ohms
-     total net capacitance (with ICs) .. 44.1 pF
-     total metal capacitance ........... 44.1 pF
-     total metal inductance ............ 92.6 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.169 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR24_EXT_SYNC_P_B00, TR24_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  101
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.430 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.1 milliohms
-     total metal length ................ 001.515 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR24_EXT_SYNC_P1V8_B00, $34N31745_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.830 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 39.8 pF
-     total metal capacitance ........... 39.8 pF
-     total metal inductance ............ 84.2 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 011.952 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR24_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  37
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.975 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.7 ohms
-     total net capacitance (with ICs) .. 43.1 pF
-     total metal capacitance ........... 43.1 pF
-     total metal inductance ............ 90.7 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.901 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR25_ADC_IF_B00, $59N17993_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 397.955 ps
-     minimum metal Z0 .................. 28.1 ohms
-     maximum metal Z0 .................. 94.9 ohms
-     total net capacitance (with ICs) .. 8.6 pF
-     total metal capacitance ........... 8.6 pF
-     total metal inductance ............ 18.5 nH
-     total metal resistance ............ 638.7 milliohms
-     total metal length ................ 002.603 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR25_EXT_SYNC_P_B00, TR25_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  108
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.447 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.2 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR25_EXT_SYNC_P1V8_B00, $34N31746_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  46
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.837 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.7 ohms
-     total net capacitance (with ICs) .. 40.1 pF
-     total metal capacitance ........... 40.1 pF
-     total metal inductance ............ 84.2 nH
-     total metal resistance ............ 3.0 ohms
-     total metal length ................ 011.996 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR25_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.980 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.7 ohms
-     total net capacitance (with ICs) .. 43.1 pF
-     total metal capacitance ........... 43.1 pF
-     total metal inductance ............ 91.1 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.932 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR26_EXT_SYNC_P_B00, TR26_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  150
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.044 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.6 milliohms
-     total metal length ................ 001.447 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR26_EXT_SYNC_P1V8_B00, $34N31747_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.749 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 38.0 pF
-     total metal capacitance ........... 38.0 pF
-     total metal inductance ............ 80.5 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.425 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR26_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.983 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 43.3 pF
-     total metal capacitance ........... 43.3 pF
-     total metal inductance ............ 90.9 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.945 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR27_EXT_SYNC_P_B00, TR27_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  177
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.665 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 169.9 milliohms
-     total metal length ................ 001.811 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR27_EXT_SYNC_P1V8_B00, $34N31748_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  36
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.738 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 503.5 ohms
-     total net capacitance (with ICs) .. 37.9 pF
-     total metal capacitance ........... 37.9 pF
-     total metal inductance ............ 79.7 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 011.347 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR27_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.973 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 62.9 ohms
-     total net capacitance (with ICs) .. 43.0 pF
-     total metal capacitance ........... 43.0 pF
-     total metal inductance ............ 90.8 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.880 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR28_ADC_IF_B00, $59N17995_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 356.004 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 74.8 ohms
-     total net capacitance (with ICs) .. 7.7 pF
-     total metal capacitance ........... 7.7 pF
-     total metal inductance ............ 16.6 nH
-     total metal resistance ............ 569.9 milliohms
-     total metal length ................ 002.330 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR28_EXT_SYNC_N_B00, TR28_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  134
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 314.639 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 6.8 pF
-     total metal capacitance ........... 6.8 pF
-     total metal inductance ............ 14.6 nH
-     total metal resistance ............ 196.9 milliohms
-     total metal length ................ 002.087 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR28_EXT_SYNC_P1V8_B00, $34N31749_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.706 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 59.7 ohms
-     total net capacitance (with ICs) .. 37.2 pF
-     total metal capacitance ........... 37.2 pF
-     total metal inductance ............ 78.2 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.151 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR28_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.970 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 58.5 ohms
-     total net capacitance (with ICs) .. 43.0 pF
-     total metal capacitance ........... 43.0 pF
-     total metal inductance ............ 90.3 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.853 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR29_EXT_SYNC_P_B00, TR29_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  193
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 270.009 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR29_EXT_SYNC_P1V8_B00, $34N31750_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.699 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 37.0 pF
-     total metal capacitance ........... 37.0 pF
-     total metal inductance ............ 78.2 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.106 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR29_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.967 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 85.3 ohms
-     total net capacitance (with ICs) .. 42.9 pF
-     total metal capacitance ........... 42.9 pF
-     total metal inductance ............ 90.3 nH
-     total metal resistance ............ 3.2 ohms
-     total metal length ................ 012.836 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR30_ADC_IF_B00, $58N17995_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 493.734 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 88.9 ohms
-     total net capacitance (with ICs) .. 10.7 pF
-     total metal capacitance ........... 10.7 pF
-     total metal inductance ............ 23.0 nH
-     total metal resistance ............ 798.8 milliohms
-     total metal length ................ 003.227 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR30_EXT_SYNC_P_B00, TR30_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  138
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.235 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.5 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR30_EXT_SYNC_P1V8_B00, $34N31751_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.714 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 37.4 pF
-     total metal capacitance ........... 37.4 pF
-     total metal inductance ............ 78.6 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.191 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR30_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  41
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.045 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 498.2 ohms
-     total net capacitance (with ICs) .. 44.5 pF
-     total metal capacitance ........... 44.5 pF
-     total metal inductance ............ 94.1 nH
-     total metal resistance ............ 3.4 ohms
-     total metal length ................ 013.344 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR31_EXT_SYNC_P_B00, TR31_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  116
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.167 ps
-     minimum metal Z0 .................. 39.3 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.8 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR31_EXT_SYNC_P1V8_B00, $34N31752_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  25
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.710 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 37.2 pF
-     total metal capacitance ........... 37.2 pF
-     total metal inductance ............ 78.8 nH
-     total metal resistance ............ 2.8 ohms
-     total metal length ................ 011.184 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR31_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  42
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.994 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 59.7 ohms
-     total net capacitance (with ICs) .. 43.5 pF
-     total metal capacitance ........... 43.5 pF
-     total metal inductance ............ 91.7 nH
-     total metal resistance ............ 3.3 ohms
-     total metal length ................ 013.022 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR32_ADC_IF_B00, $58N17998_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 411.476 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 97.8 ohms
-     total net capacitance (with ICs) .. 8.9 pF
-     total metal capacitance ........... 8.9 pF
-     total metal inductance ............ 19.2 nH
-     total metal resistance ............ 660.2 milliohms
-     total metal length ................ 002.692 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR32_EXT_SYNC_P_B00, TR32_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  100
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.416 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.1 milliohms
-     total metal length ................ 001.515 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR32_EXT_SYNC_P1V8_B00, $34N31786_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.525 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 55.2 pF
-     total metal capacitance ........... 55.2 pF
-     total metal inductance ............ 115.7 nH
-     total metal resistance ............ 4.1 ohms
-     total metal length ................ 016.481 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR32_EXT_SYNC_P3V3_B00, $34N31770_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 379.884 ps
-     minimum metal Z0 .................. 44.0 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 8.5 pF
-     total metal capacitance ........... 8.5 pF
-     total metal inductance ............ 16.9 nH
-     total metal resistance ............ 225.7 milliohms
-     total metal length ................ 002.513 in
-     average metal Z0 .................. 44.5 ohms
-
-  NET = TR32_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.396 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 52.5 pF
-     total metal capacitance ........... 52.5 pF
-     total metal inductance ............ 109.5 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 015.647 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR33_ADC_IF_B00, $58N17997_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 372.299 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 89.5 ohms
-     total net capacitance (with ICs) .. 8.0 pF
-     total metal capacitance ........... 8.0 pF
-     total metal inductance ............ 17.4 nH
-     total metal resistance ............ 595.0 milliohms
-     total metal length ................ 002.437 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR33_EXT_SYNC_P_B00, TR33_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  108
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.404 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.1 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR33_EXT_SYNC_P1V8_B00, $34N31787_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.518 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 55.0 pF
-     total metal capacitance ........... 55.0 pF
-     total metal inductance ............ 115.4 nH
-     total metal resistance ............ 4.1 ohms
-     total metal length ................ 016.436 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR33_EXT_SYNC_P3V3_B00, $34N31772_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 308.943 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.0 pF
-     total metal capacitance ........... 7.0 pF
-     total metal inductance ............ 13.7 nH
-     total metal resistance ............ 180.6 milliohms
-     total metal length ................ 002.048 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR33_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.282 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 51.2 ohms
-     total net capacitance (with ICs) .. 48.8 pF
-     total metal capacitance ........... 48.8 pF
-     total metal inductance ............ 107.2 nH
-     total metal resistance ............ 3.7 ohms
-     total metal length ................ 014.887 in
-     average metal Z0 .................. 46.9 ohms
-
-  NET = TR34_ADC_IF_B00, $58N17999_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 509.449 ps
-     minimum metal Z0 .................. 28.3 ohms
-     maximum metal Z0 .................. 96.5 ohms
-     total net capacitance (with ICs) .. 11.0 pF
-     total metal capacitance ........... 11.0 pF
-     total metal inductance ............ 23.8 nH
-     total metal resistance ............ 823.1 milliohms
-     total metal length ................ 003.330 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR34_EXT_SYNC_P_B00, TR34_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  152
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.318 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 133.0 milliohms
-     total metal length ................ 001.449 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR34_EXT_SYNC_P1V8_B00, $34N31788_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.582 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 56.5 pF
-     total metal capacitance ........... 56.5 pF
-     total metal inductance ............ 118.2 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.862 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR34_EXT_SYNC_P3V3_B00, $34N31773_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 258.664 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 11.5 nH
-     total metal resistance ............ 150.0 milliohms
-     total metal length ................ 001.717 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR34_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.318 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 50.8 pF
-     total metal capacitance ........... 50.8 pF
-     total metal inductance ............ 106.0 nH
-     total metal resistance ............ 3.8 ohms
-     total metal length ................ 015.128 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR35_ADC_IF_B00, $60N18005_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 383.040 ps
-     minimum metal Z0 .................. 29.4 ohms
-     maximum metal Z0 .................. 92.6 ohms
-     total net capacitance (with ICs) .. 8.3 pF
-     total metal capacitance ........... 8.3 pF
-     total metal inductance ............ 17.9 nH
-     total metal resistance ............ 612.8 milliohms
-     total metal length ................ 002.506 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR35_EXT_SYNC_P_B00, TR35_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  176
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.978 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.813 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR35_EXT_SYNC_P1V8_B00, $34N31789_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.556 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 55.9 pF
-     total metal capacitance ........... 55.9 pF
-     total metal inductance ............ 116.9 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.677 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR35_EXT_SYNC_P3V3_B00, $34N31774_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  13
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 140.331 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.2 pF
-     total metal capacitance ........... 3.2 pF
-     total metal inductance ............ 6.3 nH
-     total metal resistance ............ 77.4 milliohms
-     total metal length ................ 000.940 in
-     average metal Z0 .................. 44.6 ohms
-
-  NET = TR35_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.387 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 52.3 pF
-     total metal capacitance ........... 52.3 pF
-     total metal inductance ............ 109.2 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 015.578 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR36_ADC_IF_B00, $60N18006_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 437.818 ps
-     minimum metal Z0 .................. 28.6 ohms
-     maximum metal Z0 .................. 92.4 ohms
-     total net capacitance (with ICs) .. 9.5 pF
-     total metal capacitance ........... 9.5 pF
-     total metal inductance ............ 20.4 nH
-     total metal resistance ............ 704.0 milliohms
-     total metal length ................ 002.864 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR36_EXT_SYNC_N_B00, TR36_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  128
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 320.286 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.9 nH
-     total metal resistance ............ 200.7 milliohms
-     total metal length ................ 002.124 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR36_EXT_SYNC_P1V8_B00, $34N31790_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.609 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 57.1 pF
-     total metal capacitance ........... 57.1 pF
-     total metal inductance ............ 119.2 nH
-     total metal resistance ............ 4.3 ohms
-     total metal length ................ 017.020 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR36_EXT_SYNC_P3V3_B00, $34N31775_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 175.016 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.9 pF
-     total metal capacitance ........... 3.9 pF
-     total metal inductance ............ 7.8 nH
-     total metal resistance ............ 98.8 milliohms
-     total metal length ................ 001.167 in
-     average metal Z0 .................. 44.5 ohms
-
-  NET = TR36_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.542 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 90.5 ohms
-     total net capacitance (with ICs) .. 55.6 pF
-     total metal capacitance ........... 55.6 pF
-     total metal inductance ............ 116.4 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.581 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR37_EXT_SYNC_P_B00, TR37_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  192
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 269.999 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR37_EXT_SYNC_P1V8_B00, $34N31791_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.581 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 56.5 pF
-     total metal capacitance ........... 56.5 pF
-     total metal inductance ............ 118.1 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.848 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR37_EXT_SYNC_P3V3_B00, $34N31776_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 262.602 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 11.7 nH
-     total metal resistance ............ 152.4 milliohms
-     total metal length ................ 001.743 in
-     average metal Z0 .................. 44.4 ohms
-
-  NET = TR37_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  35
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.506 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 54.8 pF
-     total metal capacitance ........... 54.8 pF
-     total metal inductance ............ 114.8 nH
-     total metal resistance ............ 4.1 ohms
-     total metal length ................ 016.349 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR38_ADC_IF_B00, $60N18007_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 453.021 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 21.1 nH
-     total metal resistance ............ 729.4 milliohms
-     total metal length ................ 002.963 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR38_EXT_SYNC_P_B00, TR38_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  136
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.225 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.4 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR38_EXT_SYNC_P1V8_B00, $34N31792_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.576 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 56.4 pF
-     total metal capacitance ........... 56.4 pF
-     total metal inductance ............ 117.8 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.812 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR38_EXT_SYNC_P3V3_B00, $34N31777_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 339.822 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 7.7 pF
-     total metal capacitance ........... 7.7 pF
-     total metal inductance ............ 15.1 nH
-     total metal resistance ............ 199.6 milliohms
-     total metal length ................ 002.250 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR38_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.455 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 53.7 pF
-     total metal capacitance ........... 53.7 pF
-     total metal inductance ............ 112.3 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 016.015 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR39_ADC_IF_B00, $60N18009_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 489.552 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 88.3 ohms
-     total net capacitance (with ICs) .. 10.6 pF
-     total metal capacitance ........... 10.6 pF
-     total metal inductance ............ 22.9 nH
-     total metal resistance ............ 791.8 milliohms
-     total metal length ................ 003.201 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR39_EXT_SYNC_N_B00, TR39_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  117
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.180 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.8 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR39_EXT_SYNC_P1V8_B00, $34N31793_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.556 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 55.9 pF
-     total metal capacitance ........... 55.9 pF
-     total metal inductance ............ 116.9 nH
-     total metal resistance ............ 4.2 ohms
-     total metal length ................ 016.679 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR39_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.426 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 53.1 pF
-     total metal capacitance ........... 53.1 pF
-     total metal inductance ............ 111.0 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 015.837 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR40_EXT_SYNC_P_B00, TR40_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  100
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.419 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.1 milliohms
-     total metal length ................ 001.515 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR40_EXT_SYNC_P3V3_B00, $34N31811_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 163.041 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.7 pF
-     total metal capacitance ........... 3.7 pF
-     total metal inductance ............ 7.2 nH
-     total metal resistance ............ 91.0 milliohms
-     total metal length ................ 001.090 in
-     average metal Z0 .................. 44.4 ohms
-
-  NET = TR40_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.270 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 27.9 pF
-     total metal capacitance ........... 27.9 pF
-     total metal inductance ............ 57.9 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 008.310 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR41_ADC_IF_B00, $61N18001_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 410.650 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 95.0 ohms
-     total net capacitance (with ICs) .. 8.9 pF
-     total metal capacitance ........... 8.9 pF
-     total metal inductance ............ 19.1 nH
-     total metal resistance ............ 659.7 milliohms
-     total metal length ................ 002.686 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR41_EXT_SYNC_P_B00, TR41_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  111
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.427 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.2 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR41_EXT_SYNC_P3V3_B00, $34N31813_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  11
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 154.594 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.5 pF
-     total metal capacitance ........... 3.5 pF
-     total metal inductance ............ 6.9 nH
-     total metal resistance ............ 86.6 milliohms
-     total metal length ................ 001.033 in
-     average metal Z0 .................. 44.8 ohms
-
-  NET = TR41_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.268 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 27.9 pF
-     total metal capacitance ........... 27.9 pF
-     total metal inductance ............ 57.9 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 008.287 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR42_ADC_IF_B00, $61N18003_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  22
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 321.824 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 79.7 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 15.0 nH
-     total metal resistance ............ 513.0 milliohms
-     total metal length ................ 002.107 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR42_EXT_SYNC_N_B00, TR42_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  153
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.194 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.8 milliohms
-     total metal length ................ 001.448 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR42_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.289 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 28.2 pF
-     total metal capacitance ........... 28.2 pF
-     total metal inductance ............ 59.1 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 008.422 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR43_ADC_IF_B00, $61N18002_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 401.859 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 78.6 ohms
-     total net capacitance (with ICs) .. 8.7 pF
-     total metal capacitance ........... 8.7 pF
-     total metal inductance ............ 18.7 nH
-     total metal resistance ............ 645.3 milliohms
-     total metal length ................ 002.629 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR43_EXT_SYNC_N_B00, TR43_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  177
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.864 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.812 in
-     average metal Z0 .................. 46.7 ohms
-
-  NET = TR43_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.272 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 498.2 ohms
-     total net capacitance (with ICs) .. 27.9 pF
-     total metal capacitance ........... 27.9 pF
-     total metal inductance ............ 58.2 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 008.307 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR44_ADC_IF_B00, $61N18004_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 422.883 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 77.3 ohms
-     total net capacitance (with ICs) .. 9.1 pF
-     total metal capacitance ........... 9.1 pF
-     total metal inductance ............ 19.7 nH
-     total metal resistance ............ 681.1 milliohms
-     total metal length ................ 002.766 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR44_EXT_SYNC_N_B00, TR44_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  139
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 316.866 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.8 pF
-     total metal capacitance ........... 6.8 pF
-     total metal inductance ............ 14.8 nH
-     total metal resistance ............ 198.4 milliohms
-     total metal length ................ 002.102 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR44_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.377 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 30.1 pF
-     total metal capacitance ........... 30.1 pF
-     total metal inductance ............ 63.1 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 008.990 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TR45_EXT_SYNC_P_B00, TR45_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  202
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 271.401 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.6 nH
-     total metal resistance ............ 167.4 milliohms
-     total metal length ................ 001.804 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR45_EXT_SYNC_P3V3_B00, $34N31817_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  13
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 157.387 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.5 pF
-     total metal capacitance ........... 3.5 pF
-     total metal inductance ............ 7.1 nH
-     total metal resistance ............ 88.7 milliohms
-     total metal length ................ 001.051 in
-     average metal Z0 .................. 44.9 ohms
-
-  NET = TR45_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.386 ns
-     minimum metal Z0 .................. 44.0 ohms
-     maximum metal Z0 .................. 498.2 ohms
-     total net capacitance (with ICs) .. 30.1 pF
-     total metal capacitance ........... 30.1 pF
-     total metal inductance ............ 63.8 nH
-     total metal resistance ............ 2.3 ohms
-     total metal length ................ 009.048 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR46_ADC_IF_B00, $66N18006_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 406.597 ps
-     minimum metal Z0 .................. 30.9 ohms
-     maximum metal Z0 .................. 87.7 ohms
-     total net capacitance (with ICs) .. 8.8 pF
-     total metal capacitance ........... 8.8 pF
-     total metal inductance ............ 19.0 nH
-     total metal resistance ............ 653.9 milliohms
-     total metal length ................ 002.659 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR46_EXT_SYNC_P_B00, TR46_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  135
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.214 ps
-     minimum metal Z0 .................. 38.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.5 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR46_EXT_SYNC_P3V3_B00, $34N31818_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 164.197 ps
-     minimum metal Z0 .................. 39.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 3.7 pF
-     total metal capacitance ........... 3.7 pF
-     total metal inductance ............ 7.4 nH
-     total metal resistance ............ 92.3 milliohms
-     total metal length ................ 001.097 in
-     average metal Z0 .................. 44.9 ohms
-
-  NET = TR46_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.365 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 29.7 pF
-     total metal capacitance ........... 29.7 pF
-     total metal inductance ............ 62.8 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 008.914 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = TR47_ADC_IF_B00, $66N18008_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  31
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 373.291 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 86.0 ohms
-     total net capacitance (with ICs) .. 8.1 pF
-     total metal capacitance ........... 8.1 pF
-     total metal inductance ............ 17.3 nH
-     total metal resistance ............ 597.6 milliohms
-     total metal length ................ 002.442 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR47_EXT_SYNC_P_B00, TR47_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  122
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.173 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.8 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR47_EXT_SYNC_P3V3_B00, $34N31819_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.418 ps
-     minimum metal Z0 .................. 39.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 4.3 pF
-     total metal capacitance ........... 4.3 pF
-     total metal inductance ............ 8.5 nH
-     total metal resistance ............ 108.7 milliohms
-     total metal length ................ 001.286 in
-     average metal Z0 .................. 44.3 ohms
-
-  NET = TR47_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.377 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 464.6 ohms
-     total net capacitance (with ICs) .. 30.0 pF
-     total metal capacitance ........... 30.0 pF
-     total metal inductance ............ 63.2 nH
-     total metal resistance ............ 2.2 ohms
-     total metal length ................ 008.995 in
-     average metal Z0 .................. 45.9 ohms
-
-  NET = TR48_EXT_SYNC_P_B00, TR48_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  101
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.415 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.1 milliohms
-     total metal length ................ 001.515 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR48_EXT_SYNC_P1V8_B00, $85N3645_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  32
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.061 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 23.3 pF
-     total metal capacitance ........... 23.3 pF
-     total metal inductance ............ 48.4 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.938 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR48_EXT_SYNC_P3V3_B00, $85N3360_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 340.785 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 7.5 pF
-     total metal capacitance ........... 7.5 pF
-     total metal inductance ............ 15.6 nH
-     total metal resistance ............ 506.6 milliohms
-     total metal length ................ 002.246 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR48_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  57
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.038 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 22.8 pF
-     total metal capacitance ........... 22.8 pF
-     total metal inductance ............ 47.4 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.799 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR49_EXT_SYNC_P_B00, TR49_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  112
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.433 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.2 milliohms
-     total metal length ................ 001.285 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR49_EXT_SYNC_P3V3_B00, $85N3607_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 372.584 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 8.2 pF
-     total metal capacitance ........... 8.2 pF
-     total metal inductance ............ 17.0 nH
-     total metal resistance ............ 564.5 milliohms
-     total metal length ................ 002.450 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR49_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  56
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.071 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.0 ohms
-     total net capacitance (with ICs) .. 23.6 pF
-     total metal capacitance ........... 23.6 pF
-     total metal inductance ............ 48.8 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 007.004 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR50_EXT_SYNC_P_B00, TR50_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  152
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.177 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.8 milliohms
-     total metal length ................ 001.448 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR50_EXT_SYNC_P1V8_B00, $85N3649_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.004 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 22.1 pF
-     total metal capacitance ........... 22.1 pF
-     total metal inductance ............ 45.8 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.565 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR50_EXT_SYNC_P3V3_B00, $85N3609_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 408.739 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 9.0 pF
-     total metal capacitance ........... 9.0 pF
-     total metal inductance ............ 18.7 nH
-     total metal resistance ............ 626.8 milliohms
-     total metal length ................ 002.685 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR50_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  54
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.122 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 24.7 pF
-     total metal capacitance ........... 24.7 pF
-     total metal inductance ............ 51.2 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.334 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR51_EXT_SYNC_P_B00, TR51_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  178
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.958 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.813 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR51_EXT_SYNC_P3V3_B00, $85N3611_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  16
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 445.065 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 9.8 pF
-     total metal capacitance ........... 9.8 pF
-     total metal inductance ............ 20.3 nH
-     total metal resistance ............ 688.8 milliohms
-     total metal length ................ 002.920 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR51_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  61
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.124 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 24.7 pF
-     total metal capacitance ........... 24.7 pF
-     total metal inductance ............ 51.4 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.345 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR52_EXT_SYNC_P_B00, TR52_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  129
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 320.270 ps
-     minimum metal Z0 .................. 40.1 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.9 nH
-     total metal resistance ............ 200.7 milliohms
-     total metal length ................ 002.124 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR52_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  34
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 999.430 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 116.8 ohms
-     total net capacitance (with ICs) .. 22.0 pF
-     total metal capacitance ........... 22.0 pF
-     total metal inductance ............ 45.6 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.525 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR53_EXT_SYNC_N_B00, TR53_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  192
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 269.999 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR53_EXT_SYNC_P1V8_B00, $85N3655_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 994.730 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 50.0 ohms
-     total net capacitance (with ICs) .. 21.8 pF
-     total metal capacitance ........... 21.8 pF
-     total metal inductance ............ 45.4 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.510 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR53_EXT_SYNC_P3V3_B00, $85N3615_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  19
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 378.353 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 8.3 pF
-     total metal capacitance ........... 8.3 pF
-     total metal inductance ............ 17.3 nH
-     total metal resistance ............ 575.6 milliohms
-     total metal length ................ 002.487 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR53_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  39
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 997.009 ps
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 21.9 pF
-     total metal capacitance ........... 21.9 pF
-     total metal inductance ............ 45.5 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.511 in
-     average metal Z0 .................. 45.6 ohms
-
-  NET = TR54_EXT_SYNC_N_B00, TR54_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  142
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.225 ps
-     minimum metal Z0 .................. 40.3 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.4 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TR54_EXT_SYNC_P1V8_B00, $85N3657_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  26
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.014 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 22.2 pF
-     total metal capacitance ........... 22.2 pF
-     total metal inductance ............ 46.4 nH
-     total metal resistance ............ 1.6 ohms
-     total metal length ................ 006.630 in
-     average metal Z0 .................. 45.7 ohms
-
-  NET = TR54_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  81
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.080 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 23.9 pF
-     total metal capacitance ........... 23.9 pF
-     total metal inductance ............ 49.1 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 007.054 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = TR55_EXT_SYNC_N_B00, TR55_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  119
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.175 ps
-     minimum metal Z0 .................. 40.2 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.8 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR55_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  61
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.029 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.6 ohms
-     total net capacitance (with ICs) .. 22.6 pF
-     total metal capacitance ........... 22.6 pF
-     total metal inductance ............ 46.9 nH
-     total metal resistance ............ 1.7 ohms
-     total metal length ................ 006.725 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR56_EXT_SYNC_P_B00, TR56_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  102
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 227.428 ps
-     minimum metal Z0 .................. 45.5 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.9 pF
-     total metal capacitance ........... 4.9 pF
-     total metal inductance ............ 10.6 nH
-     total metal resistance ............ 139.1 milliohms
-     total metal length ................ 001.515 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR56_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  28
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 581.815 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 12.9 pF
-     total metal capacitance ........... 12.9 pF
-     total metal inductance ............ 26.5 nH
-     total metal resistance ............ 908.5 milliohms
-     total metal length ................ 003.824 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = TR57_ADC_IF_B00, $65N21073_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  30
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  1
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 467.247 ps
-     minimum metal Z0 .................. 28.4 ohms
-     maximum metal Z0 .................. 78.9 ohms
-     total net capacitance (with ICs) .. 10.1 pF
-     total metal capacitance ........... 10.1 pF
-     total metal inductance ............ 21.7 nH
-     total metal resistance ............ 753.9 milliohms
-     total metal length ................ 003.055 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR57_EXT_SYNC_N_B00, TR57_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  114
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 192.557 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.1 pF
-     total metal capacitance ........... 4.1 pF
-     total metal inductance ............ 9.0 nH
-     total metal resistance ............ 116.3 milliohms
-     total metal length ................ 001.286 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR57_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  27
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 594.573 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 100.5 ohms
-     total net capacitance (with ICs) .. 13.1 pF
-     total metal capacitance ........... 13.1 pF
-     total metal inductance ............ 27.1 nH
-     total metal resistance ............ 934.2 milliohms
-     total metal length ................ 003.901 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR58_EXT_SYNC_N_B00, TR58_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  155
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 217.053 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 4.7 pF
-     total metal capacitance ........... 4.7 pF
-     total metal inductance ............ 10.1 nH
-     total metal resistance ............ 132.6 milliohms
-     total metal length ................ 001.447 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR58_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 610.465 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 13.5 pF
-     total metal capacitance ........... 13.5 pF
-     total metal inductance ............ 27.8 nH
-     total metal resistance ............ 959.6 milliohms
-     total metal length ................ 004.002 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR59_EXT_SYNC_P_B00, TR59_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  180
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 272.955 ps
-     minimum metal Z0 .................. 45.4 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.9 pF
-     total metal capacitance ........... 5.9 pF
-     total metal inductance ............ 12.7 nH
-     total metal resistance ............ 170.1 milliohms
-     total metal length ................ 001.813 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR59_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  33
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 618.678 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 488.3 ohms
-     total net capacitance (with ICs) .. 13.7 pF
-     total metal capacitance ........... 13.7 pF
-     total metal inductance ............ 28.1 nH
-     total metal resistance ............ 980.5 milliohms
-     total metal length ................ 004.053 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = TR60_EXT_SYNC_N_B00, TR60_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  130
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 320.299 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 499.8 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.9 nH
-     total metal resistance ............ 200.7 milliohms
-     total metal length ................ 002.124 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR60_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  24
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 547.999 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 48.5 ohms
-     total net capacitance (with ICs) .. 12.1 pF
-     total metal capacitance ........... 12.1 pF
-     total metal inductance ............ 25.0 nH
-     total metal resistance ............ 879.7 milliohms
-     total metal length ................ 003.584 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR61_EXT_SYNC_P_B00, TR61_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  196
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 270.010 ps
-     minimum metal Z0 .................. 29.9 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.5 nH
-     total metal resistance ............ 166.4 milliohms
-     total metal length ................ 001.795 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = TR61_EXT_SYNC_P1V8_B00, $85N28668_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  11
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 224.139 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.5 ohms
-     total net capacitance (with ICs) .. 5.0 pF
-     total metal capacitance ........... 5.0 pF
-     total metal inductance ............ 10.2 nH
-     total metal resistance ............ 340.2 milliohms
-     total metal length ................ 001.476 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR61_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 546.109 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 12.0 pF
-     total metal capacitance ........... 12.0 pF
-     total metal inductance ............ 24.9 nH
-     total metal resistance ............ 870.9 milliohms
-     total metal length ................ 003.573 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TR62_EXT_SYNC_P_B00, TR62_EXT_SYNC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  137
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 242.227 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 5.2 pF
-     total metal capacitance ........... 5.2 pF
-     total metal inductance ............ 11.3 nH
-     total metal resistance ............ 148.5 milliohms
-     total metal length ................ 001.613 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TR62_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  23
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 573.319 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 116.8 ohms
-     total net capacitance (with ICs) .. 12.7 pF
-     total metal capacitance ........... 12.7 pF
-     total metal inductance ............ 26.1 nH
-     total metal resistance ............ 913.5 milliohms
-     total metal length ................ 003.754 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR63_EXT_SYNC_N_B00, TR63_EXT_SYNC_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  116
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 277.177 ps
-     minimum metal Z0 .................. 37.8 ohms
-     maximum metal Z0 .................. 485.6 ohms
-     total net capacitance (with ICs) .. 6.0 pF
-     total metal capacitance ........... 6.0 pF
-     total metal inductance ............ 12.9 nH
-     total metal resistance ............ 171.8 milliohms
-     total metal length ................ 001.842 in
-     average metal Z0 .................. 46.4 ohms
-
-  NET = TR63_EXT_SYNC_P1V8_B00, $85N28670_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 310.503 ps
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 6.9 pF
-     total metal capacitance ........... 6.9 pF
-     total metal inductance ............ 14.1 nH
-     total metal resistance ............ 480.2 milliohms
-     total metal length ................ 002.041 in
-     average metal Z0 .................. 45.4 ohms
-
-  NET = TR63_SE_SPARE0_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  21
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 550.129 ps
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.2 ohms
-     total net capacitance (with ICs) .. 12.2 pF
-     total metal capacitance ........... 12.2 pF
-     total metal inductance ............ 25.0 nH
-     total metal resistance ............ 866.0 milliohms
-     total metal length ................ 003.610 in
-     average metal Z0 .................. 45.3 ohms
-
-  NET = TXLO_DISC_P_B00, TXLO_DISC_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  114
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 417.870 ps
-     minimum metal Z0 .................. 40.8 ohms
-     maximum metal Z0 .................. 503.7 ohms
-     total net capacitance (with ICs) .. 6.3 pF
-     total metal capacitance ........... 6.3 pF
-     total metal inductance ............ 28.6 nH
-     total metal resistance ............ 640.3 milliohms
-     total metal length ................ 002.738 in
-     average metal Z0 .................. 67.2 ohms
-
-  NET = TXLO_MBUS_EN_B00, TXLO_DISC_B00, B88_L5_N_B01, B88_L5_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  128
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.596 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 94.9 ohms
-     total net capacitance (with ICs) .. 34.4 pF
-     total metal capacitance ........... 34.4 pF
-     total metal inductance ............ 74.4 nH
-     total metal resistance ............ 2.9 ohms
-     total metal length ................ 010.436 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TXLO_MBUS_EN_P3V3_B00, $42N28107_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  20
-     IC drivers .........  0
-     IC receivers .......  3
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 266.045 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 54.6 ohms
-     total net capacitance (with ICs) .. 5.8 pF
-     total metal capacitance ........... 5.8 pF
-     total metal inductance ............ 12.2 nH
-     total metal resistance ............ 381.2 milliohms
-     total metal length ................ 001.766 in
-     average metal Z0 .................. 45.8 ohms
-
-  NET = TXLO_MBUS_P_B00, TXLO_MBUS_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  14
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 99.683 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 503.7 ohms
-     total net capacitance (with ICs) .. 1.5 pF
-     total metal capacitance ........... 1.5 pF
-     total metal inductance ............ 9.4 nH
-     total metal resistance ............ 119.2 milliohms
-     total metal length ................ 000.683 in
-     average metal Z0 .................. 78.3 ohms
-
-  NET = TXLO_MBUS_TX_B00, TXLO_MBUS_RX_B00, B89_L11_N_B01, B89_L11_P_B01, $91N60493_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  123
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.125 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 95.9 ohms
-     total net capacitance (with ICs) .. 24.2 pF
-     total metal capacitance ........... 24.2 pF
-     total metal inductance ............ 52.4 nH
-     total metal resistance ............ 2.0 ohms
-     total metal length ................ 007.377 in
-     average metal Z0 .................. 46.5 ohms
-
-  NET = TXLO_MBUS_TX_P3V3_B00, $42N28108_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  15
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 231.083 ps
-     minimum metal Z0 .................. 39.8 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 5.0 pF
-     total metal capacitance ........... 5.0 pF
-     total metal inductance ............ 10.7 nH
-     total metal resistance ............ 352.9 milliohms
-     total metal length ................ 001.523 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = TXLO_REF_CLK_P_B00, TXLO_REF_CLK_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  348
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 5.051 ns
-     minimum metal Z0 .................. 63.0 ohms
-     maximum metal Z0 .................. 503.7 ohms
-     total net capacitance (with ICs) .. 76.9 pF
-     total metal capacitance ........... 76.9 pF
-     total metal inductance ............ 332.5 nH
-     total metal resistance ............ 8.0 ohms
-     total metal length ................ 032.904 in
-     average metal Z0 .................. 65.7 ohms
-
-  NET = TXLO_SER_EN_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  29
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.112 ns
-     minimum metal Z0 .................. 21.5 ohms
-     maximum metal Z0 .................. 47.0 ohms
-     total net capacitance (with ICs) .. 24.4 pF
-     total metal capacitance ........... 24.4 pF
-     total metal inductance ............ 50.7 nH
-     total metal resistance ............ 1.8 ohms
-     total metal length ................ 007.255 in
-     average metal Z0 .................. 45.5 ohms
-
-  NET = TXLO_SPI_CS_N_B00, TXLO_SPI_SDO_B00, B88_L6_N_B01, B88_L6_P_B01
-   COUNTS ------------------------------------------------------------
-     segments ...........  126
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.396 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 90.7 ohms
-     total net capacitance (with ICs) .. 30.0 pF
-     total metal capacitance ........... 30.0 pF
-     total metal inductance ............ 65.2 nH
-     total metal resistance ............ 2.5 ohms
-     total metal length ................ 009.127 in
-     average metal Z0 .................. 46.6 ohms
-
-  NET = TXLO_SPI_CS_N_N_B00, TXLO_SPI_CS_N_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 133.114 ps
-     minimum metal Z0 .................. 40.8 ohms
-     maximum metal Z0 .................. 503.7 ohms
-     total net capacitance (with ICs) .. 2.0 pF
-     total metal capacitance ........... 2.0 pF
-     total metal inductance ............ 9.9 nH
-     total metal resistance ............ 190.9 milliohms
-     total metal length ................ 000.884 in
-     average metal Z0 .................. 70.7 ohms
-
-  NET = TXLO_SPI_SCLK_B00, RXLO_MBUS_RX_B00, B88_L12_N_B01, B88_L12_P_B01, $91N60491_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  147
-     IC drivers .........  0
-     IC receivers .......  8
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 1.153 ns
-     minimum metal Z0 .................. 21.7 ohms
-     maximum metal Z0 .................. 97.6 ohms
-     total net capacitance (with ICs) .. 24.7 pF
-     total metal capacitance ........... 24.7 pF
-     total metal inductance ............ 54.1 nH
-     total metal resistance ............ 2.1 ohms
-     total metal length ................ 007.548 in
-     average metal Z0 .................. 46.8 ohms
-
-  NET = TXLO_SPI_SCLK_N_B00, TXLO_SPI_SCLK_P_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  18
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 247.485 ps
-     minimum metal Z0 .................. 40.8 ohms
-     maximum metal Z0 .................. 503.7 ohms
-     total net capacitance (with ICs) .. 3.8 pF
-     total metal capacitance ........... 3.8 pF
-     total metal inductance ............ 17.2 nH
-     total metal resistance ............ 371.2 milliohms
-     total metal length ................ 001.627 in
-     average metal Z0 .................. 67.4 ohms
-
-  NET = TXLO_SPI_SDO_P_B00, TXLO_SPI_SDO_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  17
-     IC drivers .........  0
-     IC receivers .......  4
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 96.706 ps
-     minimum metal Z0 .................. 40.9 ohms
-     maximum metal Z0 .................. 507.3 ohms
-     total net capacitance (with ICs) .. 1.4 pF
-     total metal capacitance ........... 1.4 pF
-     total metal inductance ............ 8.2 nH
-     total metal resistance ............ 134.7 milliohms
-     total metal length ................ 000.651 in
-     average metal Z0 .................. 75.1 ohms
-
-  NET = U150_RST_N_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  3
-     IC drivers .........  0
-     IC receivers .......  1
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 17.027 ps
-     minimum metal Z0 .................. 46.7 ohms
-     maximum metal Z0 .................. 48.2 ohms
-     total net capacitance (with ICs) .. 362.0 fF
-     total metal capacitance ........... 362.0 fF
-     total metal inductance ............ 801.0 pH
-     total metal resistance ............ 6.1 milliohms
-     total metal length ................ 000.125 in
-     average metal Z0 .................. 47.0 ohms
-
-  NET = VCC_CORE_RUN_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  9
-     IC drivers .........  0
-     IC receivers .......  2
-     resistors ..........  1
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 35.866 ps
-     minimum metal Z0 .................. 48.1 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 740.8 fF
-     total metal capacitance ........... 740.8 fF
-     total metal inductance ............ 1.7 nH
-     total metal resistance ............ 12.8 milliohms
-     total metal length ................ 000.262 in
-     average metal Z0 .................. 48.4 ohms
-
-  NET = VX_SRS0_SE_GPIO_2_B00, VX_SRS0_SE_GPIO_3_B00, B88_L10_P_B02, B88_L10_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  174
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.475 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 97.2 pF
-     total metal capacitance ........... 97.2 pF
-     total metal inductance ............ 206.5 nH
-     total metal resistance ............ 7.7 ohms
-     total metal length ................ 029.175 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = VX_SRS0_SE_GPIO_4_B00, VX_SRS0_SE_GPIO_5_B00, B88_L8_P_B02, B88_L8_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  173
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.377 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 95.2 pF
-     total metal capacitance ........... 95.2 pF
-     total metal inductance ............ 201.6 nH
-     total metal resistance ............ 7.5 ohms
-     total metal length ................ 028.536 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = VX_SRS0_SE_GPIO_6_B00, VX_SRS0_SE_GPIO_7_B00, B88_L11_P_B02, B88_L11_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  180
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.417 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 84.0 ohms
-     total net capacitance (with ICs) .. 96.0 pF
-     total metal capacitance ........... 96.0 pF
-     total metal inductance ............ 203.6 nH
-     total metal resistance ............ 7.6 ohms
-     total metal length ................ 028.797 in
-     average metal Z0 .................. 46.0 ohms
-
-  NET = VX_SRS0_SE_GPIO_8_B00, VX_SRS0_SE_GPIO_9_B00, B88_L9_P_B02, B88_L9_N_B02
-   COUNTS ------------------------------------------------------------
-     segments ...........  152
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 4.387 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 84.7 ohms
-     total net capacitance (with ICs) .. 95.3 pF
-     total metal capacitance ........... 95.3 pF
-     total metal inductance ............ 202.4 nH
-     total metal resistance ............ 7.5 ohms
-     total metal length ................ 028.603 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = VX_SRS1_SE_GPIO_3_B00, VX_SRS1_SE_GPIO_2_B00, B88_L10_N_B03, B88_L10_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  150
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.524 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 94.3 ohms
-     total net capacitance (with ICs) .. 76.6 pF
-     total metal capacitance ........... 76.6 pF
-     total metal inductance ............ 162.7 nH
-     total metal resistance ............ 6.1 ohms
-     total metal length ................ 022.981 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = VX_SRS1_SE_GPIO_4_B00, VX_SRS1_SE_GPIO_5_B00, B88_L8_P_B03, B88_L8_N_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  140
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.537 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 76.8 pF
-     total metal capacitance ........... 76.8 pF
-     total metal inductance ............ 163.5 nH
-     total metal resistance ............ 6.1 ohms
-     total metal length ................ 023.062 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = VX_SRS1_SE_GPIO_7_B00, VX_SRS1_SE_GPIO_6_B00, B88_L11_N_B03, B88_L11_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  145
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.578 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 77.7 pF
-     total metal capacitance ........... 77.7 pF
-     total metal inductance ............ 165.4 nH
-     total metal resistance ............ 6.2 ohms
-     total metal length ................ 023.332 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = VX_SRS1_SE_GPIO_9_B00, VX_SRS1_SE_GPIO_8_B00, B88_L9_N_B03, B88_L9_P_B03
-   COUNTS ------------------------------------------------------------
-     segments ...........  113
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 3.572 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 87.7 ohms
-     total net capacitance (with ICs) .. 77.6 pF
-     total metal capacitance ........... 77.6 pF
-     total metal inductance ............ 164.9 nH
-     total metal resistance ............ 6.1 ohms
-     total metal length ................ 023.292 in
-     average metal Z0 .................. 46.1 ohms
-
-  NET = VX_SRS2_SE_GPIO_2_B00, VX_SRS2_SE_GPIO_3_B00, B88_L10_P_B04, B88_L10_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  150
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.190 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 113.0 ohms
-     total net capacitance (with ICs) .. 47.5 pF
-     total metal capacitance ........... 47.5 pF
-     total metal inductance ............ 101.4 nH
-     total metal resistance ............ 3.9 ohms
-     total metal length ................ 014.286 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = VX_SRS2_SE_GPIO_4_B00, VX_SRS2_SE_GPIO_5_B00, B88_L8_P_B04, B88_L8_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  160
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.297 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 76.9 ohms
-     total net capacitance (with ICs) .. 49.8 pF
-     total metal capacitance ........... 49.8 pF
-     total metal inductance ............ 106.3 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 014.984 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = VX_SRS2_SE_GPIO_6_B00, VX_SRS2_SE_GPIO_7_B00, B88_L11_P_B04, B88_L11_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  137
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.281 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 49.7 ohms
-     total net capacitance (with ICs) .. 49.4 pF
-     total metal capacitance ........... 49.4 pF
-     total metal inductance ............ 105.7 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 014.876 in
-     average metal Z0 .................. 46.2 ohms
-
-  NET = VX_SRS2_SE_GPIO_8_B00, VX_SRS2_SE_GPIO_9_B00, B88_L9_P_B04, B88_L9_N_B04
-   COUNTS ------------------------------------------------------------
-     segments ...........  103
-     IC drivers .........  0
-     IC receivers .......  10
-     resistors ..........  0
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 2.315 ns
-     minimum metal Z0 .................. 21.4 ohms
-     maximum metal Z0 .................. 508.8 ohms
-     total net capacitance (with ICs) .. 50.1 pF
-     total metal capacitance ........... 50.1 pF
-     total metal inductance ............ 107.4 nH
-     total metal resistance ............ 4.0 ohms
-     total metal length ................ 015.101 in
-     average metal Z0 .................. 46.3 ohms
-
-  NET = Y1_OE_B00
-   COUNTS ------------------------------------------------------------
-     segments ...........  3
-     IC drivers .........  0
-     IC receivers .......  0
-     resistors ..........  2
-     capacitors .........  0
-   INTERCONNECT STATISTICS -------------------------------------------
-     total metal delay ................. 9.423 ps
-     minimum metal Z0 .................. 33.9 ohms
-     maximum metal Z0 .................. 34.4 ohms
-     total net capacitance (with ICs) .. 276.4 fF
-     total metal capacitance ........... 276.4 fF
-     total metal inductance ............ 321.3 pH
-     total metal resistance ............ 1.7 milliohms
-     total metal length ................ 000.067 in
-     average metal Z0 .................. 34.1 ohms
-
-END TIME
-**********************************************************************
-  Date ............................. Thursday Mar. 26,2026
-  Time ............................. 17:07:02
-  Total Run Time....................  0 Days, 01 Hours, 48 Minutes 58 Seconds
-
-******************************* END **********************************
+Column2.2	Column2.3
+CRCW060349R9FKT	R1720
+CRCW060349R9FKT	R1718
+CRCW060349R9FKT	R1717
+CRCW060349R9FKT	R369
+CRCW060349R9FKT	R108
+CRCW040227R4FKT	R1736
+CRCW040227R4FKT	R1735
+CRCW040227R4FKT	R1734
+CRCW040227R4FKT	R1733
+CRCW040227R4FKT	R1732
+CRCW040227R4FKT	R1731
+CRCW040227R4FKT	R1730
+CRCW040227R4FKT	R1729
+CRCW040227R4FKT	R1721
+CRCW040227R4FKT	R1715
+CRCW040227R4FKT	R1455
+CRCW040227R4FKT	R1454
+CRCW040227R4FKT	R1453
+CRCW040227R4FKT	R1452
+CRCW040227R4FKT	R1438
+CRCW040227R4FKT	R1436
+CRCW040227R4FKT	R1435
+CRCW040227R4FKT	R1256
+CRCW040227R4FKT	R1247
+CRCW040227R4FKT	R1246
+CRCW040227R4FKT	R1082
+CRCW040227R4FKT	R1068
+CRCW040227R4FKT	R1067
+CRCW040227R4FKT	R1057
+CRCW040227R4FKT	R1056
+CRCW040227R4FKT	R1045
+CRCW040227R4FKT	R1044
+CRCW040227R4FKT	R1042
+CRCW040227R4FKT	R1041
+CRCW040227R4FKT	R1027
+CRCW040227R4FKT	R1026
+CRCW040227R4FKT	R1025
+CRCW040227R4FKT	R1020
+CRCW040227R4FKT	R1019
+CRCW040227R4FKT	R803
+CRCW040227R4FKT	R802
+CRCW040227R4FKT	R535
+CRCW040227R4FKT	R526
+CRCW040227R4FKT	R492
+CRCW040227R4FKT	R490
+CRCW040227R4FKT	R489
+CRCW040227R4FKT	R486
+CRCW040227R4FKT	R485
+CRCW040227R4FKT	R484
+CRCW040227R4FKT	R483
+CRCW040227R4FKT	R480
+CRCW040227R4FKT	R479
+CRCW040227R4FKT	R478
+CRCW040227R4FKT	R477
+CRCW040227R4FKT	R476
+CRCW040227R4FKT	R472
+CRCW040227R4FKT	R471
+CRCW040227R4FKT	R470
+CRCW040227R4FKT	R469
+CRCW040227R4FKT	R463
+CRCW040227R4FKT	R462
+CRCW040227R4FKT	R461
+CRCW040227R4FKT	R460
+CRCW040227R4FKT	R458
+CRCW040227R4FKT	R457
+CRCW040227R4FKT	R450
+CRCW040227R4FKT	R449
+CRCW040227R4FKT	R448
+CRCW040227R4FKT	R447
+CRCW040227R4FKT	R441
+CRCW040227R4FKT	R440
+CRCW040227R4FKT	R439
+CRCW040227R4FKT	R438
+CRCW040227R4FKT	R429
+CRCW040227R4FKT	R428
+CRCW040227R4FKT	R427
+CRCW040227R4FKT	R426
+CRCW040227R4FKT	R423
+CRCW040227R4FKT	R422
+CRCW040227R4FKT	R421
+CRCW040227R4FKT	R420
+CRCW040227R4FKT	R419
+CRCW040227R4FKT	R418
+CRCW040227R4FKT	R417
+CRCW040227R4FKT	R416
+CRCW040227R4FKT	R400
+CRCW040227R4FKT	R399
+CRCW040227R4FKT	R398
+CRCW040227R4FKT	R397
+CRCW040227R4FKT	R393
+CRCW040227R4FKT	R392
+CRCW040227R4FKT	R390
+CRCW040227R4FKT	R389
+CRCW040227R4FKT	R388
+CRCW040227R4FKT	R387
+CRCW040227R4FKT	R386
+CRCW040227R4FKT	R385
+CRCW040227R4FKT	R384
+CRCW040227R4FKT	R383
+CRCW040227R4FKT	R356
+CRCW040227R4FKT	R355
+CRCW040227R4FKT	R354
+CRCW040227R4FKT	R353
+CRCW040227R4FKT	R350
+CRCW040227R4FKT	R349
+CRCW040227R4FKT	R348
+CRCW040227R4FKT	R347
+CRCW040227R4FKT	R346
+CRCW040227R4FKT	R345
+CRCW040227R4FKT	R344
+CRCW040227R4FKT	R339
+CRCW040227R4FKT	R338
+CRCW040227R4FKT	R336
+CRCW040227R4FKT	R335
+CRCW040227R4FKT	R331
+CRCW040227R4FKT	R324
+CRCW040227R4FKT	R323
+CRCW040227R4FKT	R322
+CRCW040227R4FKT	R315
+CRCW040227R4FKT	R314
+CRCW040227R4FKT	R313
+CRCW040227R4FKT	R312
+CRCW040227R4FKT	R311
+CRCW040227R4FKT	R310
+CRCW040227R4FKT	R309
+CRCW040227R4FKT	R308
+CRCW040227R4FKT	R307
+CRCW040227R4FKT	R306
+CRCW040227R4FKT	R305
+CRCW040227R4FKT	R304
+CRCW040227R4FKT	R303
+CRCW040227R4FKT	R302
+CRCW040227R4FKT	R301
+CRCW040227R4FKT	R289
+CRCW040227R4FKT	R288
+CRCW040227R4FKT	R286
+CRCW040227R4FKT	R285
+CRCW040227R4FKT	R283
+CRCW040227R4FKT	R282
+CRCW040227R4FKT	R281
+CRCW040227R4FKT	R280
+CRCW040227R4FKT	R279
+CRCW040227R4FKT	R278
+CRCW040227R4FKT	R275
+CRCW040227R4FKT	R269
+CRCW040227R4FKT	R268
+CRCW040227R4FKT	R267
+CRCW040227R4FKT	R266
+CRCW040227R4FKT	R265
+CRCW040227R4FKT	R264
+CRCW040227R4FKT	R263
+CRCW040227R4FKT	R262
+CRCW040227R4FKT	R260
+CRCW040227R4FKT	R259
+CRCW040227R4FKT	R251
+CRCW040227R4FKT	R250
+CRCW040227R4FKT	R249
+CRCW040227R4FKT	R248
+CRCW040227R4FKT	R247
+CRCW040227R4FKT	R246
+CRCW040227R4FKT	R245
+CRCW040227R4FKT	R244
+CRCW040227R4FKT	R238
+CRCW040227R4FKT	R237
+CRCW040227R4FKT	R236
+CRCW040227R4FKT	R235
+CRCW040227R4FKT	R234
+CRCW040227R4FKT	R233
+CRCW040227R4FKT	R232
+CRCW040227R4FKT	R231
+CRCW040227R4FKT	R230
+CRCW040227R4FKT	R229
+CRCW040227R4FKT	R228
+CRCW040227R4FKT	R227
+CRCW040227R4FKT	R226
+CRCW040227R4FKT	R221
+CRCW040227R4FKT	R220
+CRCW040227R4FKT	R219
+CRCW040227R4FKT	R218
+CRCW040227R4FKT	R217
+CRCW040227R4FKT	R216
+CRCW040227R4FKT	R215
+CRCW040227R4FKT	R214
+CRCW040227R4FKT	R213
+CRCW040227R4FKT	R212
+CRCW040227R4FKT	R211
+CRCW040227R4FKT	R210
+CRCW040227R4FKT	R202
+CRCW040227R4FKT	R201
+CRCW040227R4FKT	R200
+CRCW040227R4FKT	R199
+CRCW040227R4FKT	R198
+CRCW040227R4FKT	R197
+CRCW040227R4FKT	R196
+CRCW040227R4FKT	R193
+CRCW040227R4FKT	R144
+CRCW040227R4FKT	R143
+CRCW040227R4FKT	R142
+CRCW040227R4FKT	R141
+CRCW040227R4FKT	R140
+CRCW040227R4FKT	R139
+CRCW040227R4FKT	R138
+CRCW040227R4FKT	R137
+CRCW040227R4FKT	R136
+CRCW040227R4FKT	R135
+CRCW040227R4FKT	R134
+CRCW040227R4FKT	R132
+CRCW040227R4FKT	R131
+CRCW040227R4FKT	R130
+CRCW040227R4FKT	R128
+CRCW040227R4FKT	R127
+CRCW040227R4FKT	R126
+CRCW040227R4FKT	R123
+CRCW040227R4FKT	R122
+CRCW040227R4FKT	R121
+CRCW040227R4FKT	R120
+CRCW040227R4FKT	R119
+CRCW040227R4FKT	R116
+CRCW040227R4FKT	R115
+CRCW040227R4FKT	R114
+CRCW040227R4FKT	R113
+CRCW040227R4FKT	R112
+CRCW040227R4FKT	R111
+CRCW040227R4FKT	R110
+CRCW040227R4FKT	R109
+CRCW040227R4FKT	R84
+CRCW040227R4FKT	R83
+CRCW040227R4FKT	R82
+CRCW040227R4FKT	R81
+CRCW040227R4FKT	R80
+CRCW040227R4FKT	R79
+CRCW040227R4FKT	R78
+CRCW040227R4FKT	R77
+CRCW040227R4FKT	R75
+CRCW040227R4FKT	R65
+CRCW040227R4FKT	R64
+CRCW040227R4FKT	R63
+CRCW040227R4FKT	R62
+CRCW040227R4FKT	R61
+CRCW040227R4FKT	R60
+CRCW040227R4FKT	R59
+CRCW040227R4FKT	R58
+CRCW040227R4FKT	R55
+CRCW040227R4FKT	R54
+CRCW040227R4FKT	R52
+CRCW040227R4FKT	R51
+CRCW040227R4FKT	R48
+CRCW040227R4FKT	R47
+CRCW040227R4FKT	R43
+CRCW040227R4FKT	R42
+CRCW040227R4FKT	R38
+CRCW040227R4FKT	R37
+CRCW040227R4FKT	R36
+CRCW040227R4FKT	R35
+CRCW040227R4FKT	R31
+CRCW040227R4FKT	R30
+CRCW040227R4FKT	R29
+CRCW040227R4FKT	R28
+CRCW040227R4FKT	R23
+CRCW040227R4FKT	R22
+CRCW040227R4FKT	R21
+CRCW040227R4FKT	R20
+CRCW040227R4FKT	R17
+CRCW040227R4FKT	R16
+CRCW040227R4FKT	R4
+CRCW040227R4FKT	R3
+CRCW06030000Z0EAHP	R1457
+CRCW06030000Z0EAHP	R1456
+CRCW06030000Z0EAHP	R1264
+CRCW06030000Z0EAHP	R1233
+CRCW06030000Z0EAHP	R1107
+CRCW06030000Z0EAHP	R1084
+C0805X106J8RACAUTO	C1700
+C0805X106J8RACAUTO	C1534
+C0805X106J8RACAUTO	C1507
+C0805X106J8RACAUTO	C1498
+C0805X106J8RACAUTO	C1497
+C0805X106J8RACAUTO	C1474
+C0805X106J8RACAUTO	C1473
+C0805X106J8RACAUTO	C1442
+C0805X106J8RACAUTO	C1441
+C0805X106J8RACAUTO	C1439
+C0805X106J8RACAUTO	C1438
+C0805X106J8RACAUTO	C1437
+C0805X106J8RACAUTO	C1432
+C0805X106J8RACAUTO	C1431
+C0805X106J8RACAUTO	C1430
+C0805X106J8RACAUTO	C1429
+C0805X106J8RACAUTO	C1428
+C0805X106J8RACAUTO	C1403
+C0805X106J8RACAUTO	C1402
+C0805X106J8RACAUTO	C1401
+C0805X106J8RACAUTO	C1381
+C0805X106J8RACAUTO	C1379
+C0805X106J8RACAUTO	C1378
+C0805X106J8RACAUTO	C1369
+C0805X106J8RACAUTO	C1368
+C0805X106J8RACAUTO	C1367
+C0805X106J8RACAUTO	C1366
+C0805X106J8RACAUTO	C1365
+C0805X106J8RACAUTO	C1364
+C0805X106J8RACAUTO	C1328
+C0805X106J8RACAUTO	C1327
+C0805X106J8RACAUTO	C1325
+C0805X106J8RACAUTO	C1324
+C0805X106J8RACAUTO	C1323
+C0805X106J8RACAUTO	C1302
+C0805X106J8RACAUTO	C717
+C0805X106J8RACAUTO	C700
+C0805X106J8RACAUTO	C699
+C0805X106J8RACAUTO	C694
+C0805X106J8RACAUTO	C693
+C0805X106J8RACAUTO	C692
+C0805X106J8RACAUTO	C670
+C0805X106J8RACAUTO	C634
+C0805X106J8RACAUTO	C562
+C0805X106J8RACAUTO	C561
+C0805X106J8RACAUTO	C532
+C0805X106J8RACAUTO	C531
+C0805X106J8RACAUTO	C528
+C0805X106J8RACAUTO	C527
+C0805X106J8RACAUTO	C507
+C0805X106J8RACAUTO	C503
+C0805X106J8RACAUTO	C485
+C0805X106J8RACAUTO	C460
+C0805X106J8RACAUTO	C455
+C0805X106J8RACAUTO	C454
+C0805X106J8RACAUTO	C453
+C0805X106J8RACAUTO	C452
+C0805X106J8RACAUTO	C447
+C0805X106J8RACAUTO	C446
+C0805X106J8RACAUTO	C444
+C0805X106J8RACAUTO	C429
+C0805X106J8RACAUTO	C428
+C0805X106J8RACAUTO	C377
+C0805X106J8RACAUTO	C351
+C0805X106J8RACAUTO	C343
+C0805X106J8RACAUTO	C323
+C0805X106J8RACAUTO	C315
+C0805X106J8RACAUTO	C314
+C0805X106J8RACAUTO	C291
+C0805X106J8RACAUTO	C273
+C0805X106J8RACAUTO	C267
+C0805X106J8RACAUTO	C266
+C0805X106J8RACAUTO	C261
+C0805X106J8RACAUTO	C185
+C0805X106J8RACAUTO	C184
+C0805X106J8RACAUTO	C183
+C0805X106J8RACAUTO	C182
+C0805X106J8RACAUTO	C181
+C0805X106J8RACAUTO	C180
+C0805X106J8RACAUTO	C178
+C0805X106J8RACAUTO	C164
+C0805X106J8RACAUTO	C145
+C0805X106J8RACAUTO	C144
+C0805X106J8RACAUTO	C138
+C0805X106J8RACAUTO	C132
+C0805X106J8RACAUTO	C98
+C0805X106J8RACAUTO	C95
+C0805X106J8RACAUTO	C89
+C0805X106J8RACAUTO	C80
+C0805X106J8RACAUTO	C79
+C0805X106J8RACAUTO	C78
+C0805X106J8RACAUTO	C54
+C0805X106J8RACAUTO	C51
+9311-60295	J55
+9311-60295	J54
+9311-60295	J53
+9311-60295	J52
+9311-60295	J51
+9311-60295	J50
+9311-60295	J49
+9311-60295	J48
+9311-60295	J47
+9311-60295	J46
+9311-60295	J45
+9311-60295	J44
+9311-60295	J43
+9311-60295	J42
+9311-60295	J41
+9311-60295	J40
+TNPW06037K50BEEA	R1701
+TNPW06037K50BEEA	R464
+600L270FW200T	C1675
+600L270FW200T	C1674
+600L270FW200T	C1673
+600L270FW200T	C1672
+600L270FW200T	C1671
+600L270FW200T	C1670
+600L270FW200T	C1669
+600L270FW200T	C1668
+600L270FW200T	C1667
+600L270FW200T	C1666
+600L270FW200T	C1665
+600L270FW200T	C1664
+600L270FW200T	C1663
+600L270FW200T	C1662
+600L270FW200T	C1661
+600L270FW200T	C1660
+600L270FW200T	C1659
+600L270FW200T	C1658
+600L270FW200T	C1657
+600L270FW200T	C1656
+600L270FW200T	C1641
+600L270FW200T	C1640
+600L270FW200T	C1639
+600L270FW200T	C1638
+600L270FW200T	C1637
+600L270FW200T	C1636
+600L270FW200T	C1635
+600L270FW200T	C1634
+600L270FW200T	C1633
+600L270FW200T	C1632
+600L270FW200T	C1631
+600L270FW200T	C1630
+600L270FW200T	C1625
+600L270FW200T	C1624
+600L270FW200T	C1623
+600L270FW200T	C1622
+600L270FW200T	C1621
+600L270FW200T	C1619
+600L270FW200T	C1617
+600L270FW200T	C1615
+600L270FW200T	C1613
+600L270FW200T	C1612
+600L270FW200T	C1611
+600L270FW200T	C1610
+600L270FW200T	C1609
+600L270FW200T	C1608
+600L270FW200T	C1607
+600L270FW200T	C1606
+600L270FW200T	C1605
+600L270FW200T	C1604
+600L270FW200T	C1603
+600L270FW200T	C1602
+600L270FW200T	C1597
+600L270FW200T	C1596
+600L270FW200T	C1595
+600L270FW200T	C1594
+600L270FW200T	C1593
+600L270FW200T	C1592
+600L270FW200T	C1591
+600L270FW200T	C1590
+600L270FW200T	C1577
+600L270FW200T	C1576
+600L270FW200T	C1575
+600L270FW200T	C1574
+600L270FW200T	C1573
+600L270FW200T	C1572
+600L270FW200T	C1571
+600L270FW200T	C1570
+600L270FW200T	C1569
+600L270FW200T	C1568
+600L270FW200T	C1567
+600L270FW200T	C1566
+600L270FW200T	C1561
+600L270FW200T	C1560
+600L270FW200T	C1559
+600L270FW200T	C1558
+600L270FW200T	C1557
+600L270FW200T	C1555
+600L270FW200T	C1553
+600L270FW200T	C1551
+600L270FW200T	C1530
+600L270FW200T	C1524
+600L270FW200T	C1519
+600L270FW200T	C1514
+600L270FW200T	C1495
+600L270FW200T	C1494
+600L270FW200T	C1493
+600L270FW200T	C1492
+600L270FW200T	C1491
+600L270FW200T	C1490
+600L270FW200T	C1489
+600L270FW200T	C1488
+600L270FW200T	C1458
+600L270FW200T	C1453
+600L270FW200T	C1449
+600L270FW200T	C1444
+600L270FW200T	C1423
+600L270FW200T	C1422
+600L270FW200T	C1421
+600L270FW200T	C1420
+600L270FW200T	C1400
+600L270FW200T	C1398
+600L270FW200T	C1396
+600L270FW200T	C1394
+600L270FW200T	C1392
+600L270FW200T	C1388
+600L270FW200T	C1386
+600L270FW200T	C1382
+600L270FW200T	C1362
+600L270FW200T	C1361
+600L270FW200T	C1360
+600L270FW200T	C1359
+600L270FW200T	C1358
+600L270FW200T	C1357
+600L270FW200T	C1356
+600L270FW200T	C1355
+600L270FW200T	C1349
+600L270FW200T	C1338
+600L270FW200T	C1308
+600L270FW200T	C1306
+600L270FW200T	C1296
+600L270FW200T	C1295
+600L270FW200T	C1294
+600L270FW200T	C1293
+600L270FW200T	C1286
+600L270FW200T	C1284
+600L270FW200T	C1282
+600L270FW200T	C1280
+600L270FW200T	C1240
+600L270FW200T	C1239
+600L270FW200T	C1181
+600L270FW200T	C1179
+600L270FW200T	C1177
+600L270FW200T	C1175
+600L270FW200T	C1174
+600L270FW200T	C1173
+600L270FW200T	C1172
+600L270FW200T	C1171
+600L270FW200T	C1162
+600L270FW200T	C1160
+600L270FW200T	C1158
+600L270FW200T	C1138
+600L270FW200T	C1122
+600L270FW200T	C1121
+600L270FW200T	C1120
+600L270FW200T	C1119
+600L270FW200T	C1118
+600L270FW200T	C1117
+600L270FW200T	C1116
+600L270FW200T	C1115
+600L270FW200T	C1108
+600L270FW200T	C1104
+600L270FW200T	C1102
+600L270FW200T	C1098
+600L270FW200T	C1096
+600L270FW200T	C1094
+600L270FW200T	C1092
+600L270FW200T	C1090
+600L270FW200T	C1074
+600L270FW200T	C1073
+600L270FW200T	C1072
+600L270FW200T	C1071
+600L270FW200T	C1064
+600L270FW200T	C1059
+600L270FW200T	C1055
+600L270FW200T	C1050
+600L270FW200T	C1022
+600L270FW200T	C1021
+600L270FW200T	C1020
+600L270FW200T	C1019
+600L270FW200T	C1018
+600L270FW200T	C1017
+600L270FW200T	C1016
+600L270FW200T	C1015
+600L270FW200T	C1001
+600L270FW200T	C995
+600L270FW200T	C990
+600L270FW200T	C984
+600L270FW200T	C956
+600L270FW200T	C954
+600L270FW200T	C952
+600L270FW200T	C950
+600L270FW200T	C944
+600L270FW200T	C943
+600L270FW200T	C942
+600L270FW200T	C941
+600L270FW200T	C932
+600L270FW200T	C931
+600L270FW200T	C930
+600L270FW200T	C929
+600L270FW200T	C928
+600L270FW200T	C927
+600L270FW200T	C926
+600L270FW200T	C925
+600L270FW200T	C924
+600L270FW200T	C923
+600L270FW200T	C922
+600L270FW200T	C921
+600L270FW200T	C908
+600L270FW200T	C907
+600L270FW200T	C906
+600L270FW200T	C905
+600L270FW200T	C904
+600L270FW200T	C903
+600L270FW200T	C902
+600L270FW200T	C901
+600L270FW200T	C895
+600L270FW200T	C894
+600L270FW200T	C893
+600L270FW200T	C892
+600L270FW200T	C891
+600L270FW200T	C890
+600L270FW200T	C889
+600L270FW200T	C888
+600L270FW200T	C887
+600L270FW200T	C886
+600L270FW200T	C885
+600L270FW200T	C884
+600L270FW200T	C882
+600L270FW200T	C880
+600L270FW200T	C878
+600L270FW200T	C876
+600L270FW200T	C875
+600L270FW200T	C874
+600L270FW200T	C873
+600L270FW200T	C872
+600L270FW200T	C863
+600L270FW200T	C862
+600L270FW200T	C861
+600L270FW200T	C860
+600L270FW200T	C857
+600L270FW200T	C856
+600L270FW200T	C855
+600L270FW200T	C854
+600L270FW200T	C853
+600L270FW200T	C852
+600L270FW200T	C851
+600L270FW200T	C850
+600L270FW200T	C835
+600L270FW200T	C834
+600L270FW200T	C833
+600L270FW200T	C832
+600L270FW200T	C831
+600L270FW200T	C830
+600L270FW200T	C829
+600L270FW200T	C828
+600L270FW200T	C827
+600L270FW200T	C826
+600L270FW200T	C825
+600L270FW200T	C824
+600L270FW200T	C823
+600L270FW200T	C822
+600L270FW200T	C821
+600L270FW200T	C820
+600L270FW200T	C819
+600L270FW200T	C818
+600L270FW200T	C817
+600L270FW200T	C816
+600L270FW200T	C290
+600L270FW200T	C289
+78279223560	L82
+78279223560	L81
+78279223560	L54
+DP83869HMRGZT	U874
+TNPW060311K0BEE	R1719
+TNPW060311K0BEE	R465
+TNPW060311K0BEE	R172
+TNPW060311K0BEE	R168
+LTC7151SEV#PBF	U124
+LTC7151SEV#PBF	U104
+LTC7151SEV#PBF	U84
+LTC7151SEV#PBF	U75
+LTC7151SEV#PBF	U69
+LTC7151SEV#PBF	U34
+TNPW06033K01BEEN	R174
+TNPW06033K01BEEN	R162
+SZMMSZ5256ET1G	D1
+CRCW0402240RFKTD	R1466
+CRCW0402240RFKTD	R1440
+CRCW0402240RFKTD	R1424
+CRCW0402240RFKTD	R1422
+CRCW0402240RFKTD	R1399
+CRCW0402240RFKTD	R1370
+CRCW0402240RFKTD	R1367
+CRCW0402240RFKTD	R1346
+CRCW0402240RFKTD	R1337
+CRCW0402240RFKTD	R1321
+CRCW0402240RFKTD	R1306
+CRCW0402240RFKTD	R1284
+CRCW0402240RFKTD	R1283
+CRCW0402240RFKTD	R1222
+CRCW0402240RFKTD	R1221
+CRCW0402240RFKTD	R1220
+CRCW0402240RFKTD	R1219
+CRCW0402240RFKTD	R1218
+CRCW0402240RFKTD	R1209
+CRCW0402240RFKTD	R1208
+CRCW0402240RFKTD	R1207
+CRCW0402240RFKTD	R1206
+CRCW0402240RFKTD	R1109
+CRCW0402240RFKTD	R1083
+CRCW0402240RFKTD	R1069
+CRCW0402240RFKTD	R366
+CRCW0402240RFKTD	R365
+CRCW0402240RFKTD	R364
+CRCW0402240RFKTD	R363
+CRCW0402240RFKTD	R361
+CRCW0402240RFKTD	R360
+CRCW0402240RFKTD	R359
+CRCW0402240RFKTD	R358
+CRCW0402240RFKTD	R357
+TNPW06032K49BEEA	R1708
+TNPW06032K49BEEA	R1707
+TNPW06032K49BEEA	R1706
+TNPW06032K49BEEA	R1442
+TNPW06032K49BEEA	R1261
+TNPW06032K49BEEA	R1235
+TNPW06032K49BEEA	R1055
+TNPW06032K49BEEA	R327
+TNPW06032K49BEEA	R209
+1000B-5001FX	T1
+T598D337M2R5ATE006	C1512
+T598D337M2R5ATE006	C1510
+T598D337M2R5ATE006	C1330
+T598D337M2R5ATE006	C1329
+T598D337M2R5ATE006	C1278
+T598D337M2R5ATE006	C1277
+T598D337M2R5ATE006	C1276
+T598D337M2R5ATE006	C1275
+T598D337M2R5ATE006	C1274
+T598D337M2R5ATE006	C867
+T598D337M2R5ATE006	C540
+SiT5147AE-FK-33VTA125.000000	Y7
+SEAF8-20-05.0-STL-08-1	J7
+SEAF8-20-05.0-STL-08-1	J6
+SEAF8-20-05.0-STL-08-1	J5
+SEAF8-20-05.0-STL-08-1	J4
+SEAF8-20-05.0-STL-08-1	J3
+SEAF8-20-05.0-STL-08-1	J2
+SEAF8-20-05.0-STL-08-1	J1
+SEAF8-20-05.0-STL-08-1	J0
+TPD4E02B04QDQARQ1	D53
+TPD4E02B04QDQARQ1	D52
+TPD4E02B04QDQARQ1	D51
+TPD4E02B04QDQARQ1	D50
+TPD4E02B04QDQARQ1	D49
+TPD4E02B04QDQARQ1	D48
+TPD4E02B04QDQARQ1	D47
+TPD4E02B04QDQARQ1	D46
+TPD4E02B04QDQARQ1	D45
+TPD4E02B04QDQARQ1	D44
+TPD4E02B04QDQARQ1	D43
+TPD4E02B04QDQARQ1	D42
+TPD4E02B04QDQARQ1	D41
+TPD4E02B04QDQARQ1	D40
+TPD4E02B04QDQARQ1	D39
+TPD4E02B04QDQARQ1	D38
+TPD4E02B04QDQARQ1	D37
+TPD4E02B04QDQARQ1	D36
+TPD4E02B04QDQARQ1	D35
+TPD4E02B04QDQARQ1	D33
+TPD4E02B04QDQARQ1	D31
+TPD4E02B04QDQARQ1	D30
+TPD4E02B04QDQARQ1	D28
+TPD4E02B04QDQARQ1	D26
+TPD4E02B04QDQARQ1	D25
+TPD4E02B04QDQARQ1	D24
+TPD4E02B04QDQARQ1	D23
+TPD4E02B04QDQARQ1	D22
+TPD4E02B04QDQARQ1	D19
+TPD4E02B04QDQARQ1	D17
+TPD4E02B04QDQARQ1	D15
+TPD4E02B04QDQARQ1	D14
+TPD4E02B04QDQARQ1	D13
+TPD4E02B04QDQARQ1	D12
+TPD4E02B04QDQARQ1	D11
+TPD4E02B04QDQARQ1	D10
+TPD4E02B04QDQARQ1	D9
+TPD4E02B04QDQARQ1	D8
+TPD4E02B04QDQARQ1	D7
+TPD4E02B04QDQARQ1	D6
+TPD4E02B04QDQARQ1	D5
+TPD4E02B04QDQARQ1	D4
+TPD4E02B04QDQARQ1	D3
+SZMMSZ5244ET1G	D32
+SZMMSZ5244ET1G	D29
+SZMMSZ5244ET1G	D20
+SZMMSZ5244ET1G	D16
+LM239AMPWREP	U30
+C1206X102KGRACAUTO	C1715
+SiT2044BM-S1-18EA25.000000	Y2
+SiT2044BM-S1-18EA25.000000	Y1
+TNPW0402100RBEED	R1714
+TNPW0402100RBEED	R1473
+TNPW0402100RBEED	R1469
+TNPW0402100RBEED	R1467
+TNPW0402100RBEED	R1344
+TNPW0402100RBEED	R1285
+TNPW0402100RBEED	R1266
+TNPW0402100RBEED	R1265
+TNPW0402100RBEED	R532
+TNPW0402100RBEED	R531
+TNPW0402100RBEED	R530
+TNPW0402100RBEED	R90
+C1210C105K1RALTU	C1703
+C1210C105K1RALTU	C1258
+C1210C105K1RALTU	C1227
+C1210C105K1RALTU	C1211
+C1210C105K1RALTU	C1206
+CRCW0603357RFKEA	R177
+CRCW0603357RFKEA	R176
+CRCW0603357RFKEA	R175
+CRCW0603357RFKEA	R165
+CRCW0603357RFKEA	R164
+CRCW0603357RFKEA	R163
+C1210C476K8RACTU	C1702
+C1210C476K8RACTU	C1537
+C1210C476K8RACTU	C1509
+C1210C476K8RACTU	C1508
+C1210C476K8RACTU	C1496
+C1210C476K8RACTU	C1472
+C1210C476K8RACTU	C1433
+C1210C476K8RACTU	C1380
+C1210C476K8RACTU	C1363
+C1210C476K8RACTU	C1326
+C1210C476K8RACTU	C1322
+C1210C476K8RACTU	C1303
+C1210C476K8RACTU	C1289
+C1210C476K8RACTU	C1273
+C1210C476K8RACTU	C1199
+C1210C476K8RACTU	C1184
+C1210C476K8RACTU	C896
+C1210C476K8RACTU	C864
+C1210C476K8RACTU	C858
+C1210C476K8RACTU	C836
+C1210C476K8RACTU	C640
+C1210C476K8RACTU	C544
+C1210C476K8RACTU	C543
+C1210C476K8RACTU	C530
+C1210C476K8RACTU	C529
+C1210C476K8RACTU	C484
+C1210C476K8RACTU	C445
+C1210C476K8RACTU	C432
+C1210C476K8RACTU	C316
+C1210C476K8RACTU	C191
+C1210C476K8RACTU	C190
+C1210C476K8RACTU	C139
+C1210C476K8RACTU	C131
+C1210C476K8RACTU	C92
+C1210C476K8RACTU	C83
+C1210C476K8RACTU	C48
+C1210C476K8RACTU	C40
+C1210C476K8RACTU	C33
+790-044SF-23MTEPA	J27
+TNPW06037K68BETA	R171
+TNPW06037K68BETA	R167
+C0603C104J5RACAUTO	C1691
+C0603C104J5RACAUTO	C1261
+C0603C104J5RACAUTO	C1209
+C0603C104J5RACAUTO	C1203
+TNPW060363K4BEEA	R241
+CRCW1206121RFK	R1723
+CRCW1206121RFK	R1257
+CRCW1206121RFK	R801
+CRCW1206121RFK	R800
+CRCW1206121RFK	R491
+CRCW1206121RFK	R488
+CRCW1206121RFK	R487
+CRCW1206121RFK	R481
+CRCW1206121RFK	R475
+CRCW1206121RFK	R473
+CRCW1206121RFK	R459
+CRCW1206121RFK	R456
+CRCW1206121RFK	R446
+CRCW1206121RFK	R445
+CRCW1206121RFK	R437
+CRCW1206121RFK	R436
+CRCW1206121RFK	R425
+CRCW1206121RFK	R424
+CRCW1206121RFK	R415
+CRCW1206121RFK	R414
+CRCW1206121RFK	R413
+CRCW1206121RFK	R412
+CRCW1206121RFK	R410
+CRCW1206121RFK	R402
+CRCW1206121RFK	R401
+CRCW1206121RFK	R396
+CRCW1206121RFK	R394
+CRCW1206121RFK	R391
+CRCW1206121RFK	R380
+CRCW1206121RFK	R379
+CRCW1206121RFK	R378
+CRCW1206121RFK	R377
+CRCW1206121RFK	R376
+CRCW1206121RFK	R375
+CRCW1206121RFK	R374
+CRCW1206121RFK	R373
+CRCW1206121RFK	R225
+CRCW1206121RFK	R224
+CRCW1206121RFK	R203
+CRCW1206121RFK	R195
+CRCW1206121RFK	R194
+CRCW1206121RFK	R192
+CRCW1206121RFK	R191
+CRCW1206121RFK	R190
+CRCW1206121RFK	R188
+CRCW1206121RFK	R187
+CRCW1206121RFK	R186
+CRCW1206121RFK	R185
+CRCW1206121RFK	R184
+CRCW1206121RFK	R183
+CRCW1206121RFK	R182
+CRCW1206121RFK	R181
+CRCW1206121RFK	R180
+CRCW1206121RFK	R179
+CRCW1206121RFK	R178
+CRCW1206121RFK	R160
+CRCW1206121RFK	R159
+CRCW1206121RFK	R129
+CRCW1206121RFK	R87
+CRCW1206121RFK	R85
+CRCW1206121RFK	R76
+CRCW1206121RFK	R72
+CRCW1206121RFK	R67
+CRCW1206121RFK	R66
+CRCW1206121RFK	R57
+CRCW1206121RFK	R56
+CRCW1206121RFK	R53
+CRCW1206121RFK	R50
+CRCW1206121RFK	R49
+CRCW1206121RFK	R46
+CRCW1206121RFK	R45
+CRCW1206121RFK	R44
+CRCW1206121RFK	R41
+CRCW1206121RFK	R40
+CRCW1206121RFK	R39
+CRCW1206121RFK	R34
+CRCW1206121RFK	R33
+CRCW1206121RFK	R32
+CRCW1206121RFK	R25
+CRCW1206121RFK	R24
+CRCW1206121RFK	R19
+CRCW1206121RFK	R18
+CRCW1206121RFK	R15
+CRCW1206121RFK	R14
+CRCW1206121RFK	R13
+CRCW1206121RFK	R12
+CRCW1206121RFK	R11
+CRCW1206121RFK	R10
+790-044SE-19MTEPA	J25
+LTC3807EUDC#TRPBF	U121
+LTC3807EUDC#TRPBF	U85
+LTC3807EUDC#TRPBF	U45
+LTC3807EUDC#TRPBF	U44
+C0402C104J4RACAUTO	C1718
+C0402C104J4RACAUTO	C1717
+C0402C104J4RACAUTO	C1716
+C0402C104J4RACAUTO	C1714
+C0402C104J4RACAUTO	C1713
+C0402C104J4RACAUTO	C1712
+C0402C104J4RACAUTO	C1711
+C0402C104J4RACAUTO	C1710
+C0402C104J4RACAUTO	C1709
+C0402C104J4RACAUTO	C1708
+C0402C104J4RACAUTO	C1707
+C0402C104J4RACAUTO	C1706
+C0402C104J4RACAUTO	C1705
+C0402C104J4RACAUTO	C1701
+C0402C104J4RACAUTO	C1697
+C0402C104J4RACAUTO	C1695
+C0402C104J4RACAUTO	C1692
+C0402C104J4RACAUTO	C1683
+C0402C104J4RACAUTO	C1654
+C0402C104J4RACAUTO	C1548
+C0402C104J4RACAUTO	C1547
+C0402C104J4RACAUTO	C1538
+C0402C104J4RACAUTO	C1536
+C0402C104J4RACAUTO	C1535
+C0402C104J4RACAUTO	C1506
+C0402C104J4RACAUTO	C1505
+C0402C104J4RACAUTO	C1504
+C0402C104J4RACAUTO	C1332
+C0402C104J4RACAUTO	C1301
+C0402C104J4RACAUTO	C1292
+C0402C104J4RACAUTO	C1291
+C0402C104J4RACAUTO	C1290
+C0402C104J4RACAUTO	C1288
+C0402C104J4RACAUTO	C1287
+C0402C104J4RACAUTO	C1272
+C0402C104J4RACAUTO	C1271
+C0402C104J4RACAUTO	C1270
+C0402C104J4RACAUTO	C1268
+C0402C104J4RACAUTO	C1260
+C0402C104J4RACAUTO	C1259
+C0402C104J4RACAUTO	C1256
+C0402C104J4RACAUTO	C1253
+C0402C104J4RACAUTO	C1243
+C0402C104J4RACAUTO	C1238
+C0402C104J4RACAUTO	C1237
+C0402C104J4RACAUTO	C1236
+C0402C104J4RACAUTO	C1235
+C0402C104J4RACAUTO	C1230
+C0402C104J4RACAUTO	C1225
+C0402C104J4RACAUTO	C1224
+C0402C104J4RACAUTO	C1197
+C0402C104J4RACAUTO	C1196
+C0402C104J4RACAUTO	C1194
+C0402C104J4RACAUTO	C1192
+C0402C104J4RACAUTO	C1191
+C0402C104J4RACAUTO	C1190
+C0402C104J4RACAUTO	C1189
+C0402C104J4RACAUTO	C1188
+C0402C104J4RACAUTO	C1187
+C0402C104J4RACAUTO	C1165
+C0402C104J4RACAUTO	C1164
+C0402C104J4RACAUTO	C1163
+C0402C104J4RACAUTO	C1010
+C0402C104J4RACAUTO	C1009
+C0402C104J4RACAUTO	C1008
+C0402C104J4RACAUTO	C1007
+C0402C104J4RACAUTO	C1006
+C0402C104J4RACAUTO	C1005
+C0402C104J4RACAUTO	C1004
+C0402C104J4RACAUTO	C1003
+C0402C104J4RACAUTO	C1002
+C0402C104J4RACAUTO	C980
+C0402C104J4RACAUTO	C979
+C0402C104J4RACAUTO	C978
+C0402C104J4RACAUTO	C977
+C0402C104J4RACAUTO	C976
+C0402C104J4RACAUTO	C975
+C0402C104J4RACAUTO	C974
+C0402C104J4RACAUTO	C973
+C0402C104J4RACAUTO	C972
+C0402C104J4RACAUTO	C971
+C0402C104J4RACAUTO	C963
+C0402C104J4RACAUTO	C962
+C0402C104J4RACAUTO	C961
+C0402C104J4RACAUTO	C960
+C0402C104J4RACAUTO	C959
+C0402C104J4RACAUTO	C958
+C0402C104J4RACAUTO	C949
+C0402C104J4RACAUTO	C948
+C0402C104J4RACAUTO	C947
+C0402C104J4RACAUTO	C946
+C0402C104J4RACAUTO	C945
+C0402C104J4RACAUTO	C936
+C0402C104J4RACAUTO	C935
+C0402C104J4RACAUTO	C934
+C0402C104J4RACAUTO	C933
+C0402C104J4RACAUTO	C810
+C0402C104J4RACAUTO	C805
+C0402C104J4RACAUTO	C804
+C0402C104J4RACAUTO	C803
+C0402C104J4RACAUTO	C802
+C0402C104J4RACAUTO	C801
+C0402C104J4RACAUTO	C800
+C0402C104J4RACAUTO	C734
+C0402C104J4RACAUTO	C730
+C0402C104J4RACAUTO	C725
+C0402C104J4RACAUTO	C724
+C0402C104J4RACAUTO	C721
+C0402C104J4RACAUTO	C719
+C0402C104J4RACAUTO	C715
+C0402C104J4RACAUTO	C714
+C0402C104J4RACAUTO	C713
+C0402C104J4RACAUTO	C712
+C0402C104J4RACAUTO	C711
+C0402C104J4RACAUTO	C710
+C0402C104J4RACAUTO	C709
+C0402C104J4RACAUTO	C708
+C0402C104J4RACAUTO	C706
+C0402C104J4RACAUTO	C704
+C0402C104J4RACAUTO	C702
+C0402C104J4RACAUTO	C698
+C0402C104J4RACAUTO	C697
+C0402C104J4RACAUTO	C691
+C0402C104J4RACAUTO	C689
+C0402C104J4RACAUTO	C687
+C0402C104J4RACAUTO	C686
+C0402C104J4RACAUTO	C685
+C0402C104J4RACAUTO	C683
+C0402C104J4RACAUTO	C682
+C0402C104J4RACAUTO	C681
+C0402C104J4RACAUTO	C679
+C0402C104J4RACAUTO	C677
+C0402C104J4RACAUTO	C676
+C0402C104J4RACAUTO	C674
+C0402C104J4RACAUTO	C673
+C0402C104J4RACAUTO	C672
+C0402C104J4RACAUTO	C671
+C0402C104J4RACAUTO	C669
+C0402C104J4RACAUTO	C668
+C0402C104J4RACAUTO	C667
+C0402C104J4RACAUTO	C666
+C0402C104J4RACAUTO	C665
+C0402C104J4RACAUTO	C663
+C0402C104J4RACAUTO	C662
+C0402C104J4RACAUTO	C659
+C0402C104J4RACAUTO	C658
+C0402C104J4RACAUTO	C655
+C0402C104J4RACAUTO	C654
+C0402C104J4RACAUTO	C653
+C0402C104J4RACAUTO	C651
+C0402C104J4RACAUTO	C648
+C0402C104J4RACAUTO	C647
+C0402C104J4RACAUTO	C646
+C0402C104J4RACAUTO	C645
+C0402C104J4RACAUTO	C643
+C0402C104J4RACAUTO	C642
+C0402C104J4RACAUTO	C641
+C0402C104J4RACAUTO	C638
+C0402C104J4RACAUTO	C636
+C0402C104J4RACAUTO	C635
+C0402C104J4RACAUTO	C633
+C0402C104J4RACAUTO	C628
+C0402C104J4RACAUTO	C627
+C0402C104J4RACAUTO	C626
+C0402C104J4RACAUTO	C625
+C0402C104J4RACAUTO	C624
+C0402C104J4RACAUTO	C623
+C0402C104J4RACAUTO	C622
+C0402C104J4RACAUTO	C576
+C0402C104J4RACAUTO	C575
+C0402C104J4RACAUTO	C573
+C0402C104J4RACAUTO	C571
+C0402C104J4RACAUTO	C569
+C0402C104J4RACAUTO	C565
+C0402C104J4RACAUTO	C560
+C0402C104J4RACAUTO	C551
+C0402C104J4RACAUTO	C548
+C0402C104J4RACAUTO	C547
+C0402C104J4RACAUTO	C546
+C0402C104J4RACAUTO	C538
+C0402C104J4RACAUTO	C536
+C0402C104J4RACAUTO	C535
+C0402C104J4RACAUTO	C534
+C0402C104J4RACAUTO	C533
+C0402C104J4RACAUTO	C525
+C0402C104J4RACAUTO	C524
+C0402C104J4RACAUTO	C519
+C0402C104J4RACAUTO	C517
+C0402C104J4RACAUTO	C515
+C0402C104J4RACAUTO	C513
+C0402C104J4RACAUTO	C511
+C0402C104J4RACAUTO	C509
+C0402C104J4RACAUTO	C504
+C0402C104J4RACAUTO	C498
+C0402C104J4RACAUTO	C497
+C0402C104J4RACAUTO	C495
+C0402C104J4RACAUTO	C493
+C0402C104J4RACAUTO	C491
+C0402C104J4RACAUTO	C487
+C0402C104J4RACAUTO	C486
+C0402C104J4RACAUTO	C478
+C0402C104J4RACAUTO	C475
+C0402C104J4RACAUTO	C473
+C0402C104J4RACAUTO	C471
+C0402C104J4RACAUTO	C469
+C0402C104J4RACAUTO	C467
+C0402C104J4RACAUTO	C465
+C0402C104J4RACAUTO	C459
+C0402C104J4RACAUTO	C458
+C0402C104J4RACAUTO	C457
+C0402C104J4RACAUTO	C456
+C0402C104J4RACAUTO	C450
+C0402C104J4RACAUTO	C448
+C0402C104J4RACAUTO	C443
+C0402C104J4RACAUTO	C442
+C0402C104J4RACAUTO	C441
+C0402C104J4RACAUTO	C436
+C0402C104J4RACAUTO	C435
+C0402C104J4RACAUTO	C434
+C0402C104J4RACAUTO	C433
+C0402C104J4RACAUTO	C431
+C0402C104J4RACAUTO	C421
+C0402C104J4RACAUTO	C418
+C0402C104J4RACAUTO	C417
+C0402C104J4RACAUTO	C379
+C0402C104J4RACAUTO	C378
+C0402C104J4RACAUTO	C375
+C0402C104J4RACAUTO	C374
+C0402C104J4RACAUTO	C373
+C0402C104J4RACAUTO	C363
+C0402C104J4RACAUTO	C360
+C0402C104J4RACAUTO	C358
+C0402C104J4RACAUTO	C357
+C0402C104J4RACAUTO	C353
+C0402C104J4RACAUTO	C352
+C0402C104J4RACAUTO	C350
+C0402C104J4RACAUTO	C349
+C0402C104J4RACAUTO	C344
+C0402C104J4RACAUTO	C336
+C0402C104J4RACAUTO	C335
+C0402C104J4RACAUTO	C332
+C0402C104J4RACAUTO	C331
+C0402C104J4RACAUTO	C313
+C0402C104J4RACAUTO	C312
+C0402C104J4RACAUTO	C307
+C0402C104J4RACAUTO	C295
+C0402C104J4RACAUTO	C294
+C0402C104J4RACAUTO	C293
+C0402C104J4RACAUTO	C292
+C0402C104J4RACAUTO	C288
+C0402C104J4RACAUTO	C282
+C0402C104J4RACAUTO	C280
+C0402C104J4RACAUTO	C279
+C0402C104J4RACAUTO	C278
+C0402C104J4RACAUTO	C277
+C0402C104J4RACAUTO	C276
+C0402C104J4RACAUTO	C275
+C0402C104J4RACAUTO	C272
+C0402C104J4RACAUTO	C271
+C0402C104J4RACAUTO	C270
+C0402C104J4RACAUTO	C268
+C0402C104J4RACAUTO	C265
+C0402C104J4RACAUTO	C264
+C0402C104J4RACAUTO	C263
+C0402C104J4RACAUTO	C258
+C0402C104J4RACAUTO	C257
+C0402C104J4RACAUTO	C256
+C0402C104J4RACAUTO	C255
+C0402C104J4RACAUTO	C254
+C0402C104J4RACAUTO	C253
+C0402C104J4RACAUTO	C252
+C0402C104J4RACAUTO	C251
+C0402C104J4RACAUTO	C250
+C0402C104J4RACAUTO	C249
+C0402C104J4RACAUTO	C248
+C0402C104J4RACAUTO	C247
+C0402C104J4RACAUTO	C246
+C0402C104J4RACAUTO	C245
+C0402C104J4RACAUTO	C244
+C0402C104J4RACAUTO	C243
+C0402C104J4RACAUTO	C242
+C0402C104J4RACAUTO	C241
+C0402C104J4RACAUTO	C240
+C0402C104J4RACAUTO	C239
+C0402C104J4RACAUTO	C238
+C0402C104J4RACAUTO	C237
+C0402C104J4RACAUTO	C230
+C0402C104J4RACAUTO	C227
+C0402C104J4RACAUTO	C218
+C0402C104J4RACAUTO	C217
+C0402C104J4RACAUTO	C214
+C0402C104J4RACAUTO	C209
+C0402C104J4RACAUTO	C205
+C0402C104J4RACAUTO	C201
+C0402C104J4RACAUTO	C198
+C0402C104J4RACAUTO	C197
+C0402C104J4RACAUTO	C196
+C0402C104J4RACAUTO	C195
+C0402C104J4RACAUTO	C194
+C0402C104J4RACAUTO	C193
+C0402C104J4RACAUTO	C189
+C0402C104J4RACAUTO	C188
+C0402C104J4RACAUTO	C187
+C0402C104J4RACAUTO	C179
+C0402C104J4RACAUTO	C177
+C0402C104J4RACAUTO	C175
+C0402C104J4RACAUTO	C174
+C0402C104J4RACAUTO	C173
+C0402C104J4RACAUTO	C168
+C0402C104J4RACAUTO	C167
+C0402C104J4RACAUTO	C166
+C0402C104J4RACAUTO	C165
+C0402C104J4RACAUTO	C160
+C0402C104J4RACAUTO	C158
+C0402C104J4RACAUTO	C156
+C0402C104J4RACAUTO	C154
+C0402C104J4RACAUTO	C152
+C0402C104J4RACAUTO	C149
+C0402C104J4RACAUTO	C147
+C0402C104J4RACAUTO	C146
+C0402C104J4RACAUTO	C141
+C0402C104J4RACAUTO	C140
+C0402C104J4RACAUTO	C137
+C0402C104J4RACAUTO	C136
+C0402C104J4RACAUTO	C135
+C0402C104J4RACAUTO	C134
+C0402C104J4RACAUTO	C133
+C0402C104J4RACAUTO	C128
+C0402C104J4RACAUTO	C126
+C0402C104J4RACAUTO	C124
+C0402C104J4RACAUTO	C123
+C0402C104J4RACAUTO	C120
+C0402C104J4RACAUTO	C116
+C0402C104J4RACAUTO	C114
+C0402C104J4RACAUTO	C112
+C0402C104J4RACAUTO	C110
+C0402C104J4RACAUTO	C108
+C0402C104J4RACAUTO	C107
+C0402C104J4RACAUTO	C106
+C0402C104J4RACAUTO	C100
+C0402C104J4RACAUTO	C99
+C0402C104J4RACAUTO	C97
+C0402C104J4RACAUTO	C96
+C0402C104J4RACAUTO	C93
+C0402C104J4RACAUTO	C91
+C0402C104J4RACAUTO	C90
+C0402C104J4RACAUTO	C87
+C0402C104J4RACAUTO	C86
+C0402C104J4RACAUTO	C85
+C0402C104J4RACAUTO	C82
+C0402C104J4RACAUTO	C81
+C0402C104J4RACAUTO	C76
+C0402C104J4RACAUTO	C75
+C0402C104J4RACAUTO	C72
+C0402C104J4RACAUTO	C68
+C0402C104J4RACAUTO	C66
+C0402C104J4RACAUTO	C64
+C0402C104J4RACAUTO	C62
+C0402C104J4RACAUTO	C61
+C0402C104J4RACAUTO	C59
+C0402C104J4RACAUTO	C58
+C0402C104J4RACAUTO	C57
+C0402C104J4RACAUTO	C56
+C0402C104J4RACAUTO	C55
+C0402C104J4RACAUTO	C53
+C0402C104J4RACAUTO	C52
+C0402C104J4RACAUTO	C50
+C0402C104J4RACAUTO	C49
+C0402C104J4RACAUTO	C45
+C0402C104J4RACAUTO	C44
+C0402C104J4RACAUTO	C43
+C0402C104J4RACAUTO	C42
+C0402C104J4RACAUTO	C41
+C0402C104J4RACAUTO	C34
+C0402C104J4RACAUTO	C31
+C0402C104J4RACAUTO	C30
+C0402C104J4RACAUTO	C29
+C0402C104J4RACAUTO	C28
+C0402C104J4RACAUTO	C27
+C0402C104J4RACAUTO	C26
+C0402C104J4RACAUTO	C25
+C0402C104J4RACAUTO	C24
+C0402C104J4RACAUTO	C23
+C0402C104J4RACAUTO	C22
+C0402C104J4RACAUTO	C21
+C0402C104J4RACAUTO	C19
+C0402C104J4RACAUTO	C18
+C0402C104J4RACAUTO	C16
+C0402C104J4RACAUTO	C15
+C0402C104J4RACAUTO	C14
+C0402C104J4RACAUTO	C13
+C0402C104J4RACAUTO	C12
+C0402C104J4RACAUTO	C8
+C0402C104J4RACAUTO	C7
+C0402C104J4RACAUTO	C6
+C0402C104J4RACAUTO	C5
+C0402C104J4RACAUTO	C4
+C0402C104J4RACAUTO	C3
+C0402C104J4RACAUTO	C2
+C0402C104J4RACAUTO	C1
+790-041PH-66MTPA	J24
+LTC7051AV-1#PBF	U861
+LTC7051AV-1#PBF	U848
+LTC7051AV-1#PBF	U804
+LTC7051AV-1#PBF	U94
+LTC7051AV-1#PBF	U92
+LTC7051AV-1#PBF	U12
+TNPW04021K00BEED	R1697
+TNPW04021K00BEED	R1690
+TNPW04021K00BEED	R1683
+TNPW04021K00BEED	R1676
+TNPW04021K00BEED	R1669
+TNPW04021K00BEED	R1668
+TNPW04021K00BEED	R1667
+TNPW04021K00BEED	R1666
+TNPW04021K00BEED	R1664
+TNPW04021K00BEED	R1661
+TNPW04021K00BEED	R1658
+TNPW04021K00BEED	R1655
+TNPW04021K00BEED	R1620
+TNPW04021K00BEED	R1617
+TNPW04021K00BEED	R1615
+TNPW04021K00BEED	R1612
+TNPW04021K00BEED	R1610
+TNPW04021K00BEED	R1607
+TNPW04021K00BEED	R1605
+TNPW04021K00BEED	R1602
+TNPW04021K00BEED	R1593
+TNPW04021K00BEED	R1591
+TNPW04021K00BEED	R1589
+TNPW04021K00BEED	R1587
+TNPW04021K00BEED	R1583
+TNPW04021K00BEED	R1577
+TNPW04021K00BEED	R1571
+TNPW04021K00BEED	R1565
+TNPW04021K00BEED	R1560
+TNPW04021K00BEED	R1558
+TNPW04021K00BEED	R1556
+TNPW04021K00BEED	R1554
+TNPW04021K00BEED	R1544
+TNPW04021K00BEED	R1541
+TNPW04021K00BEED	R1538
+TNPW04021K00BEED	R1535
+TNPW04021K00BEED	R1531
+TNPW04021K00BEED	R1526
+TNPW04021K00BEED	R1523
+TNPW04021K00BEED	R1518
+TNPW04021K00BEED	R1515
+TNPW04021K00BEED	R1510
+TNPW04021K00BEED	R1507
+TNPW04021K00BEED	R1502
+TNPW04021K00BEED	R1481
+TNPW04021K00BEED	R1479
+TNPW04021K00BEED	R1477
+TNPW04021K00BEED	R1475
+TNPW04021K00BEED	R1437
+TNPW04021K00BEED	R1423
+TNPW04021K00BEED	R1420
+TNPW04021K00BEED	R1417
+TNPW04021K00BEED	R1414
+TNPW04021K00BEED	R1411
+TNPW04021K00BEED	R1380
+TNPW04021K00BEED	R1369
+TNPW04021K00BEED	R1368
+TNPW04021K00BEED	R1366
+TNPW04021K00BEED	R1361
+TNPW04021K00BEED	R1359
+TNPW04021K00BEED	R1357
+TNPW04021K00BEED	R1355
+TNPW04021K00BEED	R1345
+TNPW04021K00BEED	R1343
+TNPW04021K00BEED	R1320
+TNPW04021K00BEED	R1319
+TNPW04021K00BEED	R1318
+TNPW04021K00BEED	R1317
+TNPW04021K00BEED	R1274
+TNPW04021K00BEED	R1272
+TNPW04021K00BEED	R1270
+TNPW04021K00BEED	R1268
+TNPW04021K00BEED	R1229
+TNPW04021K00BEED	R1227
+TNPW04021K00BEED	R1225
+TNPW04021K00BEED	R1223
+TNPW04021K00BEED	R1175
+TNPW04021K00BEED	R1172
+TNPW04021K00BEED	R1169
+TNPW04021K00BEED	R1166
+TNPW04021K00BEED	R1146
+TNPW04021K00BEED	R1144
+TNPW04021K00BEED	R1142
+TNPW04021K00BEED	R1140
+TNPW04021K00BEED	R1108
+TNPW04021K00BEED	R1095
+TNPW04021K00BEED	R1092
+TNPW04021K00BEED	R1089
+TNPW04021K00BEED	R1086
+TNPW04021K00BEED	R1071
+TNPW04021K00BEED	R1070
+TNPW04021K00BEED	R1058
+TNPW04021K00BEED	R1046
+TNPW04021K00BEED	R1039
+TNPW04021K00BEED	R1037
+TNPW04021K00BEED	R1035
+TNPW04021K00BEED	R1033
+TNPW04021K00BEED	R1005
+TNPW04021K00BEED	R1000
+TNPW04021K00BEED	R997
+TNPW04021K00BEED	R992
+TNPW04021K00BEED	R989
+TNPW04021K00BEED	R984
+TNPW04021K00BEED	R981
+TNPW04021K00BEED	R976
+TNPW04021K00BEED	R972
+TNPW04021K00BEED	R969
+TNPW04021K00BEED	R966
+TNPW04021K00BEED	R963
+TNPW04021K00BEED	R953
+TNPW04021K00BEED	R951
+TNPW04021K00BEED	R949
+TNPW04021K00BEED	R947
+TNPW04021K00BEED	R942
+TNPW04021K00BEED	R936
+TNPW04021K00BEED	R930
+TNPW04021K00BEED	R924
+TNPW04021K00BEED	R920
+TNPW04021K00BEED	R918
+TNPW04021K00BEED	R916
+TNPW04021K00BEED	R914
+TNPW04021K00BEED	R905
+TNPW04021K00BEED	R902
+TNPW04021K00BEED	R900
+TNPW04021K00BEED	R897
+TNPW04021K00BEED	R895
+TNPW04021K00BEED	R892
+TNPW04021K00BEED	R890
+TNPW04021K00BEED	R887
+TNPW04021K00BEED	R852
+TNPW04021K00BEED	R849
+TNPW04021K00BEED	R846
+TNPW04021K00BEED	R843
+TNPW04021K00BEED	R841
+TNPW04021K00BEED	R840
+TNPW04021K00BEED	R839
+TNPW04021K00BEED	R838
+TNPW04021K00BEED	R833
+TNPW04021K00BEED	R826
+TNPW04021K00BEED	R819
+TNPW04021K00BEED	R812
+TNPW04021K00BEED	R222
+TNPW04021K00BEED	R92
+TNPW04021K00BEED	R91
+TNPW04021K00BEED	R89
+TNPW04021K00BEED	R88
+TNPW04021K00BEED	R74
+TNPW04021K00BEED	R73
+TNPW04021K00BEED	R2
+LT3022EMSE#PBF	U129
+LT3022EMSE#PBF	U122
+LT3022EMSE#PBF	U89
+LT3022EMSE#PBF	U76
+LT3022EMSE#PBF	U33
+LT3022EMSE#PBF	U31
+C0805X475J4RACAUTO	C1185
+C0805X475J4RACAUTO	C1144
+C0805X475J4RACAUTO	C837
+C0805X475J4RACAUTO	C688
+C0805X475J4RACAUTO	C652
+C0805X475J4RACAUTO	C563
+C0805X475J4RACAUTO	C554
+C0805X475J4RACAUTO	C463
+C0805X475J4RACAUTO	C462
+C0805X475J4RACAUTO	C461
+C0805X475J4RACAUTO	C451
+C0805X475J4RACAUTO	C426
+C0805X475J4RACAUTO	C419
+C0805X475J4RACAUTO	C416
+C0805X475J4RACAUTO	C361
+C0805X475J4RACAUTO	C305
+C0805X475J4RACAUTO	C260
+C0805X475J4RACAUTO	C228
+C0805X475J4RACAUTO	C226
+C0805X475J4RACAUTO	C192
+C0805X475J4RACAUTO	C172
+C0805X475J4RACAUTO	C171
+C0805X475J4RACAUTO	C170
+C0805X475J4RACAUTO	C142
+C0805X475J4RACAUTO	C46
+C0805X475J4RACAUTO	C39
+C0805X475J4RACAUTO	C32
+HRB0805S121P1.00FT	L867
+HRB0805S121P1.00FT	L51
+HRB0805S121P1.00FT	L50
+HRB0805S121P1.00FT	L49
+HRB0805S121P1.00FT	L48
+HRB0805S121P1.00FT	L46
+HRB0805S121P1.00FT	L45
+HRB0805S121P1.00FT	L43
+HRB0805S121P1.00FT	L42
+HRB0805S121P1.00FT	L41
+HRB0805S121P1.00FT	L40
+HRB0805S121P1.00FT	L11
+HRB0805S121P1.00FT	L6
+SEAF8-40-05.0-STL-06-1	J21
+SEAF8-40-05.0-STL-06-1	J20
+SEAF8-40-05.0-STL-06-1	J17
+SEAF8-40-05.0-STL-06-1	J16
+SEAF8-40-05.0-STL-06-1	J13
+SEAF8-40-05.0-STL-06-1	J12
+SEAF8-40-05.0-STL-06-1	J9
+SEAF8-40-05.0-STL-06-1	J8
+SEAF8-30-05.0-STL-08-1	J23
+SEAF8-30-05.0-STL-08-1	J22
+SEAF8-30-05.0-STL-08-1	J19
+SEAF8-30-05.0-STL-08-1	J18
+SEAF8-30-05.0-STL-08-1	J15
+SEAF8-30-05.0-STL-08-1	J14
+SEAF8-30-05.0-STL-08-1	J11
+SEAF8-30-05.0-STL-08-1	J10
+790-042SE-19MTEPA	J28
+SN74LVC1G97IDCKREP	U803
+790-043PE-19MTPA	J26
+LTMM-107-02-L-D-SM-K-TR	J73
+LTMM-107-02-L-D-SM-K-TR	J34
+LTMM-107-02-L-D-SM-K-TR	J33
+LTMM-107-02-L-D-SM-K-TR	J32
+LTMM-107-02-L-D-SM-K-TR	J31
+LTMM-107-02-L-D-SM-K-TR	J30
+LTMM-107-02-L-D-SM-K-TR	J29
+TNPW0603200RBEEA	R435
+TNPW0603200RBEEA	R93
+LTMM-104-02-L-D-SM-01-K-TR	J39
+LTMM-104-02-L-D-SM-01-K-TR	J38
+LTMM-104-02-L-D-SM-01-K-TR	J37
+LTMM-104-02-L-D-SM-01-K-TR	J36
+LTMM-104-02-L-D-SM-01-K-TR	J35
+Y14880R01000F0R	R430
+Y14880R01000F0R	R329
+Y14880R01000F0R	R153
+Y14880R01000F0R	R146
+TNPW060310K0BEEA	R466
+TNPW060310K0BEEA	R408
+TNPW060310K0BEEA	R406
+TNPW060310K0BEEA	R337
+TNPW060310K0BEEA	R333
+TNPW060310K0BEEA	R330
+TNPW060310K0BEEA	R258
+TNPW060310K0BEEA	R255
+TNPW060310K0BEEA	R206
+TNPW060310K0BEEA	R118
+TNPW060310K0BEEA	R117
+TNPW060310K0BEEA	R105
+TNPW060310K0BEEA	R100
+TNPW060310K0BEEA	R7
+CL10B105KA8VPNC	C1699
+CL10B105KA8VPNC	C1698
+CL10B105KA8VPNC	C1689
+CL10B105KA8VPNC	C1688
+CL10B105KA8VPNC	C1685
+CL10B105KA8VPNC	C1684
+CL10B105KA8VPNC	C1682
+CL10B105KA8VPNC	C1680
+CL10B105KA8VPNC	C1655
+CL10B105KA8VPNC	C1476
+CL10B105KA8VPNC	C1443
+CL10B105KA8VPNC	C1434
+CL10B105KA8VPNC	C1370
+CL10B105KA8VPNC	C1269
+CL10B105KA8VPNC	C1266
+CL10B105KA8VPNC	C1262
+CL10B105KA8VPNC	C1255
+CL10B105KA8VPNC	C1254
+CL10B105KA8VPNC	C1252
+CL10B105KA8VPNC	C1250
+CL10B105KA8VPNC	C1248
+CL10B105KA8VPNC	C1247
+CL10B105KA8VPNC	C1246
+CL10B105KA8VPNC	C1242
+CL10B105KA8VPNC	C1234
+CL10B105KA8VPNC	C1233
+CL10B105KA8VPNC	C1223
+CL10B105KA8VPNC	C1222
+CL10B105KA8VPNC	C1217
+CL10B105KA8VPNC	C1216
+CL10B105KA8VPNC	C1205
+CL10B105KA8VPNC	C1201
+CL10B105KA8VPNC	C1195
+CL10B105KA8VPNC	C1186
+CL10B105KA8VPNC	C1183
+CL10B105KA8VPNC	C1145
+CL10B105KA8VPNC	C809
+CL10B105KA8VPNC	C807
+CL10B105KA8VPNC	C723
+CL10B105KA8VPNC	C718
+CL10B105KA8VPNC	C695
+CL10B105KA8VPNC	C632
+CL10B105KA8VPNC	C631
+CL10B105KA8VPNC	C630
+CL10B105KA8VPNC	C629
+CL10B105KA8VPNC	C574
+CL10B105KA8VPNC	C572
+CL10B105KA8VPNC	C570
+CL10B105KA8VPNC	C568
+CL10B105KA8VPNC	C549
+CL10B105KA8VPNC	C545
+CL10B105KA8VPNC	C539
+CL10B105KA8VPNC	C537
+CL10B105KA8VPNC	C526
+CL10B105KA8VPNC	C520
+CL10B105KA8VPNC	C518
+CL10B105KA8VPNC	C516
+CL10B105KA8VPNC	C514
+CL10B105KA8VPNC	C512
+CL10B105KA8VPNC	C510
+CL10B105KA8VPNC	C508
+CL10B105KA8VPNC	C506
+CL10B105KA8VPNC	C505
+CL10B105KA8VPNC	C502
+CL10B105KA8VPNC	C496
+CL10B105KA8VPNC	C494
+CL10B105KA8VPNC	C492
+CL10B105KA8VPNC	C490
+CL10B105KA8VPNC	C489
+CL10B105KA8VPNC	C479
+CL10B105KA8VPNC	C477
+CL10B105KA8VPNC	C476
+CL10B105KA8VPNC	C474
+CL10B105KA8VPNC	C472
+CL10B105KA8VPNC	C470
+CL10B105KA8VPNC	C468
+CL10B105KA8VPNC	C466
+CL10B105KA8VPNC	C427
+CL10B105KA8VPNC	C422
+CL10B105KA8VPNC	C420
+CL10B105KA8VPNC	C354
+CL10B105KA8VPNC	C341
+CL10B105KA8VPNC	C161
+CL10B105KA8VPNC	C159
+CL10B105KA8VPNC	C157
+CL10B105KA8VPNC	C155
+CL10B105KA8VPNC	C153
+CL10B105KA8VPNC	C151
+CL10B105KA8VPNC	C150
+CL10B105KA8VPNC	C148
+CL10B105KA8VPNC	C130
+CL10B105KA8VPNC	C129
+CL10B105KA8VPNC	C127
+CL10B105KA8VPNC	C125
+CL10B105KA8VPNC	C121
+CL10B105KA8VPNC	C119
+CL10B105KA8VPNC	C117
+CL10B105KA8VPNC	C115
+CL10B105KA8VPNC	C113
+CL10B105KA8VPNC	C111
+CL10B105KA8VPNC	C109
+CL10B105KA8VPNC	C105
+CL10B105KA8VPNC	C103
+CL10B105KA8VPNC	C102
+CL10B105KA8VPNC	C94
+CL10B105KA8VPNC	C88
+CL10B105KA8VPNC	C84
+CL10B105KA8VPNC	C69
+CL10B105KA8VPNC	C67
+CL10B105KA8VPNC	C65
+CL10B105KA8VPNC	C63
+CL10B105KA8VPNC	C38
+CL10B105KA8VPNC	C37
+CL10B105KA8VPNC	C36
+CL10B105KA8VPNC	C35
+CL10B105KA8VPNC	C20
+CL10B105KA8VPNC	C10
+TLMG1100-GS15	DS5
+TLMG1100-GS15	DS4
+TLMG1100-GS15	DS3
+TLMG1100-GS15	DS2
+TLMG1100-GS15	DS1
+XGL6030-381MS	L909
+XGL6030-381MS	L884
+XGL6030-381MS	L77
+XGL6030-381MS	L66
+XQZU3EG-1SFRC784M	U4
+TNPW06031K00BEEA	R94
+0402DC-2N4XJRW	L933
+0402DC-2N4XJRW	L932
+0402DC-2N4XJRW	L931
+0402DC-2N4XJRW	L930
+0402DC-2N4XJRW	L929
+0402DC-2N4XJRW	L928
+0402DC-2N4XJRW	L927
+0402DC-2N4XJRW	L926
+0402DC-2N4XJRW	L925
+0402DC-2N4XJRW	L924
+0402DC-2N4XJRW	L923
+0402DC-2N4XJRW	L922
+0402DC-2N4XJRW	L921
+0402DC-2N4XJRW	L920
+0402DC-2N4XJRW	L919
+0402DC-2N4XJRW	L918
+0402DC-2N4XJRW	L917
+0402DC-2N4XJRW	L916
+0402DC-2N4XJRW	L915
+0402DC-2N4XJRW	L914
+0402DC-2N4XJRW	L913
+0402DC-2N4XJRW	L912
+0402DC-2N4XJRW	L911
+0402DC-2N4XJRW	L910
+0402DC-2N4XJRW	L908
+0402DC-2N4XJRW	L907
+0402DC-2N4XJRW	L906
+0402DC-2N4XJRW	L905
+0402DC-2N4XJRW	L904
+0402DC-2N4XJRW	L903
+0402DC-2N4XJRW	L902
+0402DC-2N4XJRW	L901
+0402DC-2N4XJRW	L900
+0402DC-2N4XJRW	L899
+0402DC-2N4XJRW	L898
+0402DC-2N4XJRW	L897
+0402DC-2N4XJRW	L896
+0402DC-2N4XJRW	L895
+0402DC-2N4XJRW	L894
+0402DC-2N4XJRW	L893
+0402DC-2N4XJRW	L892
+0402DC-2N4XJRW	L891
+0402DC-2N4XJRW	L890
+0402DC-2N4XJRW	L889
+0402DC-2N4XJRW	L888
+0402DC-2N4XJRW	L887
+0402DC-2N4XJRW	L886
+0402DC-2N4XJRW	L885
+0402DC-2N4XJRW	L883
+0402DC-2N4XJRW	L882
+0402DC-2N4XJRW	L881
+0402DC-2N4XJRW	L880
+0402DC-2N4XJRW	L879
+0402DC-2N4XJRW	L878
+0402DC-2N4XJRW	L877
+0402DC-2N4XJRW	L876
+0402DC-2N4XJRW	L875
+0402DC-2N4XJRW	L874
+0402DC-2N4XJRW	L873
+0402DC-2N4XJRW	L872
+0402DC-2N4XJRW	L871
+0402DC-2N4XJRW	L870
+0402DC-2N4XJRW	L869
+0402DC-2N4XJRW	L868
+0402DC-2N4XJRW	L864
+0402DC-2N4XJRW	L863
+0402DC-2N4XJRW	L862
+0402DC-2N4XJRW	L861
+0402DC-2N4XJRW	L860
+0402DC-2N4XJRW	L859
+0402DC-2N4XJRW	L858
+0402DC-2N4XJRW	L857
+0402DC-2N4XJRW	L856
+0402DC-2N4XJRW	L855
+0402DC-2N4XJRW	L854
+0402DC-2N4XJRW	L853
+0402DC-2N4XJRW	L852
+0402DC-2N4XJRW	L851
+0402DC-2N4XJRW	L850
+0402DC-2N4XJRW	L849
+0402DC-2N4XJRW	L848
+0402DC-2N4XJRW	L847
+0402DC-2N4XJRW	L846
+0402DC-2N4XJRW	L845
+0402DC-2N4XJRW	L844
+0402DC-2N4XJRW	L843
+0402DC-2N4XJRW	L842
+0402DC-2N4XJRW	L841
+0402DC-2N4XJRW	L840
+0402DC-2N4XJRW	L839
+0402DC-2N4XJRW	L838
+0402DC-2N4XJRW	L837
+0402DC-2N4XJRW	L836
+0402DC-2N4XJRW	L835
+0402DC-2N4XJRW	L834
+0402DC-2N4XJRW	L833
+0402DC-2N4XJRW	L832
+0402DC-2N4XJRW	L831
+0402DC-2N4XJRW	L830
+0402DC-2N4XJRW	L829
+0402DC-2N4XJRW	L828
+0402DC-2N4XJRW	L827
+0402DC-2N4XJRW	L826
+0402DC-2N4XJRW	L825
+0402DC-2N4XJRW	L824
+0402DC-2N4XJRW	L823
+0402DC-2N4XJRW	L822
+0402DC-2N4XJRW	L821
+0402DC-2N4XJRW	L820
+0402DC-2N4XJRW	L819
+0402DC-2N4XJRW	L818
+0402DC-2N4XJRW	L817
+0402DC-2N4XJRW	L816
+0402DC-2N4XJRW	L815
+0402DC-2N4XJRW	L814
+0402DC-2N4XJRW	L813
+0402DC-2N4XJRW	L812
+0402DC-2N4XJRW	L811
+0402DC-2N4XJRW	L810
+0402DC-2N4XJRW	L809
+0402DC-2N4XJRW	L808
+0402DC-2N4XJRW	L807
+0402DC-2N4XJRW	L806
+0402DC-2N4XJRW	L805
+0402DC-2N4XJRW	L804
+0402DC-2N4XJRW	L803
+0402DC-2N4XJRW	L802
+0402DC-2N4XJRW	L801
+NRVB1H100SFT3G	D34
+NRVB1H100SFT3G	D27
+NRVB1H100SFT3G	D21
+NRVB1H100SFT3G	D18
+NRVB1H100SFT3G	D2
+MT25QU01GBBB8ESF-0AAT	U82
+MT25QU01GBBB8ESF-0AAT	U32
+MT25QU01GBBB8ESF-0AAT	U29
+TPS51200MDRCTEP	U88
+TPS51200MDRCTEP	U40
+4N1G72T-24B2M	U11
+4N1G72T-24B2M	U7
+C0603C271J5GACAUTO	C1231
+C0603C271J5GACAUTO	C162
+TNPW0402499RBEED	R1231
+TNPW0402499RBEED	R1028
+TNPW0402499RBEED	R368
+TNPW06036K49BETA	R1443
+TNPW06036K49BETA	R1262
+TNPW06036K49BETA	R1232
+TNPW06036K49BETA	R1054
+TNPW06036K49BETA	R104
+RNCF0402BTE13R0	R1640
+RNCF0402BTE13R0	R1639
+RNCF0402BTE13R0	R1637
+RNCF0402BTE13R0	R1636
+RNCF0402BTE13R0	R1634
+RNCF0402BTE13R0	R1633
+RNCF0402BTE13R0	R1631
+RNCF0402BTE13R0	R1630
+RNCF0402BTE13R0	R1500
+RNCF0402BTE13R0	R1499
+RNCF0402BTE13R0	R1497
+RNCF0402BTE13R0	R1496
+RNCF0402BTE13R0	R1494
+RNCF0402BTE13R0	R1493
+RNCF0402BTE13R0	R1491
+RNCF0402BTE13R0	R1490
+RNCF0402BTE13R0	R1468
+RNCF0402BTE13R0	R1465
+RNCF0402BTE13R0	R1464
+RNCF0402BTE13R0	R1463
+RNCF0402BTE13R0	R1462
+RNCF0402BTE13R0	R1461
+RNCF0402BTE13R0	R1460
+RNCF0402BTE13R0	R1459
+RNCF0402BTE13R0	R1426
+RNCF0402BTE13R0	R1425
+RNCF0402BTE13R0	R1409
+RNCF0402BTE13R0	R1406
+RNCF0402BTE13R0	R1405
+RNCF0402BTE13R0	R1404
+RNCF0402BTE13R0	R1402
+RNCF0402BTE13R0	R1401
+RNCF0402BTE13R0	R1397
+RNCF0402BTE13R0	R1396
+RNCF0402BTE13R0	R1394
+RNCF0402BTE13R0	R1393
+RNCF0402BTE13R0	R1391
+RNCF0402BTE13R0	R1390
+RNCF0402BTE13R0	R1388
+RNCF0402BTE13R0	R1387
+RNCF0402BTE13R0	R1375
+RNCF0402BTE13R0	R1374
+RNCF0402BTE13R0	R1373
+RNCF0402BTE13R0	R1372
+RNCF0402BTE13R0	R1371
+RNCF0402BTE13R0	R1351
+RNCF0402BTE13R0	R1350
+RNCF0402BTE13R0	R1347
+RNCF0402BTE13R0	R1328
+RNCF0402BTE13R0	R1327
+RNCF0402BTE13R0	R1326
+RNCF0402BTE13R0	R1325
+RNCF0402BTE13R0	R1324
+RNCF0402BTE13R0	R1323
+RNCF0402BTE13R0	R1314
+RNCF0402BTE13R0	R1309
+RNCF0402BTE13R0	R1304
+RNCF0402BTE13R0	R1303
+RNCF0402BTE13R0	R1301
+RNCF0402BTE13R0	R1300
+RNCF0402BTE13R0	R1298
+RNCF0402BTE13R0	R1297
+RNCF0402BTE13R0	R1295
+RNCF0402BTE13R0	R1294
+RNCF0402BTE13R0	R1197
+RNCF0402BTE13R0	R1196
+RNCF0402BTE13R0	R1194
+RNCF0402BTE13R0	R1193
+RNCF0402BTE13R0	R1191
+RNCF0402BTE13R0	R1190
+RNCF0402BTE13R0	R1188
+RNCF0402BTE13R0	R1187
+RNCF0402BTE13R0	R1183
+RNCF0402BTE13R0	R1178
+RNCF0402BTE13R0	R1164
+RNCF0402BTE13R0	R1163
+RNCF0402BTE13R0	R1162
+RNCF0402BTE13R0	R1161
+RNCF0402BTE13R0	R1160
+RNCF0402BTE13R0	R1159
+RNCF0402BTE13R0	R1154
+RNCF0402BTE13R0	R1151
+RNCF0402BTE13R0	R1150
+RNCF0402BTE13R0	R1135
+RNCF0402BTE13R0	R1134
+RNCF0402BTE13R0	R1133
+RNCF0402BTE13R0	R1132
+RNCF0402BTE13R0	R1131
+RNCF0402BTE13R0	R1121
+RNCF0402BTE13R0	R1120
+RNCF0402BTE13R0	R1118
+RNCF0402BTE13R0	R1117
+RNCF0402BTE13R0	R1115
+RNCF0402BTE13R0	R1114
+RNCF0402BTE13R0	R1112
+RNCF0402BTE13R0	R1111
+RNCF0402BTE13R0	R1105
+RNCF0402BTE13R0	R1104
+RNCF0402BTE13R0	R1102
+RNCF0402BTE13R0	R1101
+RNCF0402BTE13R0	R1100
+RNCF0402BTE13R0	R1097
+RNCF0402BTE13R0	R1081
+RNCF0402BTE13R0	R1080
+RNCF0402BTE13R0	R1053
+RNCF0402BTE13R0	R1052
+RNCF0402BTE13R0	R1051
+RNCF0402BTE13R0	R1050
+RNCF0402BTE13R0	R1049
+RNCF0402BTE13R0	R1048
+RNCF0402BTE13R0	R1047
+RNCF0402BTE13R0	R1043
+RNCF0402BTE13R0	R1017
+RNCF0402BTE13R0	R1016
+RNCF0402BTE13R0	R1014
+RNCF0402BTE13R0	R1013
+RNCF0402BTE13R0	R1011
+RNCF0402BTE13R0	R1010
+RNCF0402BTE13R0	R1008
+RNCF0402BTE13R0	R1007
+RNCF0402BTE13R0	R877
+RNCF0402BTE13R0	R876
+RNCF0402BTE13R0	R874
+RNCF0402BTE13R0	R873
+RNCF0402BTE13R0	R871
+RNCF0402BTE13R0	R870
+RNCF0402BTE13R0	R868
+RNCF0402BTE13R0	R867
+RNCF0402BTE13R0	R533
+RNCF0402BTE13R0	R252
+RNCF0402BTE13R0	R223
+C0805C104J1RACAUTO	C1704
+C0805C104J1RACAUTO	C1257
+C0805C104J1RACAUTO	C1226
+C0805C104J1RACAUTO	C1212
+C0805C104J1RACAUTO	C1207
+C0805C104J1RACAUTO	C729
+C0805C104J1RACAUTO	C728
+C0805C104J1RACAUTO	C657
+C0805C104J1RACAUTO	C430
+C0805C104J1RACAUTO	C211
+C0805C104J1RACAUTO	C203
+TXS0104EQPWRQ1	U110
+TXS0104EQPWRQ1	U93
+TXS0104EQPWRQ1	U86
+TXS0104EQPWRQ1	U78
+TXS0104EQPWRQ1	U67
+TXS0104EQPWRQ1	U43
+TXS0104EQPWRQ1	U17
+C0402C103J5RACAUTO	C1696
+C0402C103J5RACAUTO	C1694
+C0402C103J5RACAUTO	C1693
+C0402C103J5RACAUTO	C1629
+C0402C103J5RACAUTO	C1628
+C0402C103J5RACAUTO	C1627
+C0402C103J5RACAUTO	C1626
+C0402C103J5RACAUTO	C1565
+C0402C103J5RACAUTO	C1564
+C0402C103J5RACAUTO	C1563
+C0402C103J5RACAUTO	C1562
+C0402C103J5RACAUTO	C1545
+C0402C103J5RACAUTO	C1543
+C0402C103J5RACAUTO	C1542
+C0402C103J5RACAUTO	C1540
+C0402C103J5RACAUTO	C1499
+C0402C103J5RACAUTO	C1483
+C0402C103J5RACAUTO	C1480
+C0402C103J5RACAUTO	C1478
+C0402C103J5RACAUTO	C1436
+C0402C103J5RACAUTO	C1435
+C0402C103J5RACAUTO	C1427
+C0402C103J5RACAUTO	C1426
+C0402C103J5RACAUTO	C1425
+C0402C103J5RACAUTO	C1424
+C0402C103J5RACAUTO	C1413
+C0402C103J5RACAUTO	C1406
+C0402C103J5RACAUTO	C1373
+C0402C103J5RACAUTO	C1372
+C0402C103J5RACAUTO	C1371
+C0402C103J5RACAUTO	C1345
+C0402C103J5RACAUTO	C1300
+C0402C103J5RACAUTO	C1299
+C0402C103J5RACAUTO	C1298
+C0402C103J5RACAUTO	C1297
+C0402C103J5RACAUTO	C1241
+C0402C103J5RACAUTO	C1198
+C0402C103J5RACAUTO	C1170
+C0402C103J5RACAUTO	C1169
+C0402C103J5RACAUTO	C1168
+C0402C103J5RACAUTO	C1167
+C0402C103J5RACAUTO	C1142
+C0402C103J5RACAUTO	C1131
+C0402C103J5RACAUTO	C1114
+C0402C103J5RACAUTO	C1113
+C0402C103J5RACAUTO	C1088
+C0402C103J5RACAUTO	C1081
+C0402C103J5RACAUTO	C1070
+C0402C103J5RACAUTO	C1069
+C0402C103J5RACAUTO	C1068
+C0402C103J5RACAUTO	C1067
+C0402C103J5RACAUTO	C1066
+C0402C103J5RACAUTO	C1065
+C0402C103J5RACAUTO	C1033
+C0402C103J5RACAUTO	C1031
+C0402C103J5RACAUTO	C1028
+C0402C103J5RACAUTO	C1026
+C0402C103J5RACAUTO	C970
+C0402C103J5RACAUTO	C968
+C0402C103J5RACAUTO	C967
+C0402C103J5RACAUTO	C965
+C0402C103J5RACAUTO	C940
+C0402C103J5RACAUTO	C939
+C0402C103J5RACAUTO	C938
+C0402C103J5RACAUTO	C937
+C0402C103J5RACAUTO	C871
+C0402C103J5RACAUTO	C870
+C0402C103J5RACAUTO	C869
+C0402C103J5RACAUTO	C868
+C0402C103J5RACAUTO	C727
+C0402C103J5RACAUTO	C726
+C0402C103J5RACAUTO	C722
+C0402C103J5RACAUTO	C720
+C0402C103J5RACAUTO	C716
+C0402C103J5RACAUTO	C701
+C0402C103J5RACAUTO	C696
+C0402C103J5RACAUTO	C664
+C0402C103J5RACAUTO	C661
+C0402C103J5RACAUTO	C621
+C0402C103J5RACAUTO	C620
+C0402C103J5RACAUTO	C619
+C0402C103J5RACAUTO	C618
+C0402C103J5RACAUTO	C617
+C0402C103J5RACAUTO	C616
+C0402C103J5RACAUTO	C615
+C0402C103J5RACAUTO	C614
+C0402C103J5RACAUTO	C613
+C0402C103J5RACAUTO	C612
+C0402C103J5RACAUTO	C611
+C0402C103J5RACAUTO	C610
+C0402C103J5RACAUTO	C609
+C0402C103J5RACAUTO	C608
+C0402C103J5RACAUTO	C607
+C0402C103J5RACAUTO	C606
+C0402C103J5RACAUTO	C605
+C0402C103J5RACAUTO	C604
+C0402C103J5RACAUTO	C603
+C0402C103J5RACAUTO	C602
+C0402C103J5RACAUTO	C601
+C0402C103J5RACAUTO	C600
+C0402C103J5RACAUTO	C599
+C0402C103J5RACAUTO	C598
+C0402C103J5RACAUTO	C597
+C0402C103J5RACAUTO	C596
+C0402C103J5RACAUTO	C595
+C0402C103J5RACAUTO	C594
+C0402C103J5RACAUTO	C593
+C0402C103J5RACAUTO	C592
+C0402C103J5RACAUTO	C591
+C0402C103J5RACAUTO	C590
+C0402C103J5RACAUTO	C589
+C0402C103J5RACAUTO	C588
+C0402C103J5RACAUTO	C587
+C0402C103J5RACAUTO	C586
+C0402C103J5RACAUTO	C585
+C0402C103J5RACAUTO	C584
+C0402C103J5RACAUTO	C583
+C0402C103J5RACAUTO	C582
+C0402C103J5RACAUTO	C581
+C0402C103J5RACAUTO	C580
+C0402C103J5RACAUTO	C579
+C0402C103J5RACAUTO	C578
+C0402C103J5RACAUTO	C577
+C0402C103J5RACAUTO	C567
+C0402C103J5RACAUTO	C566
+C0402C103J5RACAUTO	C564
+C0402C103J5RACAUTO	C559
+C0402C103J5RACAUTO	C558
+C0402C103J5RACAUTO	C557
+C0402C103J5RACAUTO	C556
+C0402C103J5RACAUTO	C553
+C0402C103J5RACAUTO	C552
+C0402C103J5RACAUTO	C522
+C0402C103J5RACAUTO	C521
+C0402C103J5RACAUTO	C500
+C0402C103J5RACAUTO	C499
+C0402C103J5RACAUTO	C449
+C0402C103J5RACAUTO	C423
+C0402C103J5RACAUTO	C415
+C0402C103J5RACAUTO	C414
+C0402C103J5RACAUTO	C413
+C0402C103J5RACAUTO	C412
+C0402C103J5RACAUTO	C411
+C0402C103J5RACAUTO	C410
+C0402C103J5RACAUTO	C409
+C0402C103J5RACAUTO	C408
+C0402C103J5RACAUTO	C407
+C0402C103J5RACAUTO	C406
+C0402C103J5RACAUTO	C405
+C0402C103J5RACAUTO	C404
+C0402C103J5RACAUTO	C403
+C0402C103J5RACAUTO	C402
+C0402C103J5RACAUTO	C401
+C0402C103J5RACAUTO	C400
+C0402C103J5RACAUTO	C399
+C0402C103J5RACAUTO	C398
+C0402C103J5RACAUTO	C397
+C0402C103J5RACAUTO	C396
+C0402C103J5RACAUTO	C395
+C0402C103J5RACAUTO	C394
+C0402C103J5RACAUTO	C393
+C0402C103J5RACAUTO	C392
+C0402C103J5RACAUTO	C391
+C0402C103J5RACAUTO	C390
+C0402C103J5RACAUTO	C389
+C0402C103J5RACAUTO	C388
+C0402C103J5RACAUTO	C387
+C0402C103J5RACAUTO	C386
+C0402C103J5RACAUTO	C385
+C0402C103J5RACAUTO	C384
+C0402C103J5RACAUTO	C383
+C0402C103J5RACAUTO	C382
+C0402C103J5RACAUTO	C381
+C0402C103J5RACAUTO	C380
+C0402C103J5RACAUTO	C376
+C0402C103J5RACAUTO	C372
+C0402C103J5RACAUTO	C371
+C0402C103J5RACAUTO	C370
+C0402C103J5RACAUTO	C369
+C0402C103J5RACAUTO	C368
+C0402C103J5RACAUTO	C367
+C0402C103J5RACAUTO	C366
+C0402C103J5RACAUTO	C365
+C0402C103J5RACAUTO	C356
+C0402C103J5RACAUTO	C355
+C0402C103J5RACAUTO	C348
+C0402C103J5RACAUTO	C347
+C0402C103J5RACAUTO	C346
+C0402C103J5RACAUTO	C345
+C0402C103J5RACAUTO	C342
+C0402C103J5RACAUTO	C340
+C0402C103J5RACAUTO	C339
+C0402C103J5RACAUTO	C338
+C0402C103J5RACAUTO	C337
+C0402C103J5RACAUTO	C333
+C0402C103J5RACAUTO	C328
+C0402C103J5RACAUTO	C327
+C0402C103J5RACAUTO	C326
+C0402C103J5RACAUTO	C322
+C0402C103J5RACAUTO	C321
+C0402C103J5RACAUTO	C320
+C0402C103J5RACAUTO	C319
+C0402C103J5RACAUTO	C311
+C0402C103J5RACAUTO	C310
+C0402C103J5RACAUTO	C309
+C0402C103J5RACAUTO	C308
+C0402C103J5RACAUTO	C304
+C0402C103J5RACAUTO	C303
+C0402C103J5RACAUTO	C302
+C0402C103J5RACAUTO	C301
+C0402C103J5RACAUTO	C300
+C0402C103J5RACAUTO	C299
+C0402C103J5RACAUTO	C298
+C0402C103J5RACAUTO	C297
+C0402C103J5RACAUTO	C296
+C0402C103J5RACAUTO	C287
+C0402C103J5RACAUTO	C259
+C0402C103J5RACAUTO	C236
+C0402C103J5RACAUTO	C235
+C0402C103J5RACAUTO	C234
+C0402C103J5RACAUTO	C231
+C0402C103J5RACAUTO	C224
+C0402C103J5RACAUTO	C223
+C0402C103J5RACAUTO	C222
+C0402C103J5RACAUTO	C219
+C0402C103J5RACAUTO	C212
+C0402C103J5RACAUTO	C204
+C0402C103J5RACAUTO	C163
+C0402C103J5RACAUTO	C122
+C0402C103J5RACAUTO	C118
+C0402C103J5RACAUTO	C104
+C0402C103J5RACAUTO	C101
+C0402C103J5RACAUTO	C77
+C0402C103J5RACAUTO	C74
+C0402C103J5RACAUTO	C73
+C0402C103J5RACAUTO	C71
+C0402C103J5RACAUTO	C70
+C0402C103J5RACAUTO	C60
+XQVU13P-1FIQD2104I	U10
+LMK04828SNKDTEP	U77
+T54EE226M063ESA100	C1229
+T54EE226M063ESA100	C1228
+T54EE226M063ESA100	C707
+T54EE226M063ESA100	C359
+T54EE226M063ESA100	C216
+T54EE226M063ESA100	C213
+TNPW060360K4BEEA	R451
+TNPW060360K4BEEA	R411
+TNPW060360K4BEEA	R334
+TNPW060360K4BEEA	R319
+TNPW060360K4BEEA	R155
+TNPW060360K4BEEA	R152
+TNPW060360K4BEEA	R148
+TNPW060360K4BEEA	R145
+BSP170PH6327XTSA1	Q3
+SBC846BWT1G	Q1
+TNPW06031K87BEE	R528
+TNPW06031K87BEE	R527
+TNPW06031K87BEE	R341
+TNPW06031K87BEE	R340
+TNPW06031K87BEE	R325
+SQ2362CES-T1_GE3	Q4
+SN55HVD75DRBREP	U876
+SN55HVD75DRBREP	U875
+SN55HVD75DRBREP	U838
+SN55HVD75DRBREP	U802
+SN55HVD75DRBREP	U801
+SN55HVD75DRBREP	U800
+SN55HVD75DRBREP	U140
+SN55HVD75DRBREP	U139
+SN55HVD75DRBREP	U137
+SN55HVD75DRBREP	U135
+SN55HVD75DRBREP	U132
+SN55HVD75DRBREP	U131
+SN55HVD75DRBREP	U130
+SN55HVD75DRBREP	U128
+SN55HVD75DRBREP	U127
+SN55HVD75DRBREP	U125
+SN55HVD75DRBREP	U123
+SN55HVD75DRBREP	U120
+SN55HVD75DRBREP	U119
+SN55HVD75DRBREP	U118
+SN55HVD75DRBREP	U117
+SN55HVD75DRBREP	U113
+SN55HVD75DRBREP	U112
+SN55HVD75DRBREP	U111
+SN55HVD75DRBREP	U106
+SN55HVD75DRBREP	U105
+SN55HVD75DRBREP	U103
+SN55HVD75DRBREP	U102
+SN55HVD75DRBREP	U101
+SN55HVD75DRBREP	U100
+SN55HVD75DRBREP	U99
+SN55HVD75DRBREP	U98
+SN55HVD75DRBREP	U97
+SN55HVD75DRBREP	U96
+SN55HVD75DRBREP	U95
+SN55HVD75DRBREP	U66
+SN55HVD75DRBREP	U65
+SN55HVD75DRBREP	U64
+SN55HVD75DRBREP	U63
+SN55HVD75DRBREP	U62
+SN55HVD75DRBREP	U61
+SN55HVD75DRBREP	U60
+SN55HVD75DRBREP	U59
+SN55HVD75DRBREP	U58
+SN55HVD75DRBREP	U57
+SN55HVD75DRBREP	U56
+SN55HVD75DRBREP	U55
+SN55HVD75DRBREP	U54
+SN55HVD75DRBREP	U52
+SN55HVD75DRBREP	U51
+SN55HVD75DRBREP	U50
+SN55HVD75DRBREP	U49
+SN55HVD75DRBREP	U38
+SN55HVD75DRBREP	U28
+SN55HVD75DRBREP	U27
+SN55HVD75DRBREP	U25
+SN55HVD75DRBREP	U24
+SN55HVD75DRBREP	U23
+SN55HVD75DRBREP	U22
+SN55HVD75DRBREP	U21
+SN55HVD75DRBREP	U20
+SN55HVD75DRBREP	U19
+SN55HVD75DRBREP	U18
+SN55HVD75DRBREP	U16
+SN55HVD75DRBREP	U15
+SN55HVD75DRBREP	U14
+SN55HVD75DRBREP	U13
+SN55HVD75DRBREP	U9
+SN55HVD75DRBREP	U8
+SN55HVD75DRBREP	U6
+SN55HVD75DRBREP	U5
+SN55HVD75DRBREP	U3
+SN55HVD75DRBREP	U2
+SN55HVD75DRBREP	U1
+SN74LVC8T245MPWREP	U138
+SN74LVC8T245MPWREP	U134
+SN74LVC8T245MPWREP	U126
+SN74LVC8T245MPWREP	U109
+SN74LVC8T245MPWREP	U91
+SN74LVC8T245MPWREP	U90
+SN74LVC8T245MPWREP	U87
+SN74LVC8T245MPWREP	U83
+SN74LVC8T245MPWREP	U81
+SN74LVC8T245MPWREP	U80
+SN74LVC8T245MPWREP	U72
+SN74LVC8T245MPWREP	U71
+SN74LVC8T245MPWREP	U70
+SN74LVC8T245MPWREP	U68
+SN74LVC8T245MPWREP	U42
+SN74LVC8T245MPWREP	U41
+SN74LVC8T245MPWREP	U26
+BMI-S-204-F	J72
+BMI-S-204-F	J71
+BMI-S-204-F	J70
+BMI-S-204-F	J69
+BMI-S-204-F	J68
+BMI-S-204-F	J67
+BMI-S-204-F	J66
+BMI-S-204-F	J65
+BMI-S-204-F	J64
+BMI-S-204-F	J63
+BMI-S-204-F	J62
+BMI-S-204-F	J61
+BMI-S-204-F	J60
+BMI-S-204-F	J59
+BMI-S-204-F	J58
+BMI-S-204-F	J57
+SiT5147AE-FK-33E0A100.000000	Y9
+AM26LV31ESDREP	U839
+AM26LV31ESDREP	U837
+AM26LV31ESDREP	U136
+AM26LV31ESDREP	U36
+JANTX2N2222AUB	Q2
+CRCW06034k70FKEA	R1724
+CRCW06034k70FKEA	R1722
+CRCW06034k70FKEA	R1712
+CRCW06034k70FKEA	R1711
+CRCW06034k70FKEA	R1710
+CRCW06034k70FKEA	R1709
+CRCW06034k70FKEA	R1703
+CRCW06034k70FKEA	R1702
+CRCW06034k70FKEA	R1700
+CRCW06034k70FKEA	R1671
+CRCW06034k70FKEA	R1670
+CRCW06034k70FKEA	R1641
+CRCW06034k70FKEA	R1638
+CRCW06034k70FKEA	R1635
+CRCW06034k70FKEA	R1632
+CRCW06034k70FKEA	R1501
+CRCW06034k70FKEA	R1498
+CRCW06034k70FKEA	R1495
+CRCW06034k70FKEA	R1492
+CRCW06034k70FKEA	R1472
+CRCW06034k70FKEA	R1471
+CRCW06034k70FKEA	R1470
+CRCW06034k70FKEA	R1451
+CRCW06034k70FKEA	R1449
+CRCW06034k70FKEA	R1447
+CRCW06034k70FKEA	R1445
+CRCW06034k70FKEA	R1439
+CRCW06034k70FKEA	R1408
+CRCW06034k70FKEA	R1403
+CRCW06034k70FKEA	R1398
+CRCW06034k70FKEA	R1395
+CRCW06034k70FKEA	R1392
+CRCW06034k70FKEA	R1389
+CRCW06034k70FKEA	R1386
+CRCW06034k70FKEA	R1383
+CRCW06034k70FKEA	R1381
+CRCW06034k70FKEA	R1353
+CRCW06034k70FKEA	R1349
+CRCW06034k70FKEA	R1342
+CRCW06034k70FKEA	R1340
+CRCW06034k70FKEA	R1316
+CRCW06034k70FKEA	R1313
+CRCW06034k70FKEA	R1311
+CRCW06034k70FKEA	R1308
+CRCW06034k70FKEA	R1305
+CRCW06034k70FKEA	R1302
+CRCW06034k70FKEA	R1299
+CRCW06034k70FKEA	R1296
+CRCW06034k70FKEA	R1260
+CRCW06034k70FKEA	R1258
+CRCW06034k70FKEA	R1255
+CRCW06034k70FKEA	R1254
+CRCW06034k70FKEA	R1253
+CRCW06034k70FKEA	R1252
+CRCW06034k70FKEA	R1251
+CRCW06034k70FKEA	R1250
+CRCW06034k70FKEA	R1249
+CRCW06034k70FKEA	R1248
+CRCW06034k70FKEA	R1243
+CRCW06034k70FKEA	R1237
+CRCW06034k70FKEA	R1236
+CRCW06034k70FKEA	R1234
+CRCW06034k70FKEA	R1195
+CRCW06034k70FKEA	R1192
+CRCW06034k70FKEA	R1189
+CRCW06034k70FKEA	R1186
+CRCW06034k70FKEA	R1184
+CRCW06034k70FKEA	R1181
+CRCW06034k70FKEA	R1179
+CRCW06034k70FKEA	R1157
+CRCW06034k70FKEA	R1155
+CRCW06034k70FKEA	R1152
+CRCW06034k70FKEA	R1148
+CRCW06034k70FKEA	R1125
+CRCW06034k70FKEA	R1122
+CRCW06034k70FKEA	R1119
+CRCW06034k70FKEA	R1116
+CRCW06034k70FKEA	R1113
+CRCW06034k70FKEA	R1110
+CRCW06034k70FKEA	R1106
+CRCW06034k70FKEA	R1103
+CRCW06034k70FKEA	R1098
+CRCW06034k70FKEA	R1065
+CRCW06034k70FKEA	R1063
+CRCW06034k70FKEA	R1061
+CRCW06034k70FKEA	R1059
+CRCW06034k70FKEA	R1018
+CRCW06034k70FKEA	R1015
+CRCW06034k70FKEA	R1012
+CRCW06034k70FKEA	R1009
+CRCW06034k70FKEA	R1006
+CRCW06034k70FKEA	R875
+CRCW06034k70FKEA	R872
+CRCW06034k70FKEA	R869
+CRCW06034k70FKEA	R866
+CRCW06034k70FKEA	R807
+CRCW06034k70FKEA	R806
+CRCW06034k70FKEA	R805
+CRCW06034k70FKEA	R804
+CRCW06034k70FKEA	R534
+CRCW06034k70FKEA	R525
+CRCW06034k70FKEA	R524
+CRCW06034k70FKEA	R523
+CRCW06034k70FKEA	R522
+CRCW06034k70FKEA	R521
+CRCW06034k70FKEA	R520
+CRCW06034k70FKEA	R519
+CRCW06034k70FKEA	R518
+CRCW06034k70FKEA	R517
+CRCW06034k70FKEA	R516
+CRCW06034k70FKEA	R515
+CRCW06034k70FKEA	R514
+CRCW06034k70FKEA	R513
+CRCW06034k70FKEA	R512
+CRCW06034k70FKEA	R511
+CRCW06034k70FKEA	R510
+CRCW06034k70FKEA	R509
+CRCW06034k70FKEA	R508
+CRCW06034k70FKEA	R507
+CRCW06034k70FKEA	R506
+CRCW06034k70FKEA	R505
+CRCW06034k70FKEA	R504
+CRCW06034k70FKEA	R503
+CRCW06034k70FKEA	R502
+CRCW06034k70FKEA	R501
+CRCW06034k70FKEA	R500
+CRCW06034k70FKEA	R499
+CRCW06034k70FKEA	R498
+CRCW06034k70FKEA	R497
+CRCW06034k70FKEA	R496
+CRCW06034k70FKEA	R495
+CRCW06034k70FKEA	R494
+CRCW06034k70FKEA	R493
+CRCW06034k70FKEA	R474
+CRCW06034k70FKEA	R468
+CRCW06034k70FKEA	R433
+CRCW06034k70FKEA	R432
+CRCW06034k70FKEA	R405
+CRCW06034k70FKEA	R404
+CRCW06034k70FKEA	R403
+CRCW06034k70FKEA	R382
+CRCW06034k70FKEA	R381
+CRCW06034k70FKEA	R370
+CRCW06034k70FKEA	R326
+CRCW06034k70FKEA	R300
+CRCW06034k70FKEA	R299
+CRCW06034k70FKEA	R298
+CRCW06034k70FKEA	R297
+CRCW06034k70FKEA	R296
+CRCW06034k70FKEA	R295
+CRCW06034k70FKEA	R294
+CRCW06034k70FKEA	R293
+CRCW06034k70FKEA	R292
+CRCW06034k70FKEA	R270
+CRCW06034k70FKEA	R261
+CRCW06034k70FKEA	R253
+CRCW06034k70FKEA	R242
+CRCW06034k70FKEA	R204
+CRCW06034k70FKEA	R189
+CRCW06034k70FKEA	R169
+CRCW06034k70FKEA	R107
+CRCW06034k70FKEA	R99
+CRCW06034k70FKEA	R98
+CRCW06034k70FKEA	R96
+CRCW06034k70FKEA	R95
+CRCW06034k70FKEA	R71
+CRCW06034k70FKEA	R70
+CRCW06034k70FKEA	R69
+CRCW06034k70FKEA	R68
+CRCW06034k70FKEA	R8
+TMP117AIDRVR	U35
+NCS2-222+	T863
+NCS2-222+	T862
+NCS2-222+	T861
+NCS2-222+	T860
+NCS2-222+	T859
+NCS2-222+	T858
+NCS2-222+	T857
+NCS2-222+	T856
+NCS2-222+	T855
+NCS2-222+	T854
+NCS2-222+	T853
+NCS2-222+	T852
+NCS2-222+	T851
+NCS2-222+	T850
+NCS2-222+	T849
+NCS2-222+	T848
+NCS2-222+	T847
+NCS2-222+	T846
+NCS2-222+	T845
+NCS2-222+	T844
+NCS2-222+	T843
+NCS2-222+	T842
+NCS2-222+	T841
+NCS2-222+	T840
+NCS2-222+	T839
+NCS2-222+	T838
+NCS2-222+	T837
+NCS2-222+	T836
+NCS2-222+	T835
+NCS2-222+	T834
+NCS2-222+	T833
+NCS2-222+	T832
+NCS2-222+	T831
+NCS2-222+	T830
+NCS2-222+	T829
+NCS2-222+	T828
+NCS2-222+	T827
+NCS2-222+	T826
+NCS2-222+	T825
+NCS2-222+	T824
+NCS2-222+	T823
+NCS2-222+	T822
+NCS2-222+	T821
+NCS2-222+	T820
+NCS2-222+	T819
+NCS2-222+	T818
+NCS2-222+	T817
+NCS2-222+	T816
+NCS2-222+	T815
+NCS2-222+	T814
+NCS2-222+	T813
+NCS2-222+	T812
+NCS2-222+	T811
+NCS2-222+	T810
+NCS2-222+	T809
+NCS2-222+	T808
+NCS2-222+	T807
+NCS2-222+	T806
+NCS2-222+	T805
+NCS2-222+	T804
+NCS2-222+	T803
+NCS2-222+	T802
+NCS2-222+	T801
+NCS2-222+	T800
+T598X337M010ATE025	C425
+T598X337M010ATE025	C269
+T598X337M010ATE025	C186
+T598X337M010ATE025	C143
+T510E107K025ATA050	C1511
+T510E107K025ATA050	C1331
+T510E107K025ATA050	C1221
+T510E107K025ATA050	C684
+T510E107K025ATA050	C675
+T510E107K025ATA050	C650
+T510E107K025ATA050	C649
+T510E107K025ATA050	C644
+T510E107K025ATA050	C542
+T510E107K025ATA050	C541
+T510E107K025ATA050	C483
+T510E107K025ATA050	C482
+T510E107K025ATA050	C481
+T510E107K025ATA050	C480
+T510E107K025ATA050	C440
+T510E107K025ATA050	C439
+T510E107K025ATA050	C424
+T510E107K025ATA050	C362
+T510E107K025ATA050	C306
+T510E107K025ATA050	C262
+T510E107K025ATA050	C207
+T510E107K025ATA050	C206
+T510E107K025ATA050	C200
+T510E107K025ATA050	C199
+T510E107K025ATA050	C169
+CRCW040249R9FKE	R1601
+CRCW040249R9FKE	R1600
+CRCW040249R9FKE	R1599
+CRCW040249R9FKE	R1598
+CRCW040249R9FKE	R1485
+CRCW040249R9FKE	R1484
+CRCW040249R9FKE	R1483
+CRCW040249R9FKE	R1482
+CRCW040249R9FKE	R1450
+CRCW040249R9FKE	R1448
+CRCW040249R9FKE	R1446
+CRCW040249R9FKE	R1444
+CRCW040249R9FKE	R1407
+CRCW040249R9FKE	R1385
+CRCW040249R9FKE	R1384
+CRCW040249R9FKE	R1382
+CRCW040249R9FKE	R1365
+CRCW040249R9FKE	R1364
+CRCW040249R9FKE	R1363
+CRCW040249R9FKE	R1362
+CRCW040249R9FKE	R1352
+CRCW040249R9FKE	R1348
+CRCW040249R9FKE	R1341
+CRCW040249R9FKE	R1339
+CRCW040249R9FKE	R1315
+CRCW040249R9FKE	R1312
+CRCW040249R9FKE	R1310
+CRCW040249R9FKE	R1307
+CRCW040249R9FKE	R1282
+CRCW040249R9FKE	R1281
+CRCW040249R9FKE	R1280
+CRCW040249R9FKE	R1279
+CRCW040249R9FKE	R1213
+CRCW040249R9FKE	R1212
+CRCW040249R9FKE	R1211
+CRCW040249R9FKE	R1210
+CRCW040249R9FKE	R1185
+CRCW040249R9FKE	R1182
+CRCW040249R9FKE	R1180
+CRCW040249R9FKE	R1177
+CRCW040249R9FKE	R1158
+CRCW040249R9FKE	R1156
+CRCW040249R9FKE	R1153
+CRCW040249R9FKE	R1149
+CRCW040249R9FKE	R1139
+CRCW040249R9FKE	R1138
+CRCW040249R9FKE	R1137
+CRCW040249R9FKE	R1136
+CRCW040249R9FKE	R1126
+CRCW040249R9FKE	R1124
+CRCW040249R9FKE	R1123
+CRCW040249R9FKE	R1099
+CRCW040249R9FKE	R1066
+CRCW040249R9FKE	R1064
+CRCW040249R9FKE	R1062
+CRCW040249R9FKE	R1060
+CRCW040249R9FKE	R1032
+CRCW040249R9FKE	R1031
+CRCW040249R9FKE	R1030
+CRCW040249R9FKE	R1029
+CRCW040249R9FKE	R913
+CRCW040249R9FKE	R912
+CRCW040249R9FKE	R911
+CRCW040249R9FKE	R910
+LTC7852IUFD-1#PBF	U48
+TNPW06032K15BETA	R1716
+TNPW06032K15BETA	R1713
+TNPW06032K15BETA	R482
+TNPW06032K15BETA	R455
+TNPW06032K15BETA	R395
+TNPW06032K15BETA	R343
+TNPW06032K15BETA	R243
+TNPW06032K15BETA	R240
+TNPW06032K15BETA	R239
+TNPW06032K15BETA	R173
+TNPW06032K15BETA	R161
+TNPW06032K15BETA	R125
+TNPW06032K15BETA	R124
+TNPW06032K15BETA	R102
+CRCW04020000Z0ED	R1699
+CRCW04020000Z0ED	R1698
+CRCW04020000Z0ED	R1696
+CRCW04020000Z0ED	R1695
+CRCW04020000Z0ED	R1694
+CRCW04020000Z0ED	R1693
+CRCW04020000Z0ED	R1692
+CRCW04020000Z0ED	R1691
+CRCW04020000Z0ED	R1689
+CRCW04020000Z0ED	R1688
+CRCW04020000Z0ED	R1687
+CRCW04020000Z0ED	R1686
+CRCW04020000Z0ED	R1685
+CRCW04020000Z0ED	R1684
+CRCW04020000Z0ED	R1682
+CRCW04020000Z0ED	R1681
+CRCW04020000Z0ED	R1680
+CRCW04020000Z0ED	R1679
+CRCW04020000Z0ED	R1678
+CRCW04020000Z0ED	R1677
+CRCW04020000Z0ED	R1675
+CRCW04020000Z0ED	R1674
+CRCW04020000Z0ED	R1673
+CRCW04020000Z0ED	R1672
+CRCW04020000Z0ED	R1665
+CRCW04020000Z0ED	R1663
+CRCW04020000Z0ED	R1662
+CRCW04020000Z0ED	R1660
+CRCW04020000Z0ED	R1659
+CRCW04020000Z0ED	R1657
+CRCW04020000Z0ED	R1656
+CRCW04020000Z0ED	R1654
+CRCW04020000Z0ED	R1653
+CRCW04020000Z0ED	R1652
+CRCW04020000Z0ED	R1651
+CRCW04020000Z0ED	R1650
+CRCW04020000Z0ED	R1649
+CRCW04020000Z0ED	R1648
+CRCW04020000Z0ED	R1647
+CRCW04020000Z0ED	R1646
+CRCW04020000Z0ED	R1645
+CRCW04020000Z0ED	R1644
+CRCW04020000Z0ED	R1643
+CRCW04020000Z0ED	R1642
+CRCW04020000Z0ED	R1629
+CRCW04020000Z0ED	R1628
+CRCW04020000Z0ED	R1627
+CRCW04020000Z0ED	R1626
+CRCW04020000Z0ED	R1625
+CRCW04020000Z0ED	R1624
+CRCW04020000Z0ED	R1623
+CRCW04020000Z0ED	R1622
+CRCW04020000Z0ED	R1621
+CRCW04020000Z0ED	R1619
+CRCW04020000Z0ED	R1618
+CRCW04020000Z0ED	R1616
+CRCW04020000Z0ED	R1614
+CRCW04020000Z0ED	R1613
+CRCW04020000Z0ED	R1611
+CRCW04020000Z0ED	R1609
+CRCW04020000Z0ED	R1608
+CRCW04020000Z0ED	R1606
+CRCW04020000Z0ED	R1604
+CRCW04020000Z0ED	R1603
+CRCW04020000Z0ED	R1597
+CRCW04020000Z0ED	R1596
+CRCW04020000Z0ED	R1595
+CRCW04020000Z0ED	R1594
+CRCW04020000Z0ED	R1592
+CRCW04020000Z0ED	R1590
+CRCW04020000Z0ED	R1588
+CRCW04020000Z0ED	R1586
+CRCW04020000Z0ED	R1585
+CRCW04020000Z0ED	R1584
+CRCW04020000Z0ED	R1582
+CRCW04020000Z0ED	R1581
+CRCW04020000Z0ED	R1580
+CRCW04020000Z0ED	R1579
+CRCW04020000Z0ED	R1578
+CRCW04020000Z0ED	R1576
+CRCW04020000Z0ED	R1575
+CRCW04020000Z0ED	R1574
+CRCW04020000Z0ED	R1573
+CRCW04020000Z0ED	R1572
+CRCW04020000Z0ED	R1570
+CRCW04020000Z0ED	R1569
+CRCW04020000Z0ED	R1568
+CRCW04020000Z0ED	R1567
+CRCW04020000Z0ED	R1566
+CRCW04020000Z0ED	R1564
+CRCW04020000Z0ED	R1563
+CRCW04020000Z0ED	R1562
+CRCW04020000Z0ED	R1561
+CRCW04020000Z0ED	R1559
+CRCW04020000Z0ED	R1557
+CRCW04020000Z0ED	R1555
+CRCW04020000Z0ED	R1553
+CRCW04020000Z0ED	R1552
+CRCW04020000Z0ED	R1551
+CRCW04020000Z0ED	R1550
+CRCW04020000Z0ED	R1549
+CRCW04020000Z0ED	R1548
+CRCW04020000Z0ED	R1547
+CRCW04020000Z0ED	R1546
+CRCW04020000Z0ED	R1545
+CRCW04020000Z0ED	R1543
+CRCW04020000Z0ED	R1542
+CRCW04020000Z0ED	R1540
+CRCW04020000Z0ED	R1539
+CRCW04020000Z0ED	R1537
+CRCW04020000Z0ED	R1536
+CRCW04020000Z0ED	R1534
+CRCW04020000Z0ED	R1533
+CRCW04020000Z0ED	R1532
+CRCW04020000Z0ED	R1530
+CRCW04020000Z0ED	R1529
+CRCW04020000Z0ED	R1528
+CRCW04020000Z0ED	R1527
+CRCW04020000Z0ED	R1525
+CRCW04020000Z0ED	R1524
+CRCW04020000Z0ED	R1522
+CRCW04020000Z0ED	R1521
+CRCW04020000Z0ED	R1520
+CRCW04020000Z0ED	R1519
+CRCW04020000Z0ED	R1517
+CRCW04020000Z0ED	R1516
+CRCW04020000Z0ED	R1514
+CRCW04020000Z0ED	R1513
+CRCW04020000Z0ED	R1512
+CRCW04020000Z0ED	R1511
+CRCW04020000Z0ED	R1509
+CRCW04020000Z0ED	R1508
+CRCW04020000Z0ED	R1506
+CRCW04020000Z0ED	R1505
+CRCW04020000Z0ED	R1504
+CRCW04020000Z0ED	R1503
+CRCW04020000Z0ED	R1489
+CRCW04020000Z0ED	R1488
+CRCW04020000Z0ED	R1487
+CRCW04020000Z0ED	R1486
+CRCW04020000Z0ED	R1480
+CRCW04020000Z0ED	R1478
+CRCW04020000Z0ED	R1476
+CRCW04020000Z0ED	R1474
+CRCW04020000Z0ED	R1434
+CRCW04020000Z0ED	R1433
+CRCW04020000Z0ED	R1432
+CRCW04020000Z0ED	R1431
+CRCW04020000Z0ED	R1430
+CRCW04020000Z0ED	R1429
+CRCW04020000Z0ED	R1428
+CRCW04020000Z0ED	R1427
+CRCW04020000Z0ED	R1421
+CRCW04020000Z0ED	R1419
+CRCW04020000Z0ED	R1418
+CRCW04020000Z0ED	R1416
+CRCW04020000Z0ED	R1415
+CRCW04020000Z0ED	R1413
+CRCW04020000Z0ED	R1412
+CRCW04020000Z0ED	R1410
+CRCW04020000Z0ED	R1379
+CRCW04020000Z0ED	R1378
+CRCW04020000Z0ED	R1377
+CRCW04020000Z0ED	R1376
+CRCW04020000Z0ED	R1360
+CRCW04020000Z0ED	R1358
+CRCW04020000Z0ED	R1356
+CRCW04020000Z0ED	R1354
+CRCW04020000Z0ED	R1336
+CRCW04020000Z0ED	R1335
+CRCW04020000Z0ED	R1334
+CRCW04020000Z0ED	R1333
+CRCW04020000Z0ED	R1332
+CRCW04020000Z0ED	R1331
+CRCW04020000Z0ED	R1330
+CRCW04020000Z0ED	R1329
+CRCW04020000Z0ED	R1293
+CRCW04020000Z0ED	R1292
+CRCW04020000Z0ED	R1291
+CRCW04020000Z0ED	R1290
+CRCW04020000Z0ED	R1289
+CRCW04020000Z0ED	R1288
+CRCW04020000Z0ED	R1287
+CRCW04020000Z0ED	R1286
+CRCW04020000Z0ED	R1278
+CRCW04020000Z0ED	R1277
+CRCW04020000Z0ED	R1276
+CRCW04020000Z0ED	R1275
+CRCW04020000Z0ED	R1273
+CRCW04020000Z0ED	R1271
+CRCW04020000Z0ED	R1269
+CRCW04020000Z0ED	R1267
+CRCW04020000Z0ED	R1245
+CRCW04020000Z0ED	R1244
+CRCW04020000Z0ED	R1240
+CRCW04020000Z0ED	R1230
+CRCW04020000Z0ED	R1228
+CRCW04020000Z0ED	R1226
+CRCW04020000Z0ED	R1224
+CRCW04020000Z0ED	R1217
+CRCW04020000Z0ED	R1216
+CRCW04020000Z0ED	R1215
+CRCW04020000Z0ED	R1214
+CRCW04020000Z0ED	R1205
+CRCW04020000Z0ED	R1204
+CRCW04020000Z0ED	R1203
+CRCW04020000Z0ED	R1202
+CRCW04020000Z0ED	R1201
+CRCW04020000Z0ED	R1200
+CRCW04020000Z0ED	R1199
+CRCW04020000Z0ED	R1198
+CRCW04020000Z0ED	R1176
+CRCW04020000Z0ED	R1174
+CRCW04020000Z0ED	R1173
+CRCW04020000Z0ED	R1171
+CRCW04020000Z0ED	R1170
+CRCW04020000Z0ED	R1168
+CRCW04020000Z0ED	R1167
+CRCW04020000Z0ED	R1165
+CRCW04020000Z0ED	R1147
+CRCW04020000Z0ED	R1145
+CRCW04020000Z0ED	R1143
+CRCW04020000Z0ED	R1141
+CRCW04020000Z0ED	R1130
+CRCW04020000Z0ED	R1129
+CRCW04020000Z0ED	R1128
+CRCW04020000Z0ED	R1127
+CRCW04020000Z0ED	R1096
+CRCW04020000Z0ED	R1094
+CRCW04020000Z0ED	R1093
+CRCW04020000Z0ED	R1091
+CRCW04020000Z0ED	R1090
+CRCW04020000Z0ED	R1088
+CRCW04020000Z0ED	R1087
+CRCW04020000Z0ED	R1085
+CRCW04020000Z0ED	R1079
+CRCW04020000Z0ED	R1078
+CRCW04020000Z0ED	R1077
+CRCW04020000Z0ED	R1076
+CRCW04020000Z0ED	R1075
+CRCW04020000Z0ED	R1074
+CRCW04020000Z0ED	R1073
+CRCW04020000Z0ED	R1072
+CRCW04020000Z0ED	R1040
+CRCW04020000Z0ED	R1038
+CRCW04020000Z0ED	R1036
+CRCW04020000Z0ED	R1034
+CRCW04020000Z0ED	R1024
+CRCW04020000Z0ED	R1023
+CRCW04020000Z0ED	R1022
+CRCW04020000Z0ED	R1021
+CRCW04020000Z0ED	R1004
+CRCW04020000Z0ED	R1003
+CRCW04020000Z0ED	R1002
+CRCW04020000Z0ED	R1001
+CRCW04020000Z0ED	R999
+CRCW04020000Z0ED	R998
+CRCW04020000Z0ED	R996
+CRCW04020000Z0ED	R995
+CRCW04020000Z0ED	R994
+CRCW04020000Z0ED	R993
+CRCW04020000Z0ED	R991
+CRCW04020000Z0ED	R990
+CRCW04020000Z0ED	R988
+CRCW04020000Z0ED	R987
+CRCW04020000Z0ED	R986
+CRCW04020000Z0ED	R985
+CRCW04020000Z0ED	R983
+CRCW04020000Z0ED	R982
+CRCW04020000Z0ED	R980
+CRCW04020000Z0ED	R979
+CRCW04020000Z0ED	R978
+CRCW04020000Z0ED	R977
+CRCW04020000Z0ED	R975
+CRCW04020000Z0ED	R974
+CRCW04020000Z0ED	R973
+CRCW04020000Z0ED	R971
+CRCW04020000Z0ED	R970
+CRCW04020000Z0ED	R968
+CRCW04020000Z0ED	R967
+CRCW04020000Z0ED	R965
+CRCW04020000Z0ED	R964
+CRCW04020000Z0ED	R962
+CRCW04020000Z0ED	R961
+CRCW04020000Z0ED	R960
+CRCW04020000Z0ED	R959
+CRCW04020000Z0ED	R958
+CRCW04020000Z0ED	R957
+CRCW04020000Z0ED	R956
+CRCW04020000Z0ED	R955
+CRCW04020000Z0ED	R954
+CRCW04020000Z0ED	R952
+CRCW04020000Z0ED	R950
+CRCW04020000Z0ED	R948
+CRCW04020000Z0ED	R946
+CRCW04020000Z0ED	R945
+CRCW04020000Z0ED	R944
+CRCW04020000Z0ED	R943
+CRCW04020000Z0ED	R941
+CRCW04020000Z0ED	R940
+CRCW04020000Z0ED	R939
+CRCW04020000Z0ED	R938
+CRCW04020000Z0ED	R937
+CRCW04020000Z0ED	R935
+CRCW04020000Z0ED	R934
+CRCW04020000Z0ED	R933
+CRCW04020000Z0ED	R932
+CRCW04020000Z0ED	R931
+CRCW04020000Z0ED	R929
+CRCW04020000Z0ED	R928
+CRCW04020000Z0ED	R927
+CRCW04020000Z0ED	R926
+CRCW04020000Z0ED	R925
+CRCW04020000Z0ED	R923
+CRCW04020000Z0ED	R922
+CRCW04020000Z0ED	R921
+CRCW04020000Z0ED	R919
+CRCW04020000Z0ED	R917
+CRCW04020000Z0ED	R915
+CRCW04020000Z0ED	R909
+CRCW04020000Z0ED	R908
+CRCW04020000Z0ED	R907
+CRCW04020000Z0ED	R906
+CRCW04020000Z0ED	R904
+CRCW04020000Z0ED	R903
+CRCW04020000Z0ED	R901
+CRCW04020000Z0ED	R899
+CRCW04020000Z0ED	R898
+CRCW04020000Z0ED	R896
+CRCW04020000Z0ED	R894
+CRCW04020000Z0ED	R893
+CRCW04020000Z0ED	R891
+CRCW04020000Z0ED	R889
+CRCW04020000Z0ED	R888
+CRCW04020000Z0ED	R886
+CRCW04020000Z0ED	R885
+CRCW04020000Z0ED	R884
+CRCW04020000Z0ED	R883
+CRCW04020000Z0ED	R882
+CRCW04020000Z0ED	R881
+CRCW04020000Z0ED	R880
+CRCW04020000Z0ED	R879
+CRCW04020000Z0ED	R878
+CRCW04020000Z0ED	R865
+CRCW04020000Z0ED	R864
+CRCW04020000Z0ED	R863
+CRCW04020000Z0ED	R862
+CRCW04020000Z0ED	R861
+CRCW04020000Z0ED	R860
+CRCW04020000Z0ED	R859
+CRCW04020000Z0ED	R858
+CRCW04020000Z0ED	R857
+CRCW04020000Z0ED	R856
+CRCW04020000Z0ED	R855
+CRCW04020000Z0ED	R854
+CRCW04020000Z0ED	R853
+CRCW04020000Z0ED	R851
+CRCW04020000Z0ED	R850
+CRCW04020000Z0ED	R848
+CRCW04020000Z0ED	R847
+CRCW04020000Z0ED	R845
+CRCW04020000Z0ED	R844
+CRCW04020000Z0ED	R842
+CRCW04020000Z0ED	R837
+CRCW04020000Z0ED	R836
+CRCW04020000Z0ED	R835
+CRCW04020000Z0ED	R834
+CRCW04020000Z0ED	R832
+CRCW04020000Z0ED	R831
+CRCW04020000Z0ED	R830
+CRCW04020000Z0ED	R829
+CRCW04020000Z0ED	R828
+CRCW04020000Z0ED	R827
+CRCW04020000Z0ED	R825
+CRCW04020000Z0ED	R824
+CRCW04020000Z0ED	R823
+CRCW04020000Z0ED	R822
+CRCW04020000Z0ED	R821
+CRCW04020000Z0ED	R820
+CRCW04020000Z0ED	R818
+CRCW04020000Z0ED	R817
+CRCW04020000Z0ED	R816
+CRCW04020000Z0ED	R815
+CRCW04020000Z0ED	R814
+CRCW04020000Z0ED	R813
+CRCW04020000Z0ED	R811
+CRCW04020000Z0ED	R810
+CRCW04020000Z0ED	R166
+78614070360	MP16
+78614070360	MP15
+78614070360	MP14
+78614070360	MP13
+78614070360	MP12
+78614070360	MP11
+78614070360	MP10
+78614070360	MP9
+78614070360	MP8
+78614070360	MP7
+78614070360	MP6
+78614070360	MP5
+78614070360	MP4
+78614070360	MP3
+78614070360	MP2
+78614070360	MP1
+AD9508SCPZ-EP	U79
+C0402C182K5RACAUTO	C281
+MCOTS-N-28V-60-QT-N-M	U53
+TNPW060326k1BEEA	R407
+TNPW060326k1BEEA	R257
+netcon	NT1
+TPS3808G01MDBVTEP	U133
+TPS3808G01MDBVTEP	U116
+TPS3808G01MDBVTEP	U115
+TPS3808G01MDBVTEP	U114
+TPS3808G01MDBVTEP	U108
+TPS3808G01MDBVTEP	U107
+TPS3808G01MDBVTEP	U74
+TPS3808G01MDBVTEP	U73
+TPS3808G01MDBVTEP	U47
+TPS3808G01MDBVTEP	U46
+TPS3808G01MDBVTEP	U39
+TPS3808G01MDBVTEP	U37
+TRF1208RPVR	U873
+TRF1208RPVR	U872
+TRF1208RPVR	U871
+TRF1208RPVR	U870
+TRF1208RPVR	U869
+TRF1208RPVR	U868
+TRF1208RPVR	U867
+TRF1208RPVR	U866
+TRF1208RPVR	U865
+TRF1208RPVR	U864
+TRF1208RPVR	U863
+TRF1208RPVR	U862
+TRF1208RPVR	U860
+TRF1208RPVR	U859
+TRF1208RPVR	U858
+TRF1208RPVR	U857
+TRF1208RPVR	U856
+TRF1208RPVR	U855
+TRF1208RPVR	U854
+TRF1208RPVR	U853
+TRF1208RPVR	U852
+TRF1208RPVR	U851
+TRF1208RPVR	U850
+TRF1208RPVR	U849
+TRF1208RPVR	U847
+TRF1208RPVR	U846
+TRF1208RPVR	U845
+TRF1208RPVR	U844
+TRF1208RPVR	U843
+TRF1208RPVR	U842
+TRF1208RPVR	U841
+TRF1208RPVR	U840
+TRF1208RPVR	U836
+TRF1208RPVR	U835
+TRF1208RPVR	U834
+TRF1208RPVR	U833
+TRF1208RPVR	U832
+TRF1208RPVR	U831
+TRF1208RPVR	U830
+TRF1208RPVR	U829
+TRF1208RPVR	U828
+TRF1208RPVR	U827
+TRF1208RPVR	U826
+TRF1208RPVR	U825
+TRF1208RPVR	U824
+TRF1208RPVR	U823
+TRF1208RPVR	U822
+TRF1208RPVR	U821
+TRF1208RPVR	U820
+TRF1208RPVR	U819
+TRF1208RPVR	U818
+TRF1208RPVR	U817
+TRF1208RPVR	U816
+TRF1208RPVR	U815
+TRF1208RPVR	U814
+TRF1208RPVR	U813
+TRF1208RPVR	U812
+TRF1208RPVR	U811
+TRF1208RPVR	U810
+TRF1208RPVR	U809
+TRF1208RPVR	U808
+TRF1208RPVR	U807
+TRF1208RPVR	U806
+TRF1208RPVR	U805
+0402DF-121XJRW	L90
+0402DF-121XJRW	L89
+0402DF-121XJRW	L88
+0402DF-121XJRW	L87
+0402DF-121XJRW	L86
+0402DF-121XJRW	L85
+0402DF-121XJRW	L84
+0402DF-121XJRW	L83
+0402DF-121XJRW	L80
+0402DF-121XJRW	L79
+0402DF-121XJRW	L78
+0402DF-121XJRW	L76
+0402DF-121XJRW	L75
+0402DF-121XJRW	L74
+0402DF-121XJRW	L73
+0402DF-121XJRW	L72
+0402DF-121XJRW	L71
+0402DF-121XJRW	L70
+0402DF-121XJRW	L69
+0402DF-121XJRW	L68
+0402DF-121XJRW	L67
+0402DF-121XJRW	L65
+0402DF-121XJRW	L64
+0402DF-121XJRW	L63
+0402DF-121XJRW	L62
+0402DF-121XJRW	L61
+0402DF-121XJRW	L60
+0402DF-121XJRW	L59
+0402DF-121XJRW	L58
+0402DF-121XJRW	L57
+0402DF-121XJRW	L56
+0402DF-121XJRW	L55
+0402DF-121XJRW	L35
+0402DF-121XJRW	L34
+0402DF-121XJRW	L33
+0402DF-121XJRW	L32
+0402DF-121XJRW	L31
+0402DF-121XJRW	L30
+0402DF-121XJRW	L29
+0402DF-121XJRW	L28
+0402DF-121XJRW	L27
+0402DF-121XJRW	L26
+0402DF-121XJRW	L25
+0402DF-121XJRW	L24
+0402DF-121XJRW	L23
+0402DF-121XJRW	L22
+0402DF-121XJRW	L21
+0402DF-121XJRW	L20
+0402DF-121XJRW	L19
+0402DF-121XJRW	L18
+0402DF-121XJRW	L17
+0402DF-121XJRW	L16
+0402DF-121XJRW	L15
+0402DF-121XJRW	L14
+0402DF-121XJRW	L13
+0402DF-121XJRW	L12
+0402DF-121XJRW	L10
+0402DF-121XJRW	L9
+0402DF-121XJRW	L8
+0402DF-121XJRW	L7
+0402DF-121XJRW	L5
+0402DF-121XJRW	L4
+0402DF-121XJRW	L3
+0402DF-121XJRW	L2
+600L3R3AW200T	C1620
+600L3R3AW200T	C1618
+600L3R3AW200T	C1616
+600L3R3AW200T	C1614
+600L3R3AW200T	C1556
+600L3R3AW200T	C1554
+600L3R3AW200T	C1552
+600L3R3AW200T	C1550
+600L3R3AW200T	C1544
+600L3R3AW200T	C1541
+600L3R3AW200T	C1539
+600L3R3AW200T	C1525
+600L3R3AW200T	C1484
+600L3R3AW200T	C1482
+600L3R3AW200T	C1479
+600L3R3AW200T	C1477
+600L3R3AW200T	C1415
+600L3R3AW200T	C1412
+600L3R3AW200T	C1408
+600L3R3AW200T	C1405
+600L3R3AW200T	C1399
+600L3R3AW200T	C1397
+600L3R3AW200T	C1395
+600L3R3AW200T	C1393
+600L3R3AW200T	C1350
+600L3R3AW200T	C1344
+600L3R3AW200T	C1339
+600L3R3AW200T	C1334
+600L3R3AW200T	C1285
+600L3R3AW200T	C1283
+600L3R3AW200T	C1281
+600L3R3AW200T	C1279
+600L3R3AW200T	C1182
+600L3R3AW200T	C1180
+600L3R3AW200T	C1178
+600L3R3AW200T	C1176
+600L3R3AW200T	C1143
+600L3R3AW200T	C1137
+600L3R3AW200T	C1132
+600L3R3AW200T	C1127
+600L3R3AW200T	C1097
+600L3R3AW200T	C1095
+600L3R3AW200T	C1093
+600L3R3AW200T	C1091
+600L3R3AW200T	C1089
+600L3R3AW200T	C1086
+600L3R3AW200T	C1082
+600L3R3AW200T	C1079
+600L3R3AW200T	C1034
+600L3R3AW200T	C1032
+600L3R3AW200T	C1029
+600L3R3AW200T	C1027
+600L3R3AW200T	C1000
+600L3R3AW200T	C989
+600L3R3AW200T	C969
+600L3R3AW200T	C966
+600L3R3AW200T	C957
+600L3R3AW200T	C955
+600L3R3AW200T	C953
+600L3R3AW200T	C951
+600L3R3AW200T	C883
+600L3R3AW200T	C881
+600L3R3AW200T	C879
+600L3R3AW200T	C877
+600L100FW200	C1653
+600L100FW200	C1651
+600L100FW200	C1650
+600L100FW200	C1648
+600L100FW200	C1647
+600L100FW200	C1645
+600L100FW200	C1644
+600L100FW200	C1642
+600L100FW200	C1589
+600L100FW200	C1587
+600L100FW200	C1586
+600L100FW200	C1584
+600L100FW200	C1583
+600L100FW200	C1581
+600L100FW200	C1580
+600L100FW200	C1578
+600L100FW200	C1546
+600L100FW200	C1531
+600L100FW200	C1527
+600L100FW200	C1526
+600L100FW200	C1521
+600L100FW200	C1520
+600L100FW200	C1516
+600L100FW200	C1515
+600L100FW200	C1485
+600L100FW200	C1481
+600L100FW200	C1471
+600L100FW200	C1469
+600L100FW200	C1468
+600L100FW200	C1466
+600L100FW200	C1465
+600L100FW200	C1463
+600L100FW200	C1462
+600L100FW200	C1460
+600L100FW200	C1459
+600L100FW200	C1455
+600L100FW200	C1454
+600L100FW200	C1450
+600L100FW200	C1446
+600L100FW200	C1445
+600L100FW200	C1417
+600L100FW200	C1416
+600L100FW200	C1414
+600L100FW200	C1409
+600L100FW200	C1407
+600L100FW200	C1389
+600L100FW200	C1387
+600L100FW200	C1383
+600L100FW200	C1352
+600L100FW200	C1351
+600L100FW200	C1346
+600L100FW200	C1341
+600L100FW200	C1340
+600L100FW200	C1335
+600L100FW200	C1321
+600L100FW200	C1319
+600L100FW200	C1318
+600L100FW200	C1316
+600L100FW200	C1315
+600L100FW200	C1313
+600L100FW200	C1312
+600L100FW200	C1310
+600L100FW200	C1309
+600L100FW200	C1307
+600L100FW200	C1161
+600L100FW200	C1159
+600L100FW200	C1157
+600L100FW200	C1155
+600L100FW200	C1154
+600L100FW200	C1152
+600L100FW200	C1151
+600L100FW200	C1149
+600L100FW200	C1148
+600L100FW200	C1146
+600L100FW200	C1141
+600L100FW200	C1136
+600L100FW200	C1135
+600L100FW200	C1130
+600L100FW200	C1126
+600L100FW200	C1125
+600L100FW200	C1107
+600L100FW200	C1103
+600L100FW200	C1101
+600L100FW200	C1087
+600L100FW200	C1085
+600L100FW200	C1080
+600L100FW200	C1078
+600L100FW200	C1077
+600L100FW200	C1063
+600L100FW200	C1062
+600L100FW200	C1058
+600L100FW200	C1054
+600L100FW200	C1053
+600L100FW200	C1049
+600L100FW200	C1048
+600L100FW200	C1046
+600L100FW200	C1045
+600L100FW200	C1043
+600L100FW200	C1042
+600L100FW200	C1040
+600L100FW200	C1039
+600L100FW200	C1037
+600L100FW200	C1030
+600L100FW200	C1025
+600L100FW200	C999
+600L100FW200	C998
+600L100FW200	C994
+600L100FW200	C993
+600L100FW200	C988
+600L100FW200	C987
+600L100FW200	C983
+600L100FW200	C964
+600L100FW200	C920
+600L100FW200	C918
+600L100FW200	C917
+600L100FW200	C915
+600L100FW200	C914
+600L100FW200	C912
+600L100FW200	C911
+600L100FW200	C909
+600L100FW200	C849
+600L100FW200	C847
+600L100FW200	C846
+600L100FW200	C844
+600L100FW200	C843
+600L100FW200	C841
+600L100FW200	C840
+600L100FW200	C838
+600L1R0AW200T	C1679
+600L1R0AW200T	C1678
+600L1R0AW200T	C1677
+600L1R0AW200T	C1676
+600L1R0AW200T	C1601
+600L1R0AW200T	C1600
+600L1R0AW200T	C1599
+600L1R0AW200T	C1598
+600L1R0AW200T	C1533
+600L1R0AW200T	C1529
+600L1R0AW200T	C1523
+600L1R0AW200T	C1518
+600L1R0AW200T	C1503
+600L1R0AW200T	C1502
+600L1R0AW200T	C1501
+600L1R0AW200T	C1500
+600L1R0AW200T	C1487
+600L1R0AW200T	C1457
+600L1R0AW200T	C1452
+600L1R0AW200T	C1448
+600L1R0AW200T	C1419
+600L1R0AW200T	C1411
+600L1R0AW200T	C1391
+600L1R0AW200T	C1385
+600L1R0AW200T	C1377
+600L1R0AW200T	C1376
+600L1R0AW200T	C1375
+600L1R0AW200T	C1374
+600L1R0AW200T	C1354
+600L1R0AW200T	C1348
+600L1R0AW200T	C1343
+600L1R0AW200T	C1337
+600L1R0AW200T	C1139
+600L1R0AW200T	C1133
+600L1R0AW200T	C1128
+600L1R0AW200T	C1123
+600L1R0AW200T	C1112
+600L1R0AW200T	C1111
+600L1R0AW200T	C1110
+600L1R0AW200T	C1109
+600L1R0AW200T	C1105
+600L1R0AW200T	C1099
+600L1R0AW200T	C1083
+600L1R0AW200T	C1075
+600L1R0AW200T	C1060
+600L1R0AW200T	C1056
+600L1R0AW200T	C1051
+600L1R0AW200T	C1023
+600L1R0AW200T	C1014
+600L1R0AW200T	C1013
+600L1R0AW200T	C1012
+600L1R0AW200T	C1011
+600L1R0AW200T	C996
+600L1R0AW200T	C991
+600L1R0AW200T	C985
+600L1R0AW200T	C981
+600L1R0AW200T	C900
+600L1R0AW200T	C899
+600L1R0AW200T	C898
+600L1R0AW200T	C897
+600L1R0AW200T	C815
+600L1R0AW200T	C814
+600L1R0AW200T	C813
+600L1R0AW200T	C812
+600L1R5AW200T	C1652
+600L1R5AW200T	C1649
+600L1R5AW200T	C1646
+600L1R5AW200T	C1643
+600L1R5AW200T	C1588
+600L1R5AW200T	C1585
+600L1R5AW200T	C1582
+600L1R5AW200T	C1579
+600L1R5AW200T	C1532
+600L1R5AW200T	C1528
+600L1R5AW200T	C1522
+600L1R5AW200T	C1517
+600L1R5AW200T	C1486
+600L1R5AW200T	C1470
+600L1R5AW200T	C1467
+600L1R5AW200T	C1464
+600L1R5AW200T	C1461
+600L1R5AW200T	C1456
+600L1R5AW200T	C1451
+600L1R5AW200T	C1447
+600L1R5AW200T	C1418
+600L1R5AW200T	C1410
+600L1R5AW200T	C1390
+600L1R5AW200T	C1384
+600L1R5AW200T	C1353
+600L1R5AW200T	C1347
+600L1R5AW200T	C1342
+600L1R5AW200T	C1336
+600L1R5AW200T	C1320
+600L1R5AW200T	C1317
+600L1R5AW200T	C1314
+600L1R5AW200T	C1311
+600L1R5AW200T	C1156
+600L1R5AW200T	C1153
+600L1R5AW200T	C1150
+600L1R5AW200T	C1147
+600L1R5AW200T	C1140
+600L1R5AW200T	C1134
+600L1R5AW200T	C1129
+600L1R5AW200T	C1124
+600L1R5AW200T	C1106
+600L1R5AW200T	C1100
+600L1R5AW200T	C1084
+600L1R5AW200T	C1076
+600L1R5AW200T	C1061
+600L1R5AW200T	C1057
+600L1R5AW200T	C1052
+600L1R5AW200T	C1047
+600L1R5AW200T	C1044
+600L1R5AW200T	C1041
+600L1R5AW200T	C1038
+600L1R5AW200T	C1024
+600L1R5AW200T	C997
+600L1R5AW200T	C992
+600L1R5AW200T	C986
+600L1R5AW200T	C982
+600L1R5AW200T	C919
+600L1R5AW200T	C916
+600L1R5AW200T	C913
+600L1R5AW200T	C910
+600L1R5AW200T	C848
+600L1R5AW200T	C845
+600L1R5AW200T	C842
+600L1R5AW200T	C839
+C0603C479C3GACAUTO	C1245
+C0603C479C3GACAUTO	C660
+TNPW060314K0BETA	R321
+TNPW060314K0BETA	R208
+TNPW060314K0BETA	R101
+XGL4020-471MSC	L92
+XGL4020-471MSC	L91
+XGL4020-471MSC	L53
+XGL4020-471MSC	L47
+XGL4020-471MSC	L39
+XGL4020-471MSC	L36
+C0603C102JAGACAUTO	C1475
+C0603C102JAGACAUTO	C1333
+C0603C102JAGACAUTO	C806
+C0603C102JAGACAUTO	C550
+C0603C102JAGACAUTO	C501
+C0603C102JAGACAUTO	C437
+C0603C102JAGACAUTO	C176
+C0603C102JAGACAUTO	C9
+C0603C221JAGACAUTO	C1686
+C0603C221JAGACAUTO	C1264
+C0603C221JAGACAUTO	C1244
+C0603C221JAGACAUTO	C1208
+C0603C221JAGACAUTO	C1202
+C0603C221JAGACAUTO	C1200
+C0603C221JAGACAUTO	C1193
+C0603C221JAGACAUTO	C733
+C0603C221JAGACAUTO	C732
+C0603C221JAGACAUTO	C731
+C0603C221JAGACAUTO	C705
+C0603C221JAGACAUTO	C680
+C0603C221JAGACAUTO	C678
+C0603C221JAGACAUTO	C639
+C0603C221JAGACAUTO	C637
+C0603C221JAGACAUTO	C274
+C0603C221JAGACAUTO	C229
+C0603C221JAGACAUTO	C225
+C0603C331JAGACAUTO	C703
+C0603C331JAGACAUTO	C232
+C0603C331JAGACAUTO	C220
+C0603C330J5GACAUTO	C1232
+C0603C150J5GACAUTO	C1267
+TNPW0603898RBEE	R444
+BVSS138LT1G	Q802
+BVSS138LT1G	Q801
+BVSS138LT1G	Q800
+TNPW0603187RBET	R443
+TNPW0603187RBET	R351
+TNPW0603187RBET	R271
+TNPW0603187RBET	R97
+CRCW0603100KFKT	R454
+CRCW0603100KFKT	R442
+CRCW0603100KFKT	R434
+CRCW0603100KFKT	R352
+CRCW0603100KFKT	R342
+CRCW0603100KFKT	R316
+CRCW0603100KFKT	R158
+CRCW0603100KFKT	R151
+CRCW0603100KFKT	R133
+CRCW0603100KFKT	R103
+CRCW0603100KFKT	R86
+CRCW060375R0FKT	R1728
+CRCW060375R0FKT	R1727
+CRCW060375R0FKT	R1726
+CRCW060375R0FKT	R1725
+C0805C225J4RACAUTO	C1304
+C0805C225J4RACAUTO	C1218
+C0805C225J4RACAUTO	C1215
+C0805C225J4RACAUTO	C1036
+C0805C225J4RACAUTO	C1035
+C0805C225J4RACAUTO	C690
+C0805C225J4RACAUTO	C364
+C0805C225J4RACAUTO	C215
+C0805C225J4RACAUTO	C208
+C0805C474J4RACAUTO	C1440
+C0805C474J4RACAUTO	C866
+C0805C474J4RACAUTO	C865
+C0805C474J4RACAUTO	C859
+C0805C474J4RACAUTO	C330
+C0805C474J4RACAUTO	C329
+C0805C474J4RACAUTO	C47
+XGL6060-103MS	L865
+XGL6060-103MS	L44
+TNPW060317K4BETA	R320
+TNPW060317K4BETA	R5
+CRCW06031K80FKEA	R277
+CRCW06031K80FKEA	R276
+CRCW06031K80FKEA	R1
+CRCW06031R00FKT	R1441
+CRCW06031R00FKT	R1338
+CRCW06031R00FKT	R809
+CRCW06031R00FKT	R371
+CRCW06031R00FKT	R362
+CRCW06031R00FKT	R27
+CRCW06031R00FKT	R9
+CRCW06031R00FKT	R6
+CRCW0603820RFKE	R291
+CRCW0603820RFKE	R287
+CRCW0603820RFKE	R274
+CRCW0603820RFKE	R273
+CRCW06038K25FK	R290
+C0603C333J5RACAUTO	C233
+C0603C333J5RACAUTO	C221
+12103C106K4Z2A	C1549
+12103C106K4Z2A	C1513
+12103C106K4Z2A	C1404
+12103C106K4Z2A	C1305
+12103C106K4Z2A	C1251
+12103C106K4Z2A	C1249
+12103C106K4Z2A	C811
+12103C106K4Z2A	C808
+12103C106K4Z2A	C656
+12103C106K4Z2A	C555
+12103C106K4Z2A	C523
+12103C106K4Z2A	C488
+12103C106K4Z2A	C464
+12103C106K4Z2A	C438
+12103C106K4Z2A	C325
+12103C106K4Z2A	C324
+12103C106K4Z2A	C318
+12103C106K4Z2A	C317
+12103C106K4Z2A	C210
+12103C106K4Z2A	C202
+12103C106K4Z2A	C17
+12103C106K4Z2A	C11
+TNPW06034K48BEE	R272
+TNPW060337K4BEEA	R170
+TNPW060318K7BETA	R529
+TNPW060318K7BETA	R256
+TNPW06035K49BEEA	R1400
+TNPW06035K49BEEA	R1322
+TNPW06035K49BEEA	R808
+TNPW06035K49BEEA	R372
+TNPW06035K49BEEA	R367
+TNPW06035K49BEEA	R207
+TNPW06035K49BEEA	R26
+XGL4030-401MS	L800
+XGL4030-401MS	L1
+XGL6030-682MS	L93
+XGL6030-682MS	L52
+XGL6030-682MS	L38
+XGL6030-682MS	L37
+C0603C470JAGACAUTO	C1690
+C0603C470JAGACAUTO	C1263
+C0603C470JAGACAUTO	C1210
+C0603C470JAGACAUTO	C1204
+C0603C470JAGACAUTO	C1166
+TNPW060375K0BEEA	R453
+TNPW060375K0BEEA	R317
+TNPW060375K0BEEA	R157
+TNPW060375K0BEEA	R150
+NVMFS5C673NL	Q12
+NVMFS5C673NL	Q11
+NVMFS5C673NL	Q10
+NVMFS5C673NL	Q9
+NVMFS5C673NL	Q8
+NVMFS5C673NL	Q7
+NVMFS5C673NL	Q6
+NVMFS5C673NL	Q5
+CRCW06032R00FKTA	R1705
+CRCW06032R00FKTA	R1259
+CRCW06032R00FKTA	R1239
+CRCW06032R00FKTA	R1238
+CRCW06032R00FKTA	R431
+CRCW06032R00FKTA	R328
+CRCW06032R00FKTA	R154
+CRCW06032R00FKTA	R147
+TNPW06034K32BET	R452
+TNPW06034K32BET	R318
+TNPW06034K32BET	R156
+TNPW06034K32BET	R149
+C0603C681J5GACAUTO	C1687
+TNPW0603162KBETA	R467
+TNPW0603162KBETA	R409
+TNPW0603162KBETA	R332
+TNPW0603162KBETA	R254
+TNPW0603162KBETA	R205
+TNPW0603162KBETA	R106
+TNPW06032K21BEEA	R1704
+C0603C222J5GACAUTO	C1265
+C0603C332J5GACAUTO	C1681
+<img width="293" height="32766" alt="image" src="https://github.com/user-attachments/assets/67aa2b49-3e83-4119-b9c4-7c36643bae92" />
