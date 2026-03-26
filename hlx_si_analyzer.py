@@ -42,6 +42,7 @@ class DriverModel:
     rise_time: float = 1.0  # 10-90% rise time (ns)
     fall_time: float = 1.0  # 10-90% fall time (ns)
     cin: float = 7.0        # Receiver input capacitance (pF)
+    freq_mhz: float = 1.0   # Signal frequency (MHz) — sets half-period for VOH/VOL
 
 
 @dataclass
@@ -392,14 +393,24 @@ def compute_si(net: NetData, driver: DriverModel, num_bounces: int = 40) -> SIRe
     # 3. Convolve with driver ramp to get actual receiver waveform
     # 4. Measure 10-90% rise/fall time, overshoot, undershoot from waveform
 
-    # Time grid — 5000 points is enough for good resolution and fast computation
+    # Half-period: the signal stays high (or low) for this long before switching
+    half_period_s = 1.0 / (2.0 * driver.freq_mhz * 1e6)
+
+    # Time grid — must cover at least one half-period so we can measure
+    # VOH/VOL at the point where the signal would switch back
     n_pts = 5000
-    total_time = max(Td_s * 40, tr_driver_s * 4, tau_load_s * 10, 20e-9)
-    total_time = min(total_time, 200e-9)
+    total_time = max(Td_s * 40, tr_driver_s * 4, tau_load_s * 10,
+                     half_period_s * 1.1, 20e-9)
+    total_time = min(total_time, 1e-6)  # cap at 1µs
     t_arr_np = np.linspace(0, total_time, n_pts)
     dt = t_arr_np[1] - t_arr_np[0]
 
     # --- Bounce diagram: unit step response at load ---
+    #
+    # Model: open-circuit bounce diagram (gamma_l = +1) to get the voltage
+    # waveform at the load assuming no capacitive loading. Then apply the
+    # receiver capacitance as a low-pass RC filter (Z0 * C_load) on the
+    # total waveform. This avoids double-counting the capacitive effect.
     v_launched_unit = Z0 / (Z0 + Rout)
 
     load_arrivals = []  # (arrival_time, amplitude)
@@ -407,27 +418,33 @@ def compute_si(net: NetData, driver: DriverModel, num_bounces: int = 40) -> SIRe
     arr_time = Td_s
     load_arrivals.append((arr_time, wave_fwd))
 
+    gamma_l = 1.0  # open-circuit termination
     for bounce in range(num_bounces):
-        if tau_load_s > 1e-15:
-            gamma_l_eff = 1.0 - 2.0 * math.exp(-Td_s / tau_load_s)
-        else:
-            gamma_l_eff = 1.0
-        wave_back = wave_fwd * gamma_l_eff * loss_per_traversal
+        wave_back = wave_fwd * gamma_l * loss_per_traversal
         wave_fwd = wave_back * gamma_s * loss_per_traversal
         arr_time += 2 * Td_s
         if abs(wave_fwd) < 1e-6:
             break
         load_arrivals.append((arr_time, wave_fwd))
 
-    # Build step response array (vectorized)
-    step_resp = np.zeros(n_pts)
+    # Build open-circuit step response (before cap loading)
+    step_resp_oc = np.zeros(n_pts)
     for t_a, v_inc in load_arrivals:
         mask = t_arr_np >= t_a
-        elapsed = t_arr_np[mask] - t_a
-        if tau_load_s > 1e-15:
-            step_resp[mask] += v_inc * (2.0 - np.exp(-elapsed / tau_load_s))
-        else:
-            step_resp[mask] += v_inc * 2.0
+        # At open circuit, voltage doubles: V_load = V_inc * (1 + gamma_l) = 2 * V_inc
+        step_resp_oc[mask] += v_inc * 2.0
+
+    # Apply receiver capacitive loading as single-pole RC filter
+    # The cap across Z0 has tau = Z0 * C_load
+    # Discrete IIR filter: y[n] = alpha * x[n] + (1-alpha) * y[n-1]
+    if tau_load_s > 1e-15:
+        alpha = dt / (tau_load_s + dt)
+        step_resp = np.zeros(n_pts)
+        step_resp[0] = alpha * step_resp_oc[0]
+        for i in range(1, n_pts):
+            step_resp[i] = alpha * step_resp_oc[i] + (1 - alpha) * step_resp[i-1]
+    else:
+        step_resp = step_resp_oc
 
     # --- Driver ramp (impulse response for convolution) ---
     # Rising edge: linear ramp 0→VDD over t_ramp = tr/0.8
@@ -480,9 +497,16 @@ def compute_si(net: NetData, driver: DriverModel, num_bounces: int = 40) -> SIRe
     elec_length_deg = 360.0 * f_knee * Td_s
     result.electrical_length_deg = elec_length_deg
 
-    # --- Steady-state values ---
-    result.voh = VDD
-    result.vol = 0.0
+    # --- VOH / VOL: measured at end of half-period ---
+    # At 1MHz, the signal is high for 500ns then low for 500ns.
+    # VOH = voltage at receiver at the end of the high half-period
+    # VOL = voltage at receiver at the end of the low half-period
+    # This captures attenuation from Rout + R_trace and incomplete settling.
+    hp_idx = np.searchsorted(t_arr_np, half_period_s)
+    hp_idx = min(hp_idx, n_pts - 1)
+
+    result.voh = float(v_rise[hp_idx])
+    result.vol = float(v_fall[hp_idx])
 
     # --- Rise / Fall time ---
     if t_10_r is not None and t_90_r is not None:
@@ -495,20 +519,20 @@ def compute_si(net: NetData, driver: DriverModel, num_bounces: int = 40) -> SIRe
     else:
         result.fall_time_ns = tf_driver_s * 1e9
 
-    # --- Overshoot / Undershoot ---
+    # --- Overshoot / Undershoot (relative to VOH/VOL, not VDD/0) ---
     v_max_rise = float(np.max(v_rise))
     v_min_fall = float(np.min(v_fall))
 
-    result.overshoot_v = max(0, v_max_rise - VDD)
-    result.undershoot_v = max(0, -v_min_fall)
+    result.overshoot_v = max(0, v_max_rise - result.voh)
+    result.undershoot_v = max(0, result.vol - v_min_fall)  # how far below VOL
     result.peak_v = v_max_rise
     result.trough_v = v_min_fall
     result.overshoot_pct = (result.overshoot_v / VDD * 100) if VDD > 0 else 0
     result.undershoot_pct = (result.undershoot_v / VDD * 100) if VDD > 0 else 0
 
-    # --- Settling time ---
+    # --- Settling time (within 5% of VOH) ---
     settle_thresh = 0.05 * VDD
-    settle_idx = np.where(np.abs(v_rise - VDD) > settle_thresh)[0]
+    settle_idx = np.where(np.abs(v_rise - result.voh) > settle_thresh)[0]
     result.settling_time_ns = float(t_arr_np[settle_idx[-1]]) * 1e9 if len(settle_idx) > 0 else 0
 
     # Bounce count: number of VDD crossings on rising edge
@@ -628,6 +652,8 @@ def main():
                         help="Override driver fall time (ns)")
     parser.add_argument("--cin", type=float, default=None,
                         help="Override receiver input capacitance (pF)")
+    parser.add_argument("--freq", type=float, default=1.0,
+                        help="Signal frequency in MHz (default: 1.0) — sets half-period for VOH/VOL")
     parser.add_argument("--bounces", type=int, default=40,
                         help="Number of bounce iterations (default: 40)")
     parser.add_argument("-q", "--quiet", action="store_true",
@@ -647,10 +673,12 @@ def main():
     if args.tr is not None: driver.rise_time = args.tr
     if args.tf is not None: driver.fall_time = args.tf
     if args.cin is not None: driver.cin = args.cin
+    if args.freq is not None: driver.freq_mhz = args.freq
 
     if any([args.vdd, args.rout, args.tr, args.tf, args.cin]):
         print(f"Using overrides: VDD={driver.vdd}V  Rout={driver.rout}Ω  "
-              f"tr/tf={driver.rise_time}/{driver.fall_time}ns  Cin={driver.cin}pF")
+              f"tr/tf={driver.rise_time}/{driver.fall_time}ns  Cin={driver.cin}pF  "
+              f"freq={driver.freq_mhz}MHz")
 
     # Compute SI for each net
     results = []
