@@ -45,7 +45,8 @@ class DriverModel:
 
 @dataclass
 class NetData:
-    name: str = ""
+    name: str = ""          # Full raw name line from report
+    aliases: list = None    # All individual net names (split on comma)
     segments: int = 0
     ic_drivers: int = 0
     ic_receivers: int = 0
@@ -158,6 +159,75 @@ def parse_length(value_str: str) -> float:
     return float(value_str.replace("in", "").strip())
 
 
+def _strip_board_suffix(name: str) -> str:
+    """Strip the _BXX board suffix from a net name.
+
+    Examples: 'TR2_EXT_SYNC_P3V3_B00' -> 'TR2_EXT_SYNC_P3V3'
+              '$28N9063_B00'           -> '$28N9063'
+              'SOME_NET_B12'           -> 'SOME_NET'
+    """
+    return re.sub(r'_B\d{2}$', '', name)
+
+
+def build_alias_index(nets: List[NetData]) -> dict:
+    """Build a lookup dict: alias string -> NetData.
+
+    Each net can have multiple aliases (comma-separated names in the NET line).
+    All aliases point to the same NetData since they are the same electrical
+    signal connected through series components.
+
+    The index contains both the raw alias (with _BXX) and the stripped version
+    (without _BXX) for flexible matching.  If the same stripped name appears
+    on multiple boards, all boards are collected in a list.
+    """
+    index = {}          # raw alias -> NetData
+    stripped = {}       # stripped alias -> [NetData, ...]
+    for net in nets:
+        if net.aliases:
+            for alias in net.aliases:
+                index[alias] = net
+                key = _strip_board_suffix(alias)
+                stripped.setdefault(key, []).append(net)
+    return index, stripped
+
+
+def find_net(index: tuple, signal_name: str) -> Optional[NetData]:
+    """Find a net by signal name.
+
+    Tries exact match (with _BXX) first, then stripped match (without _BXX).
+    Returns the first match found.
+    """
+    raw_index, stripped_index = index
+    # Exact match (includes _BXX)
+    if signal_name in raw_index:
+        return raw_index[signal_name]
+    # Case-insensitive exact match
+    for alias, net in raw_index.items():
+        if alias.upper() == signal_name.upper():
+            return net
+    # Stripped match (signal_name without _BXX -> net with _BXX)
+    if signal_name in stripped_index:
+        return stripped_index[signal_name][0]
+    for key, net_list in stripped_index.items():
+        if key.upper() == signal_name.upper():
+            return net_list[0]
+    return None
+
+
+def find_all_boards(index: tuple, signal_name: str) -> List[NetData]:
+    """Find all board variants for a signal name (without _BXX suffix).
+
+    Returns a list of NetData, one per board the signal appears on.
+    """
+    _, stripped_index = index
+    if signal_name in stripped_index:
+        return stripped_index[signal_name]
+    for key, net_list in stripped_index.items():
+        if key.upper() == signal_name.upper():
+            return net_list
+    return []
+
+
 def parse_report(filepath: str):
     """Parse a HyperLynx batch report file.
 
@@ -196,8 +266,13 @@ def parse_report(filepath: str):
         net = NetData()
 
         # Net name: first line up to newline
+        # NET lines can have multiple comma-separated aliases — these are
+        # the same electrical signal with series components between segments.
+        # The _BXX suffix (e.g. _B00, _B01) identifies which board in a
+        # multi-board project and must be preserved.
         name_line = block.split("\n")[0].strip()
         net.name = name_line
+        net.aliases = [a.strip() for a in name_line.split(",") if a.strip()]
 
         # Counts
         m = re.search(r"segments\s*\.+\s*(\d+)", block)
