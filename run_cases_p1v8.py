@@ -48,13 +48,14 @@ class BufferModel:
 
 MODELS = {
     # XQVU13P / XQZU3EG — HP_LVCMOS18_S_2 (SLOW slew, drive strength 2)
-    # IBIS: Rout_pd=121.7Ω (V/I @ 0.9V), Rout_pu=176.7Ω
-    # Using pulldown Rout (worst case, closer to Z0 → more overshoot potential)
+    # IBIS: Rout_pd=121.7Ω (V/I @ 0.9V), Rout_pu=112.1Ω (V/I @ 0.9V)
+    # Average Rout = 117Ω
     # C_comp=2.694pF (typ), Voltage Range=1.8V
-    # No [Ramp] data in file — tr/tf estimated for SLOW slew LVCMOS18
+    # [Ramp] dV/dt_r=0.3329/0.1684ns, dV/dt_f=0.3128/0.1778ns (R_load=50)
+    # 10-90% from waveform data: tr≈0.28ns, tf≈0.24ns
     "FPGA_LVCMOS18": BufferModel(
         name="FPGA_LVCMOS18",
-        vdd=1.8, rout=122.0, rise_time=3.0, fall_time=3.0,
+        vdd=1.8, rout=117.0, rise_time=0.28, fall_time=0.24,
         cin=2.694, source="IBIS",
         vih=1.17, vil=0.63,  # LVCMOS18: 0.65*VDD / 0.35*VDD
     ),
@@ -62,7 +63,7 @@ MODELS = {
     # Zynq uses same HP_LVCMOS18_S_2 model per user direction
     "ZYNQ_LVCMOS18": BufferModel(
         name="ZYNQ_LVCMOS18",
-        vdd=1.8, rout=122.0, rise_time=3.0, fall_time=3.0,
+        vdd=1.8, rout=117.0, rise_time=0.28, fall_time=0.24,
         cin=2.694, source="IBIS",
         vih=1.17, vil=0.63,
     ),
@@ -71,11 +72,16 @@ MODELS = {
     # Scaled from 3.3V IBIS (Rout=25Ω at 3.3V → ~50Ω at 1.8V)
     # Datasheet: VOH ≥ VCC-0.45V @ -2mA, VOL ≤ 0.45V @ 2mA at 1.8V
     # Cin per pin ≈ 6 pF (datasheet Table 6.6, independent of VCC)
+    # IBIS: sn74lvc8t245.ibs — 1.8V model extracted
+    # Rout_pd=21.5Ω, Rout_pu=23.9Ω → avg 22.7Ω
+    # [Ramp] dV/dt_r=0.7697/0.5776ns → 20-80% × 1.333 = 2.99ns (10-90%)
+    # [Ramp] dV/dt_f=0.8072/0.4659ns → 20-80% × 1.333 = 2.41ns (10-90%)
+    # C_comp=6.34pF, VIH=0.75*1.69=1.2675V, VIL=0.25*2.31=0.5775V
     "LVC8T245_18": BufferModel(
         name="LVC8T245_18",
-        vdd=1.8, rout=50.0, rise_time=1.5, fall_time=1.5,
-        cin=6.0, source="datasheet-scaled",
-        vih=1.17, vil=0.63,  # LVCMOS18
+        vdd=1.8, rout=22.7, rise_time=2.99, fall_time=2.41,
+        cin=6.34, source="IBIS",
+        vih=1.2675, vil=0.5775,
     ),
 
     # TXS0104 A-side at 1.8V — passive open-drain level translator
@@ -98,13 +104,17 @@ MODELS = {
     ),
 
     # DP83869 MDIO/MDC at 1.8V LVCMOS I/O
-    # No IBIS available — datasheet estimate
-    # MDC is output-only (clock), MDIO is bidirectional
+    # IBIS: dp83869.ibs — MDIO model (IO_MUX_CFG drive strength unknown)
+    # Rout range: 36.5Ω (max drive, 0x1F) to 69.5Ω (min drive, 0x00)
+    # Using mid-range estimate 50Ω pending firmware register readback
+    # tr/tf from IBIS [Ramp]: 0.14-0.32ns rise, 0.13-0.33ns fall (drive-dependent)
+    # Using conservative (slowest) values: tr=0.32ns, tf=0.33ns
+    # C_comp=1.311pF, VIH=0.669*1.8=1.204V, VIL=0.191*1.8=0.344V
     "DP83869_MDIO": BufferModel(
         name="DP83869_MDIO",
-        vdd=1.8, rout=50.0, rise_time=2.0, fall_time=2.0,
-        cin=5.0, source="datasheet-est",
-        vih=1.17, vil=0.63,
+        vdd=1.8, rout=50.0, rise_time=0.32, fall_time=0.33,
+        cin=1.311, source="IBIS",
+        vih=1.204, vil=0.344,
     ),
 
     # LM239A — quad comparator, open-collector output

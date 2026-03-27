@@ -42,58 +42,86 @@ class BufferModel:
 
 MODELS = {
     # SN74LVC8T245 B-port at VCCB = 3.3V
-    # Datasheet: VOH ≥ 2.4V @ -24mA, VOL ≤ 0.55V @ 24mA
-    # tpd ≈ 3.7ns (B→A, CL=15pF)
-    # Cin per pin ≈ 6 pF (datasheet Table 6.6)
+    # IBIS: Rout_pd=13.0Ω, Rout_pu=16.0Ω → avg 14.5Ω at Vmeas=1.65V
+    # [Ramp] dV/dt_r=1.717V/0.809ns, dV/dt_f=1.797V/0.649ns (R_load=50)
+    # 10-90%: tr=1.44ns, tf=1.16ns
+    # C_comp=6.05pF (typ)
+    # Pin parasitics (TSSOP): R≈0.05Ω, L≈2.5nH, C≈0.3pF
     "LVC8T245_B": BufferModel(
         name="LVC8T245_B",
-        vdd=3.3, rout=25.0, rise_time=2.1, fall_time=2.0,
-        cin=6.0, source="datasheet"
+        vdd=3.3, rout=14.5, rise_time=1.44, fall_time=1.16,
+        cin=6.05, source="IBIS"
     ),
 
     # SN55HVD75 Pin 1 (R = receiver output, push-pull CMOS 3.3V)
-    # Datasheet: VOH ≥ VCC-0.4 @ -4mA, VOL ≤ 0.4V @ 4mA
-    # Estimated Rout from I-V: ~45Ω pullup, ~40Ω pulldown
-    # Propagation delay tPLH/tPHL ≈ 28ns max (includes RS-485 → CMOS)
-    # Output slew: tr/tf ≈ 3ns estimated (CMOS output stage)
+    # IBIS model "r": Vmeas=1.65V, Rout_pd=20.4Ω, Rout_pu=28.5Ω → avg 24.5Ω
+    # [Ramp] dV/dt_r=1.351V/7.575ns, dV/dt_f=1.619V/6.821ns (R_load=50)
+    # 10-90%: tr=10.1ns, tf=9.1ns (slew-rate limited RS-485 receiver output)
+    # C_comp=2.78pF (typ)
+    # Pin 1 parasitics: R=0.067Ω, L=2.984nH, C=0.442pF
     "HVD75_R": BufferModel(
         name="HVD75_R",
-        vdd=3.3, rout=42.0, rise_time=3.0, fall_time=3.0,
-        cin=3.0, source="datasheet"
+        vdd=3.3, rout=24.5, rise_time=10.1, fall_time=9.1,
+        cin=2.78, source="IBIS"
     ),
 
     # SN55HVD75 Pin 4 (D = driver input, always receiver)
-    # Cin ≈ 3 pF
+    # IBIS model "d_re": C_comp=0.762pF, Vinl=0.8V, Vinh=2.0V
+    # Pin 4 parasitics: R=0.061Ω, L=2.826nH, C=0.433pF
     "HVD75_D": BufferModel(
         name="HVD75_D",
         vdd=3.3, rout=999.0, rise_time=99.0, fall_time=99.0,
-        cin=3.0, source="datasheet"
+        cin=0.762, source="IBIS"
     ),
 
     # SN55HVD75 Pins 2,3 (RE#, DE = enable inputs, always receiver)
+    # IBIS: d_re (pin 2) C_comp=0.762pF, de (pin 3) C_comp=0.762pF
+    # Pin 2 parasitics: R=0.057Ω, L=2.246nH, C=0.359pF
+    # Pin 3 parasitics: R=0.056Ω, L=2.214nH, C=0.356pF
     "HVD75_EN": BufferModel(
         name="HVD75_EN",
         vdd=3.3, rout=999.0, rise_time=99.0, fall_time=99.0,
-        cin=3.0, source="datasheet"
+        cin=0.762, source="IBIS"
     ),
 
-    # LMK04828 SDIO model (STATUS, STATUS_LD2, RESET, SYNC pins)
-    # IBIS-extracted: C_comp=0.555pF, Rout_pu=37.5Ω, Rout_pd=34.5Ω
-    # Ramp: dV/dt_r=1.842V/0.326ns, dV/dt_f=1.851V/0.329ns (R_load=500Ω)
-    # 10-90% rise = 0.43ns, fall = 0.44ns
+    # LMK04828 SDIO model (STATUS, STATUS_LD2 outputs; RESET receiver)
+    # IBIS model "SDIO": I/O, Vmeas=1.65V, Rref=500Ω
+    # Rout_pd=43.2Ω, Rout_pu=43.5Ω → avg 43.4Ω (corrected from prior 36Ω)
+    # [Ramp] dV/dt_r=1.842V/0.326ns, dV/dt_f=1.851V/0.329ns (R_load=500)
+    # 10-90%: tr=0.43ns, tf=0.44ns
+    # C_comp=0.555pF (typ)
+    # SDIO receiver: Vinl=0.4V, Vinh=1.6V (corrected from 1.4V)
+    # Pin parasitics: STATUS(31) R=0.987Ω L=2.232nH C=0.306pF
+    #                 STATUS_LD2(48) R=1.119Ω L=2.392nH C=0.317pF
+    #                 RESET(5) R=0.740Ω L=1.645nH C=0.257pF
     "LMK04828_SDIO": BufferModel(
         name="LMK04828_SDIO",
-        vdd=3.3, rout=36.0, rise_time=0.43, fall_time=0.44,
+        vdd=3.3, rout=43.4, rise_time=0.43, fall_time=0.44,
         cin=0.555, source="IBIS",
-        vih=1.4, vil=0.4,  # LMK04828 LVCMOS input thresholds
+        vih=1.6, vil=0.4,  # IBIS SDIO model Vinh/Vinl
     ),
 
-    # DP83869 GPIO/management pins (MDIO, LED, etc.)
-    # Datasheet estimates; IBIS not yet extracted
+    # LMK04828 SYNC pin (pin 6) — input only, different model than SDIO
+    # IBIS model "SYNC": Input, C_comp=0.184pF, Vinl=0.4V, Vinh=1.2V
+    # Pin 6 parasitics: R=0.658Ω, L=1.644nH, C=0.224pF
+    "LMK04828_SYNC": BufferModel(
+        name="LMK04828_SYNC",
+        vdd=3.3, rout=999.0, rise_time=99.0, fall_time=99.0,
+        cin=0.184, source="IBIS",
+        vih=1.2, vil=0.4,
+    ),
+
+    # DP83869 GPIO/management pins (MDIO, LED, etc.) at 3.3V
+    # IBIS: dp83869.ibs — gpio models (IO_MUX_CFG drive strength unknown)
+    # Rout range: 69.5Ω (max drive, gpio_1111_3p3) to 127.6Ω (min drive, gpio_0000_3p3)
+    # Using mid-range estimate 98Ω pending firmware register readback
+    # tr range: 0.52-0.75ns, tf range: 0.40-0.51ns — using conservative (slowest)
+    # C_comp=1.106pF, Vinh=1.7V, Vinl=0.7V (from IBIS)
     "DP83869_GPIO": BufferModel(
         name="DP83869_GPIO",
-        vdd=3.3, rout=25.0, rise_time=2.0, fall_time=2.0,
-        cin=5.0, source="datasheet-est"
+        vdd=3.3, rout=98.0, rise_time=0.75, fall_time=0.51,
+        cin=1.106, source="IBIS",
+        vih=1.7, vil=0.7,
     ),
 }
 
@@ -402,10 +430,10 @@ def build_lmk_cases() -> List[RunCase]:
         driver_pin="LVC8T245 via R234",
         driver_model="LVC8T245_B",
         rx_pins="U77-6",
-        rx_model="LMK04828_SDIO",
+        rx_model="LMK04828_SYNC",
         n_rx=1,
         series_r_refdes="R234",
-        notes="LVC8T245 → LMK SYNC"
+        notes="LVC8T245 → LMK SYNC (uses SYNC model, not SDIO)"
     ))
 
     return cases

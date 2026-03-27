@@ -1,0 +1,157 @@
+# Delta Batch Report — Missing Signal Nets
+# Status: PENDING — awaiting new Batch.RPT from user
+#
+# Signal nets in the master netlist (temp.qcv) but absent from the
+# current Batch.RPT. DDR4 (260 nets) and MGT (49 nets) are
+# intentionally excluded.
+#
+# Once the delta batch report is produced, re-run the netlist audit
+# and incorporate results into the SI analysis pipeline.
+#
+# =========================================================================
+# NETS MISSING FROM BATCH REPORT (need HyperLynx export)
+# =========================================================================
+
+# --- U10 (XQVU13P) — 30 nets ---
+
+# SRS/ADC control (14)
+PRS_ADC_TDD_MODE_EN
+PRS_ADC_THRESHOLD_MAX
+PRS_ADC_THRESHOLD_MIN
+PRS_TX_ENABLE
+PRS_TXRX_READY
+SRS0_ADC_THRESHOLD_MAX
+SRS0_ADC_THRESHOLD_MIN
+SRS0_TX_ENABLE
+SRS1_ADC_THRESHOLD_MAX
+SRS1_ADC_THRESHOLD_MIN
+SRS1_TX_ENABLE
+SRS2_ADC_THRESHOLD_MAX
+SRS2_ADC_THRESHOLD_MIN
+SRS2_TX_ENABLE
+
+# Chip-to-chip (3)
+AC2C_STAT
+AXI_C2C_INIT
+AXI_C2C_RESET_N
+
+# Fan control (4)
+EXT_FAN_EN_P1V8
+FAN0_PS_P1V8
+FAN1_PS_P1V8
+FAN2_PS_P1V8
+
+# I2C temp sensor (3)
+TMP_ALERT
+TMP_SCL
+TMP_SDA
+
+# JTAG (3)
+VX_JTAG_TCK
+VX_JTAG_TDI
+VX_JTAG_TMS
+
+# SYS_CLK_VX_ALT (1)
+SYS_CLK_VX_ALT
+
+# Unnamed config/pull-up (15) — review before including
+# UNNAMED_1507 through UNNAMED_1529 (U10 bank 0 pins)
+
+# --- U4 (XQZU3EG) — 12+ nets ---
+
+# QSPI flash (12)
+QSPI_LO_CLK_OUT
+QSPI_LO_CS_N_OUT
+QSPI_LO_DQ0_OUT
+QSPI_LO_DQ1_OUT
+QSPI_LO_DQ2_OUT
+QSPI_LO_DQ3_OUT
+QSPI_UP_CLK_OUT
+QSPI_UP_CS_N_OUT
+QSPI_UP_DQ0_OUT
+QSPI_UP_DQ1_OUT
+QSPI_UP_DQ2_OUT
+QSPI_UP_DQ3_OUT
+
+# JTAG (3)
+PS_JTAG_TCK
+PS_JTAG_TDI
+PS_JTAG_TMS
+
+# Unnamed config/pull-up (10) — review before including
+# UNNAMED_1020, UNNAMED_1021, UNNAMED_1479-1486
+
+# --- AM26LV31E B-port (P3V3) input nets — NOT in Batch.RPT ---
+# These are UNNAMED nets on the 3.3V side of LVC8T245 → series R → AM26LV31E
+# The A-port (P1V8) side nets ARE in the batch report already.
+# HyperLynx may not export UNNAMED nets — if so, these must be analyzed
+# as part of the named P1V8 net trace (LVC8T245 B-port output loading).
+#
+# U87 B-port → U839 (RXLO AM26LV31E):
+#   UNNAMED_301 (B1→1A), UNNAMED_303 (B2→2A), UNNAMED_305 (B3→3A),
+#   UNNAMED_307 (B4→4A), UNNAMED_311 (B7→G enable)
+# U68 B-port → U837 (TXLO AM26LV31E):
+#   UNNAMED_325 (B1→1A), UNNAMED_327 (B2→2A), UNNAMED_329 (B3→3A),
+#   UNNAMED_331 (B4→4A), UNNAMED_335 (B7→G enable)
+# U42 B-port → U36 (CAL AM26LV31E):
+#   UNNAMED_313 (B1→1A), UNNAMED_315 (B2→2A), UNNAMED_317 (B3→3A),
+#   UNNAMED_319 (B4→4A), UNNAMED_323 (B7→G enable)
+# U72 B-port → U136 (FAN AM26LV31E):
+#   UNNAMED_1530 (B4→4A, EXT_FAN_EN_P3V3)
+
+# =========================================================================
+# NETS IN BATCH REPORT BUT MISSING RUN CASES (need run_cases entries)
+# =========================================================================
+
+# --- P1V8 domain: AM26LV31E feeder nets (15 nets, via LVC8T245 A-port) ---
+# Signal path: FPGA/J11 → [P1V8 net] → LVC8T245 A-port → [UNNAMED P3V3] → R → AM26LV31E
+# Driver: FPGA_LVCMOS18 or external via J11
+# Receiver: LVC8T245_18 (A-port)
+# Add to run_cases_p1v8.py
+#
+# U87 A-port (RXLO feeder, 5 nets):
+RXLO_SER_EN_N
+RXLO_MBUS_TX
+RXLO_MBUS_EN
+RXLO_SPI_CS_N
+RXLO_DISC
+# U68 A-port (TXLO feeder, 5 nets):
+TXLO_SER_EN_N
+TXLO_MBUS_TX
+TXLO_MBUS_EN
+TXLO_SPI_CS_N
+TXLO_DISC
+# U42 A-port (CAL feeder, 5 nets):
+CAL_SER_EN_N
+CAL_MBUS_TX
+CAL_MBUS_EN
+CAL_SPI_CS_N
+CAL_DISC
+
+# --- P3V3 domain: AM26LV31E output nets (in Batch.RPT, 24 nets) ---
+# These are RS-422 differential outputs — analyze separately per user direction
+# Signal path: AM26LV31E Y/Z outputs → differential pair → receiver
+# Driver: AM26LV31E_OUT_33 (Rout_avg=11.9Ω, tr=1.39ns, tf=1.52ns, C_comp=23.93pF)
+# Listed here for completeness; RS-422 analysis is a separate effort.
+#
+# RXLO_DISC_P/N, RXLO_SPI_SCLK_P/N, RXLO_SPI_SDO_P/N, RXLO_SPI_CS_N_P/N (8)
+# TXLO_DISC_P/N, TXLO_SPI_SCLK_P/N, TXLO_SPI_SDO_P/N, TXLO_SPI_CS_N_P/N (8)
+# CAL_DISC_P/N, CAL_SPI_SCLK_P/N, CAL_SPI_SDO_P/N, CAL_SPI_CS_N_P/N (8)
+
+# --- P3V3 domain: U136 control nets (in Batch.RPT, not in run_cases.py) ---
+# Add to run_cases.py
+P48V_EN_P3V3
+FAN_EN_P3V3
+
+# --- P3V3 domain: DIR_AB nets (in Batch.RPT, not in run_cases.py, 8 nets) ---
+# Identified during LVC8T245 audit — LVC8T245 drives DIR pin of other LVC8T245s
+# Driver: LVC8T245_B (Rout=14.5Ω corrected), Receiver: LVC8T245_DIR_33 (C_comp=3.01pF)
+# Add to run_cases.py
+DIR_AB_0_P3V3
+DIR_AB_1_P3V3
+DIR_AB_2_P3V3
+DIR_AB_3_P3V3
+DIR_AB_4_P3V3
+DIR_AB_5_P3V3
+DIR_AB_6_P3V3
+DIR_AB_7_P3V3
