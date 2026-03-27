@@ -65,8 +65,20 @@ LVDS_SPECS = {
     "vid_threshold": 0.1,      # receiver input sensitivity ±100mV
 }
 
-# FPGA MGTREFCLK receiver input capacitance (estimated)
+# ---------------------------------------------------------------------------
+# Receiver input capacitance models
+# ---------------------------------------------------------------------------
+
+# FPGA MGTREFCLK receiver input capacitance (estimated — no IBIS rx model)
 FPGA_CIN_RX_PF = 1.0
+
+# Zynq HP_LVDS receiver (XQZU3EG) + Zynq package (xczu3eg_sfvc784.pkg L2/L3)
+# C_comp=2.694pF + C_pin=1.76pF = 4.45pF
+ZYNQ_HP_LVDS_CIN_PF = 4.45
+
+# Daughter board receiver: HP_LVDS die model + LMK04832 package parasitics
+# C_comp=2.694pF (HP_LVDS) + C_pkg=0.144pF (LMK04832) = 2.84pF
+DAUGHTER_BOARD_CIN_PF = 2.84
 
 # Differential termination: 100Ω diff = 50Ω per single-ended leg
 RTERM_SE = 50.0
@@ -89,6 +101,7 @@ class LVDSPair:
     td_ns: float        # propagation delay (ns)
     length_in: float    # trace length (inches)
     c_leg_pf: float     # total metal capacitance per leg (pF)
+    cin_rx_pf: float = FPGA_CIN_RX_PF  # receiver input capacitance (pF)
 
 
 # U77 (LMK04828) → FPGA MGTREFCLK (all on B00)
@@ -141,33 +154,37 @@ LMK_PAIRS = [
              "GTY_REFCLK_231_P", "GTY_REFCLK_231_N",
              z0_se=53.0, td_ns=2.569, length_in=17.519, c_leg_pf=24.44),
 
-    # CLK_OUT4 → SRS2_EXT_CLK_IN (J23 → B04)
+    # CLK_OUT4 → SRS2_EXT_CLK_IN (J23 → B04, rx: HP_LVDS + LMK04832 pkg)
     LVDSPair("SRS2_EXT_CLK_IN", LMK04828_LVDS,
              "U77-24", "U77-25",
              "EXT_CLK_IN_P (B04)", "EXT_CLK_IN_N (B04)",
              "SRS2_EXT_CLK_IN_P", "SRS2_EXT_CLK_IN_N",
-             z0_se=88.1, td_ns=1.670, length_in=11.486, c_leg_pf=6.1),
+             z0_se=88.1, td_ns=1.670, length_in=11.486, c_leg_pf=6.1,
+             cin_rx_pf=DAUGHTER_BOARD_CIN_PF),
 
-    # CLK_OUT5 → PRS_EXT_CLK_IN (J11 → B01)
+    # CLK_OUT5 → PRS_EXT_CLK_IN (J11 → B01, rx: HP_LVDS + LMK04832 pkg)
     LVDSPair("PRS_EXT_CLK_IN", LMK04828_LVDS,
              "U77-22", "U77-23",
              "EXT_CLK_IN_P (B01)", "EXT_CLK_IN_N (B01)",
              "PRS_EXT_CLK_IN_P", "PRS_EXT_CLK_IN_N",
-             z0_se=64.8, td_ns=3.366, length_in=22.925, c_leg_pf=22.4),
+             z0_se=64.8, td_ns=3.366, length_in=22.925, c_leg_pf=22.4,
+             cin_rx_pf=DAUGHTER_BOARD_CIN_PF),
 
-    # CLK_OUT6 → SRS1_EXT_CLK_IN (J19 → B03)
+    # CLK_OUT6 → SRS1_EXT_CLK_IN (J19 → B03, rx: HP_LVDS + LMK04832 pkg)
     LVDSPair("SRS1_EXT_CLK_IN", LMK04828_LVDS,
              "U77-27", "U77-28",
              "EXT_CLK_IN_P (B03)", "EXT_CLK_IN_N (B03)",
              "SRS1_EXT_CLK_IN_P", "SRS1_EXT_CLK_IN_N",
-             z0_se=90.8, td_ns=2.088, length_in=14.395, c_leg_pf=8.0),
+             z0_se=90.8, td_ns=2.088, length_in=14.395, c_leg_pf=8.0,
+             cin_rx_pf=DAUGHTER_BOARD_CIN_PF),
 
-    # CLK_OUT7 → SRS0_EXT_CLK_IN (J15 → B02)
+    # CLK_OUT7 → SRS0_EXT_CLK_IN (J15 → B02, rx: HP_LVDS + LMK04832 pkg)
     LVDSPair("SRS0_EXT_CLK_IN", LMK04828_LVDS,
              "U77-29", "U77-30",
              "EXT_CLK_IN_P (B02)", "EXT_CLK_IN_N (B02)",
              "SRS0_EXT_CLK_IN_P", "SRS0_EXT_CLK_IN_N",
-             z0_se=96.9, td_ns=4.625, length_in=31.947, c_leg_pf=20.4),
+             z0_se=96.9, td_ns=4.625, length_in=31.947, c_leg_pf=20.4,
+             cin_rx_pf=DAUGHTER_BOARD_CIN_PF),
 
     # CLK_OUT10 → PL_DDR4_REFCLK (U10 FPGA)
     LVDSPair("PL_DDR4_REFCLK", LMK04828_LVDS,
@@ -186,17 +203,29 @@ LMK_PAIRS = [
 
 # U79 (AD9508) → cross-board and on-board distribution
 AD9508_PAIRS = [
+    # OUT0 → PRS_PS_PCIE_REFCLK (J11 → B01, rx: HP_LVDS + LMK04832 pkg)
     LVDSPair("PRS_PS_PCIE_REFCLK", AD9508_LVDS,
              "U79-7", "U79-8",
              "PEX_REFCLK_P (B01)", "PEX_REFCLK_N (B01)",
              "PRS_PS_PCIE_REFCLK_P", "PRS_PS_PCIE_REFCLK_N",
-             z0_se=84.4, td_ns=1.362, length_in=9.337, c_leg_pf=8.46),
+             z0_se=84.4, td_ns=1.362, length_in=9.337, c_leg_pf=8.46,
+             cin_rx_pf=DAUGHTER_BOARD_CIN_PF),
 
+    # OUT2 → PS_DDR4_REFCLK (U4 Zynq pins L3/L2, rx: HP_LVDS + Zynq pkg)
+    LVDSPair("PS_DDR4_REFCLK", AD9508_LVDS,
+             "U79-11", "U79-12",
+             "PS_DDR4_REFCLK_P (U4)", "PS_DDR4_REFCLK_N (U4)",
+             "PS_DDR4_REFCLK_P", "PS_DDR4_REFCLK_N",
+             z0_se=52.5, td_ns=3.902, length_in=26.573, c_leg_pf=37.2,
+             cin_rx_pf=ZYNQ_HP_LVDS_CIN_PF),
+
+    # OUT1 → PS_PCIE_REFCLK (U4 Zynq on B00, rx: HP_LVDS + Zynq pkg)
     LVDSPair("PS_PCIE_REFCLK", AD9508_LVDS,
              "U79-16", "U79-17",
              "PS_PCIE_CLK_P (Zynq)", "PS_PCIE_CLK_N (Zynq)",
              "PS_PCIE_REFCLK_P", "PS_PCIE_REFCLK_N",
-             z0_se=53.5, td_ns=3.375, length_in=22.969, c_leg_pf=31.90),
+             z0_se=53.5, td_ns=3.375, length_in=22.969, c_leg_pf=31.90,
+             cin_rx_pf=ZYNQ_HP_LVDS_CIN_PF),
 ]
 
 ALL_PAIRS = LMK_PAIRS + AD9508_PAIRS
@@ -206,7 +235,7 @@ ALL_PAIRS = LMK_PAIRS + AD9508_PAIRS
 # LVDS current-mode driver SI model
 # ---------------------------------------------------------------------------
 
-def compute_lvds_si(pair: LVDSPair, cin_rx_pf=FPGA_CIN_RX_PF):
+def compute_lvds_si(pair: LVDSPair, cin_rx_pf=None):
     """Compute LVDS SI parameters for one differential pair.
 
     Uses current-mode driver model:
@@ -215,6 +244,8 @@ def compute_lvds_si(pair: LVDSPair, cin_rx_pf=FPGA_CIN_RX_PF):
     - Steady state: V = VOS + I × Rterm = VOH
     - Overshoot from Z0/Rterm mismatch
     """
+    if cin_rx_pf is None:
+        cin_rx_pf = pair.cin_rx_pf
     drv = pair.driver_model
     z0 = pair.z0_se
     rterm = RTERM_SE

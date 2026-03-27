@@ -115,16 +115,18 @@ def build_lvds_table_rows(p_data, n_data):
         pass_fail(max(us_p, us_n), LVDS_SPECS["overshoot_max_pct"], "<="),
     ))
 
-    # Differential: VOD = VP - VN (full swing)
+    # Differential: VOD = |VP - VN| in one state (not full swing)
+    # VOD_high = VOH_P - VOL_N (P high, N low)
+    # VOD_low  = VOH_N - VOL_P (N high, P low)
     vod_h = voh_p - vol_n
-    vod_l = vol_p - voh_n
-    vod_swing = vod_h - vod_l
+    vod_l = voh_n - vol_p
+    vod = (abs(vod_h) + abs(vod_l)) / 2.0  # average of both states
 
     rows.append((
         "VOD (VP \u2013 VN) (mV)",
-        f"{vod_swing*1000:.0f}", "",
+        f"{vod*1000:.0f}", "",
         "250\u2013450mV",
-        pass_fail_range(vod_swing, LVDS_SPECS["vod_min"], LVDS_SPECS["vod_max"]),
+        pass_fail_range(vod, LVDS_SPECS["vod_min"], LVDS_SPECS["vod_max"]),
     ))
 
     # VOS = (VOH + VOL) / 2, average of both legs
